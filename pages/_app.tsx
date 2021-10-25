@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <BaseStyles />
       <Head>
-        <title>F1 Next.js Starter App</title>
+        <title>Forum One Next.js Starter App</title>
         <meta
           name="description"
           content="Next app using TypeScript and Emotion"
