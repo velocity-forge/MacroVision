@@ -6,6 +6,10 @@ This is a starter app for [Next.js](https://nextjs.org/) (bootstrapped with [`cr
 * [ESLint](https://eslint.org/)
 * [Prettier](https://prettier.io/)
 
+Note that Next v11 comes with the following installed already:
+* [Webpack v5](https://webpack.js.org/concepts/)
+* [Babel v7](https://babeljs.io/docs/en/)
+
 ## Getting Started
 
 Ensure that you are using the proper Node version for this app. We currently use v16. Assuming you have [nvm](https://github.com/nvm-sh/nvm) installed locally, you can simply run:
@@ -72,3 +76,11 @@ npm run tsc
 ```
 
 Runs `tsc --noEmit`, which will compile the TypeScript code without emitting files. This acts as a TS error check in your CLI. This is useful to catch TS errors that you might miss during development. For more information, see the [TypeScript Compiler (tsc) documentation](https://www.typescriptlang.org/docs/handbook/compiler-options.html).
+
+## Notes
+
+* Although ESLint v8 has been released (https://eslint.org/blog/2021/10/eslint-v8.0.0-released), `eslint-config-next` is not yet compatible with v8. Because of this, we are using v7.
+* Code for the app is currently configured to go into the `pages` directory (for [Next.js pages](https://nextjs.org/docs/basic-features/pages)) and `source` for theming, components, providers, helpers, etc.
+* Starting in Next.js v9.4, TypeScript errors do not show up in your browser when running the dev server (i.e. `npm run dev`). However, TS errors will prevent `next build` (i.e. `npm run build`) from running successfully. Be sure to run `npm run lint` and `npm run tsc` before committing and pushing code. This will give you lint and TS errors that will most likely cause your builds to fail.
+  * For discussion: should we include a [TS checker in the config](https://github.com/vercel/next.js/issues/12735#issuecomment-629404102)? Note that a Next.js dev warns that [this will greatly slow development](https://github.com/vercel/next.js/issues/12735#issuecomment-629404842).
+* The current favicon implementation will probably not display correctly locally in Chrome (v94), but does display correctly in Firefox and Safari. Note that the favicon _does_ display correctly once deployed. Not sure why.
