@@ -1,5 +1,5 @@
-import { Global } from "@emotion/react";
-import createBaseStyles from "./createBaseStyles";
+import { Global } from '@emotion/react';
+import createBaseStyles from './createBaseStyles';
 
 const BaseStyles = () => <Global styles={createBaseStyles} />;
 

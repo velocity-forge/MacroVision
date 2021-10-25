@@ -1,4 +1,4 @@
-import { css, SerializedStyles, Theme } from "@emotion/react";
+import { css, SerializedStyles, Theme } from '@emotion/react';
 
 function createBaseStyles(theme: Theme): SerializedStyles {
   return css`
@@ -14,7 +14,7 @@ function createBaseStyles(theme: Theme): SerializedStyles {
     body {
       color: ${theme.palette.grayscale.gray8};
       font-family: ${theme.typography.fontFamily.base};
-      font-size: ${theme.typography.fontSize["3"]};
+      font-size: ${theme.typography.fontSize['3']};
       line-height: ${theme.typography.lineHeight.base};
       margin: 0;
     }

@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
@@ -7,8 +7,8 @@ const Home: NextPage = () => {
         <h1>F1 Next.js Starter App</h1>
 
         <p>
-          <a href="https://nextjs.org/docs">Next.js</a> app with{" "}
-          <a href="https://www.typescriptlang.org/">TypeScript</a> and{" "}
+          <a href="https://nextjs.org/docs">Next.js</a> app with{' '}
+          <a href="https://www.typescriptlang.org/">TypeScript</a> and{' '}
           <a href="https://emotion.sh/docs/introduction">Emotion.js</a>.
         </p>
 

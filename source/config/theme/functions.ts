@@ -43,7 +43,7 @@ export type ThemeFunction<T, TP = unknown> = (props: ThemeProps & TP) => T;
  */
 export function palette<
   Color extends keyof Palette,
-  Shade extends keyof Palette[Color]
+  Shade extends keyof Palette[Color],
 >(color: Color, shade: Shade): ThemeFunction<Palette[Color][Shade]> {
   return props => props.theme.palette[color][shade];
 }

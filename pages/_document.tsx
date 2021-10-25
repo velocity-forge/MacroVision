@@ -3,7 +3,8 @@ import Document, {
   Head,
   Html,
   Main,
-  NextScript, } from 'next/document';
+  NextScript,
+} from 'next/document';
 import React from 'react';
 import { renderStatic } from '../source/helpers/renderer';
 
@@ -22,8 +23,8 @@ class MyDocument extends Document {
             dangerouslySetInnerHTML={{ __html: css }}
           />
         </React.Fragment>
-      )
-    }
+      ),
+    };
   }
 
   render() {
