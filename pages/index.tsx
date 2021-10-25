@@ -65,8 +65,6 @@ const Home: NextPage = () => {
           natoque tempor habitant laboriosam.
         </p>
       </main>
-
-      <footer>FOOTER</footer>
     </>
   );
 };
