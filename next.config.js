@@ -8,6 +8,10 @@ module.exports = {
   eslint: {
     dirs: ['source', 'pages'],
   },
+  /**
+   * Custom Webpack Config
+   * https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config
+   */
   webpack: (config, { webpack }) => {
     config.plugins.push(
       new webpack.DefinePlugin({

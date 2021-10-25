@@ -10,6 +10,9 @@ import { renderStatic } from '../source/helpers/renderer';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
+    // Note: not sure if all this is needed for Emotion >=10.
+    // For v10 and above, SSR just works in Next.js.
+    // https://emotion.sh/docs/ssr#nextjs
     const page = await ctx.renderPage();
     const { css, ids } = await renderStatic(page.html);
     const initialProps = await Document.getInitialProps(ctx);
