@@ -1,6 +1,6 @@
 # Forum One Next.js Starter App
 
-This is a starer app for [Next.js](https://nextjs.org/) (bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)) that includes the following features:
+This is a starter app for [Next.js](https://nextjs.org/) (bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)) that includes the following features:
 * [TypeScript](https://www.typescriptlang.org/)
 * [Emotion](https://emotion.sh/docs/introduction)
 * [ESLint](https://eslint.org/)
