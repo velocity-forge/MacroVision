@@ -125,6 +125,31 @@ const CONSTRAIN = {
   lg: `${rem(2200)}`,
 };
 
+const BOX_SHADOW = {
+  0: 'none',
+  1: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
+  2: '0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)',
+  3: '0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)',
+  4: '0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)',
+  5: '0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22)',
+};
+
+const EASING = {
+  'ease-in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+  'ease-out': 'cubic-bezier(0.0, 0, 0.2, 1)',
+  'ease-in': 'cubic-bezier(0.4, 0, 1, 1)',
+  sharp: 'cubic-bezier(0.4, 0, 0.6, 1)',
+};
+
+const DURATION = {
+  shortest: '150ms',
+  short: '200ms',
+  standard: '375ms',
+  long: '400ms',
+  intro: '270ms',
+  outro: '195ms',
+};
+
 export {
   BRAND,
   GRAYSCALE,
@@ -137,4 +162,7 @@ export {
   SPACING,
   BREAKPOINT,
   CONSTRAIN,
+  BOX_SHADOW,
+  EASING,
+  DURATION,
 };
