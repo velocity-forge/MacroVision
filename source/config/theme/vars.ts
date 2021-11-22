@@ -9,6 +9,12 @@ enum VarNames {
   TextLinkActive = '--color-text-link-active',
   TextLinkVisited = '--color-text-link-visited',
   FontFamilyBase = '--font-family-base',
+  UiAccent = '--ui-accent',
+  UiAccentDark = '--ui-accent-dark',
+  UiAccentLight = '--ui-accent-light',
+  UiBorder = '--ui-border',
+  UiBorderDark = '--ui-border-dark',
+  UiBorderLight = '--ui-border-light',
 }
 
 const vars = css`
@@ -19,6 +25,12 @@ const vars = css`
   ${VarNames.TextLinkActive}: ${BRAND.blue.dark};
   ${VarNames.TextLinkVisited}: ${BRAND.blue.dark};
   ${VarNames.FontFamilyBase}: ${FONT_FAMILY['lato']};
+  ${VarNames.UiAccent}: ${BRAND.blue.base};
+  ${VarNames.UiAccentDark}: ${BRAND.blue['dark-1']};
+  ${VarNames.UiAccentLight}: ${BRAND.blue['light']};
+  ${VarNames.UiBorder}: ${GRAYSCALE['gray-3']};
+  ${VarNames.UiBorderDark}: ${GRAYSCALE['gray-6']};
+  ${VarNames.UiBorderLight}: ${GRAYSCALE['gray-1']};
 `;
 
 export { VarNames };

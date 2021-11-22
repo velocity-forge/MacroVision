@@ -12,7 +12,7 @@ const FooterWrapper = styled('footer')`
   ${VarNames.TextLinkHover}: ${PALETTE.white};
   ${VarNames.TextLinkActive}: ${PALETTE.white};
   ${VarNames.TextLinkVisited}: ${PALETTE.white};
-  background: ${PALETTE['ocean-blue']['dark-1']};
+  background: var(${VarNames.UiAccentDark});
   color: ${PALETTE.white};
   padding: ${SPACING['2']} 0 ${SPACING['2']};
 
