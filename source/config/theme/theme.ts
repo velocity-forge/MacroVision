@@ -120,9 +120,9 @@ const BREAKPOINT = {
 };
 
 const CONSTRAIN = {
-  sm: '800px',
-  md: '1440px',
-  lg: '2200px',
+  sm: `${rem(800)}`,
+  md: `${rem(1440)}`,
+  lg: `${rem(2200)}`,
 };
 
 export {
