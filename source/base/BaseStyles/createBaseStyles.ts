@@ -20,7 +20,10 @@ const createBaseStyles = css`
 
   html {
     line-height: ${LINE_HEIGHT.tight};
-    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    @media screen and (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
   }
 
   body {
