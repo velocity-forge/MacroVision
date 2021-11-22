@@ -1,7 +1,17 @@
 import styled from '@emotion/styled';
-import { BREAKPOINT, PALETTE, SPACING, mediaMin } from '../../config/theme';
+import {
+  BREAKPOINT,
+  PALETTE,
+  SPACING,
+  mediaMin,
+  VarNames,
+} from '../../config/theme';
 
 const FooterWrapper = styled('footer')`
+  ${VarNames.TextLink}: ${PALETTE.white};
+  ${VarNames.TextLinkHover}: ${PALETTE.white};
+  ${VarNames.TextLinkActive}: ${PALETTE.white};
+  ${VarNames.TextLinkVisited}: ${PALETTE.white};
   background: ${PALETTE['ocean-blue']['dark-1']};
   color: ${PALETTE.white};
   padding: ${SPACING['2']} 0 ${SPACING['2']};
