@@ -1,24 +1,28 @@
-import { css, SerializedStyles, Theme } from '@emotion/react';
+import { css } from '@emotion/react';
+import vars, { VarNames } from '../../config/theme/vars';
+import { FONT_SIZE, LINE_HEIGHT, SPACING } from '../../config/theme';
 
-function createBaseStyles(theme: Theme): SerializedStyles {
-  return css`
-    * {
-      box-sizing: border-box;
-    }
+const createBaseStyles = css`
+  :root {
+    ${vars}
+  }
 
-    html {
-      line-height: ${theme.typography.lineHeight.tight};
-      -webkit-text-size-adjust: 100%;
-    }
+  * {
+    box-sizing: border-box;
+  }
 
-    body {
-      color: ${theme.palette.grayscale.gray8};
-      font-family: ${theme.typography.fontFamily.base};
-      font-size: ${theme.typography.fontSize['3']};
-      line-height: ${theme.typography.lineHeight.base};
-      margin: 0;
-    }
-  `;
-}
+  html {
+    line-height: ${LINE_HEIGHT.tight};
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    color: var(${VarNames.TextPrimary});
+    font-family: var(${VarNames.FontFamilyBase});
+    font-size: ${FONT_SIZE['3']};
+    line-height: ${LINE_HEIGHT.base};
+    margin: ${SPACING[0]};
+  }
+`;
 
 export default createBaseStyles;
