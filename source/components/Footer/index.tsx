@@ -1,13 +1,23 @@
 import styled from '@emotion/styled';
-import { media, palette, spacing } from '../../config/theme';
+import {
+  BREAKPOINT,
+  PALETTE,
+  SPACING,
+  mediaMin,
+  VarNames,
+} from '../../config/theme';
 
 const FooterWrapper = styled('footer')`
-  background: ${palette('cyan', 'dark1')};
-  color: ${palette('grayscale', 'white')};
-  padding: ${spacing(2)} 0 ${spacing(2)};
+  ${VarNames.TextLink}: ${PALETTE.white};
+  ${VarNames.TextLinkHover}: ${PALETTE.white};
+  ${VarNames.TextLinkActive}: ${PALETTE.white};
+  ${VarNames.TextLinkVisited}: ${PALETTE.white};
+  background: var(${VarNames.UiAccentDark});
+  color: ${PALETTE.white};
+  padding: ${SPACING['2']} 0 ${SPACING['2']};
 
-  ${media('tabletLg')} {
-    padding: ${spacing(5)} 0 ${spacing(7)};
+  ${mediaMin(BREAKPOINT.tabletLg)} {
+    padding: ${SPACING['5']} 0 ${SPACING['7']};
   }
 `;
 

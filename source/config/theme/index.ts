@@ -1,7 +1,3 @@
-import theme, { BaseTheme } from './theme';
-
+export * from './theme';
 export * from './functions';
-export * from './types';
-
-export { theme };
-export type { BaseTheme };
+export * from './vars';
