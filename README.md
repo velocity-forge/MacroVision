@@ -79,7 +79,6 @@ Runs `tsc --noEmit`, which will compile the TypeScript code without emitting fil
 
 ## Notes
 
-* Although ESLint v8 has been released (https://eslint.org/blog/2021/10/eslint-v8.0.0-released), `eslint-config-next` is not yet compatible with v8 (note that it is in the works: https://github.com/vercel/next.js/pull/29865). Because of this, we are using v7.
 * Code for the app is currently configured to go into the `pages` directory (for [Next.js pages](https://nextjs.org/docs/basic-features/pages)) and `source` for theming, components, providers, helpers, etc.
 * Starting in Next.js v9.4, TypeScript errors do not show up in your browser when running the dev server (i.e. `npm run dev`). However, TS errors will prevent `next build` (i.e. `npm run build`) from running successfully. Be sure to run `npm run lint` and `npm run tsc` before committing and pushing code. This will give you lint and TS errors that will most likely cause your builds to fail.
   * For discussion: should we include a [TS checker in the config](https://github.com/vercel/next.js/issues/12735#issuecomment-629404102)? Note that a Next.js dev warns that [this will greatly slow development](https://github.com/vercel/next.js/issues/12735#issuecomment-629404842).
