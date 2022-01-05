@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import {
   BREAKPOINT,
+  mediaMin,
   PALETTE,
   SPACING,
-  mediaMin,
   VarNames,
 } from '../../config/theme';
 

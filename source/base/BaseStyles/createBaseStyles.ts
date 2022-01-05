@@ -1,5 +1,4 @@
 import { css } from '@emotion/react';
-import vars, { VarNames } from '../../config/theme/vars';
 import {
   DURATION,
   EASING,
@@ -7,6 +6,7 @@ import {
   LINE_HEIGHT,
   SPACING,
 } from '../../config/theme';
+import vars, { VarNames } from '../../config/theme/vars';
 import focus from './focus';
 
 const createBaseStyles = css`
