@@ -20,6 +20,11 @@ nvm use
 
 This will set your Node version to match the `.nvmrc` file.
 
+Next, install packages:
+```bash
+npm ci
+```
+
 To run the [development server](https://nextjs.org/docs/api-reference/cli#development):
 
 ```bash
