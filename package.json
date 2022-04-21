@@ -1,5 +1,5 @@
 {
-  "name": "f1-nextjs-starter-app",
+  "name": "nextjs-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,8 @@
     "start": "next start",
     "export": "next build && next export",
     "lint": "next lint",
-    "prettier": "prettier --write pages/ source/",
+    "prettier": "prettier --check pages/ source/",
+    "prettier:write": "prettier --write pages/ source/",
     "tsc": "tsc --noEmit"
   },
   "dependencies": {

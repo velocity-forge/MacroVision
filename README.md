@@ -68,8 +68,18 @@ Runs `next lint`, which runs the ESLint command. This is useful to catch lint er
 
 ### Run prettier
 
+#### Prettier check
+
 ```bash
 npm run prettier
+```
+
+Runs `prettier --check`, which will check that all files within the `pages` and `source` directories use the Prettier code style from `.prettierrc`. This might be redundant with the `lint` script above, since it extends whatever Prettier rules we have set.
+
+#### Prettier write
+
+```bash
+npm run prettier:write
 ```
 
 Runs `prettier --write`, which will find and fix all prettier issues found within the `pages` and `source` directories. Note that this will automatically overwrite your files.
