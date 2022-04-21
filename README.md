@@ -92,6 +92,18 @@ npm run tsc
 
 Runs `tsc --noEmit`, which will compile the TypeScript code without emitting files. This acts as a TS error check in your CLI. This is useful to catch TS errors that you might miss during development. For more information, see the [TypeScript Compiler (tsc) documentation](https://www.typescriptlang.org/docs/handbook/compiler-options.html).
 
+## Husky
+
+This project uses [Husky](https://typicode.github.io/husky/#/) to check code on git commits. By default, it is setup to use the `npm test` script which runs `lint` and `tsc` (TypeScript) checks against the codebase. This check occurs on `git commit` attempts. This helps developers catch errors _before_ pushing branches and creating PRs, quickening the overall dev worklow.
+
+To bypass this check, you can use the `--no-verify` flag with your commit:
+
+```bash
+git commit -m "This will not get checked by Husky." --no-verify
+```
+
+Note that bypassing the Husky check is frowned upon.
+
 ## Notes
 
 * Code for the app is currently configured to go into the `pages` directory (for [Next.js pages](https://nextjs.org/docs/basic-features/pages)) and `source` for theming, components, providers, helpers, etc.
