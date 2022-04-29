@@ -92,6 +92,14 @@ npm run tsc
 
 Runs `tsc --noEmit`, which will compile the TypeScript code without emitting files. This acts as a TS error check in your CLI. This is useful to catch TS errors that you might miss during development. For more information, see the [TypeScript Compiler (tsc) documentation](https://www.typescriptlang.org/docs/handbook/compiler-options.html).
 
+### Scaffold new component
+
+```bash
+npm run component
+```
+Runs the `lib/component.js` script, which will scaffold a new React or Emotion component,
+with the option to include a Storybook story file as well.
+
 ## Husky
 
 This project uses [Husky](https://typicode.github.io/husky/#/) to check code on git commits. By default, it is setup to use the `npm test` script which runs `lint` and `tsc` (TypeScript) checks against the codebase. This check occurs on `git commit` attempts. This helps developers catch errors _before_ pushing branches and creating PRs, quickening the overall dev worklow.
