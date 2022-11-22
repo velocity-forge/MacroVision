@@ -11,14 +11,29 @@ case $1 in
   build)
     npm run build
   ;;
+  export)
+    npm run export
+  ;;
   restart)
     pm2 restart $2
   ;;
   monit)
     pm2 monit
   ;;
-  run)
-    npm run dev
+  lint)
+    npm run lint
+  ;;
+  prettier)
+    npm run prettier
+  ;;
+  tsc)
+    npm run tsc
+  ;;
+  component)
+    npm run component
+  ;;
+  prettier:write)
+    npm run prettier:write
   ;;
   "")
     echo "Usage: nextjs install|build|deploy|watch|(some other command in the theme service)"
