@@ -52,7 +52,12 @@ Please remove:
     ...
   ``` 
 * Run `npm i --package-lock-only`
-  
+
+#### Do you need github action linting?
+
+##### No
+
+Please delete: `./github` folder.
 
 #### Configuring Capistrano
 
