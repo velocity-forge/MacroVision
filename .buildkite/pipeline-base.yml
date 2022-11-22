@@ -1,0 +1,83 @@
+# Consolidate the common configuration for reuse across multiple steps.
+definitions:
+  # Configure some default step values.
+  step-defaults: &step-defaults
+    timeout_in_minutes: 15
+  plugins:
+    ecr: &ecr
+      ecr#v2.0.0:
+        login: true
+        no-include-email: true
+
+  # Specify common agent queue parameters.
+  queues:
+    # Docker-based tasks should run in the Docker queue.
+    docker-agents: &docker-agents
+      agents:
+        queue: "docker-builders"
+env:
+  # If you do not declare buildkit:1 then arguments using for --target
+  # do not work correctly and they will build every steps.
+  DOCKER_BUILDKIT: 1
+  BUILDKIT_PROGRESS: plain
+
+  # Identify the address for the shared Buildkite ECR repository.
+  IMAGE_REPOSITORY: "165761832703.dkr.ecr.us-east-1.amazonaws.com/buildkite"
+
+  # Set this as an environment variable for automatic usage by default for all
+  # docker-compose buildkite plugin executions.
+  BUILDKITE_PLUGIN_DOCKER_COMPOSE_IMAGE_REPOSITORY: "$IMAGE_REPOSITORY"
+
+  # Define a common namespace for images to be published within the shared ECR repo.
+  ECR_NAMESPACE: "${IMAGE_REPOSITORY}:${BUILDKITE_PIPELINE_SLUG}"
+
+  # Define service directory were the Dockerfile is used
+  DOCKERFILE_LOCATION: "./services/app"
+steps:
+  - label: ":hammer: :docker: Building Docker Image"
+    key: "build-image"
+    <<: *step-defaults
+    <<: *docker-agents
+    command:
+      - "docker build --target ${DOCKERFILE_BUILD_STEP} -t ${ECR_NAMESPACE}-${BUILDKITE_BUILD_NUMBER}-${BUILDKITE_COMMIT} ${DOCKERFILE_LOCATION}"
+      - "docker push ${ECR_NAMESPACE}-${BUILDKITE_BUILD_NUMBER}-${BUILDKITE_COMMIT}"
+    plugins:
+      - *ecr
+      - seek-oss/aws-sm#v2.0.0:
+          file:
+            - path: services/app/.env
+              secret-id: [NEED THIS CONFIGURED]
+
+  # Wait for images to finish building.
+  - wait: ~
+
+  # Deploy the built application.
+  - label: ":capistrano: Deploy"
+    key: "deploy"
+    timeout_in_minutes: 15
+    depends_on: "build-image"
+    concurrency: 1
+    concurrency_group: '$BUILDKITE_PIPELINE_SLUG/$BUILDKITE_BRANCH/deploy'
+    branches:
+      - integration
+      - main
+      - live
+    plugins:
+      # Log into ECR for this build step to access prebuilt images.
+      - *ecr
+
+      # Download the prebuilt image and extract project files to the
+      # local filesystem for further operations.
+      - forumone/extract#v0.2.0:
+          image: ${ECR_NAMESPACE}-${BUILDKITE_BUILD_NUMBER}-${BUILDKITE_COMMIT}
+          from: /app
+          to: ${DOCKERFILE_LOCATION}
+
+      # Execute a Capistrano deployment using the defined branch to
+      # environment mapping.
+      - forumone/capistrano#v0.4.0:
+          require-stage: true
+          branches:
+            integration: dev
+            main: stage
+            live: prod
