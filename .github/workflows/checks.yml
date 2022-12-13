@@ -5,6 +5,9 @@ on: [pull_request]
 jobs:
   lint:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./services/app
 
     strategy:
       matrix:
@@ -35,6 +38,9 @@ jobs:
 
   typescript:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./services/app
 
     strategy:
       matrix:
