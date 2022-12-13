@@ -1,5 +1,7 @@
 # dependencies
 /node_modules
 
-# Adding IDE folders to be ignored
-/.idea
+# misc
+.DS_Store
+*.pem
+.idea

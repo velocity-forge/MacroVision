@@ -10,11 +10,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <BaseStyles />
       <Head>
-        <title>Forum One Next.js Starter App</title>
-        <meta
-          name="description"
-          content="Next app using TypeScript and Emotion"
-        />
         <link rel="icon" href={addBasePath('/favicon.ico')} />
       </Head>
       <SiteContainer>

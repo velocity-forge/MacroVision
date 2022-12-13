@@ -42,7 +42,6 @@ git remote add origin git@github.com:forumone/[project-name].git
 ##### No
 
 Please remove:
-* `./services/app/stories`
 * `./services/app/.storybook`
 * In the `./services/app/package.json`, remove
   ```
@@ -51,6 +50,7 @@ Please remove:
     "build-storybook": "build-storybook"
     ...
   ``` 
+* Uninstall the storybook related packages as well in `services/app/package.json`
 * Run `npm i --package-lock-only`
 
 #### Do you need github action linting?

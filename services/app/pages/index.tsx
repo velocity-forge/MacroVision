@@ -1,14 +1,23 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import Main from '../source/layouts/Main';
 
 const Home: NextPage = () => {
+  const title = 'Forum One Next.js Starter App';
   return (
     <Main>
-      <h1>Forum One Next.js Starter App</h1>
+      <Head>
+        <title>{title}</title>
+        <meta
+          name="description"
+          content="Next app using TypeScript and Emotion"
+        />
+      </Head>
+      <h1>{title}</h1>
 
       <p>
         <a href="https://nextjs.org/docs">Next.js</a> app with{' '}
-        <a href="pages/index">TypeScript</a> and{' '}
+        <a href="https://www.typescriptlang.org/">TypeScript</a> and{' '}
         <a href="https://emotion.sh/docs/introduction">Emotion.js</a>.
       </p>
 

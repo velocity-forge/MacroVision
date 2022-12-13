@@ -12,77 +12,33 @@ Note that Next v11 comes with the following installed already:
 
 ## Getting Started
 
-## Initial Setup
-
-
-1. Go to the `services/app` directory.
-    ```bash
-    cd services/app
-    ```
-
-1. Ensure that you are using the proper Node version for this app. We currently use v16. Assuming you have [nvm](https://github.com/nvm-sh/nvm) installed locally, you can simply run:
-    ```bash
-    nvm use
-    ```
-    This will set your Node version to match the `.nvmrc` file.
-
-1. Next, install packages for local development:
-    ```bash
-    npm ci
-    ```
-
-1. Next, copy `.env.local.example` to `.env.local` and define any local environment variables you need for local development.
-    ```bash
-    cp .env.local.example .env.local
-    ```
-
-1. Now you are ready to start up the app. To do that, run `ddev start` from within the `services/app` directory:
-    ```bash
-    ddev start
-   ```
-
-## Starting and stopping the project
-
-After following the "Initial Setup" instructions, you can start the local development server for the app by going to the `services/app` directory and running:
-```bash
-ddev start
-```
-Open [https://nyu-cdhdb.ddev.site/](https://nyu-cdhdb.ddev.site/) with your browser to see the app. Note that the script will continue to run in your terminal tab. Killing or exiting the script (e.g. `ctrl+C`) will stop the Nextjs app.
-
-To stop `ddev` for the project:
-```bash
-ddev stop
-```
-
-Note that these `ddev` commands _must_ be run in the `services/app` directory.
-
-## Helpful commands
-
-#### Monitoring the applications
-If you want to monitor the status of `app` or `storybook`. Please use `ddev nextjs monit`
-
-#### Restarting a specific service
-If you want to restart `storybook` or `app`, please use the following:
-
-`app`
-```bash
-ddev nextjs restart app
-```
-`storybook`
-```bash
-ddev nextjs restart storybook
-```
-
-To restart the whole application
+Ensure that you are using the proper Node version for this app. We currently use v16. Assuming you have [nvm](https://github.com/nvm-sh/nvm) installed locally, you can simply run:
 
 ```bash
-ddev restart
+nvm use
 ```
+
+This will set your Node version to match the `.nvmrc` file.
+
+Next, install packages:
+```bash
+npm ci
+```
+
+To run the [development server](https://nextjs.org/docs/api-reference/cli#development):
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Other Commands
 
 ### Build production application
 
 ```bash
-ddev nextjs build
+npm run build
 ```
 Runs `next build`, which builds the production application in the `.next` folder. For more information, see the [Next.js CLI documentation](https://nextjs.org/docs/api-reference/cli#build).
 
@@ -97,7 +53,7 @@ Runs `next start`, which starts a Node.js server that supports [hybrid pages](ht
 ### Export application to static HTML
 
 ```bash
-ddev nextjs export
+npm run export
 ```
 
 Runs `next build && next export`. This allows you to export your app to static HTML (exported in the `out` folder), which can be run standalone without the need of a Node.js server. For more information, see the [Next.js Static HTML Export documentation](https://nextjs.org/docs/advanced-features/static-html-export).
@@ -105,7 +61,7 @@ Runs `next build && next export`. This allows you to export your app to static H
 ### Run linter
 
 ```bash
-ddev nextjs lint
+npm run lint
 ```
 
 Runs `next lint`, which runs the ESLint command. This is useful to catch lint errors that you might miss during development. For more information, see the [Next.js ESLint documentation](https://nextjs.org/docs/basic-features/eslint).
@@ -115,7 +71,7 @@ Runs `next lint`, which runs the ESLint command. This is useful to catch lint er
 #### Prettier check
 
 ```bash
-ddev nextjs prettier
+npm run prettier
 ```
 
 Runs `prettier --check`, which will check that all files within the `pages` and `source` directories use the Prettier code style from `.prettierrc`. This might be redundant with the `lint` script above, since it extends whatever Prettier rules we have set.
@@ -123,7 +79,7 @@ Runs `prettier --check`, which will check that all files within the `pages` and 
 #### Prettier write
 
 ```bash
-ddev nextjs prettier:write
+npm run prettier:write
 ```
 
 Runs `prettier --write`, which will find and fix all prettier issues found within the `pages` and `source` directories. Note that this will automatically overwrite your files.
@@ -131,7 +87,7 @@ Runs `prettier --write`, which will find and fix all prettier issues found withi
 ### Run TypeScript compiler (tsc)
 
 ```bash
-ddev nextjs tsc
+npm run tsc
 ```
 
 Runs `tsc --noEmit`, which will compile the TypeScript code without emitting files. This acts as a TS error check in your CLI. This is useful to catch TS errors that you might miss during development. For more information, see the [TypeScript Compiler (tsc) documentation](https://www.typescriptlang.org/docs/handbook/compiler-options.html).
@@ -139,15 +95,26 @@ Runs `tsc --noEmit`, which will compile the TypeScript code without emitting fil
 ### Scaffold new component
 
 ```bash
-ddev nextjs component
+npm run component
 ```
 Runs the `lib/component.js` script, which will scaffold a new React or Emotion component,
 with the option to include a Storybook story file as well.
 
+## Husky
+
+This project uses [Husky](https://typicode.github.io/husky/#/) to check code on git commits. By default, it is setup to use the `npm test` script which runs `lint` and `tsc` (TypeScript) checks against the codebase. This check occurs on `git commit` attempts. This helps developers catch errors _before_ pushing branches and creating PRs, quickening the overall dev worklow.
+
+To bypass this check, you can use the `--no-verify` flag with your commit:
+
+```bash
+git commit -m "This will not get checked by Husky." --no-verify
+```
+
+Note that bypassing the Husky check is frowned upon.
 
 ## Notes
 
 * Code for the app is currently configured to go into the `pages` directory (for [Next.js pages](https://nextjs.org/docs/basic-features/pages)) and `source` for theming, components, providers, helpers, etc.
 * Starting in Next.js v9.4, TypeScript errors do not show up in your browser when running the dev server (i.e. `npm run dev`). However, TS errors will prevent `next build` (i.e. `npm run build`) from running successfully. Be sure to run `npm run lint` and `npm run tsc` before committing and pushing code. This will give you lint and TS errors that will most likely cause your builds to fail.
-    * For discussion: should we include a [TS checker in the config](https://github.com/vercel/next.js/issues/12735#issuecomment-629404102)? Note that a Next.js dev warns that [this will greatly slow development](https://github.com/vercel/next.js/issues/12735#issuecomment-629404842).
+  * For discussion: should we include a [TS checker in the config](https://github.com/vercel/next.js/issues/12735#issuecomment-629404102)? Note that a Next.js dev warns that [this will greatly slow development](https://github.com/vercel/next.js/issues/12735#issuecomment-629404842).
 * The current favicon implementation will probably not display correctly locally in Chrome (v94), but does display correctly in Firefox and Safari. Note that the favicon _does_ display correctly once deployed. Not sure why.

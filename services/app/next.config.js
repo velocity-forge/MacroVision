@@ -1,7 +1,6 @@
-/** @type {import('next').NextConfig} */
-
 const basePath = '';
 
+/** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
   basePath,
