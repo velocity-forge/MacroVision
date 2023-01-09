@@ -174,4 +174,6 @@ To verify that it is working please run: `ddev nextjs monit` and if it is not wo
 * Remove `node_modules` folder from the `services/app`
 * Then restart DDev, `ddev start`
 
+### Helpfup script
 
+If you do not want to go into the `services/app` directory and want to stay at the root of the project, Please just use `sh dev [ddev command]`.
