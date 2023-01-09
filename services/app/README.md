@@ -1,4 +1,4 @@
-# Forum One Next.js Starter App
+# Forum One Next.js Starter App to run locally without ddev
 
 This is a starter app for [Next.js](https://nextjs.org/) (bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)) that includes the following features:
 * [TypeScript](https://www.typescriptlang.org/)

@@ -58,10 +58,10 @@ Note that these `ddev` commands _must_ be run in the `services/app` directory.
 
 ## Helpful commands
 
-#### Monitoring the applications
+### Monitoring the applications
 If you want to monitor the status of `app` or `storybook`. Please use `ddev nextjs monit`
 
-#### Restarting a specific service
+### Restarting a specific service
 If you want to restart `storybook` or `app`, please use the following:
 
 `app`
@@ -151,3 +151,27 @@ with the option to include a Storybook story file as well.
 * Starting in Next.js v9.4, TypeScript errors do not show up in your browser when running the dev server (i.e. `npm run dev`). However, TS errors will prevent `next build` (i.e. `npm run build`) from running successfully. Be sure to run `npm run lint` and `npm run tsc` before committing and pushing code. This will give you lint and TS errors that will most likely cause your builds to fail.
     * For discussion: should we include a [TS checker in the config](https://github.com/vercel/next.js/issues/12735#issuecomment-629404102)? Note that a Next.js dev warns that [this will greatly slow development](https://github.com/vercel/next.js/issues/12735#issuecomment-629404842).
 * The current favicon implementation will probably not display correctly locally in Chrome (v94), but does display correctly in Firefox and Safari. Note that the favicon _does_ display correctly once deployed. Not sure why.
+
+
+## Helpful tips
+
+### Starting project is slow
+
+If the npm install is running slow you can enable `mutagen`,  to do this:
+* In the `.ddev` folder create a file named: `config.mutagen.yaml`
+* In the file place: `mutagen_enabled: true`
+* Please Restart the project.
+**NOTE**: if you run into an issue with problems starting please run `ddev delete -O`.
+
+### Installing npm packages within ddev
+
+If you would want to use `npm`, please do `ddev npm [package]`.
+
+### If the application never starts
+
+To verify that it is working please run: `ddev nextjs monit` and if it is not working as expected please try the following:
+* Stop DDev, `ddev stop`
+* Remove `node_modules` folder from the `services/app`
+* Then restart DDev, `ddev start`
+
+
