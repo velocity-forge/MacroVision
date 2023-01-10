@@ -1,0 +1,44 @@
+#!/bin/sh
+
+## Description: Run nextjs commands to rebuild the app
+## Usage: nextjs install|build|deploy|watch|(some other command in the theme service)
+## Example: "ddev nextjs build"
+
+case $1 in
+  install)
+    npm ci
+  ;;
+  build)
+    npm run build
+  ;;
+  export)
+    npm run export
+  ;;
+  restart)
+    pm2 restart $2
+  ;;
+  monit)
+    pm2 monit
+  ;;
+  lint)
+    npm run lint
+  ;;
+  prettier)
+    npm run prettier
+  ;;
+  tsc)
+    npm run tsc
+  ;;
+  component)
+    npm run component
+  ;;
+  prettier:write)
+    npm run prettier:write
+  ;;
+  "")
+    echo "Usage: nextjs install|build|deploy|watch|(some other command in the theme service)"
+  ;;
+  *)
+    "$@"
+  ;;
+esac

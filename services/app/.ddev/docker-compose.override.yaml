@@ -1,0 +1,9 @@
+version: "3.6"
+services:
+  web:
+    expose:
+      - 3000
+      - 6006
+    environment:
+      HTTP_EXPOSE: 80:3000,8025:8025,6007:6006
+      HTTPS_EXPOSE: 443:3000,8026:8025,6006:6006
