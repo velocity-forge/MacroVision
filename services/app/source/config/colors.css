@@ -1,0 +1,7 @@
+:root {
+  --ui-generic-accent: var(--brand-blue-base);
+  --ui-generic-accent-dark: var(--brand-blue-dark-1);
+  --ui-generic-accent-light: var(--brand-blue-light);
+  --ui-generic-focus: var(--brand-blue-light);
+  --text-on-dark: var(--grayscale-white);
+}

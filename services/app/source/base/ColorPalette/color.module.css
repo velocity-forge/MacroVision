@@ -1,0 +1,9 @@
+/*$swatch-size: rem(150px);*/
+$swatch-padding: 1rem;
+
+.group {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $swatch-padding;
+}

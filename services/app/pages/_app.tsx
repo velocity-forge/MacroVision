@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import BaseStyles from '../source/base/BaseStyles';
 import Footer from '../source/components/Footer';
+import '../source/config/vars.css';
 import addBasePath from '../source/helpers/addBasePath';
 import SiteContainer from '../source/layouts/SiteContainer';
 
