@@ -62,27 +62,56 @@ const colorFamilies = allColors.reduce((groupedColors, [key, value]) => {
   return groupedColors;
 }, {} as ColorFamily);
 
+const ColorItem = ({
+  name,
+  value,
+}: {
+  name: string;
+  value: string;
+}): JSX.Element => {
+  return (
+    <div className={styles.swatch}>
+      <div className={styles.indicator} style={{ backgroundColor: value }} />
+      <div className={styles.name}>{name}</div>
+      <div className={styles.hex}>{value}</div>
+    </div>
+  );
+};
+
+const ColorGroup = ({
+  group,
+  colors,
+  family,
+}: {
+  group: string;
+  colors: ColorItem[];
+  family: ColorFamilies;
+}) => {
+  return (
+    <div key={group} className={styles.group}>
+      {colors.map(({ name, value }) => (
+        <ColorItem
+          name={`${group}-${name}`}
+          value={value}
+          key={`${family}-${group}-${name}`}
+        />
+      ))}
+    </div>
+  );
+};
+
 const ColorPalette = (args: ColorFamily) => (
   <div>
     {args.brand && (
       <>
         <h3>Brand</h3>
         {Object.entries(args.brand).map(([group, colors]) => (
-          <div key={group} className={styles.group}>
-            {colors.map(({ name, value }) => (
-              <div
-                className="gesso-storybook-color-swatch"
-                key={`brand-${group}-${name}`}
-              >
-                <div
-                  className="gesso-storybook-color-swatch__indicator"
-                  style={{ backgroundColor: value }}
-                />
-                <div className="gesso-storybook-color-swatch__name">{name}</div>
-                <div className="gesso-storybook-color-swatch__hex">{value}</div>
-              </div>
-            ))}
-          </div>
+          <ColorGroup
+            group={group}
+            colors={colors}
+            family="brand"
+            key={`brand-${group}`}
+          />
         ))}
       </>
     )}
@@ -90,43 +119,25 @@ const ColorPalette = (args: ColorFamily) => (
       <>
         <h3>Grayscale</h3>
         {Object.entries(args.grayscale).map(([group, colors]) => (
-          <div key={group} className="gesso-storybook-color__group">
-            {colors.map(({ name, value }) => (
-              <div
-                className="gesso-storybook-color-swatch"
-                key={`brand-${group}-${name}`}
-              >
-                <div
-                  className="gesso-storybook-color-swatch__indicator"
-                  style={{ backgroundColor: value }}
-                />
-                <div className="gesso-storybook-color-swatch__name">{name}</div>
-                <div className="gesso-storybook-color-swatch__hex">{value}</div>
-              </div>
-            ))}
-          </div>
+          <ColorGroup
+            group={group}
+            colors={colors}
+            family="grayscale"
+            key={`grayscale-${group}`}
+          />
         ))}
       </>
     )}
     {args.other && (
       <>
         <h3>Other</h3>
-        {Object.entries(args.brand).map(([group, colors]) => (
-          <div key={group} className="gesso-storybook-color__group">
-            {colors.map(({ name, value }) => (
-              <div
-                className="gesso-storybook-color-swatch"
-                key={`brand-${group}-${name}`}
-              >
-                <div
-                  className="gesso-storybook-color-swatch__indicator"
-                  style={{ backgroundColor: value }}
-                />
-                <div className="gesso-storybook-color-swatch__name">{name}</div>
-                <div className="gesso-storybook-color-swatch__hex">{value}</div>
-              </div>
-            ))}
-          </div>
+        {Object.entries(args.other).map(([group, colors]) => (
+          <ColorGroup
+            group={group}
+            colors={colors}
+            family="other"
+            key={`other-${group}`}
+          />
         ))}
       </>
     )}
