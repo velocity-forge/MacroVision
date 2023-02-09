@@ -3,5 +3,8 @@
   --ui-generic-accent-dark: var(--brand-blue-dark-1);
   --ui-generic-accent-light: var(--brand-blue-light);
   --ui-generic-focus: var(--brand-blue-light);
+  --text-primary: var(--grayscale-gray-7);
+  --text-secondary: var(--grayscale-gray-5);
   --text-on-dark: var(--grayscale-white);
+  --text-link: var(--brand-blue-base);
 }

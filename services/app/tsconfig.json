@@ -27,7 +27,8 @@
     "next-env.d.ts",
     "emotion.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "**/*.module.css"
   ],
   "exclude": [
     "node_modules"

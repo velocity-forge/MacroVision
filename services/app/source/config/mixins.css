@@ -1,0 +1,90 @@
+@mixin display-text-display {
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-10);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+@mixin display-h1 {
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-8);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+@mixin display-h2 {
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-7);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+@mixin display-h3 {
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-6);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+@mixin display-h4 {
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-base);
+}
+
+@mixin display-h5 {
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-base);
+}
+
+@mixin display-h6 {
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.04em;
+  line-height: var(--line-height-loose);
+  text-transform: uppercase;
+}
+
+@mixin display-blockquote {
+  color: var(--text-link);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+}
+
+@mixin display-body {
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+}
+
+@mixin display-body-large {
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+}
+
+@mixin display-cite {
+  color: var(--text-secondary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+  line-height: var(--line-height-tight);
+}
