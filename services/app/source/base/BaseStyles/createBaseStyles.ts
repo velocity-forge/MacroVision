@@ -6,14 +6,10 @@ import {
   LINE_HEIGHT,
   SPACING,
 } from '../../config/theme';
-import vars, { VarNames } from '../../config/theme/vars';
+import { VarNames } from '../../config/theme/vars';
 import focus from './focus';
 
 const createBaseStyles = css`
-  :root {
-    ${vars}
-  }
-
   * {
     box-sizing: border-box;
   }

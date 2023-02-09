@@ -1,0 +1,20 @@
+$shadow-swatch: rem(200px);
+
+.box-shadow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  display: flex;
+  flex: 0 0 $shadow-swatch;
+  height: $shadow-swatch;
+  margin: 0 rem(25px) rem(50px);
+  width: $shadow-swatch;
+}
+
+.label {
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+}

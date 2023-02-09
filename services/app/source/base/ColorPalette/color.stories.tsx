@@ -1,4 +1,5 @@
 import { Meta } from '@storybook/react';
+import getCssVariables from '../../helpers/storybook/getCssVariables';
 import styles from './color.module.css';
 
 const settings: Meta = {
@@ -23,24 +24,8 @@ type ColorFamily = {
   [name in ColorFamilies]: ColorGroups;
 };
 
-const allColors = Array.from(document.styleSheets).reduce(
-  (allStyles, sheet) =>
-    allStyles.concat(
-      Array.from(sheet.cssRules)
-        .filter(r => r instanceof CSSStyleRule)
-        .reduce((colorVars, rule) => {
-          const props = Array.from((rule as CSSStyleRule).style)
-            .map(propName => [
-              propName.trim(),
-              (rule as CSSStyleRule).style.getPropertyValue(propName).trim(),
-            ])
-            .filter(([propName]) => propName.indexOf('--') === 0);
-          return [...colorVars, ...props];
-        }, [] as string[][]),
-    ),
-  [] as string[][],
-);
-const colorFamilies = allColors.reduce((groupedColors, [key, value]) => {
+const allVars = getCssVariables();
+const colorFamilies = allVars.reduce((groupedColors, [key, value]) => {
   let [colorFamily, colorGroup, ...colorName] = key.substring(2).split('-');
   colorFamily = colorFamily.trim();
   if (isColorFamily(colorFamily)) {

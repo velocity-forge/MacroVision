@@ -2,6 +2,6 @@ $padding-size: rem(20px);
 
 .footer {
   background: var(--ui-generic-accent-dark);
-  color: var(--text-on-dark);
+  color: var(--brand-blue-base);
   padding: $padding-size;
 }
