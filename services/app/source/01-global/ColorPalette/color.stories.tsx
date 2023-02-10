@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react';
-import getCssVariables from '../../helpers/storybook/getCssVariables';
+import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './color.module.css';
 
 const settings: Meta = {

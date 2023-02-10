@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { CONSTRAIN } from '../../config/theme';
+import { CONSTRAIN } from '../../00-config/theme';
 
 const Main = styled('main')`
   margin-left: auto;

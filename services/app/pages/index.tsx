@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Main from '../source/layouts/Main';
+import Main from '../source/02-layouts/Main';
 
 const Home: NextPage = () => {
   const title = 'Forum One Next.js Starter App';

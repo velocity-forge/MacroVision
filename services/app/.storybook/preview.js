@@ -1,4 +1,4 @@
-import '../source/config/vars.css';
+import '../source/00-config/vars.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

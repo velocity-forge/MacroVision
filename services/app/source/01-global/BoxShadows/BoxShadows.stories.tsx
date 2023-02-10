@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { Property } from 'csstype';
-import getCssVariables from '../../helpers/storybook/getCssVariables';
+import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './box-shadow.module.css';
 
 const settings: Meta = {

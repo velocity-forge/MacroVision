@@ -5,8 +5,8 @@ import {
   FONT_SIZE,
   LINE_HEIGHT,
   SPACING,
-} from '../../config/theme';
-import { VarNames } from '../../config/theme/vars';
+} from '../../00-config/theme';
+import { VarNames } from '../../00-config/theme/vars';
 import focus from './focus';
 
 const createBaseStyles = css`
