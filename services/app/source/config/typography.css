@@ -13,7 +13,16 @@
   --font-size-8: 48.8281px;
   --font-size-9: 61.0352px;
   --font-size-10: 76.2939px;
-  /* TODO: Responsive font sizes */
+  --responsive-font-size-1: responsive-font-size(12px 12px);
+  --responsive-font-size-2: responsive-font-size(14px 14px);
+  --responsive-font-size-3: responsive-font-size(16px 16px);
+  --responsive-font-size-4: responsive-font-size(18px 20px);
+  --responsive-font-size-5: responsive-font-size(20.25px 25px);
+  --responsive-font-size-6: responsive-font-size(22.7813px 31.25px);
+  --responsive-font-size-7: responsive-font-size(25.6289px 39.0625px);
+  --responsive-font-size-8: responsive-font-size(28.8325px 48.8281px);
+  --responsive-font-size-9: responsive-font-size(32.4366px 61.0352px);
+  --responsive-font-size-10: responsive-font-size(36.4912px 76.2939px);
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-semibold: 600;
