@@ -1,0 +1,12 @@
+@mixin focus($width: 2px, $offset: 2px) {
+  outline: $width solid transparent;
+  outline-offset: $offset;
+
+  &:focus {
+    outline-color: var(--ui-generic-focus);
+  }
+
+  &:focus:not(:focus-visible) {
+    outline-color: transparent;
+  }
+}

@@ -1,0 +1,44 @@
+@import "../00-config/mixins/focus.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: var(--line-height-tight);
+  text-size-adjust: 100%;
+  @media screen and (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  color: var(--text-primary);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-3);
+  line-height: var(--line-height-base);
+  margin: 0;
+}
+
+a {
+  @include focus();
+  background-color: transparent;
+  color: var(--text-link);
+  -webkit-text-decoration-skip: objects;
+  transition-duration: 300ms;
+  transition-property: background-color, border-color, color, outline-color;
+  transition-timing-function: ease-in;
+
+  &:visited {
+    color: var(--text-link-visited);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--text-link-hover);
+  }
+
+  &:active {
+    color: var(--text-link-active);
+  }
+}

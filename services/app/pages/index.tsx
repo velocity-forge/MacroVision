@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Main from '../source/02-layouts/Main';
+import mainStyles from '../source/02-layouts/main/main.module.css';
 
 const Home: NextPage = () => {
   const title = 'Forum One Next.js Starter App';
   return (
-    <Main>
+    <main className={mainStyles.main}>
       <Head>
         <title>{title}</title>
         <meta
@@ -73,7 +73,7 @@ const Home: NextPage = () => {
         quisquam interdum fringilla, delectus eleifend natoque tempor habitant
         laboriosam.
       </p>
-    </Main>
+    </main>
   );
 };
 

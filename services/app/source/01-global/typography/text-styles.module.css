@@ -1,4 +1,4 @@
-@import "../../00-config/mixins.css";
+@import "../../00-config/mixins/display-text.css";
 
 .display {
   @include display-text-display;

@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
+    "@csstools/postcss-global-data": "^1.0.1",
     "@emotion/babel-plugin": "^11.9.2",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
@@ -58,6 +59,7 @@
     "postcss": "^8.4.21",
     "postcss-advanced-variables": "^3.0.1",
     "postcss-loader": "^7.0.2",
+    "postcss-nesting": "^11.1.0",
     "postcss-preset-env": "^8.0.1",
     "postcss-rem": "^2.0.2",
     "prettier": "^2.6.2",

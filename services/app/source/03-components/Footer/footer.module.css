@@ -1,7 +1,13 @@
-$padding-size: rem(20px);
-
-.footer {
+.wrapper {
   background: var(--ui-generic-accent-dark);
-  color: var(--brand-blue-base);
-  padding: $padding-size;
+  color: var(--text-on-dark);
+  padding: var(--spacing-2) 0 var(--spacing-2);
+
+  @media (--tablet-lg) {
+    padding: var(--spacing-5) 0 var(--spacing-7);
+  }
+}
+
+.inner {
+  text-align: center;
 }
