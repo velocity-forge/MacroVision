@@ -17,8 +17,7 @@ const Home: NextPage = () => {
 
       <p>
         <a href="https://nextjs.org/docs">Next.js</a> app with{' '}
-        <a href="https://www.typescriptlang.org/">TypeScript</a> and{' '}
-        <a href="https://emotion.sh/docs/introduction">Emotion.js</a>.
+        <a href="https://www.typescriptlang.org/">TypeScript</a>.
       </p>
 
       <p>
