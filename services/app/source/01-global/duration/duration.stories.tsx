@@ -23,21 +23,17 @@ const duration = allVars.reduce((allDurations, [key, value]) => {
 const Duration: Story = args => {
   return (
     <div className={styles['duration']}>
-      <div className={styles.helptext}>
-        (Hover to demo duration)
-      </div>
+      <div className={styles.helptext}>(Hover to demo duration)</div>
       <div className={styles.group}>
         {Object.entries(args.duration as DurationOptions).map(
           ([duration, transitionDuration]) => (
-            <div className={styles.item}>
+            <div className={styles.item} key={`duration-${duration}`}>
               <div
-                key={`duration-${duration}`}
                 className={styles.indicator}
                 style={{
                   transitionDuration,
                 }}
-              >
-              </div>
+              ></div>
               <div className={styles.label}>
                 <div>{duration}</div>
                 <div>{transitionDuration}</div>

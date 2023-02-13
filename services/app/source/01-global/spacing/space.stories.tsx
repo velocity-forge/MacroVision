@@ -22,7 +22,7 @@ const spacing = allVars.reduce((allSpacing, [key, value]) => {
   if (key.indexOf('--spacing') === 0) {
     let space = key.substring(10);
     if (space.includes('-')) {
-      space = space.replace('-','.');
+      space = space.replace('-', '.');
     } else {
       space = space + '.0';
     }
@@ -43,28 +43,28 @@ const Spacing: Story = args => {
         </tr>
       </thead>
       <tbody>
-        {Object.entries(args.spacing as SpacingOptions).map(
-          ([name, unit]) => (
-            <tr>
-              <td>{name.replace('.0','')}</td>
-              <td>{Number(unit.replace('px','')) / Number(basefontsize.replace('px',''))}rem</td>
-              <td>{unit}</td>
-              <td>
-                <div
-                  style={{
-                    height: unit,
-                    width: unit,
-                    backgroundColor: '#ccc',
-                  }}
-                >
-                </div>
-              </td>
-            </tr>
-          ),
-        )}
+        {Object.entries(args.spacing as SpacingOptions).map(([name, unit]) => (
+          <tr key={`spacing-${name}`}>
+            <td>{name.replace('.0', '')}</td>
+            <td>
+              {Number(unit.replace('px', '')) /
+                Number(basefontsize.replace('px', ''))}
+              rem
+            </td>
+            <td>{unit}</td>
+            <td>
+              <div
+                style={{
+                  height: unit,
+                  width: unit,
+                  backgroundColor: '#ccc',
+                }}
+              ></div>
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
-
   );
 };
 Spacing.args = {
