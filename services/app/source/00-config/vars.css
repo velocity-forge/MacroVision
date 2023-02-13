@@ -2,5 +2,7 @@
 @import 'box-shadow.css';
 @import 'constrain.css';
 @import 'colors.css';
+@import 'duration.css';
+@import 'easing.css';
 @import 'typography.css';
 @import 'spacing.css';

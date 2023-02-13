@@ -1,0 +1,38 @@
+
+$easing-swatch: rem(75px);
+
+.easing {
+  background-color: #eee;
+  padding: 1rem;
+}
+
+.helptext {
+  margin-bottom: 1rem;
+}
+
+.group {
+  padding: 0 rem(150px) 0 1rem;
+
+  &:hover {
+    .indicator {
+      left: 100%;
+    }
+  }
+}
+
+
+.item {
+  margin-bottom: 1rem;
+}
+
+.indicator {
+  background-color: #666;
+  border-radius: 10%;
+  height: $easing-swatch;
+  left: 0;
+  margin-bottom: 0.5rem;
+  position: relative;
+  transition-duration: 1s;
+  transition-property: left;
+  width: $easing-swatch;
+}
