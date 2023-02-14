@@ -22,7 +22,7 @@ const duration = allVars.reduce((allDurations, [key, value]) => {
 
 const Duration: Story = args => {
   return (
-    <div className={styles['duration']}>
+    <div className={styles.duration}>
       <div className={styles.helptext}>(Hover to demo duration)</div>
       <div className={styles.group}>
         {Object.entries(args.duration as DurationOptions).map(
