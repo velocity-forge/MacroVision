@@ -1,49 +1,43 @@
-import React from 'react';
-import './button.css';
+import clsx from 'clsx';
+import React, { ComponentProps } from 'react';
+import styles from './button.module.css';
 
-interface ButtonProps {
+interface SharedButtonProps {
   /**
-   * Is this the principal call to action on the page?
+   * Which style variation should we use?
    */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
+  variant?: string;
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large';
+  styleSize?: 'small' | 'medium' | 'large';
   /**
    * Button contents
    */
   label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
 }
+
+type ButtonProps = SharedButtonProps & ComponentProps<'button'>;
+type LinkProps = SharedButtonProps & ComponentProps<'a'>;
 
 /**
  * Primary UI component for user interaction
  */
 const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
+  variant,
+  styleSize = 'medium',
   label,
+  type = 'button',
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
   return (
     <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' ',
+      type={type}
+      className={clsx(
+        styles.button,
+        variant && styles[`button--${variant}`],
+        styleSize !== 'medium' && styles[`button--${styleSize}`],
       )}
-      style={{ backgroundColor }}
       {...props}
     >
       {label}
@@ -51,4 +45,25 @@ const Button = ({
   );
 };
 
-export default Button;
+const LinkButton = ({
+  variant,
+  styleSize = 'medium',
+  label,
+  ...props
+}: LinkProps) => {
+  return (
+    <a
+      className={clsx(
+        styles.button,
+        variant && styles[`button--${variant}`],
+        styleSize !== 'medium' && styles[`button--${styleSize}`],
+      )}
+      {...props}
+    >
+      {label}
+    </a>
+  );
+};
+
+export type { SharedButtonProps };
+export { Button, LinkButton };

@@ -1,0 +1,75 @@
+@import 'focus.css';
+
+@mixin button($border-width: 0, $border-radius: 0) {
+  background-color: var(--button-background-color);
+  @if $border-width != 0 {
+    border: $border-width solid var(--button-border-color);
+  } @else {
+    border: 0;
+  }
+  border-radius: $border-radius;
+  color: var(--button-text-color);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-family-primary);
+  font-size: var(--button-font-size);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-base);
+  padding: var(--spacing-1) var(--spacing-2);
+  text-align: center;
+  text-decoration: none;
+  transition: background var(--duration-short) var(--easing-ease-in);
+  vertical-align: top;
+  white-space: normal;
+
+  &:visited {
+    color: var(--button-text-color);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--button-background-hover);
+    @if $border-width != 0 {
+      border-color: var(--button-border-hover);
+    }
+    color: var(--button-text-hover);
+  }
+
+  &:active,
+  &.is-active {
+    background-color: var(--button-background-active);
+    color: var(--button-text-active);
+  }
+
+  &[disabled] {
+    background-color: var(--button-background-disabled);
+    @if $border-width != 0 {
+      border-color: var(--button-border-disabled);
+    }
+    color: var(--button-text-disabled);
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+@mixin text-button() {
+  @include focus();
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+
+  &[disabled] {
+    color: var(--button-text-disabled);
+    cursor: default;
+    pointer-events: none;
+  }
+}

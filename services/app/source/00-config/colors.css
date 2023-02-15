@@ -1,13 +1,25 @@
 :root {
+  --button-background-active: var(--brand-blue-dark-1);
+  --button-background-color: var(--brand-blue-base);
+  --button-background-disabled: var(--grayscale-gray-1);
+  --button-background-hover: var(--brand-blue-dark);
+  --button-border-color: var(--button-background-color);
+  --button-border-disabled: var(--button-background-disabled);
+  --button-border-hover: var(--button-background-hover);
+  --button-font-size: var(--base-font-size);
+  --button-text-active: var(--grayscale-white);
+  --button-text-color: var(--grayscale-white);
+  --button-text-disabled: var(--grayscale-gray-3);
+  --button-text-hover: var(--grayscale-white);
+  --text-link: var(--brand-blue-base);
+  --text-link-active: var(--brand-blue-dark);
+  --text-link-hover: var(--brand-blue-dark);
+  --text-link-visited: var(--brand-blue-dark);
+  --text-on-dark: var(--grayscale-white);
+  --text-primary: var(--grayscale-gray-7);
+  --text-secondary: var(--grayscale-gray-5);
   --ui-generic-accent: var(--brand-blue-base);
   --ui-generic-accent-dark: var(--brand-blue-dark-1);
   --ui-generic-accent-light: var(--brand-blue-light);
   --ui-generic-focus: var(--brand-blue-light);
-  --text-primary: var(--grayscale-gray-7);
-  --text-secondary: var(--grayscale-gray-5);
-  --text-on-dark: var(--grayscale-white);
-  --text-link: var(--brand-blue-base);
-  --text-link-hover: var(--brand-blue-dark);
-  --text-link-active: var(--brand-blue-dark);
-  --text-link-visited: var(--brand-blue-dark);
 }
