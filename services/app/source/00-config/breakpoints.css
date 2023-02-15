@@ -9,8 +9,6 @@
 * min-max query:
 * `@media (mobile) and (--tablet-max) {}`
 */
-
-
 @custom-media --mobile (width >= 320px);
 @custom-media --mobile-max (width < 320px);
 @custom-media --mobile-lg (width >= 480px);
@@ -20,5 +18,5 @@
 @custom-media --tablet-lg (width >= 880px);
 @custom-media --tablet-lg-max (width < 880px);
 @custom-media --desktop (width >= 1024px);
-@custom-media --desktop-lg (width < 1200px);
+@custom-media --desktop-lg (width >= 1200px);
 @custom-media --widescreen (width >= 1400px);
