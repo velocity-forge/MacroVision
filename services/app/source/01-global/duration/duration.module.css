@@ -1,0 +1,39 @@
+$duration-swatch: rem(40px);
+
+.duration {
+  margin-bottom: 1rem;
+}
+
+.helptext {
+  margin-bottom: 1rem;
+}
+
+.group {
+  background-color: #eee;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+
+  &:hover {
+    .indicator {
+      transform: scale(1.5);
+    }
+  }
+}
+
+.item {
+  flex: 0 0 rem(150px);
+  padding: 1rem;
+  text-align: center;
+}
+
+.indicator {
+  background-color: #666;
+  border-radius: 50%;
+  display: inline-block;
+  height: $duration-swatch;
+  margin-bottom: 2rem;
+  position: relative;
+  transition: all 2s ease-out;
+  width: $duration-swatch;
+}

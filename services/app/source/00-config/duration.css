@@ -1,0 +1,8 @@
+:root {
+  --duration-shortest: 150ms;
+  --duration-short: 200ms;
+  --duration-standard: 375ms;
+  --duration-long: 400ms;
+  --duration-intro: 270ms;
+  --duration-outro: 195ms;
+}
