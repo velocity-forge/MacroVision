@@ -1,0 +1,45 @@
+@import '../../00-config/mixins/grids.css';
+
+.grid {
+  @include css-fixed-grid(1);
+}
+
+.grid--2-col {
+  @include css-fixed-grid(1);
+
+  @media (width >= 600px) {
+    @include set-css-fixed-columns(2);
+  }
+}
+
+.grid--3-col {
+  @include css-fixed-grid(1);
+
+  @media (width >= 760px) {
+    @include set-css-fixed-columns(3);
+  }
+}
+
+.grid--4-col {
+  @include css-fixed-grid(1);
+
+  @media (600px <= width <= 800px) {
+    @include set-css-fixed-columns(2);
+  }
+
+  @media (width > 800px) {
+    @include set-css-fixed-columns(4);
+  }
+}
+
+.grid--6-col {
+  @include css-fixed-grid(1);
+
+  @media (600px <= width < 1000px) {
+    @include set-css-fixed-columns(3);
+  }
+
+  @media (width >= 1000px) {
+    @include set-css-fixed-columns(6);
+  }
+}

@@ -10,6 +10,7 @@ module.exports = {
       stage: 3,
       features: {
         'custom-media-queries': true,
+        'custom-properties': false,
       },
     },
     [require.resolve('./lib/responsive-font-size.js')]: {},
