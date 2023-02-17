@@ -16,6 +16,10 @@
   --mark-text: var(--grayscale-gray-7);
   --selection-background: var(--brand-blue-base);
   --selection-text: var(--grayscale-white);
+  --table-border: var(--grayscale-gray-5);
+  --table-background: var(--grayscale-white);
+  --table-background-head: var(--grayscale-gray-1);
+  --tablebackground-foot: var(--grayscale-gray-1);
   --text-link: var(--brand-blue-base);
   --text-link-active: var(--brand-blue-dark);
   --text-link-hover: var(--brand-blue-dark);

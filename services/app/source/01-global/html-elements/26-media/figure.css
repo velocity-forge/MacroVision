@@ -1,0 +1,7 @@
+/* HTML Element: Figure */
+
+figure {
+  margin: 0 0 rem(var(--spacing-2));
+}
+
+/* figcaption {} */

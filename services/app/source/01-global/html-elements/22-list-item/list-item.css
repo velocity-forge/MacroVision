@@ -1,0 +1,13 @@
+/* HTML Element: List Item */
+
+li {
+  margin-bottom: rem(var(--spacing-1));
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media print {
+    page-break-inside: avoid;
+  }
+}
