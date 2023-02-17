@@ -3,7 +3,7 @@
 html {
   box-sizing: border-box;
   font-family: var(--font-family-primary);
-  font-size: 100% * calc(var(--base-font-size) / 16px);
+  font-size: 100% * calc(var(--base-font-size, 16px) / 16px);
   line-height: var(--line-height-base);
   min-height: 100%;
   text-size-adjust: 100%;

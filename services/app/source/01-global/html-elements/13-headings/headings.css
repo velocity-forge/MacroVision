@@ -1,12 +1,11 @@
-/* HTML Element: Headings */
 @import '../../../00-config/mixins/display-text.css';
 
-@mixin hN {
+:is(h1, h2, h3, h4, h5, h6) {
   color: inherit;
   font-weight: var(--font-weight-bold);
   hyphens: none;
   line-height: var(--line-height-base);
-  margin: 0 0 rem(var(--spacing-2));
+  margin: 0 0 var(--spacing-2);
   text-rendering: optimizelegibility;
 
   @media print {
@@ -23,46 +22,33 @@
   * + & {
     margin-top: 1em;
   }
-}
 
-h1 {
-  @include hN;
-  @include display-h1;
-}
-
-h2 {
-  @include hN;
-  @include display-h2;
-}
-
-h3 {
-  @include hN;
-  @include display-h3;
-}
-
-h4 {
-  @include hN;
-  @include display-h4;
-}
-
-h5 {
-  @include hN;
-  @include display-h5;
-}
-
-h6 {
-  @include hN;
-  @include display-h6;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
   /* Remove top margin for adjacent subheadings. */
   & + & {
     margin-top: 0;
   }
+}
+
+h1 {
+  @include display-h1;
+}
+
+h2 {
+  @include display-h2;
+}
+
+h3 {
+  @include display-h3;
+}
+
+h4 {
+  @include display-h4;
+}
+
+h5 {
+  @include display-h5;
+}
+
+h6 {
+  @include display-h6;
 }

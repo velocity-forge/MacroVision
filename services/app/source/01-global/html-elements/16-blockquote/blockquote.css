@@ -31,7 +31,7 @@ blockquote {
     text-align: right;
 
     em {
-      border-left: 1px solid var(--ui-generic-border);
+      border-left: 1px solid var(--ui-border);
       font-weight: var(--font-weight-regular);
       margin-left: rem(var(--spacing-0-5));
       padding-left: rem(var(--spacing-1));
