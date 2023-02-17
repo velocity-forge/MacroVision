@@ -18,8 +18,9 @@
   --text-on-dark: var(--grayscale-white);
   --text-primary: var(--grayscale-gray-7);
   --text-secondary: var(--grayscale-gray-5);
-  --ui-generic-accent: var(--brand-blue-base);
-  --ui-generic-accent-dark: var(--brand-blue-dark-1);
-  --ui-generic-accent-light: var(--brand-blue-light);
-  --ui-generic-focus: var(--brand-blue-light);
+  --ui-accent: var(--brand-blue-base);
+  --ui-accent-dark: var(--brand-blue-dark-1);
+  --ui-accent-light: var(--brand-blue-light);
+  --ui-border: var(--grayscale-gray-3);
+  --ui-focus: var(--brand-blue-light);
 }

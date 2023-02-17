@@ -1,0 +1,21 @@
+@import '../../00-config/mixins/list.css';
+
+.border {
+  @include list-border;
+}
+
+.clean {
+  @include list-clean;
+}
+
+.inline {
+  @include list-inline;
+}
+
+.pipeline {
+  @include list-pipeline;
+}
+
+.column {
+  @include list-column;
+}

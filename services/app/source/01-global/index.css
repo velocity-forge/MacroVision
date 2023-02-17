@@ -1,5 +1,6 @@
-@import "../00-config/mixins/focus.css";
-@import "../00-config/mixins/accessibility.css";
+@import '../00-config/mixins/focus.css';
+@import '../00-config/mixins/accessibility.css';
+@import '../00-config/mixins/link.css';
 
 * {
   box-sizing: border-box;
@@ -22,24 +23,11 @@ body {
 }
 
 a {
+  @include link();
   @include focus();
   background-color: transparent;
-  color: var(--text-link);
   text-decoration-skip: objects;
   transition-duration: 300ms;
   transition-property: background-color, border-color, color, outline-color;
   transition-timing-function: ease-in;
-
-  &:visited {
-    color: var(--text-link-visited);
-  }
-
-  &:hover,
-  &:focus {
-    color: var(--text-link-hover);
-  }
-
-  &:active {
-    color: var(--text-link-active);
-  }
 }

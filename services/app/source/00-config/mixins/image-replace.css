@@ -3,15 +3,15 @@
   block or inline-block.
  */
 @mixin image-replace($width, $height: $width) {
-  height: $height;
+  block-size: $height;
+  inline-size: $width;
   overflow: hidden;
-  width: $width;
 
   &::before {
     content: '';
     display: block;
-    height: 150%;
-    width: 0;
+    block-size: 150%;
+    inline-size: 0;
   }
 }
 
@@ -23,7 +23,7 @@
 @mixin image-replace-alt($width, $height: $width) {
   color: transparent;
   font: 0/0 a;
-  height: $height;
+  block-size: $height;
+  inline-size: $width;
   text-shadow: none;
-  width: $width;
 }

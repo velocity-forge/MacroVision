@@ -10,7 +10,7 @@ module.exports = () => {
     Declaration(decl) {
       if (decl.value.includes('iff(')) {
         decl.value = decl.value.replace(
-          /iff\(([^\s,]+),? ([^)]+)\)/di,
+          /iff\(([^\s,]*),? ([^)]*)\)/di,
           (_match, p1, p2) =>
             p1.toLowerCase().trim() === 'true' ? p2.trim() : '',
         );
