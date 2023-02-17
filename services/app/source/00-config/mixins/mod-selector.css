@@ -1,0 +1,18 @@
+/**
+  Mod Queries with Range Selectors from Patrick Clancey:
+  http://alistapart.com/article/using-css-mod-queries-with-range-selectors
+ */
+
+@mixin select-range($start, $end) {
+  &:nth-child(n + $start):nth-child(-n + $end) {
+    @content;
+  }
+}
+
+@mixin mod-list($mod, $remainder) {
+  $mod: $mod + 'n';
+  &:nth-last-child($mod + $remainder):first-child,
+  &:nth-last-child($mod + $remainder):first-child ~ li {
+    @content;
+  }
+}

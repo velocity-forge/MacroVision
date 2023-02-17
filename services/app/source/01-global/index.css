@@ -1,2 +1,4 @@
-@import './normalize/normalize';
-@import './html-elements/index';
+@layer global {
+  @import './normalize/normalize';
+  @import './html-elements/index';
+}

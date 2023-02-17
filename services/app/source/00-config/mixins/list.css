@@ -1,0 +1,104 @@
+@import 'clearfix.css';
+
+@mixin list-clean {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  & li {
+    padding-inline-start: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@mixin list-inline {
+  list-style-type: none;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+
+  & li {
+    padding-inline-start: 0;
+  }
+
+  & > li {
+    display: inline;
+  }
+}
+
+@mixin list-pipeline {
+  @include clearfix();
+  list-style-type: none;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+
+  & > li {
+    border-inline-end: 1px solid var(--ui-border);
+    display: block;
+    float: inline-start;
+    margin-inline-end: 0.75em;
+    padding-inline-start: 0;
+    padding-inline-end: 0.75em;
+
+    @supports not (float: inline-start) {
+      float: left;
+
+      [dir='rtl'] & {
+        float: right;
+      }
+    }
+
+    &.is-active {
+      font-weight: var(--font-weight-bold);
+    }
+
+    &:last-of-type {
+      border-inline-end: 0;
+      margin-inline-end: 0;
+      padding-inline-end: 0;
+    }
+  }
+}
+
+@mixin list-border($list-border-padding: 0.25rem) {
+  list-style: none;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+
+  & li {
+    padding-inline-start: 0;
+  }
+
+  & > li {
+    border-block-end: 1px solid var(--ui-border);
+    padding: $list-border-padding;
+  }
+}
+
+@mixin list-column(
+  $list-column-count: 2,
+  $list-column-gap: 2em,
+  $list-item-padding: 0.25em
+) {
+  list-style: none;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
+
+  & li {
+    padding-inline-start: 0;
+  }
+
+  & > li {
+    break-inside: avoid-column;
+    display: table;
+    margin-block-end: 0;
+    padding-block-end: $list-item-padding;
+  }
+
+  @media (width >= 500px) {
+    column-count: $list-column-count;
+    column-gap: $list-column-gap;
+  }
+}

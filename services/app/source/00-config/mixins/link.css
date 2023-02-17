@@ -1,0 +1,16 @@
+@mixin link() {
+  color: var(--text-link);
+
+  &:visited {
+    color: var(--text-link-visited);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--text-link-hover);
+  }
+
+  &:active {
+    color: var(--text-link-active);
+  }
+}

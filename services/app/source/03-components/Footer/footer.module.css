@@ -1,5 +1,5 @@
 .wrapper {
-  background: var(--ui-generic-accent-dark);
+  background: var(--ui-accent-dark);
   color: var(--text-on-dark);
   padding: var(--spacing-2) 0 var(--spacing-2);
 

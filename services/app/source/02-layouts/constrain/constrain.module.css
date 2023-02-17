@@ -1,0 +1,13 @@
+@import '../../00-config/mixins/layout.css';
+
+.constrain {
+  @include layout-constrain();
+}
+
+.constrain--large {
+  max-width: var(--constrain-lg);
+}
+
+.constrain--no-padding {
+  padding-inline: 0;
+}

@@ -1,8 +1,12 @@
-@import 'palette.css';
-@import 'box-shadow.css';
-@import 'constrain.css';
-@import 'colors.css';
-@import 'duration.css';
-@import 'easing.css';
-@import 'typography.css';
-@import 'spacing.css';
+@layer config, global, layouts, components, utilities;
+
+@layer config {
+  @import 'palette.css';
+  @import 'box-shadow.css';
+  @import 'constrain.css';
+  @import 'colors.css';
+  @import 'duration.css';
+  @import 'easing.css';
+  @import 'typography.css';
+  @import 'spacing.css';
+}

@@ -1,4 +1,5 @@
 :root {
+  --background-site: var(--grayscale-white);
   --button-background-active: var(--brand-blue-dark-1);
   --button-background-color: var(--brand-blue-base);
   --button-background-disabled: var(--grayscale-gray-1);
@@ -11,6 +12,10 @@
   --button-text-color: var(--grayscale-white);
   --button-text-disabled: var(--grayscale-gray-3);
   --button-text-hover: var(--grayscale-white);
+  --mark-background: var(--other-yellow-neon);
+  --mark-text: var(--grayscale-gray-7);
+  --selection-background: var(--brand-blue-base);
+  --selection-text: var(--grayscale-white);
   --text-link: var(--brand-blue-base);
   --text-link-active: var(--brand-blue-dark);
   --text-link-hover: var(--brand-blue-dark);
@@ -18,16 +23,11 @@
   --text-on-dark: var(--grayscale-white);
   --text-primary: var(--grayscale-gray-7);
   --text-secondary: var(--grayscale-gray-5);
-  --background-site: var(--grayscale-white);
-  --mark-background: var(--other-yellow-neon);
-  --mark-text: var(--grayscale-gray-7);
-  --selection-background: var(--brand-blue-base);
-  --selection-text: var(--grayscale-white);
-  --ui-generic-accent: var(--brand-blue-base);
-  --ui-generic-accent-dark: var(--brand-blue-dark-1);
-  --ui-generic-accent-light: var(--brand-blue-light);
-  --ui-generic-border: var(--grayscale-gray-3);
-  --ui-generic-border-dark: var(--grayscale-gray-6);
-  --ui-generic-border-light: var(--grayscale-gray-1);
-  --ui-generic-focus: var(--brand-blue-light);
+  --ui-accent: var(--brand-blue-base);
+  --ui-accent-dark: var(--brand-blue-dark-1);
+  --ui-accent-light: var(--brand-blue-light);
+  --ui-border: var(--grayscale-gray-3);
+  --ui-border-dark: var(--grayscale-gray-6);
+  --ui-border-light: var(--grayscale-gray-1);
+  --ui-focus: var(--brand-blue-light);
 }

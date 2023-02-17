@@ -3,7 +3,7 @@
   outline-offset: $offset;
 
   &:focus {
-    outline-color: var(--ui-generic-focus);
+    outline-color: var(--ui-focus);
   }
 
   &:focus:not(:focus-visible) {

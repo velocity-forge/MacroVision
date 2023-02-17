@@ -11,6 +11,11 @@ module.exports = {
       features: {
         'custom-media-queries': true,
         'custom-properties': false,
+        // Enable if you don't need RTL support (or will provide your own)
+        // and you *do* need to support browsers that do not support
+        // logical properties (e.g. Opera Mini, IE 11, Safari 14)
+        'float-clear-logical-values': false,
+        'logical-properties-and-values': false,
       },
     },
     [require.resolve('./lib/responsive-font-size.js')]: {},
