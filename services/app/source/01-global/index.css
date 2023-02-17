@@ -2,24 +2,14 @@
 @import '../00-config/mixins/accessibility.css';
 @import '../00-config/mixins/link.css';
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  line-height: var(--line-height-tight);
-  text-size-adjust: 100%;
-  @media screen and (prefers-reduced-motion: no-preference) {
-    scroll-behavior: smooth;
-  }
-}
-
-body {
-  color: var(--text-primary);
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-3);
-  line-height: var(--line-height-base);
-  margin: 0;
+@layer global {
+  @import 'html-elements/universal/universal.css';
+  @import 'html-elements/html/html.css';
+  @import 'html-elements/body/body.css';
+  @import 'html-elements/nav/nav.css';
+  @import 'html-elements/details/details.css';
+  @import 'html-elements/iframe/iframe.css';
+  @import 'html-elements/headings/headings.css';
 }
 
 a {

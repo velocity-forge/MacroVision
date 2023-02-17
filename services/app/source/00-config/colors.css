@@ -1,4 +1,5 @@
 :root {
+  --background-site: var(--grayscale-white);
   --button-background-active: var(--brand-blue-dark-1);
   --button-background-color: var(--brand-blue-base);
   --button-background-disabled: var(--grayscale-gray-1);
