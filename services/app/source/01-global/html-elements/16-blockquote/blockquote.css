@@ -1,7 +1,4 @@
 /* HTML Element: Blockquote */
-:root {
-  --blockquote-cite-divider-color: var(ui-generic-border);
-}
 
 blockquote {
   @include display-blockquote;
@@ -34,7 +31,7 @@ blockquote {
     text-align: right;
 
     em {
-      border-left: 1px solid var(--blockquote-cite-divider-color);
+      border-left: 1px solid var(--ui-generic-border);
       font-weight: var(--font-weight-regular);
       margin-left: rem(var(--spacing-0-5));
       padding-left: rem(var(--spacing-1));
