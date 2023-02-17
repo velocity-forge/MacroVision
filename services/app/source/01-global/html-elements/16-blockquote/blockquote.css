@@ -1,0 +1,51 @@
+/* HTML Element: Blockquote */
+:root {
+  --blockquote-cite-divider-color: var(ui-generic-border);
+}
+
+blockquote {
+  @include display-blockquote;
+  margin: 0 0 rem(var(--spacing-5));
+
+  /* Add top margin when blockquote is preceded by other elements */
+  * + & {
+    margin-top: rem(var(--spacing-5));
+  }
+
+  p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+
+    &::before {
+      content: '\201C';
+    }
+
+    &::after {
+      content: '\201D';
+    }
+  }
+
+  cite {
+    display: block;
+    margin-top: rem(var(--spacing-2));
+    text-align: right;
+
+    em {
+      border-left: 1px solid var(--blockquote-cite-divider-color);
+      font-weight: var(--font-weight-regular);
+      margin-left: rem(var(--spacing-0-5));
+      padding-left: rem(var(--spacing-1));
+    }
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  @media print {
+    page-break-inside: avoid;
+  }
+}

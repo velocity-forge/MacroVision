@@ -18,8 +18,16 @@
   --text-on-dark: var(--grayscale-white);
   --text-primary: var(--grayscale-gray-7);
   --text-secondary: var(--grayscale-gray-5);
+  --background-site: var(--grayscale-white);
+  --mark-background: var(--other-yellow-neon);
+  --mark-text: var(--grayscale-gray-7);
+  --selection-background: var(--brand-blue-base);
+  --selection-text: var(--grayscale-white);
   --ui-generic-accent: var(--brand-blue-base);
   --ui-generic-accent-dark: var(--brand-blue-dark-1);
   --ui-generic-accent-light: var(--brand-blue-light);
+  --ui-generic-border: var(--grayscale-gray-3);
+  --ui-generic-border-dark: var(--grayscale-gray-6);
+  --ui-generic-border-light: var(--grayscale-gray-1);
   --ui-generic-focus: var(--brand-blue-light);
 }
