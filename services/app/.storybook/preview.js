@@ -10,6 +10,21 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  layout: 'fullscreen',
+  options: {
+    storySort: {
+      method: 'alphabetical',
+      order: [
+        'Global',
+        ['Color Palette', '*'],
+        'Layouts',
+        'Components',
+        'Templates',
+        'Pages',
+      ],
+      includeName: true,
+    },
+  },
 };
 
 // Toolbar to test multiple writing directions.
