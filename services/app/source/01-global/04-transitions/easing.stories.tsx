@@ -12,6 +12,7 @@ interface EasingOptions {
 }
 
 const allVars = getCssVariables();
+
 const easing = allVars.reduce((allEases, [key, value]) => {
   if (key.indexOf('--easing') === 0) {
     const ease = key.substring(9);

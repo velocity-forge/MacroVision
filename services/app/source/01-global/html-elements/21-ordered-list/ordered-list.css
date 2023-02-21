@@ -2,7 +2,7 @@
 
 ol {
   margin: 0 0 rem(var(--spacing-2));
-  padding: 0 0 0 rem(var(--spacing-3)); // LTR
+  padding: 0 0 0 rem(var(--spacing-3)); /* LTR */
 
   /* @if $support-for-rtl {
     [dir='rtl'] & {

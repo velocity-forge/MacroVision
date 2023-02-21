@@ -8,9 +8,9 @@ hr {
   box-sizing: content-box;
   height: 0;
   margin: 0 0 rem(gesso-spacing(3));
-  overflow: auto; // Fix for when next to a floated element.
+  overflow: auto; /* Fix for when next to a floated element. */
 
-  // Add top margin when preceded by another element.
+  /* Add top margin when preceded by another element. */
   * + & {
     margin-top: rem(gesso-spacing(3));
   }

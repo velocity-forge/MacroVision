@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/react';
 import styles from './text-styles.module.css';
 
 const settings: Meta = {
-  title: 'Global/Text Styles',
+  title: 'Global/Typography/Text Styles',
 };
 
 const TextStyles: Story = () => {
