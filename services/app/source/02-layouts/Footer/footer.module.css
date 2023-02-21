@@ -1,0 +1,8 @@
+@layer layout {
+  .wrapper {
+    padding: var(--spacing-3) 0;
+  }
+
+  .inner {
+  }
+}

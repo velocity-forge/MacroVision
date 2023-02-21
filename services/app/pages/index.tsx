@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import mainStyles from '../source/02-layouts/main/main.module.css';
+import Header from '../source/02-layouts/Header/Header';
+import mainStyles from '../source/02-layouts/Main/main.module.css';
 
 const Home: NextPage = () => {
   const title = 'Forum One Next.js Starter App';
@@ -13,7 +14,9 @@ const Home: NextPage = () => {
           content="Next app using TypeScript and Emotion"
         />
       </Head>
-      <h1>{title}</h1>
+      <Header>
+        <h1>{title}</h1>
+      </Header>
 
       <p>
         <a href="https://nextjs.org/docs">Next.js</a> app with{' '}

@@ -1,0 +1,12 @@
+@layer layout {
+  .section {
+    margin-bottom: var(--spacing-5);
+  }
+
+  .title {
+    composes: h2 from global;
+  }
+
+  .content {
+  }
+}
