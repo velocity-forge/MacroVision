@@ -1,37 +1,39 @@
 @import '../../00-config/mixins/button.css';
 
-.button {
-  @include button();
+@layer component {
+  .button {
+    @include button();
 
-  & + & {
-    margin-inline-start: 1rem;
+    & + & {
+      margin-inline-start: 1rem;
+    }
   }
-}
 
-.button--secondary {
-  --button-background-active: var(--brand-ocean-blue-base);
-  --button-background-color: var(--brand-ocean-blue-light-1);
-  --button-background-hover: var(--brand-ocean-blue-light);
-  --button-text-active: var(--grayscale-gray-7);
-  --button-text-color: var(--brand-ocean-blue-dark-1);
-  --button-text-hover: var(--brand-ocean-blue-dark-1);
-}
+  .button--secondary {
+    --button-background-active: var(--brand-ocean-blue-base);
+    --button-background-color: var(--brand-ocean-blue-light-1);
+    --button-background-hover: var(--brand-ocean-blue-light);
+    --button-text-active: var(--grayscale-gray-7);
+    --button-text-color: var(--brand-ocean-blue-dark-1);
+    --button-text-hover: var(--brand-ocean-blue-dark-1);
+  }
 
-.button--danger {
-  --button-background-active: var(--other-red-dark-1);
-  --button-background-color: var(--other-red-base);
-  --button-background-hover: var(--other-red-dark);
-  --button-text-active: var(--grayscale-white);
-  --button-text-color: var(--grayscale-white);
-  --button-text-hover: var(--grayscale-white);
-}
+  .button--danger {
+    --button-background-active: var(--other-red-dark-1);
+    --button-background-color: var(--other-red-base);
+    --button-background-hover: var(--other-red-dark);
+    --button-text-active: var(--grayscale-white);
+    --button-text-color: var(--grayscale-white);
+    --button-text-hover: var(--grayscale-white);
+  }
 
-.button--large {
-  --button-font-size: var(--font-size-4);
-  padding: var(--spacing-2) var(--spacing-5);
-}
+  .button--large {
+    --button-font-size: var(--font-size-4);
+    padding: var(--spacing-2) var(--spacing-5);
+  }
 
-.button--small {
-  --button-font-size: var(--font-size-1);
-  padding: var(--spacing-0-5) var(--spacing-1);
+  .button--small {
+    --button-font-size: var(--font-size-1);
+    padding: var(--spacing-0-5) var(--spacing-1);
+  }
 }

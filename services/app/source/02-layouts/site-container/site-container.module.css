@@ -1,3 +1,5 @@
-.site-container {
-  min-height: 100vh;
+@layer layout {
+  .site-container {
+    min-height: 100vh;
+  }
 }
