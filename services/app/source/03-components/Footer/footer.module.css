@@ -1,13 +1,15 @@
-.wrapper {
-  background: var(--ui-accent-dark);
-  color: var(--text-on-dark);
-  padding: var(--spacing-2) 0 var(--spacing-2);
+@layer component {
+  .wrapper {
+    background: var(--ui-accent-dark);
+    color: var(--text-on-dark);
+    padding: var(--spacing-2) 0 var(--spacing-2);
 
-  @media (--tablet-lg) {
-    padding: var(--spacing-5) 0 var(--spacing-7);
+    @media (--tablet-lg) {
+      padding: var(--spacing-5) 0 var(--spacing-7);
+    }
   }
-}
 
-.inner {
-  text-align: center;
+  .inner {
+    text-align: center;
+  }
 }

@@ -1,8 +1,23 @@
+// TypeScript doesn't know yet about CSSLayerBlockRule, which extends
+// CSSGroupingRule, so we fake it.
+type CSSRulesWithLayers = CSSRule | CSSGroupingRule;
+
 function getCssVariables(): string[][] {
-  return Array.from(document.styleSheets).reduce(
-    (allStyles, sheet) =>
-      allStyles.concat(
-        Array.from(sheet.cssRules)
+  return Array.from(document.styleSheets)
+    .map(sheet => {
+      const rules: CSSRulesWithLayers[] = Array.from(sheet.cssRules);
+      return rules.map(r => {
+        if ('cssRules' in r) {
+          return Array.from(r.cssRules);
+        }
+        return r;
+      });
+    })
+    .reduce((allStyles, sheet) => {
+      console.log(sheet);
+      return allStyles.concat(
+        sheet
+          .flat()
           .filter(r => r instanceof CSSStyleRule)
           .reduce((cssVars, rule) => {
             const props = Array.from((rule as CSSStyleRule).style)
@@ -13,9 +28,8 @@ function getCssVariables(): string[][] {
               .filter(([propName]) => propName.indexOf('--') === 0);
             return [...cssVars, ...props];
           }, [] as string[][]),
-      ),
-    [] as string[][],
-  );
+      );
+    }, [] as string[][]);
 }
 
 export default getCssVariables;
