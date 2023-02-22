@@ -1,11 +1,7 @@
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Property } from 'csstype';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './easing.module.css';
-
-const settings: Meta = {
-  title: 'Global/Easing',
-};
 
 interface EasingOptions {
   [ease: string]: Property.TransitionTimingFunction;
@@ -20,31 +16,43 @@ const easing = allVars.reduce((allEases, [key, value]) => {
   return allEases;
 }, {} as EasingOptions);
 
-const Easing: Story = args => {
+const Easing = ({ easing }: { easing: EasingOptions }) => {
   return (
     <div className={styles['easing']}>
       <div className={styles.helptext}>(Hover to demo easing)</div>
-      {Object.entries(args.easing as EasingOptions).map(
-        ([ease, transitionTimingFunction]) => (
-          <div className={styles.group} key={`easing-${ease}`}>
-            <div className={styles.item}>
-              <div
-                className={styles.indicator}
-                style={{
-                  transitionTimingFunction,
-                }}
-              ></div>
-              <div className={styles.label}>{ease}</div>
-            </div>
+      {Object.entries(easing).map(([ease, transitionTimingFunction]) => (
+        <div className={styles.group} key={`easing-${ease}`}>
+          <div className={styles.item}>
+            <div
+              className={styles.indicator}
+              style={{
+                transitionTimingFunction,
+              }}
+            ></div>
+            <div className={styles.label}>{ease}</div>
           </div>
-        ),
-      )}
+        </div>
+      ))}
     </div>
   );
 };
-Easing.args = {
+
+const settings = {
+  title: 'Global/Easing',
+  argTypes: {
+    easing: {
+      table: {
+        disable: true,
+      },
+    },
+  },
+} as ComponentMeta<typeof Easing>;
+
+const Template: ComponentStory<typeof Easing> = args => <Easing {...args} />;
+const _Easing = Template.bind({});
+_Easing.args = {
   easing: easing,
 };
 
 export default settings;
-export { Easing };
+export { _Easing };

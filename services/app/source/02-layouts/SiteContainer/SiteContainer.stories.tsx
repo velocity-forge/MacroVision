@@ -7,11 +7,15 @@ const settings = {
   component: SiteContainer,
 } as ComponentMeta<typeof SiteContainer>;
 
-const _SiteContainer: ComponentStory<typeof SiteContainer> = args => (
+const Template: ComponentStory<typeof SiteContainer> = args => (
   <SiteContainer {...args}>
     <SampleContent>Site Container Layout Content</SampleContent>
   </SiteContainer>
 );
 
+const _SiteContainer = Template.bind({});
+_SiteContainer.args = {
+  modifierClasses: '',
+};
 export default settings;
 export { _SiteContainer };

@@ -5,6 +5,14 @@ import styles from './media.module.css';
 const settings = {
   title: 'Layouts/Media',
   component: Media,
+  argTypes: {
+    media: {
+      control: false,
+    },
+    mediaContent: {
+      control: false,
+    },
+  },
 } as ComponentMeta<typeof Media>;
 
 const Template: ComponentStory<typeof Media> = args => <Media {...args} />;
@@ -21,6 +29,7 @@ Default.args = {
       necessitatibus fuga provident aut.
     </p>
   ),
+  modifierClasses: '',
 };
 
 const Column = Template.bind({});

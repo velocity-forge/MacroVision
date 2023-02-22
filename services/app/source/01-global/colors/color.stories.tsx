@@ -1,10 +1,6 @@
-import { Meta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './color.module.css';
-
-const settings: Meta = {
-  title: 'Global/Color Palette',
-};
 
 interface ColorItem {
   name: string;
@@ -73,7 +69,7 @@ const ColorGroup = ({
   family: ColorFamilies;
 }) => {
   return (
-    <div key={group} className={styles.group}>
+    <div className={styles.group}>
       {colors.map(({ name, value }) => (
         <ColorItem
           name={`${group}-${name}`}
@@ -85,12 +81,12 @@ const ColorGroup = ({
   );
 };
 
-const ColorPalette = (args: ColorFamily) => (
+const ColorPalette = ({ brand, grayscale, other }: ColorFamily) => (
   <div>
-    {args.brand && (
+    {brand && (
       <>
         <h3>Brand</h3>
-        {Object.entries(args.brand).map(([group, colors]) => (
+        {Object.entries(brand).map(([group, colors]) => (
           <ColorGroup
             group={group}
             colors={colors}
@@ -100,10 +96,10 @@ const ColorPalette = (args: ColorFamily) => (
         ))}
       </>
     )}
-    {args.grayscale && (
+    {grayscale && (
       <>
         <h3>Grayscale</h3>
-        {Object.entries(args.grayscale).map(([group, colors]) => (
+        {Object.entries(grayscale).map(([group, colors]) => (
           <ColorGroup
             group={group}
             colors={colors}
@@ -113,10 +109,10 @@ const ColorPalette = (args: ColorFamily) => (
         ))}
       </>
     )}
-    {args.other && (
+    {other && (
       <>
         <h3>Other</h3>
-        {Object.entries(args.other).map(([group, colors]) => (
+        {Object.entries(other).map(([group, colors]) => (
           <ColorGroup
             group={group}
             colors={colors}
@@ -128,7 +124,32 @@ const ColorPalette = (args: ColorFamily) => (
     )}
   </div>
 );
-ColorPalette.args = colorFamilies;
+const settings = {
+  title: 'Global/Color Palette',
+  argTypes: {
+    brand: {
+      table: {
+        disable: true,
+      },
+    },
+    grayscale: {
+      table: {
+        disable: true,
+      },
+    },
+    other: {
+      table: {
+        disable: true,
+      },
+    },
+  },
+} as ComponentMeta<typeof ColorPalette>;
+
+const Template: ComponentStory<typeof ColorPalette> = args => (
+  <ColorPalette {...args} />
+);
+const _ColorPalette = Template.bind({});
+_ColorPalette.args = colorFamilies;
 
 export default settings;
-export { ColorPalette };
+export { _ColorPalette };

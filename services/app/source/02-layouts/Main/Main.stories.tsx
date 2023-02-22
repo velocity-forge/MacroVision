@@ -7,11 +7,19 @@ const settings = {
   component: Main,
 } as ComponentMeta<typeof Main>;
 
-const _Main: ComponentStory<typeof Main> = args => (
+const Template: ComponentStory<typeof Main> = args => (
   <Main {...args}>
     <SampleContent>Main Layout Content</SampleContent>
   </Main>
 );
+
+const _Main = Template.bind({});
+_Main.args = {
+  id: 'main',
+  hasConstrain: true,
+  modifierClasses: '',
+  constrainClasses: '',
+};
 
 export default settings;
 export { _Main };

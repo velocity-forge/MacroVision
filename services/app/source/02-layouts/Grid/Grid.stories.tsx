@@ -13,7 +13,7 @@ function GridDemo(): JSX.Element {
   );
 }
 
-const settings: ComponentMeta<typeof Grid> = {
+const settings = {
   title: 'Layouts/Grid',
   component: Grid,
   argTypes: {
@@ -24,7 +24,7 @@ const settings: ComponentMeta<typeof Grid> = {
       },
     },
   },
-};
+} as ComponentMeta<typeof Grid>;
 
 const Template: ComponentStory<typeof Grid> = args => (
   <Grid {...args}>
@@ -33,7 +33,8 @@ const Template: ComponentStory<typeof Grid> = args => (
 );
 const _Grid = Template.bind({});
 _Grid.args = {
-  numCols: 1,
+  numCols: 3,
+  modifierClasses: '',
 };
 
 export default settings;

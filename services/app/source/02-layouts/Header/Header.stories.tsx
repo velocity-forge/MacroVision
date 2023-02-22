@@ -7,11 +7,18 @@ const settings = {
   component: Header,
 } as ComponentMeta<typeof Header>;
 
-const _Header: ComponentStory<typeof Header> = args => (
+const Template: ComponentStory<typeof Header> = args => (
   <Header {...args}>
     <SampleContent>Header Layout Content</SampleContent>
   </Header>
 );
+
+const _Header = Template.bind({});
+_Header.args = {
+  hasConstrain: true,
+  modifierClasses: '',
+  constrainClasses: '',
+};
 
 export default settings;
 export { _Header };

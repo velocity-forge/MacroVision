@@ -6,7 +6,7 @@ const settings = {
   component: ResponsiveTable,
 } as ComponentMeta<typeof ResponsiveTable>;
 
-const _ResponsiveTable: ComponentStory<typeof ResponsiveTable> = args => (
+const Template: ComponentStory<typeof ResponsiveTable> = args => (
   <ResponsiveTable {...args}>
     <table>
       <caption id="tablecaption01">Table caption</caption>
@@ -80,6 +80,7 @@ const _ResponsiveTable: ComponentStory<typeof ResponsiveTable> = args => (
   </ResponsiveTable>
 );
 
+const _ResponsiveTable = Template.bind({});
 _ResponsiveTable.args = {
   labelledBy: 'tablecaption01',
 };
