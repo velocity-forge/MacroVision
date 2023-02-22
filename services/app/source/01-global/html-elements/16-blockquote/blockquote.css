@@ -1,4 +1,4 @@
-HTML Element: Blockquote
+/* HTML Element: Blockquote */
 
 blockquote {
   @include display-blockquote;

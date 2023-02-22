@@ -1,76 +1,102 @@
-// import { Meta, Story } from '@storybook/react';
-// import { Property } from 'csstype';
-// import getCssVariables from '../../06-utility/storybook/getCssVariables';
+import { Meta, Story } from '@storybook/react';
+import { Property } from 'csstype';
+import getCssVariables from '../../06-utility/storybook/getCssVariables';
+import styles from './fonts.module.css';
 
-// const settings: Meta = {
-//   title: 'Global/Typography/Fonts',
-// };
+const settings: Meta = {
+  title: 'Global/Typography/Fonts',
+};
 
-// interface FontOptions {
-//   [name: string]: Property.FontFamily;
-// }
+interface FontOptions {
+  [name: string]: Property.FontFamily;
+}
 
-// const allVars = getCssVariables();
+interface WeightOptions {
+  [name: string]: Property.FontWeight;
+}
 
-// const fonts = allVars.reduce((allFonts, [key, value]) => {
-//   if (key.indexOf('--font-family') === 0) {
-//     const name = key.substring(14);
-//     allFonts[name] = value;
-//   }
-//   return allFonts;
-// }, {} as FontOptions);
+const allVars = getCssVariables();
 
-// const Fonts: Story = args => {
-//   return (
-//     // {% for name, item in gesso.typography['font-family'] %}
-//     //   {% set stack = item.stack|replace({'/\\/' : ""})  %}
-//     //   {% set font_family = 'font-family: ' ~ stack ~ ';' %}
+const fonts = allVars.reduce((allFonts, [key, value]) => {
+  if (key.indexOf('--font-family') === 0) {
+    const name =
+      key.substring(14).charAt(0).toUpperCase() + key.substring(14).slice(1);
+    allFonts[name] = value;
+  }
+  return allFonts;
+}, {} as FontOptions);
 
-//     //   <div class="gesso-storybook-font">
-//     //     <h3 class="gesso-storybook-font__family" style='{{font_family}}'>
-//     //       {{item.name}}
-//     //     </h3>
+const weights = allVars.reduce((allWeights, [key, value]) => {
+  if (key.indexOf('--font-weight') === 0) {
+    const name = key.substring(14);
+    allWeights[name] = value;
+  }
+  return allWeights;
+}, {} as WeightOptions);
 
-//     //     {% for key, weight in gesso.typography['font-weight'] %}
-//     //       {% set font_weight = 'font-weight: ' ~ weight ~ ';' %}
+const Fonts: Story = args => {
+  return (
+    <>
+      {Object.entries(args.fonts as FontOptions).map(([name, fontFamily]) => (
+        <div className={styles.fonts}>
+          <h3
+            className={styles.family}
+            style={{
+              fontFamily,
+            }}
+          >
+            {name}
+          </h3>
+          {Object.entries(args.weights as WeightOptions).map(
+            ([name, fontWeight]) => (
+              <div className={styles.item}>
+                <div
+                  className={styles['preview-character']}
+                  style={{
+                    fontStyle: 'normal',
+                    fontFamily,
+                    fontWeight,
+                  }}
+                >
+                  AaBbCc
+                </div>
+                <div
+                  className={styles.preview}
+                  style={{
+                    fontStyle: 'normal',
+                    fontFamily,
+                    fontWeight,
+                  }}
+                >
+                  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                  <br />
+                  abcdefghijklmnopqrstuvwxyz
+                  <br />
+                  1234567890(,.;:?!$&*)
+                </div>
+                <div className={styles['preview-meta']}>
+                  <div className={styles.name}>{name}</div>
+                  <div className={styles.weight}>
+                    <span className={styles.label}>Weight:</span>
+                    {fontWeight}
+                  </div>
+                  <div className={styles.style}>
+                    <span className={styles.label}>Style:</span>
+                    {fontFamily}
+                  </div>
+                </div>
+              </div>
+            ),
+          )}
+        </div>
+      ))}
+    </>
+  );
+};
+Fonts.args = {
+  fonts: fonts,
+  weights: weights,
+};
 
-//     //       {% set preview_style = 'font-style: normal;' ~ font_weight ~ font_family %}
-
-//     //       <div class="gesso-storybook-font__item">
-//     //         <div class="gesso-storybook-font__preview-character" style='{{preview_style}}'>AaBbCc</div>
-//     //         <div class="gesso-storybook-font__preview" style='{{preview_style}}'>
-//     //           ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>abcdefghijklmnopqrstuvwxyz<br/>1234567890(,.;:?!$&*)
-//     //         </div>
-//     //         <div class="gesso-storybook-font__preview-meta">
-//     //           <div class="gesso-storybook-font__name">{{item.name }}</div>
-//     //           <div class="gesso-storybook-font__weight">
-//     //             <span class="gesso-storybook-font__label">Weight:</span>
-//     //             {{ weight }}
-//     //           </div>
-//     //           <div class="gesso-storybook-font__style">
-//     //             <span class="gesso-storybook-font__label">Style:</span>
-//     //             {{ stack }}
-//     //           </div>
-//     //         </div>
-//     //       </div>
-
-//     //     {% endfor %}
-//     //   </div>
-//     // {% endfor %}
-
-//     <div>
-//       {Object.entries(args.Font as FontOptions).map(([name, Font]) => (
-//         <div>
-//           {Font}
-//           {name}
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-// Fonts.args = {
-//   Font: fonts,
-// };
-
-// export default settings;
-// export { Fonts };
+export default settings;
+export { Fonts };

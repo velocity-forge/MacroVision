@@ -23,7 +23,7 @@ const easing = allVars.reduce((allEases, [key, value]) => {
 
 const Easing: Story = args => {
   return (
-    <div className={styles['easing']}>
+    <div className={styles.easing}>
       <div className={styles.helptext}>(Hover to demo easing)</div>
       {Object.entries(args.easing as EasingOptions).map(
         ([ease, transitionTimingFunction]) => (

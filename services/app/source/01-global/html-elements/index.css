@@ -14,7 +14,7 @@
 @import '13-headings/headings';
 @import '14-paragraph/paragraph';
 @import '15-inline-elements/inline-elements';
-/* @import '16-blockquote/blockquote';
+@import '16-blockquote/blockquote';
 @import '17-preformatted-text/preformatted-text';
 @import '18-horizontal-rule/horizontal-rule';
 @import '19-address/address';
@@ -31,4 +31,4 @@
 @import '26-media/img';
 @import '26-media/object';
 @import '26-media/svg';
-@import '26-media/video'; */
+@import '26-media/video';
