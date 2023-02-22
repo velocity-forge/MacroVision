@@ -1,0 +1,13 @@
+@layer components {
+  .article {
+  }
+
+  .footer {
+    margin-block-end: var(--spacing-2);
+  }
+
+  .date {
+    color: var(--text-secondary);
+    font-size: var(--font-size-3);
+  }
+}
