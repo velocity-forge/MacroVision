@@ -13,7 +13,6 @@ const Home: NextPage = () => {
           content="Next app using TypeScript and Emotion"
         />
       </Head>
-
       <p>
         <a href="https://nextjs.org/docs">Next.js</a> app with{' '}
         <a href="https://www.typescriptlang.org/">TypeScript</a>.

@@ -39,6 +39,7 @@
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/theming": "^6.5.16",
+    "@svgr/webpack": "^6.5.1",
     "@types/node": "^16.11.25",
     "@types/react": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
