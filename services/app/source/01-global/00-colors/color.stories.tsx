@@ -124,6 +124,7 @@ const ColorPalette = ({ brand, grayscale, other }: ColorFamily) => (
     )}
   </div>
 );
+
 const settings = {
   title: 'Global/Color Palette',
   argTypes: {

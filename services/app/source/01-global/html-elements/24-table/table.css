@@ -24,8 +24,8 @@ td {
 }
 
 tfoot {
-  td,
-  th {
+  & td,
+  & th {
     background-color: var(--table-background-foot);
   }
 }
@@ -38,8 +38,8 @@ th {
 }
 
 thead {
-  td,
-  th {
+  & td,
+  & th {
     background-color: var(--table-background-head);
   }
 

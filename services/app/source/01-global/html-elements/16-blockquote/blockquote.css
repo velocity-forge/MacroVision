@@ -9,7 +9,7 @@ blockquote {
     margin-top: rem(var(--spacing-5));
   }
 
-  p {
+  & p {
     color: inherit;
     font-family: inherit;
     font-size: inherit;
@@ -25,12 +25,12 @@ blockquote {
     }
   }
 
-  cite {
+  & cite {
     display: block;
     margin-top: rem(var(--spacing-2));
     text-align: right;
 
-    em {
+    & em {
       border-left: 1px solid var(--ui-border);
       font-weight: var(--font-weight-regular);
       margin-left: rem(var(--spacing-0-5));

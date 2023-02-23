@@ -2,16 +2,11 @@
 
 ol {
   margin: 0 0 rem(var(--spacing-2));
-  padding: 0 0 0 rem(var(--spacing-3)); /* LTR */
+  padding: 0 0 0 rem(var(--spacing-3));
+  padding-inline-start: rem(var(--spacing-3));
 
-  /* @if $support-for-rtl {
-    [dir='rtl'] & {
-      padding: 0 rem(var(--spacing-3)) 0 0;
-    }
-  } */
-
-  ol,
-  ul {
+  & ol,
+  & ul {
     margin-top: rem(calc(var(--spacing-2) / 2));
   }
 }
