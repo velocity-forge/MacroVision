@@ -2,7 +2,6 @@
 
 @layer config.base {
   @import 'box-shadow.css';
-  @import 'breakpoints.css';
   @import 'constrain.css';
   @import 'duration.css';
   @import 'easing.css';
@@ -15,15 +14,4 @@
   @import 'colors.css';
 }
 
-@import 'mixins/accessibility.css';
-@import 'mixins/button.css';
-@import 'mixins/clearfix.css';
-@import 'mixins/display-text.css';
-@import 'mixins/focus.css';
-@import 'mixins/grids.css';
-@import 'mixins/image-replace.css';
-@import 'mixins/layout.css';
-@import 'mixins/link.css';
-@import 'mixins/list.css';
-@import 'mixins/mod-selector.css';
 
