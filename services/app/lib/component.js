@@ -32,7 +32,7 @@ function humanName(name) {
 }
 
 function makeEmotionFile(componentName, location) {
-  const fileName = 'index.tsx';
+  const fileName = 'Footer.tsx';
   const filePath = path.join(location, fileName);
   const fileContent = `import styled from '@emotion/styled;'
 
@@ -46,7 +46,7 @@ export default ${componentName};
 }
 
 function makeReactFile(componentName, location) {
-  const fileName = 'index.tsx';
+  const fileName = 'Footer.tsx';
   const filePath = path.join(location, fileName);
   const fileContent = `function ${componentName}(): JSX.Element {
   return <div />;

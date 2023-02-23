@@ -1,0 +1,8 @@
+@import '../../00-config/mixins/focus.css';
+
+@layer layout {
+  .wrapper {
+    @include focus;
+    overflow-x: auto;
+  }
+}

@@ -16,7 +16,7 @@
 }
 
 /**
-  Set flex grid layout.
+  Set flex Grid layout.
   @param {Number} $columns Number of columns.
   @param {String} $item-min-width Value to set a minimum column width.
  */
@@ -32,7 +32,7 @@
 
 /**
   Remove flex constrains and margins.
-  CSS grid reset for flex parent and children items.
+  CSS Grid reset for flex parent and children items.
  */
 @mixin css-grid-reset {
   margin-inline: 0;
@@ -45,9 +45,9 @@
 }
 
 /**
-  Set auto fit grid template.
+  Set auto fit Grid template.
   @param {String} $item-min-width Minimum column width.
-  @param {Boolean} $flex-override Whether to set override for grid cells.
+  @param {Boolean} $flex-override Whether to set override for Grid cells.
  */
 @mixin set-css-autofit-columns($item-min-width, $flex-override: false) {
   gap: var(--gutter-width);
@@ -63,9 +63,9 @@
 }
 
 /**
-  Set fixed grid template.
+  Set fixed Grid template.
   @param {Number} $columns Number of columns.
-  @param {Boolean} $flex-override Whether to set override for grid cells.
+  @param {Boolean} $flex-override Whether to set override for Grid cells.
  */
 @mixin set-css-fixed-columns($columns, $flex-override: false) {
   grid-template-columns: repeat($columns, 1fr);
@@ -80,7 +80,7 @@
 }
 
 /**
-  Create auto fit grid.
+  Create auto fit Grid.
   @param {String} $item-min-width Minimum column width.
   @param {Boolean} $flex-override Whether to reset styling to remove flex constrains first.
  */
@@ -93,7 +93,7 @@
 }
 
 /**
-  Create auto fit grid.
+  Create auto fit Grid.
   @param {String} $item-min-width Minimum column width.
   @param {Boolean} $flex-override Whether to reset styling to remove flex constrains first.
  */

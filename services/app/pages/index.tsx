@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import mainStyles from '../source/02-layouts/main/main.module.css';
+import Article from '../source/03-components/Article/Article';
 
 const Home: NextPage = () => {
   const title = 'Forum One Next.js Starter App';
   return (
-    <main className={mainStyles.main}>
+    <Article title={title} showFooter={false}>
       <Head>
         <title>{title}</title>
         <meta
@@ -13,7 +13,6 @@ const Home: NextPage = () => {
           content="Next app using TypeScript and Emotion"
         />
       </Head>
-      <h1>{title}</h1>
 
       <p>
         <a href="https://nextjs.org/docs">Next.js</a> app with{' '}
@@ -72,7 +71,7 @@ const Home: NextPage = () => {
         quisquam interdum fringilla, delectus eleifend natoque tempor habitant
         laboriosam.
       </p>
-    </main>
+    </Article>
   );
 };
 

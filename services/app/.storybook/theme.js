@@ -9,7 +9,7 @@ const storybookTheme = create({
   base: 'light',
   brandTitle: 'Forum One',
   brandUrl: 'https://forumone.com',
-  brandImage: 'forumone.svg',
+  brandImage: 'images/forumone.svg',
   colorPrimary: '#3E2A5E',
   colorSecondary: '#EE2737',
   fontBase: '"Barlow", sans-serif',

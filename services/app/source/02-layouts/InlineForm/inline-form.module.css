@@ -1,0 +1,25 @@
+@layer layout {
+  @media (--tablet) {
+    .wrap,
+    .no-wrap {
+      display: flex;
+      gap: var(--spacing-2);
+    }
+
+    .wrap {
+      flex-wrap: wrap;
+
+      > * {
+        margin: 0 0 var(--spacing-2) !important;
+      }
+    }
+
+    .no-wrap {
+      flex-wrap: nowrap;
+
+      > * {
+        margin: 0 !important;
+      }
+    }
+  }
+}

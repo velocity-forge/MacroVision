@@ -1,0 +1,61 @@
+@custom-media --sidebar (width >= 900px);
+
+@layer layout {
+  .wrapper {
+    --sidebar-width: 300px;
+    --sidebar-gutter: var(--spacing-2);
+    @media (--sidebar) {
+      gap: var(--sidebar-gutter);
+      display: flex;
+      flex-wrap: wrap;
+
+      > * {
+        flex-basis: calc(
+          100% - var(--sidebar-width) - var(--sidebar-gutter) * 2
+        );
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+    }
+
+    @supports (display: grid) {
+      display: grid;
+      grid-template-columns: var(--sidebar-width) 1fr;
+    }
+  }
+
+  .wrapper--multi-2 {
+    @media (--sidebar) {
+      > * {
+        flex-basis: calc(
+          100% - var(--sidebar-width) * 2 - var(--sidebar-gutter) * 3
+        );
+      }
+
+      @supports (display: grid) {
+        grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width);
+      }
+    }
+  }
+
+  .full {
+    @media (--sidebar) {
+      flex-basis: 100%;
+
+      @supports (display: grid) {
+        grid-column: span 2;
+
+        .wrapper--multi-2 & {
+          grid-column: span 3;
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    @media (--sidebar) {
+      flex-basis: var(--sidebar-width);
+      flex-shrink: 0;
+    }
+  }
+}
