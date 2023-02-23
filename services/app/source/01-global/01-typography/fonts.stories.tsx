@@ -38,7 +38,7 @@ const Fonts: Story = args => {
   return (
     <>
       {Object.entries(args.fonts as FontOptions).map(([name, fontFamily]) => (
-        <div className={styles.fonts}>
+        <div className={styles.fonts} key={name}>
           <h3
             className={styles.family}
             style={{
@@ -49,7 +49,7 @@ const Fonts: Story = args => {
           </h3>
           {Object.entries(args.weights as WeightOptions).map(
             ([name, fontWeight]) => (
-              <div className={styles.item}>
+              <div className={styles.item} key={name}>
                 <div
                   className={styles['preview-character']}
                   style={{

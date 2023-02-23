@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 
+/* eslint-disable */
 const data = `
     P R E F O R M A T T E D T E X T
     ! " # $ % &amp; ' ( ) * + , - . /
@@ -9,6 +10,7 @@ const data = `
     \` a b c d e f g h i j k l m n o
     p q r s t u v w x y z { | } ~
   `;
+/* eslint-enable */
 
 const settings: Meta = {
   title: 'Global/HTML Elements/Preformatted Text',

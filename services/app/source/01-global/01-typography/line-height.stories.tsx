@@ -38,12 +38,12 @@ const LineHeight: Story = args => {
   return (
     <>
       {Object.entries(args.fonts as FontOptions).map(([name, fontFamily]) => (
-        <div className={styles['line-height']}>
+        <div className={styles['line-height']} key={name}>
           <h2 className={styles.heading}>{name}</h2>
           <div style={{ fontFamily }}>
             {Object.entries(args.lineheights as LineHeightOptions).map(
               ([name, lineHeight]) => (
-                <div className={styles.row}>
+                <div className={styles.row} key={name}>
                   <div className={styles.label}>{name}</div>
                   <div className={styles.preview} style={{ lineHeight }}>
                     The line-height for this text is{' '}
