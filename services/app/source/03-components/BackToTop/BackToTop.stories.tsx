@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import styles from './back-to-top.module.css';
 import BackToTop from './BackToTop';
 
 const settings = {
@@ -14,7 +15,7 @@ _BackToTop.args = {
   topElement: 'top',
   text: 'Back to top',
   isDemo: true,
-  modifierClasses: '',
+  modifierClasses: styles.show,
 };
 
 export default settings;

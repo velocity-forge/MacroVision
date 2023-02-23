@@ -6,6 +6,7 @@ import '../source/02-layouts/constrain/constrain.css';
 import Footer from '../source/02-layouts/Footer/Footer';
 import Main from '../source/02-layouts/Main/Main';
 import SiteContainer from '../source/02-layouts/SiteContainer/SiteContainer';
+import BackToTop from '../source/03-components/BackToTop/BackToTop';
 import addBasePath from '../source/06-utility/addBasePath';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Main>
         <Footer>[FOOTER CONTENT]</Footer>
       </SiteContainer>
+      <BackToTop text="Back to Top" topElement="top" />
     </>
   );
 }
