@@ -30,7 +30,6 @@
     "**/*.module.css"
   ],
   "exclude": [
-    "node_modules",
-    "!!raw-loader!"
+    "node_modules"
   ]
 }
