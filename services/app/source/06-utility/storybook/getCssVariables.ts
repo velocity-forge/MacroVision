@@ -14,7 +14,6 @@ function getCssVariables(): string[][] {
       });
     })
     .reduce((allStyles, sheet) => {
-      console.log(sheet);
       return allStyles.concat(
         sheet
           .flat()
