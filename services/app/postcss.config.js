@@ -1,7 +1,7 @@
 module.exports = {
   plugins: {
     '@csstools/postcss-global-data': {
-      files: ['./source/00-config/breakpoints.css'],
+      files: ['./source/00-config/vars/breakpoints.css'],
     },
     'postcss-advanced-variables': {},
     [require.resolve('./lib/iff.js')]: {},

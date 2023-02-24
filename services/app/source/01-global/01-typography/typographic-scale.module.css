@@ -1,0 +1,28 @@
+.typographic-scale {
+  margin: 1rem 1rem 3rem;
+}
+
+.heading {
+  font-family: var(--font-family-system);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  line-height: var(--line-height-tight);
+  margin: 1rem 0;
+}
+
+.label {
+  font-family: var(--font-family-system);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.preview {
+  -webkit-marquee-increment: 0vw; /* Needed to get clamp() to work in Safari. */
+}

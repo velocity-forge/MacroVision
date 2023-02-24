@@ -1,4 +1,4 @@
-@import '../../00-config/mixins/list.css';
+@import "../../00-config/mixins";
 
 @layer component {
   .border {

@@ -1,0 +1,46 @@
+blockquote {
+  @include display-blockquote;
+  margin: 0 0 var(--spacing-5);
+
+  /* Add top margin when blockquote is preceded by other elements */
+  * + & {
+    margin-top: var(--spacing-5);
+  }
+
+  & p {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+
+    &::before {
+      content: '\201C';
+    }
+
+    &::after {
+      content: '\201D';
+    }
+  }
+
+  & cite {
+    display: block;
+    margin-top: var(--spacing-2);
+    text-align: right;
+
+    & em {
+      border-left: 1px solid var(--ui-border);
+      font-weight: var(--font-weight-regular);
+      margin-left: var(--spacing-0-5);
+      padding-left: var(--spacing-1);
+    }
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  @media print {
+    page-break-inside: avoid;
+  }
+}

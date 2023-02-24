@@ -1,0 +1,11 @@
+li {
+  margin-block-end: var(--spacing-1);
+
+  &:last-child {
+    margin-block-end: 0;
+  }
+
+  @media print {
+    page-break-inside: avoid;
+  }
+}

@@ -1,4 +1,4 @@
-@import '../../00-config/mixins/grids.css';
+@import "../../00-config/mixins";
 
 @layer layout {
   .grid {

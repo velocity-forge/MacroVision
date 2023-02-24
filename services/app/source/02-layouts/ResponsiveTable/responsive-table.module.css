@@ -1,4 +1,4 @@
-@import '../../00-config/mixins/focus.css';
+@import "../../00-config/mixins";
 
 @layer layout {
   .wrapper {

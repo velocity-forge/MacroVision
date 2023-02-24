@@ -1,15 +1,17 @@
 @layer config, global, layout, components, utilities;
 
 @layer config.base {
-  @import 'box-shadow.css';
-  @import 'constrain.css';
-  @import 'duration.css';
-  @import 'easing.css';
-  @import 'palette.css';
-  @import 'spacing.css';
-  @import 'typography.css';
+  @import 'vars/box-shadow';
+  @import 'vars/constrain';
+  @import 'vars/duration';
+  @import 'vars/easing';
+  @import 'vars/palette';
+  @import 'vars/spacing';
+  @import 'vars/typography';
 }
 
 @layer config.usage {
-  @import 'colors.css';
+  @import 'vars/colors';
 }
+
+

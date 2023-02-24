@@ -1,0 +1,8 @@
+pre {
+  margin: 0 0 var(--spacing-2);
+  overflow: auto;
+
+  @media print {
+    page-break-inside: avoid;
+  }
+}

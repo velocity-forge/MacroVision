@@ -1,4 +1,4 @@
-@import 'clearfix.css';
+@import 'clearfix';
 
 @mixin list-clean {
   list-style-type: none;

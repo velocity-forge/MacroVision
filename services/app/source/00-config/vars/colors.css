@@ -1,0 +1,44 @@
+:root {
+  --background-site: var(--grayscale-white);
+
+  --button-background-active: var(--brand-blue-dark-1);
+  --button-background-color: var(--brand-blue-base);
+  --button-background-disabled: var(--grayscale-gray-1);
+  --button-background-hover: var(--brand-blue-dark);
+  --button-border-color: var(--button-background-color);
+  --button-border-disabled: var(--button-background-disabled);
+  --button-border-hover: var(--button-background-hover);
+  --button-font-size: var(--base-font-size);
+  --button-text-active: var(--grayscale-white);
+  --button-text-color: var(--grayscale-white);
+  --button-text-disabled: var(--grayscale-gray-3);
+  --button-text-hover: var(--grayscale-white);
+
+  --mark-background: var(--other-yellow-neon);
+  --mark-text: var(--grayscale-gray-7);
+
+  --selection-background: var(--brand-blue-base);
+  --selection-text: var(--grayscale-white);
+
+  --table-border: var(--grayscale-gray-5);
+  --table-background: var(--grayscale-white);
+  --table-background-head: var(--grayscale-gray-1);
+  --tablebackground-foot: var(--grayscale-gray-1);
+
+  --text-link: var(--brand-blue-base);
+  --text-link-active: var(--brand-blue-dark);
+  --text-link-hover: var(--brand-blue-dark);
+  --text-link-visited: var(--brand-blue-dark);
+  --text-on-dark: var(--grayscale-white);
+  --text-primary: var(--grayscale-gray-7);
+  --text-secondary: var(--grayscale-gray-5);
+
+  --ui-accent: var(--brand-blue-base);
+  --ui-accent-dark: var(--brand-blue-dark-1);
+  --ui-accent-light: var(--brand-blue-light);
+  --ui-border: var(--grayscale-gray-3);
+  --ui-border-dark: var(--grayscale-gray-6);
+  --ui-border-light: var(--grayscale-gray-1);
+  --ui-focus: var(--brand-blue-light);
+  --ui-text-light: var(--grayscale-gray-3);
+}

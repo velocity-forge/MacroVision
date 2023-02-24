@@ -1,23 +1,5 @@
-@import '../00-config/mixins/focus.css';
-@import '../00-config/mixins/accessibility.css';
-@import '../00-config/mixins/link.css';
-
 @layer global {
-  @import 'html-elements/universal/universal.css';
-  @import 'html-elements/html/html.css';
-  @import 'html-elements/body/body.css';
-  @import 'html-elements/nav/nav.css';
-  @import 'html-elements/details/details.css';
-  @import 'html-elements/iframe/iframe.css';
-  @import 'html-elements/headings/headings.css';
-}
-
-a {
-  @include link();
-  @include focus();
-  background-color: transparent;
-  text-decoration-skip: objects;
-  transition-duration: 300ms;
-  transition-property: background-color, border-color, color, outline-color;
-  transition-timing-function: ease-in;
+  @import './normalize/normalize';
+  @import './html-elements/index';
+  @import './constrain/constrain';
 }
