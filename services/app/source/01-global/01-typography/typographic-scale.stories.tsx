@@ -5,21 +5,6 @@ import { Property } from 'csstype';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './typographic-scale.module.css';
 
-const typographyVars = typographyVarsAsString
-  .replace(':root {', '')
-  .replace('}', '')
-  .split(';')
-  .map((e: string) => {
-    return e.trim();
-  })
-  .filter((e: string) => e.includes('--responsive-font-size'))
-  .map((e: string) => {
-    return e.replace(')', '').split('(').pop();
-  });
-
-const typographyVarsMax = typographyVars.map(e => e && e.split(' ').pop());
-const typographyVarsMin = typographyVars.map(e => e && e.split(' ', 1).pop());
-
 const settings: Meta = {
   title: 'Global/Typography/Typographic Scale',
 };
@@ -29,10 +14,16 @@ interface FontOptions {
 }
 
 interface ResponsiveFontSizeOptions {
-  [number: number]: string;
+  [number: number]: {
+    style?: string;
+    min?: string;
+    max?: string;
+  };
 }
 
 const allVars = getCssVariables();
+
+const minMaxRegex = ': responsive-font-size\\(([^,\\s]+),? ([^,\\s]+)\\)';
 
 const fonts = allVars.reduce((allFonts, [key, value]) => {
   if (key.indexOf('--font-family') === 0) {
@@ -43,11 +34,20 @@ const fonts = allVars.reduce((allFonts, [key, value]) => {
   return allFonts;
 }, {} as FontOptions);
 
-const responsivefontsizes = allVars.reduce(
+const responsiveFontSizes = allVars.reduce(
   (allResponsiveFontSizes, [key, value]) => {
     if (key.indexOf('--responsive-font-size') === 0) {
       const number = parseInt(key.substring(23));
-      allResponsiveFontSizes[number] = value;
+      // Add the min and max from typographyVarsAsString, because we need the
+      // *unparsed* values here, what we wrote before PostCSS worked its magic.
+      // It's weird, but so is CSS.
+      const minMax = new RegExp(`${key.trim()}${minMaxRegex}`);
+      const matchingVar = minMax.exec(typographyVarsAsString);
+      allResponsiveFontSizes[number] = {
+        style: value,
+        min: matchingVar ? matchingVar[1] : undefined,
+        max: matchingVar ? matchingVar[2] : undefined,
+      };
     }
     return allResponsiveFontSizes;
   },
@@ -62,23 +62,20 @@ const TypographicScale: Story = args => {
           <h2 className={styles.heading}>{name}</h2>
           <div style={{ fontFamily }}>
             {Object.entries(
-              args.responsivefontsizes as ResponsiveFontSizeOptions,
+              args.responsiveFontSizes as ResponsiveFontSizeOptions,
             ).map(([number, responsiveFontSize]) => (
-              <>
-                <div className={styles.row}>
-                  <div className={styles.label}>{number}</div>
-                  <div
-                    className={styles.preview}
-                    style={{
-                      fontSize: responsiveFontSize,
-                    }}
-                  >
-                    This text goes from{' '}
-                    {typographyVarsMin[parseInt(number) - 1]} to{' '}
-                    {typographyVarsMax[parseInt(number) - 1]}.
-                  </div>
+              <div className={styles.row} key={number}>
+                <div className={styles.label}>{number}</div>
+                <div
+                  className={styles.preview}
+                  style={{
+                    fontSize: responsiveFontSize.style,
+                  }}
+                >
+                  This text goes from {responsiveFontSize.min} to{' '}
+                  {responsiveFontSize.max}.
                 </div>
-              </>
+              </div>
             ))}
           </div>
         </div>
@@ -88,7 +85,7 @@ const TypographicScale: Story = args => {
 };
 TypographicScale.args = {
   fonts: fonts,
-  responsivefontsizes: responsivefontsizes,
+  responsiveFontSizes: responsiveFontSizes,
 };
 
 export default settings;
