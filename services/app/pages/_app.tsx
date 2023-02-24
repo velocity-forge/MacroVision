@@ -8,6 +8,7 @@ import Main from '../source/02-layouts/Main/Main';
 import SiteContainer from '../source/02-layouts/SiteContainer/SiteContainer';
 import BackToTop from '../source/03-components/BackToTop/BackToTop';
 import addBasePath from '../source/06-utility/addBasePath';
+import '../source/06-utility/index.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

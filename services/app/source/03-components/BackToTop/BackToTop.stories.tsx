@@ -3,7 +3,7 @@ import styles from './back-to-top.module.css';
 import BackToTop from './BackToTop';
 
 const settings = {
-  title: 'Components/Back to Top',
+  title: 'Components/Back To Top',
   component: BackToTop,
 } as ComponentMeta<typeof BackToTop>;
 

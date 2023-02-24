@@ -24,4 +24,5 @@
   --ui-accent-light: var(--brand-blue-light);
   --ui-border: var(--grayscale-gray-3);
   --ui-focus: var(--brand-blue-light);
+  --ui-text-light: var(--grayscale-gray-3);
 }

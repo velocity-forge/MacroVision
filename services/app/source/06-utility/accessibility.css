@@ -1,0 +1,24 @@
+@import '../00-config/mixins/accessibility.css';
+
+.visually-hidden,
+.u-visually-hidden {
+  @include visually-hidden;
+
+  &.focusable,
+  &.u-focusable {
+    &:focus,
+    &:active {
+      @include visually-hidden-off;
+    }
+  }
+}
+
+.hidden,
+.u-hidden {
+  @include hidden;
+}
+
+.invisible,
+.u-invisible {
+  @include invisible;
+}
