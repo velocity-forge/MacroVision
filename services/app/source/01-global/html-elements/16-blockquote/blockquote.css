@@ -1,12 +1,10 @@
-/* HTML Element: Blockquote */
-
 blockquote {
   @include display-blockquote;
-  margin: 0 0 rem(var(--spacing-5));
+  margin: 0 0 var(--spacing-5);
 
   /* Add top margin when blockquote is preceded by other elements */
   * + & {
-    margin-top: rem(var(--spacing-5));
+    margin-top: var(--spacing-5);
   }
 
   & p {
@@ -27,14 +25,14 @@ blockquote {
 
   & cite {
     display: block;
-    margin-top: rem(var(--spacing-2));
+    margin-top: var(--spacing-2);
     text-align: right;
 
     & em {
       border-left: 1px solid var(--ui-border);
       font-weight: var(--font-weight-regular);
-      margin-left: rem(var(--spacing-0-5));
-      padding-left: rem(var(--spacing-1));
+      margin-left: var(--spacing-0-5);
+      padding-left: var(--spacing-1);
     }
   }
 

@@ -1,7 +1,5 @@
-/* HTML Element: Table */
-
 caption {
-  margin-bottom: rem(var(--spacing-0-5));
+  margin-bottom: var(--spacing-0-5);
 }
 
 /* col {} */
@@ -11,7 +9,7 @@ caption {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  margin-bottom: rem(var(--spacing-2));
+  margin-bottom: var(--spacing-2);
   min-width: 100%;
 }
 
@@ -20,7 +18,7 @@ table {
 td {
   background-color: var(--table-background);
   border: 1px solid var(--table-border);
-  padding: rem(var(--spacing-2));
+  padding: var(--spacing-2);
 }
 
 tfoot {
@@ -33,7 +31,7 @@ tfoot {
 th {
   background-color: var(--table-background);
   border: 1px solid var(--table-border);
-  padding: rem(var(--spacing-2));
+  padding: var(--spacing-2);
   text-align: left;
 }
 

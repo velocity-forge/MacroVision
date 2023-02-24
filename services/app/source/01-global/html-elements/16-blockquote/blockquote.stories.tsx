@@ -1,13 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-const settings: Meta = {
-  title: 'Global/HTML Elements/Blockquote',
-  parameters: {
-    controls: { hideNoControlsWarning: true },
-  },
-};
-
-const Blockquote: Story = () => {
+const Blockquote = (): JSX.Element => {
   return (
     <>
       <blockquote>
@@ -25,5 +18,16 @@ const Blockquote: Story = () => {
   );
 };
 
+const settings = {
+  title: 'Global/HTML Elements/Blockquote',
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
+} as ComponentMeta<typeof Blockquote>;
+
+const Template: ComponentStory<typeof Blockquote> = () => <Blockquote />;
+
+const _Blockquote = Template.bind({});
+
 export default settings;
-export { Blockquote };
+export { _Blockquote };

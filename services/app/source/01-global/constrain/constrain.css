@@ -1,4 +1,4 @@
-@import '../../00-config/mixins/layout.css';
+@import "../../00-config/mixins";
 
 @layer layout {
   .constrain {

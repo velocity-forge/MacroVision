@@ -1,5 +1,3 @@
-/* HTML Element: Audio */
-
 audio {
   &:not([controls]) {
     display: none;

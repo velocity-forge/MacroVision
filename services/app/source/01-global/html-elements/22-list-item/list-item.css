@@ -1,7 +1,5 @@
-/* HTML Element: List Item */
-
 li {
-  margin-block-end: rem(var(--spacing-1));
+  margin-block-end: var(--spacing-1);
 
   &:last-child {
     margin-block-end: 0;

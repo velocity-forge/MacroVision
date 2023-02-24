@@ -1,6 +1,4 @@
-/* HTML Element: Inline Elements */
-
-@import '../../../00-config/mixins/focus.css';
+@import "../../../00-config/mixins";
 
 a {
   @include focus();

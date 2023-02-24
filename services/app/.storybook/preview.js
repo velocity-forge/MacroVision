@@ -1,6 +1,5 @@
 import '../source/00-config/index.css';
 import '../source/01-global/index.css';
-import '../source/02-layouts/constrain/constrain.css';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

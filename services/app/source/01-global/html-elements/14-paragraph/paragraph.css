@@ -1,7 +1,5 @@
-/* HTML Element: Paragraph */
-
 p {
-  margin: 0 0 rem(var(--spacing-2));
+  margin: 0 0 var(--spacing-2);
 
   @media print {
     orphans: 3;
