@@ -1,0 +1,29 @@
+@layer component {
+  .link {
+    padding-inline-end: 28px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      & path {
+        fill: var(--text-link-hover);
+      }
+    }
+  }
+
+  .icon {
+    block-size: 28px;
+    display: inline-block;
+    inset-block-start: 8px;
+    margin-inline-end: -28px;
+    position: relative;
+
+    & path {
+      fill: var(--text-link);
+    }
+  }
+
+  .description {
+    composes: u-visually-hidden from global;
+  }
+}

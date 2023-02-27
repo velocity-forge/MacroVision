@@ -30,6 +30,7 @@
   --text-link-hover: var(--brand-blue-dark);
   --text-link-visited: var(--brand-blue-dark);
   --text-on-dark: var(--grayscale-white);
+  --text-on-light: var(--grayscale-gray-7);
   --text-primary: var(--grayscale-gray-7);
   --text-secondary: var(--grayscale-gray-5);
 
@@ -40,5 +41,6 @@
   --ui-border-dark: var(--grayscale-gray-6);
   --ui-border-light: var(--grayscale-gray-1);
   --ui-focus: var(--brand-blue-light);
+  --ui-text-dark: var(--grayscale-gray-5);
   --ui-text-light: var(--grayscale-gray-3);
 }

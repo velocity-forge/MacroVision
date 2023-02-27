@@ -1,0 +1,13 @@
+@import '../../00-config/mixins.css';
+
+@layer component {
+  .tag-list {
+    @include list-clean;
+  }
+
+  .item {
+    display: inline-block;
+    margin-block-end: var(--spacing-1);
+    margin-inline-end: var(--spacing-1);
+  }
+}

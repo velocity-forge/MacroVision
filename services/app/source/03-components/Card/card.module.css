@@ -1,0 +1,93 @@
+@layer component {
+  .card {
+    border-block-end: 4px solid var(--ui-accent);
+    box-shadow: var(--box-shadow-1);
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow var(--duration-short) var(--easing-ease-in-out);
+
+    &:hover,
+    &:focus-within {
+      box-shadow: var(--box-shadow-3);
+    }
+  }
+
+  .title {
+    --text-link: var(--text-on-light);
+    --text-link-visited: var(--text-link);
+    --text-link-hover: var(--ui-text-dark);
+    --text-link-active: var(--text-link-hover);
+    font-size: var(--font-size-5);
+    margin: 0;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: var(--spacing-3);
+  }
+
+  .header {
+    margin-block-end: var(--spacing-3);
+  }
+
+  .date {
+    color: var(--ui-text-dark);
+    font-size: var(--font-size-2);
+    margin-block-end: var(--spacing-2);
+  }
+
+  .content {
+    margin-block-end: var(--spacing-3);
+  }
+
+  .media {
+    order: -1;
+
+    & a {
+      block-size: 100%;
+      display: block;
+      inline-size: 100%;
+    }
+
+    & img {
+      inline-size: 100%;
+    }
+  }
+
+  .footer {
+    margin-block-start: auto;
+  }
+
+  .tags {
+    margin-block-end: var(--spacing-2);
+  }
+
+  .readmore {
+    text-align: right;
+  }
+
+  .card--feature {
+    & .media {
+      flex-grow: 1;
+    }
+
+    @media (--desktop) {
+      flex-direction: row;
+
+      & .title {
+        font-size: var(--font-size-6);
+      }
+
+      & .body {
+        max-block-size: 600px;
+        padding-inline: 2vw;
+      }
+
+      & .media {
+        order: initial;
+      }
+    }
+  }
+}

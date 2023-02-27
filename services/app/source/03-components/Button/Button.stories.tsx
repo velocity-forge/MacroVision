@@ -20,14 +20,11 @@ export default {
   // More on controls: https://storybook.js.org/docs/react/essentials/controls
   argTypes: {
     variant: {
-      options: ['', 'secondary', 'danger'],
-      mapping: [''],
+      options: ['primary', 'secondary', 'danger'],
       control: {
         type: 'radio',
-        labels: {
-          '': 'primary',
-        },
       },
+      defaultValue: 'primary',
     },
   },
   subcomponents: { Button, LinkButton },

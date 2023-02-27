@@ -35,7 +35,7 @@ const Button = ({
       type={type}
       className={clsx(
         styles.button,
-        variant && styles[`button--${variant}`],
+        variant && variant !== 'primary' && styles[`button--${variant}`],
         styleSize !== 'medium' && styles[`button--${styleSize}`],
       )}
       {...props}

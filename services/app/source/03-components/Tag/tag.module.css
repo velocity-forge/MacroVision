@@ -1,0 +1,26 @@
+@layer component {
+  .tag {
+    --text-link: var(--ui-accent-dark);
+    --text-link-hover: var(--text-link);
+    --text-link-visited: var(--text-link);
+    --text-link-active: var(--text-link);
+    border: 2px solid var(--ui-accent-light);
+    border-radius: 70px;
+    display: inline-block;
+    font-size: var(--font-size-2);
+    margin-block: 0 var(--spacing-1);
+    margin-inline: 0;
+    padding-block: 0.25em;
+    padding-inline: 1.65em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: box-shadow var(--duration-short) var(--easing-ease-in);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 2px var(--ui-accent-light);
+      outline: 0;
+    }
+  }
+}
