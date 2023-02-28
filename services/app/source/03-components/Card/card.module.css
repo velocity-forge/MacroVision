@@ -1,3 +1,5 @@
+@import '../../00-config/mixins.css';
+
 @layer component {
   .card {
     border-block-end: 4px solid var(--ui-accent);
@@ -13,10 +15,7 @@
   }
 
   .title {
-    --text-link: var(--text-on-light);
-    --text-link-visited: var(--text-link);
-    --text-link-hover: var(--ui-text-dark);
-    --text-link-active: var(--text-link-hover);
+    @include set-link-vars(var(--text-on-light), var(--ui-text-dark));
     font-size: var(--font-size-5);
     margin: 0;
   }

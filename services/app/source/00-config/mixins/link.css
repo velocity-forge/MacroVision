@@ -14,3 +14,22 @@
     color: var(--text-link-active);
   }
 }
+
+@mixin set-link-vars($link, $hover: '', $active: '', $visit: '') {
+  --text-link: $link;
+  @if $hover != '' {
+    --text-link-hover: $hover;
+  } @else {
+    --text-link-hover: var(--text-link);
+  }
+  @if $active != '' {
+    --text-link-active: $active;
+  } @else {
+    --text-link-active: var(--text-link-hover);
+  }
+  @if $visit != '' {
+    --text-link-visited: $visit;
+  } @else {
+    --text-link-visited: var(--text-link);
+  }
+}

@@ -53,7 +53,7 @@
     "inquirer": "^8.2.4",
     "mkdirp": "^1.0.4",
     "postcss": "^8.4.21",
-    "postcss-advanced-variables": "^3.0.1",
+    "postcss-advanced-variables": "github:kmonahan/postcss-advanced-variables",
     "postcss-loader": "^7.0.2",
     "postcss-nesting": "^11.1.0",
     "postcss-preset-env": "^8.0.1",
