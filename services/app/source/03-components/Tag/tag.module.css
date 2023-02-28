@@ -1,9 +1,8 @@
+@import '../../00-config/mixins.css';
+
 @layer component {
   .tag {
-    --text-link: var(--ui-accent-dark);
-    --text-link-hover: var(--text-link);
-    --text-link-visited: var(--text-link);
-    --text-link-active: var(--text-link);
+    @include set-link-vars(var(--ui-accent-dark));
     border: 2px solid var(--ui-accent-light);
     border-radius: 70px;
     display: inline-block;

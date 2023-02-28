@@ -1,14 +1,10 @@
-@import '../../00-config/mixins/clearfix.css';
-@import '../../00-config/mixins/list.css';
+@import '../../00-config/mixins.css';
 
-@layer components {
+@layer component {
   .breadcrumb {
     --background-color: var(--ui-accent-dark);
     --divider-color: var(--ui-border);
-    --text-link: var(--ui-text-light);
-    --text-link-hover: var(--text-link);
-    --text-link-active: var(--text-link);
-    --text-link-visited: var(--text-link);
+    @include set-link-vars(var(--ui-text-light));
     --text-color: var(--text-on-dark);
     @include clearfix;
     background-color: var(--background-color);

@@ -1,34 +1,36 @@
-.link {
-  --text-link: var(--grayscale-white);
-  --text-link-visited: var(--text-link);
-  --text-link-hover: var(--grayscale-white);
-  display: none;
+@import '../../00-config/mixins.css';
 
-  @media (--mobile-lg) {
-    align-items: center;
-    background-color: var(--grayscale-gray-3);
-    block-size: rem(70px);
-    border-radius: 50%;
-    display: flex;
-    font-size: rem(60px);
-    inline-size: rem(70px);
-    inset-block-end: var(--spacing-2-5);
-    inset-inline-end: var(--spacing-2-5);
-    justify-content: center;
-    position: fixed;
-    transition-duration: var(--duration-short);
-    transition-property: background-color, color, opacity;
+@layer component {
+  .link {
+    @include set-link-vars(var(--grayscale-white));
+    display: none;
 
-    &:hover,
-    &:focus {
-      background-color: var(--grayscale-gray-5);
+    @media (--mobile-lg) {
+      align-items: center;
+      background-color: var(--grayscale-gray-3);
+      block-size: rem(70px);
+      border-radius: 50%;
+      display: flex;
+      font-size: rem(60px);
+      inline-size: rem(70px);
+      inset-block-end: var(--spacing-2-5);
+      inset-inline-end: var(--spacing-2-5);
+      justify-content: center;
+      position: fixed;
+      transition-duration: var(--duration-short);
+      transition-property: background-color, color, opacity;
+
+      &:hover,
+      &:focus {
+        background-color: var(--grayscale-gray-5);
+      }
+
+      &[aria-hidden='true'] {
+        opacity: 0;
+      }
     }
-
-    &[aria-hidden='true'] {
-      opacity: 0;
+    &.show {
+      opacity: 1 !important;
     }
-  }
-  &.show {
-    opacity: 1 !important;
   }
 }
