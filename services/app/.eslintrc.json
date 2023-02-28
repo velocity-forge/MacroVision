@@ -21,5 +21,11 @@
       { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
     ],
     "prettier/prettier": "error"
-  }
+  },
+  "overrides": [{
+    "files": ["**/*.stories.tsx"],
+    "rules": {
+      "@next/next/no-img-element": "off"
+    }
+  }]
 }
