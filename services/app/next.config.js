@@ -20,10 +20,10 @@ module.exports = {
 
     config.module.rules.find(
       rule => rule.test && rule.test.toString().includes('svg'),
-    ).exclude = /icons\/.*\.svg$/i;
+    ).exclude = /Icon\/icons\/.*\.svg$/i;
 
     config.module.rules.push({
-      test: /icons\/.*\.svg$/i,
+      test: /Icon\/icons\/.*\.svg$/i,
       use: [
         {
           loader: '@svgr/webpack',

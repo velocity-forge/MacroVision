@@ -2,8 +2,9 @@ const path = require('path');
 const {
   getCssModuleLocalIdent,
 } = require('next/dist/build/webpack/config/blocks/css/loaders/getCssModuleLocalIdent');
+const { css } = require('@storybook/theming');
 module.exports = {
-  staticDirs: ['../public/'],
+  staticDirs: [path.resolve(__dirname, '../public')],
   stories: ['../source/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
@@ -24,23 +25,28 @@ module.exports = {
   },
   webpackFinal: async config => {
     // Support CSS modules, via https://gist.github.com/justincy/b8805ae2b333ac98d5a3bd9f431e8f70
-    config.module.rules.find(
+    const cssRule = config.module.rules.find(
       rule => rule.test.toString() === '/\\.css$/',
-    ).exclude = /\.module\.css$/;
+    );
+    cssRule.exclude = /\.module\.css$/;
 
-    // Then we tell webpack what to do with CSS modules
+    // Then we tell webpack what to do with CSS modules.
+    // We can't just call 'css-loader' here because Storybook has its own
+    // specific css-loader that can resolve files in staticDirs.
+    const cssLoader = cssRule.use.find(r => r.loader.includes('css-loader'));
     config.module.rules.push({
       test: /\.module\.css$/,
+      sideEffects: true,
       use: [
         'style-loader',
         {
-          loader: 'css-loader',
+          ...cssLoader,
           options: {
+            ...cssLoader.options,
             importLoaders: 1,
             modules: {
               getLocalIdent: getCssModuleLocalIdent,
               mode: 'pure',
-              exportLocalsConvention: 'asIs',
             },
           },
         },
@@ -50,10 +56,10 @@ module.exports = {
 
     config.module.rules.find(
       rule => rule.test && rule.test.toString().includes('svg'),
-    ).exclude = /icons\/.*\.svg$/i;
+    ).exclude = /Icon\/icons\/.*\.svg$/i;
 
     config.module.rules.push({
-      test: /icons\/.*\.svg$/i,
+      test: /Icon\/icons\/.*\.svg$/i,
       use: [
         {
           loader: '@svgr/webpack',

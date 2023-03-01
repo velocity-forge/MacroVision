@@ -37,6 +37,8 @@
   --ui-accent: var(--brand-blue-base);
   --ui-accent-dark: var(--brand-blue-dark-1);
   --ui-accent-light: var(--brand-blue-light);
+  --ui-background: var(--grayscale-gray-3);
+  --ui-background-light: var(--grayscale-gray-1);
   --ui-border: var(--grayscale-gray-3);
   --ui-border-dark: var(--grayscale-gray-6);
   --ui-border-light: var(--grayscale-gray-1);
