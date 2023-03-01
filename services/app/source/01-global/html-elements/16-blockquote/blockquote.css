@@ -1,10 +1,11 @@
 blockquote {
   @include display-blockquote;
-  margin: 0 0 var(--spacing-5);
+  margin-block: 0 var(--spacing-5);
+  margin-inline: 0;
 
   /* Add top margin when blockquote is preceded by other elements */
   * + & {
-    margin-top: var(--spacing-5);
+    margin-block-start: var(--spacing-5);
   }
 
   & p {
@@ -25,19 +26,19 @@ blockquote {
 
   & cite {
     display: block;
-    margin-top: var(--spacing-2);
-    text-align: right;
+    margin-block-start: var(--spacing-2);
+    text-align: end;
 
     & em {
-      border-left: 1px solid var(--ui-border);
+      border-inline-start: 1px solid var(--ui-border);
       font-weight: var(--font-weight-regular);
-      margin-left: var(--spacing-0-5);
-      padding-left: var(--spacing-1);
+      margin-inline-start: var(--spacing-0-5);
+      padding-inline-start: var(--spacing-1);
     }
   }
 
   :last-child {
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   @media print {

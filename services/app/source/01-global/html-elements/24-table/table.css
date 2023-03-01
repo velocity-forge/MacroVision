@@ -1,5 +1,5 @@
 caption {
-  margin-bottom: var(--spacing-0-5);
+  margin-block-end: var(--spacing-0-5);
 }
 
 /* col {} */
@@ -9,8 +9,8 @@ caption {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  margin-bottom: var(--spacing-2);
-  min-width: 100%;
+  margin-block-end: var(--spacing-2);
+  min-inline-size: 100%;
 }
 
 /* tbody {} */
@@ -32,7 +32,7 @@ th {
   background-color: var(--table-background);
   border: 1px solid var(--table-border);
   padding: var(--spacing-2);
-  text-align: left;
+  text-align: start;
 }
 
 thead {

@@ -1,5 +1,5 @@
 hr {
-  border: 1px solid var(--ui-border);
+  border: solid var(--ui-border);
   border-width: 1px 0 0;
   box-sizing: content-box;
   height: 0;
@@ -8,6 +8,6 @@ hr {
 
   /* Add top margin when preceded by another element. */
   * + & {
-    margin-top: var(--spacing-3);
+    margin-block-start: var(--spacing-3);
   }
 }

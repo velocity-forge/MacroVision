@@ -5,10 +5,10 @@ Overflow-x and width properties ensure elements using full bleed techniques
 body {
   background-color: var(--background-site);
   color: var(--text-primary);
+  inline-size: 100%;
   margin: 0;
   overflow-x: hidden;
   padding: 0;
-  width: 100%;
   word-wrap: break-word;
 
   &.has-open-menu {

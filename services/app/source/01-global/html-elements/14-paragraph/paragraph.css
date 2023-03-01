@@ -1,5 +1,6 @@
 p {
-  margin: 0 0 var(--spacing-2);
+  margin-block: 0 var(--spacing-2);
+  margin-inline: 0;
 
   @media print {
     orphans: 3;

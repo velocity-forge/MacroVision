@@ -6,6 +6,6 @@ ul {
 
   & ol,
   & ul {
-    margin-top: calc(var(--spacing-2) / 2);
+    margin-block-start: calc(var(--spacing-2) / 2);
   }
 }
