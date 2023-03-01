@@ -1,0 +1,4 @@
+:root {
+  --form-border: var(--grayscale-gray-2);
+  --form-disabled-opacity: 0.35;
+}

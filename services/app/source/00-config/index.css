@@ -12,4 +12,5 @@
 
 @layer config.usage {
   @import 'vars/colors.css';
+  @import 'vars/form.css';
 }
