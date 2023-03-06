@@ -1,0 +1,41 @@
+@layer component {
+  .figure {
+    display: table;
+    margin-block: 0 var(--spacing-2);
+
+    &:global(.u-align-center) {
+      clear: both;
+      margin-block-start: var(--spacing-2);
+    }
+
+    &:global(.u-align-left) {
+      @media (--tablet) {
+        margin-inline-end: var(--spacing-4);
+        max-inline-size: calc(50% - var(--spacing-2));
+      }
+    }
+
+    &:global(.u-align-right) {
+      @media (--tablet) {
+        margin-inline-start: var(--spacing-4);
+        max-inline-size: calc(50% - var(--spacing-2));
+      }
+    }
+  }
+
+  .caption {
+    caption-side: bottom;
+    display: table-caption;
+    font-weight: var(--font-weight-semibold);
+    margin-block-start: var(--spacing-1);
+  }
+
+  .figure--iframe {
+    display: block;
+    inline-size: 100%;
+
+    .caption {
+      display: block;
+    }
+  }
+}

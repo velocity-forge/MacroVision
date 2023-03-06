@@ -1,0 +1,73 @@
+.u-align-left,
+.align-left {
+  @media (--tablet) {
+    float: inline-start;
+    margin-inline-end: var(--gutter-width);
+
+    @supports not (float: inline-start) {
+      float: left;
+      margin-inline-end: initial;
+      margin-right: var(--gutter-width);
+
+      [dir='rtl'] & {
+        float: right;
+        margin-left: var(--gutter-width);
+        margin-right: initial;
+      }
+    }
+  }
+}
+
+.u-align-right,
+.align-right {
+  @media (--tablet) {
+    float: inline-end;
+    margin-inline-start: var(--gutter-width);
+
+    @supports not (float: inline-start) {
+      float: right;
+      margin-inline-start: initial;
+      margin-left: var(--gutter-width);
+
+      [dir='rtl'] & {
+        float: left;
+        margin-left: var(--gutter-width);
+        margin-end: initial;
+      }
+    }
+  }
+}
+
+.u-align-center,
+.align-center {
+  margin-inline: auto;
+}
+
+// Clear floats
+.u-clear-both {
+  clear: both;
+}
+
+.u-clear-left {
+  clear: inline-start;
+
+  @supports not (clear: inline-start) {
+    clear: left;
+
+    [dir='rtl'] & {
+      clear: right;
+    }
+  }
+}
+
+.u-clear-right {
+  clear: inline-end;
+
+  @supports not (clear: inline-end) {
+    clear: right;
+
+    [dir='rtl'] & {
+      clear: left;
+    }
+  }
+}

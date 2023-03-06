@@ -1,0 +1,8 @@
+@layer component {
+  .video {
+    iframe {
+      aspect-ratio: 16/9;
+      inline-size: 100%;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@layer config, global, layout, components, utilities;
+@layer config, global, layout, component, utilities;
 
 @layer config.base {
   @import 'vars/box-shadow.css';
