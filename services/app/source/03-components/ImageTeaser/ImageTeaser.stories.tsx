@@ -13,7 +13,12 @@ const Template: ComponentStory<typeof ImageTeaser> = args => (
 const _ImageTeaser = Template.bind({});
 _ImageTeaser.args = {
   url: '#0',
-  image: <img src="http://fpoimg.com/140x105?text=Thumbnail 4:3" />,
+  image: (
+    <img
+      src="http://fpoimg.com/140x105?text=Thumbnail 4:3"
+      alt="Thumbnail placeholder"
+    />
+  ),
   title: 'Title',
   date: 'Teaser Date',
   summary: (
