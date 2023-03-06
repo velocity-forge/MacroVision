@@ -65,5 +65,5 @@ const LinkButton = ({
   );
 };
 
-export type { SharedButtonProps };
+export type { SharedButtonProps, ButtonProps, LinkProps };
 export { Button, LinkButton };

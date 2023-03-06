@@ -1,0 +1,93 @@
+@import '../../00-config/mixins.css';
+
+@layer components {
+  .hero {
+    @media (--desktop) {
+      color: var(--text-on-dark);
+      position: relative;
+      text-align: center;
+
+      &.has-overlay {
+        &::after {
+          background: rgba(0, 0, 0, 0.5);
+          content: '';
+          inset: 0;
+          position: absolute;
+          z-index: 1;
+        }
+
+        .content {
+          z-index: 2;
+        }
+      }
+    }
+  }
+
+  .media {
+    display: block;
+    line-height: 0;
+    margin-block-end: var(--spacing-3);
+
+    @media (--desktop) {
+      margin-block-end: 0;
+    }
+
+    & :is(img, picture) {
+      inline-size: 100%;
+    }
+  }
+
+  .content {
+    @media (--desktop) {
+      display: flex;
+      flex-direction: column;
+      inset: 5% 15%;
+      justify-content: center;
+      position: absolute;
+    }
+  }
+
+  .title {
+    @include display-text-display;
+    margin-block-end: var(--spacing-3);
+
+    @media (--desktop) {
+      color: var(--text-on-dark);
+      margin-block-end: var(--spacing-5);
+    }
+
+    @media (--desktop-max) {
+      font-size: var(--font-size-8);
+    }
+  }
+
+  .summary {
+    @include display-body-large;
+    margin-block-end: var(--spacing-3);
+
+    @media (--desktop) {
+      color: var(--text-on-dark);
+      margin-block-end: var(--spacing-5);
+    }
+  }
+
+  .hero--left {
+    .content {
+      @media (--desktop) {
+        align-items: flex-start;
+        inset-inline-start: 10%;
+        inset-inline-end: 35%;
+      }
+    }
+  }
+
+  .hero--right {
+    .content {
+      @media (--desktop) {
+        align-items: flex-start;
+        inset-inline-start: 35%;
+        inset-inline-end: 10%;
+      }
+    }
+  }
+}

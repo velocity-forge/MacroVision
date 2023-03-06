@@ -1,0 +1,74 @@
+@import '../../00-config/mixins.css';
+
+@layer components {
+  .hero {
+    color: var(--text-on-dark);
+    overflow: hidden;
+    padding-block: var(--spacing-12);
+    padding-inline: 15%;
+    position: relative;
+    text-align: center;
+
+    & > img {
+      block-size: 100%;
+      inline-size: 100%;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      object-fit: cover;
+      position: absolute;
+    }
+
+    &.has-overlay {
+      &::after {
+        background: rgba(0, 0, 0, 0.5);
+        content: '';
+        inset: 0;
+        position: absolute;
+        z-index: 1;
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .title {
+    @include display-text-display;
+    color: var(--text-on-dark);
+    margin-block-end: var(--spacing-5);
+
+    @media (--desktop-max) {
+      font-size: var(--font-size-8);
+      margin-block-end: var(--spacing-3);
+    }
+  }
+
+  .summary {
+    @include display-body-large;
+    color: var(--text-on-dark);
+    margin-block-end: var(--spacing-5);
+
+    @media (--desktop-max) {
+      font-size: var(--font-size-3);
+      margin-block-end: var(--spacing-3);
+    }
+  }
+
+  .hero--left {
+    text-align: start;
+
+    @media (--desktop) {
+      padding-inline: 10% 35%;
+    }
+  }
+
+  .hero--right {
+    text-align: end;
+
+    @media (--desktop) {
+      padding-inline: 35% 10%;
+    }
+  }
+}

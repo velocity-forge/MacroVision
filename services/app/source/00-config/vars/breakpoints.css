@@ -18,5 +18,6 @@
 @custom-media --tablet-lg (width >= 880px);
 @custom-media --tablet-lg-max (width < 880px);
 @custom-media --desktop (width >= 1024px);
+@custom-media --desktop-max (width < 1024px);
 @custom-media --desktop-lg (width >= 1200px);
 @custom-media --widescreen (width >= 1400px);
