@@ -1,6 +1,6 @@
-@import "../../00-config/mixins";
+@import '../../00-config/mixins';
 
-@layer component {
+@layer components {
   .button {
     @include button();
 

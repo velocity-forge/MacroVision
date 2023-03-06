@@ -1,23 +1,25 @@
-.icon {
-  display: inline-block;
-  fill: currentColor;
-  height: 1em;
-  inset-block-start: -2px;
-  position: relative;
-  transition: none;
-  vertical-align: middle;
-  width: 1em;
-
-  /* Fixes delayed transitions in Chrome. */
-  & * {
+@layer components {
+  .icon {
+    display: inline-block;
+    fill: currentColor;
+    height: 1em;
+    inset-block-start: -2px;
+    position: relative;
     transition: none;
-  }
+    vertical-align: middle;
+    width: 1em;
 
-  &.is-spaced-before {
-    margin-inline-start: 0.25em;
-  }
+    /* Fixes delayed transitions in Chrome. */
+    & * {
+      transition: none;
+    }
 
-  &.is-spaced-after {
-    margin-inline-end: 0.25em;
+    &.is-spaced-before {
+      margin-inline-start: 0.25em;
+    }
+
+    &.is-spaced-after {
+      margin-inline-end: 0.25em;
+    }
   }
 }

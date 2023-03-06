@@ -1,6 +1,6 @@
-@import "../../00-config/mixins";
+@import '../../00-config/mixins';
 
-@layer layout {
+@layer layouts {
   .wrapper {
     @include focus;
     overflow-x: auto;

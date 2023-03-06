@@ -1,6 +1,6 @@
 @import '../../00-config/mixins.css';
 
-@layer component {
+@layer components {
   .link {
     @include set-link-vars(var(--grayscale-white));
     display: none;

@@ -1,4 +1,4 @@
-@layer layout {
+@layer layouts {
   @media (--tablet) {
     .wrap,
     .no-wrap {

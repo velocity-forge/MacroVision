@@ -1,6 +1,6 @@
 @import '../../00-config/mixins.css';
 
-@layer component {
+@layer components {
   .tag-list {
     @include list-clean;
   }

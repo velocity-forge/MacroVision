@@ -3,7 +3,7 @@
 $border-width: 3px;
 $border-radius: 3px;
 
-@layer component {
+@layer components {
   .group {
     display: flex;
     margin-block: var(--spacing-2);

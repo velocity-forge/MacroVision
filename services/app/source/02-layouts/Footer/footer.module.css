@@ -1,4 +1,4 @@
-@layer layout {
+@layer layouts {
   .wrapper {
     padding: var(--spacing-3) 0;
   }

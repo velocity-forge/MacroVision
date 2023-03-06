@@ -1,6 +1,6 @@
 @custom-media --sidebar (width >= 900px);
 
-@layer layout {
+@layer layouts {
   .wrapper {
     --sidebar-width: 300px;
     --sidebar-gutter: var(--spacing-2);

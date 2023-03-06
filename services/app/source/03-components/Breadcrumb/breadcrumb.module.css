@@ -1,6 +1,6 @@
 @import '../../00-config/mixins.css';
 
-@layer component {
+@layer components {
   .breadcrumb {
     --background-color: var(--ui-accent-dark);
     --divider-color: var(--ui-border);

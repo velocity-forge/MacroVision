@@ -1,4 +1,4 @@
-@layer component {
+@layer components {
   .details {
     --details-background-color: var(--ui-background-light);
     --details-content-background: var(--background-site);

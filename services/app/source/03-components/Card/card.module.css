@@ -1,6 +1,6 @@
 @import '../../00-config/mixins.css';
 
-@layer component {
+@layer components {
   .card {
     border-block-end: 4px solid var(--ui-accent);
     box-shadow: var(--box-shadow-1);

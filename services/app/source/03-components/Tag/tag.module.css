@@ -1,6 +1,6 @@
 @import '../../00-config/mixins.css';
 
-@layer component {
+@layer components {
   .tag {
     @include set-link-vars(var(--ui-accent-dark));
     border: 2px solid var(--ui-accent-light);

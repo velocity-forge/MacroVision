@@ -1,4 +1,4 @@
-@layer component {
+@layer components {
   .fieldset {
     --legend-offset: calc(var(--line-height-base) * var(--base-font-size));
     inset-block-start: var(--legend-offset);

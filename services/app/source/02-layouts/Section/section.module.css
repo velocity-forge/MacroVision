@@ -1,4 +1,4 @@
-@layer layout {
+@layer layouts {
   .section {
     margin-bottom: var(--spacing-5);
   }
