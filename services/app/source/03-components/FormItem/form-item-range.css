@@ -1,0 +1,116 @@
+@import '../../00-config/mixins.css';
+
+@mixin thumb {
+  @include focus;
+  background: var(--form-thumb);
+  block-size: var(--thumb-height);
+  border: var(--thumb-border-width) solid var(--form-border-light);
+  border-radius: var(--thumb-border-radius);
+  cursor: pointer;
+  inline-size: var(--thumb-width);
+  outline: 0;
+  transition: box-shadow var(--duration-short) var(--easing-ease-in-out);
+}
+
+@mixin thumb-focus {
+  outline-color: var(--ui-focus);
+}
+
+@mixin track {
+  background: var(--form-track);
+  block-size: var(--track-height);
+  border: var(--track-border-width) solid var(--form-border-dark);
+  cursor: pointer;
+  display: block;
+  inline-size: 100%;
+  margin: 0;
+  outline: 0;
+}
+
+.form-item--range {
+  --thumb-border-radius: 1px;
+  --thumb-border-width: 1px;
+  --thumb-height: rem(44px);
+  --thumb-width: rem(22px);
+  --track-border-width: 1px;
+  --track-height: rem(10px);
+
+  & input {
+    appearance: none;
+    background: transparent;
+    block-size: var(--thumb-height);
+    border: 0;
+    margin-block: 0.2em;
+    margin-inline: 0;
+    padding: 0;
+
+    &::-moz-focus-outer {
+      border: 0;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: 0;
+
+      &::-moz-range-thumb {
+        @include thumb-focus;
+      }
+
+      &::-ms-thumb {
+        @include thumb-focus;
+      }
+
+      &::-webkit-slider-thumb {
+        @include thumb-focus;
+      }
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: var(--form-disabled-opacity);
+    }
+
+    &::-moz-range-thumb {
+      @include thumb;
+    }
+
+    &::-moz-range-track {
+      @include track;
+    }
+
+    &::-ms-thumb {
+      @include thumb;
+      margin-top: 0 !important;
+    }
+
+    &::-ms-track {
+      @include track;
+      background: transparent;
+      border: 0;
+      color: transparent;
+    }
+
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+      background: var(--form-track);
+      border: var(--track-border-width) solid var(--form-border-dark);
+    }
+
+    &::-webkit-slider-thumb {
+      @include thumb;
+      -webkit-appearance: none;
+      margin-block-start: calc(
+        ((-2 * var(--track-border-width) + var(--track-height)) / 2) -
+          (var(--thumb-height) / 2)
+      );
+    }
+
+    &::-webkit-slider-runnable-track {
+      @include track;
+    }
+  }
+
+  &.is-full-width > input {
+    inline-size: 100%;
+  }
+}

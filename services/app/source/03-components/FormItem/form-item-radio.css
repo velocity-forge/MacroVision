@@ -1,0 +1,48 @@
+@import '../../00-config/mixins.css';
+
+.form-item--radio {
+  & + & {
+    margin-block-start: calc(-1 * var(--spacing-2));
+  }
+
+  input {
+    @include focus;
+    appearance: none;
+    background: var(--form-background-unchecked);
+    block-size: rem(18px);
+    border: 1px solid var(--form-border-dark);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px transparent;
+    cursor: pointer;
+    inline-size: rem(18px);
+    inset-block-start: rem(2px);
+    margin-inline-end: 3px;
+    outline: none;
+    position: relative;
+    transition-duration: var(--duration-short);
+    transition-property: background-color, border-color, border-radius;
+    transition-timing-function: var(--easing-ease-in-out);
+
+    &:checked {
+      background-color: var(--form-background-checked);
+      border: 2px solid var(--form-background-unchecked);
+      box-shadow: 0 0 0 2px var(--form-background-checked);
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: var(--form-disabled-opacity);
+    }
+
+    & + .label {
+      cursor: pointer;
+      display: inline;
+      font-weight: var(--font-weight-regular);
+    }
+
+    &:disabled + .label {
+      cursor: default;
+      opacity: var(--form-disabled-opacity);
+    }
+  }
+}

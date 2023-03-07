@@ -1,4 +1,12 @@
 :root {
+  --form-background: var(--grayscale-gray-1);
+  --form-background-active: var(--grayscale-white);
+  --form-background-unchecked: var(--grayscale-white);
+  --form-background-checked: var(--brand-blue-base);
   --form-border: var(--grayscale-gray-2);
+  --form-border-dark: var(--grayscale-gray-5);
+  --form-border-light: var(--grayscale-gray-1);
   --form-disabled-opacity: 0.35;
+  --form-thumb: var(--grayscale-gray-5);
+  --form-track: var(--grayscale-gray-3);
 }

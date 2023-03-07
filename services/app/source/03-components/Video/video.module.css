@@ -1,6 +1,6 @@
 @layer components {
   .video {
-    iframe {
+    & iframe {
       aspect-ratio: 16/9;
       inline-size: 100%;
     }

@@ -1,0 +1,42 @@
+:is(.form-item--box, .form-item--color, .form-item--date, .form-item--email, .form-item--file, .form-item--month, .form-item--number, .form-item--password, .form-item--search, .form-item--select, .form-item--tel, .form-item--text, .form-item--time, .form-item--url, .form-item--week) {
+  & :is(input, select) {
+    @include focus;
+    appearance: none;
+    background: var(--form-background);
+    block-size: rem(44px);
+    border: 1px solid var(--form-border);
+    border-radius: 0;
+    display: inline-block;
+    font-size: var(--form-font-size);
+    line-height: calc(22px / var(--form-font-size));
+    margin-block: var(--spacing-0-5);
+    margin-inline: 0;
+    max-inline-size: 100%;
+    padding-block: 0.625em;
+    padding-inline: 0.4375em;
+    transition-duration: var(--duration-short);
+    transition-property: background-color, border;
+    transition-timing-function: var(--easing-ease-in-out);
+
+    &:hover,
+    &:focus {
+      background-color: var(--form-background-active);
+      border: 1px solid var(--form-border-dark);
+    }
+
+    &:disabled {
+      cursor: default;
+      opacity: var(--form-disabled-opacity);
+
+      &:hover,
+      &:focus {
+        background-color: var(--form-background);
+        border: 1px solid var(--form-border);
+      }
+    }
+  }
+
+  &.is-full-width > input {
+    width: 100%;
+  }
+}
