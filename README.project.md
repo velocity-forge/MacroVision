@@ -6,14 +6,17 @@ This is a starter app for [Next.js](https://nextjs.org/) (bootstrapped with [`cr
 * [ESLint](https://eslint.org/)
 * [Prettier](https://prettier.io/)
 
-Note that Next v11 comes with the following installed already:
+Note that Next v13 comes with the following installed already:
 * [Webpack v5](https://webpack.js.org/concepts/)
-* [Babel v7](https://babeljs.io/docs/en/)
 
 ## Getting Started
 
 ## Initial Setup
 
+1. Setup [husky](https://typicode.github.io/husky/#/) by installing it at the base of the repo.
+    ```bash
+    npm ci
+    ```
 
 1. Go to the `services/app` directory.
     ```bash
@@ -39,7 +42,7 @@ Note that Next v11 comes with the following installed already:
 1. Now you are ready to start up the app. To do that, run `ddev start` from within the `services/app` directory:
     ```bash
     ddev start
-   ```
+    ```
 
 ## Starting and stopping the project
 
@@ -148,8 +151,7 @@ with the option to include a Storybook story file as well.
 ## Notes
 
 * Code for the app is currently configured to go into the `pages` directory (for [Next.js pages](https://nextjs.org/docs/basic-features/pages)) and `source` for theming, components, providers, helpers, etc.
-* Starting in Next.js v9.4, TypeScript errors do not show up in your browser when running the dev server (i.e. `npm run dev`). However, TS errors will prevent `next build` (i.e. `npm run build`) from running successfully. Be sure to run `npm run lint` and `npm run tsc` before committing and pushing code. This will give you lint and TS errors that will most likely cause your builds to fail.
-    * For discussion: should we include a [TS checker in the config](https://github.com/vercel/next.js/issues/12735#issuecomment-629404102)? Note that a Next.js dev warns that [this will greatly slow development](https://github.com/vercel/next.js/issues/12735#issuecomment-629404842).
+* Starting in Next.js v9.4, TypeScript errors do not show up in your browser when running the dev server (i.e. `npm run dev`). However, TS errors will prevent `next build` (i.e. `npm run build`) from running successfully. You can run `npm run lint` and `npm run tsc` to check for issues, which will give you lint and TS errors that will most likely cause your builds to fail. Note also that if you have [`husky`](https://typicode.github.io/husky/#/) installed, these will automatically run when you attempt to commit to a branch.
 * The current favicon implementation will probably not display correctly locally in Chrome (v94), but does display correctly in Firefox and Safari. Note that the favicon _does_ display correctly once deployed. Not sure why.
 
 
@@ -157,7 +159,7 @@ with the option to include a Storybook story file as well.
 
 ### Starting project is slow
 
-If the npm install is running slow you can enable `mutagen`,  to do this:
+If the npm install is running slow you can enable `mutagen`, to do this:
 * In the `.ddev` folder create a file named: `config.mutagen.yaml`
 * In the file place: `mutagen_enabled: true`
 * Please Restart the project.
