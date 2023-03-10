@@ -1,0 +1,14 @@
+@import '../../00-config/mixins.css';
+
+@layer components {
+  .menu {
+    @include list-clean;
+  }
+
+  .item {
+    margin-block-end: 0;
+  }
+
+  .subnav {
+  }
+}

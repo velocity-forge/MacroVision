@@ -1,0 +1,15 @@
+@import '../../00-config/mixins.css';
+
+@layer components {
+  .menu {
+    @include list-inline;
+  }
+
+  .item {
+    margin-inline-end: var(--spacing-2);
+
+    &:last-of-type {
+      margin-inline-end: 0;
+    }
+  }
+}
