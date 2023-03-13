@@ -41,8 +41,8 @@ function Breadcrumb({
           {breadcrumb.map(crumb => (
             <li key={crumb.url || 'current'} className={styles.item}>
               {crumb.url ? (
-                <Link href={crumb.url} passHref={true}>
-                  <a className={styles.link}>{crumb.text}</a>
+                <Link href={crumb.url} className={styles.link}>
+                  {crumb.text}
                 </Link>
               ) : (
                 <span aria-current="page">{crumb.text}</span>

@@ -57,13 +57,7 @@ function Card({
       </div>
       {media && (
         <div className={styles.media}>
-          {url ? (
-            <Link href={url} passHref={true}>
-              <a>{media}</a>
-            </Link>
-          ) : (
-            media
-          )}
+          {url ? <Link href={url}>{media}</Link> : media}
         </div>
       )}
     </div>

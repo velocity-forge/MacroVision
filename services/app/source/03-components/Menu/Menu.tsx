@@ -43,7 +43,7 @@ function MenuLinks({
           )}
         >
           <Link href={item.url} passHref={true}>
-            <a>{item.title}</a>
+            {item.title}
           </Link>
           {item.below && (
             <MenuLinks menuLevel={menuLevel + 1} items={item.below} />

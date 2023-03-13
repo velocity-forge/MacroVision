@@ -11,13 +11,12 @@ interface TagProps {
 
 function Tag({ type, size, url, title }: TagProps): JSX.Element {
   return (
-    <Link href={url} passHref={true}>
-      <a
-        className={clsx(styles.tag, type && styles[type], size && styles[size])}
-        rel="tag"
-      >
-        {title}
-      </a>
+    <Link
+      href={url}
+      className={clsx(styles.tag, type && styles[type], size && styles[size])}
+      rel="tag"
+    >
+      {title}
     </Link>
   );
 }

@@ -39,18 +39,17 @@ function ButtonGroup({
               button.isActive && styles['is-active'],
             )}
           >
-            <Link href={button.url || '#0'} passHref={true}>
-              <a
-                className={clsx(
-                  styles.link,
-                  button.isActive && styles['is-active'],
-                )}
-              >
-                {button.text}
-                {button.isActive && (
-                  <span className="u-visually-hidden">{activeLabel}</span>
-                )}
-              </a>
+            <Link
+              href={button.url || '#0'}
+              className={clsx(
+                styles.link,
+                button.isActive && styles['is-active'],
+              )}
+            >
+              {button.text}
+              {button.isActive && (
+                <span className="u-visually-hidden">{activeLabel}</span>
+              )}
             </Link>
           </li>
         ))}
