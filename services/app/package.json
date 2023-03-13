@@ -22,9 +22,9 @@
     ">= 1% in US"
   ],
   "dependencies": {
-    "next": "^12.1.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "next": "^13.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
@@ -47,7 +47,7 @@
     "babel-loader": "^8.3.0",
     "enhanced-resolve": "5.10.0",
     "eslint": "^8.13.0",
-    "eslint-config-next": "^12.1.5",
+    "eslint-config-next": "^13.2.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "inquirer": "^8.2.4",
