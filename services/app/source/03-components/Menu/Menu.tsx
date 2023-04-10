@@ -13,6 +13,7 @@ interface MenuItem {
 interface MenuProps extends GessoComponent {
   items: MenuItem[];
   itemClasses?: string | string[];
+  linkClasses?: string | string[];
 }
 
 interface MenuLinksProps extends MenuProps {
@@ -24,6 +25,7 @@ function MenuLinks({
   menuLevel,
   modifierClasses,
   itemClasses,
+  linkClasses,
 }: MenuLinksProps) {
   return (
     <ul
@@ -42,7 +44,11 @@ function MenuLinks({
             itemClasses,
           )}
         >
-          <Link href={item.url} passHref={true}>
+          <Link
+            href={item.url}
+            passHref={true}
+            className={clsx(styles.link, linkClasses)}
+          >
             {item.title}
           </Link>
           {item.below && (
@@ -54,17 +60,23 @@ function MenuLinks({
   );
 }
 
-function Menu({ items, modifierClasses, itemClasses }: MenuProps): JSX.Element {
+function Menu({
+  items,
+  modifierClasses,
+  itemClasses,
+  linkClasses,
+}: MenuProps): JSX.Element {
   return (
     <MenuLinks
       menuLevel={0}
       items={items}
       modifierClasses={modifierClasses}
       itemClasses={itemClasses}
+      linkClasses={linkClasses}
     />
   );
 }
 
 export default Menu;
-export type { MenuLinksProps, MenuProps };
+export type { MenuLinksProps, MenuProps, MenuItem };
 export { MenuLinks };

@@ -1,0 +1,35 @@
+@layer components.menu {
+  .overlay {
+    background-color: transparent;
+    block-size: 0;
+    inline-size: 0;
+    inset: 0;
+    overflow: hidden;
+    position: fixed;
+    transition: all var(--duration-long) var(--easing-ease-in-out);
+    z-index: -1;
+
+    &.is-open {
+      background-color: var(--ui-background-light);
+      block-size: 100vh;
+      inline-size: 100vw;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+  }
+
+  .menu {
+    align-items: center;
+    block-size: calc(100% - 55px);
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: var(--font-size-6);
+    inline-size: 100%;
+    justify-content: center;
+  }
+
+  .link {
+    margin-inline-end: 0;
+    text-decoration: none;
+  }
+}
