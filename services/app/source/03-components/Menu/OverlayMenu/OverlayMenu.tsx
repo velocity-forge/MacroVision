@@ -1,16 +1,20 @@
 import clsx from 'clsx';
+import { GessoComponent } from 'gesso';
 import { useEffect, useId, useState } from 'react';
 import buttonStyles from '../../HamburgerButton/hamburger-button.module.css';
 import HamburgerButton from '../../HamburgerButton/HamburgerButton';
 import Menu, { MenuItem } from '../Menu';
 import styles from './overlay-menu.module.css';
 
-interface OverlayMenuProps {
+interface OverlayMenuProps extends GessoComponent {
   items: MenuItem[];
 }
 
-function OverlayMenu({ items }: OverlayMenuProps): JSX.Element {
-  const [isOpen, setIsOpen] = useState(true);
+function OverlayMenu({
+  items,
+  modifierClasses,
+}: OverlayMenuProps): JSX.Element {
+  const [isOpen, setIsOpen] = useState(false);
   const navId = useId();
 
   const handleKeydown = (event: KeyboardEvent) => {
@@ -44,7 +48,11 @@ function OverlayMenu({ items }: OverlayMenuProps): JSX.Element {
         modifierClasses={buttonStyles['button--menu']}
       />
       <nav
-        className={clsx(styles.overlay, isOpen && styles['is-open'])}
+        className={clsx(
+          styles.overlay,
+          isOpen && styles['is-open'],
+          modifierClasses,
+        )}
         id={navId}
       >
         <HamburgerButton

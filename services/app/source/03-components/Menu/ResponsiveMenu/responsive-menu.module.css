@@ -1,0 +1,22 @@
+@import '../../../00-config/mixins.css';
+
+@layer components.menu {
+  .menu {
+    @include list-inline;
+  }
+
+  .item {
+    display: inline-block;
+    margin-block-end: 0;
+  }
+
+  .link {
+    display: inline-block;
+    font-weight: var(--font-weight-semibold);
+    margin-inline-end: var(--spacing-5);
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}

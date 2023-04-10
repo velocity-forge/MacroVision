@@ -23,8 +23,8 @@ Default.args = {
   ],
 };
 
-export const Footer = Template.bind({});
-Footer.args = {
+export const FooterMenu = Template.bind({});
+FooterMenu.args = {
   items: [
     {
       title: 'Careers',
