@@ -1,16 +1,4 @@
 @layer components {
-  .link {
-    padding-inline-end: 28px;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      & path {
-        fill: var(--text-link-hover);
-      }
-    }
-  }
-
   .icon {
     block-size: 28px;
     display: inline-block;
@@ -20,6 +8,18 @@
 
     & path {
       fill: var(--text-link);
+    }
+  }
+
+  .link {
+    padding-inline-end: 28px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      & path {
+        fill: var(--text-link-hover);
+      }
     }
   }
 

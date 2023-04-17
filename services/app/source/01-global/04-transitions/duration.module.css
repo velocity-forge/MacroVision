@@ -8,6 +8,17 @@ $duration-swatch: rem(40px);
   margin-bottom: 1rem;
 }
 
+.indicator {
+  background-color: #666;
+  border-radius: 50%;
+  display: inline-block;
+  height: $duration-swatch;
+  margin-bottom: 2rem;
+  position: relative;
+  transition: all 2s ease-out;
+  width: $duration-swatch;
+}
+
 .group {
   background-color: #eee;
   display: flex;
@@ -25,15 +36,4 @@ $duration-swatch: rem(40px);
   flex: 0 0 rem(150px);
   padding: 1rem;
   text-align: center;
-}
-
-.indicator {
-  background-color: #666;
-  border-radius: 50%;
-  display: inline-block;
-  height: $duration-swatch;
-  margin-bottom: 2rem;
-  position: relative;
-  transition: all 2s ease-out;
-  width: $duration-swatch;
 }

@@ -9,17 +9,13 @@
   }
 
   .object {
-    flex-basis: auto;
-    flex-grow: 0;
-    flex-shrink: 0;
+    flex: 0 0 auto;
     margin-block: 0;
     margin-inline: 0 var(--spacing-2);
   }
 
   .content {
-    flex-basis: auto;
-    flex-grow: 1;
-    flex-shrink: 1;
+    flex: 1 1 auto;
   }
 
   .media--column {

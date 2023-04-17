@@ -4,6 +4,7 @@
     --details-content-background: var(--background-site);
     --details-padding: rem(24px);
     --details-text-color: var(--text-on-light);
+
     margin-block: 0 var(--spacing-4);
     margin-inline: 0;
   }
@@ -39,7 +40,7 @@
       box-shadow: var(--box-shadow-2);
     }
 
-    &::details-marker {
+    &::marker {
       display: none;
     }
   }

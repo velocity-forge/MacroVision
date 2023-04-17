@@ -5,16 +5,12 @@
     --sidebar-width: 300px;
     --sidebar-gutter: var(--spacing-2);
     @media (--sidebar) {
-      gap: var(--sidebar-gutter);
       display: flex;
       flex-wrap: wrap;
+      gap: var(--sidebar-gutter);
 
       > * {
-        flex-basis: calc(
-          100% - var(--sidebar-width) - var(--sidebar-gutter) * 2
-        );
-        flex-grow: 1;
-        flex-shrink: 1;
+        flex: 1 1 calc(100% - var(--sidebar-width) - var(--sidebar-gutter) * 2);
       }
     }
 

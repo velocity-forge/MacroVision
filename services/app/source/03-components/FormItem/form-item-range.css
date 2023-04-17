@@ -2,6 +2,7 @@
 
 @mixin thumb {
   @include focus;
+
   background: var(--form-thumb);
   block-size: var(--thumb-height);
   border: var(--thumb-border-width) solid var(--form-border-light);
@@ -48,23 +49,6 @@
       border: 0;
     }
 
-    &:focus {
-      box-shadow: none;
-      outline: 0;
-
-      &::-moz-range-thumb {
-        @include thumb-focus;
-      }
-
-      &::-ms-thumb {
-        @include thumb-focus;
-      }
-
-      &::-webkit-slider-thumb {
-        @include thumb-focus;
-      }
-    }
-
     &:disabled {
       cursor: default;
       opacity: var(--form-disabled-opacity);
@@ -80,11 +64,13 @@
 
     &::-ms-thumb {
       @include thumb;
+
       margin-top: 0 !important;
     }
 
     &::-ms-track {
       @include track;
+
       background: transparent;
       border: 0;
       color: transparent;
@@ -98,6 +84,7 @@
 
     &::-webkit-slider-thumb {
       @include thumb;
+
       -webkit-appearance: none;
       margin-block-start: calc(
         ((-2 * var(--track-border-width) + var(--track-height)) / 2) -
@@ -107,6 +94,23 @@
 
     &::-webkit-slider-runnable-track {
       @include track;
+    }
+
+    &:focus {
+      box-shadow: none;
+      outline: 0;
+
+      &::-moz-range-thumb {
+        @include thumb-focus;
+      }
+
+      &::-ms-thumb {
+        @include thumb-focus;
+      }
+
+      &::-webkit-slider-thumb {
+        @include thumb-focus;
+      }
     }
   }
 

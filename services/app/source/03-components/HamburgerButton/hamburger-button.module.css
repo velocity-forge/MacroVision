@@ -3,7 +3,9 @@
 @layer components {
   .button {
     @include focus;
+
     background-color: transparent;
+    block-size: rem(55px);
     border: 0;
     border-radius: 0;
     box-shadow: none;
@@ -12,7 +14,6 @@
     font-family: var(--font-family-system);
     font-size: var(--font-size-3);
     font-weight: var(--font-weight-bold);
-    block-size: rem(55px);
     line-height: rem(55px);
     margin: 0;
     padding-block: 0;
@@ -27,6 +28,7 @@
 
   .icon {
     @include image-replace(1.375rem, 1.375rem);
+
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 1.375rem 1.375rem;

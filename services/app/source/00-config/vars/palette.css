@@ -1,5 +1,5 @@
 :root {
-  --brand-blue-base: #0071BC;
+  --brand-blue-base: #0071bc;
   --brand-blue-light: #4773aa;
   --brand-blue-light-1: #8ba6ca;
   --brand-blue-light-2: #dce4ef;
@@ -22,14 +22,14 @@
   --grayscale-gray-7: #1b1b1b;
   --grayscale-black: #000;
 
-  --other-yellow-base: #fad980;
-  --other-yellow-light: #fff1d2;
-  --other-yellow-neon: #ff0;
   --other-green-base: #94bfa2;
   --other-green-light: #e7f4e4;
   --other-red-base: #e31c3d;
-  --other-red-light: #e59393;
-  --other-red-light-1: #f9dede;
   --other-red-dark: #cd2026;
   --other-red-dark-1: #981b1e;
+  --other-red-light: #e59393;
+  --other-red-light-1: #f9dede;
+  --other-yellow-base: #fad980;
+  --other-yellow-light: #fff1d2;
+  --other-yellow-neon: #ff0;
 }

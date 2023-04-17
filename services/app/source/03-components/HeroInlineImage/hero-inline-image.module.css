@@ -9,7 +9,7 @@
 
       &.has-overlay {
         &::after {
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(0 0 0 / 50%);
           content: '';
           inset: 0;
           position: absolute;
@@ -49,6 +49,7 @@
 
   .title {
     @include display-text-display;
+
     margin-block-end: var(--spacing-3);
 
     @media (--desktop) {
@@ -63,6 +64,7 @@
 
   .summary {
     @include display-body-large;
+
     margin-block-end: var(--spacing-3);
 
     @media (--desktop) {
@@ -75,8 +77,8 @@
     .content {
       @media (--desktop) {
         align-items: flex-start;
-        inset-inline-start: 10%;
         inset-inline-end: 35%;
+        inset-inline-start: 10%;
       }
     }
   }
@@ -85,8 +87,8 @@
     .content {
       @media (--desktop) {
         align-items: flex-start;
-        inset-inline-start: 35%;
         inset-inline-end: 10%;
+        inset-inline-start: 35%;
       }
     }
   }

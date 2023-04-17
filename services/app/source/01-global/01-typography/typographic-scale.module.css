@@ -24,5 +24,6 @@
 }
 
 .preview {
+  /* stylelint-disable-next-line length-zero-no-unit */
   -webkit-marquee-increment: 0vw; /* Needed to get clamp() to work in Safari. */
 }

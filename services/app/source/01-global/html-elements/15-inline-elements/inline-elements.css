@@ -1,7 +1,8 @@
-@import "../../../00-config/mixins";
+@import '../../../00-config/mixins';
 
 a {
   @include focus();
+
   background-color: transparent;
   color: var(--text-link);
   -webkit-text-decoration-skip: objects;
@@ -37,6 +38,7 @@ a {
     }
 
     /* Uncomment and replace example.com with your site’s domain. */
+
     /* &[href^='/']::after {
       content: ' <http://example.com' attr(href) '>';
     } */

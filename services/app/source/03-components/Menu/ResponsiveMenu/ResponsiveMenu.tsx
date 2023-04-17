@@ -1,7 +1,7 @@
 'use client';
 
 import { GessoComponent } from 'gesso';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Menu, { MenuItem } from '../Menu';
 import OverlayMenu from '../OverlayMenu/OverlayMenu';
 import styles from './responsive-menu.module.css';
@@ -21,7 +21,7 @@ function ResponsiveMenu({
       : [modifierClasses]
     : [];
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const mediaQuery = window.matchMedia('(min-width: 700px)');
     const handleChange = (e: MediaQueryListEvent | MediaQueryList) => {
       if (e.matches) {

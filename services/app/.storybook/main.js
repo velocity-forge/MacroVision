@@ -3,6 +3,8 @@ const {
   getCssModuleLocalIdent,
 } = require('next/dist/build/webpack/config/blocks/css/loaders/getCssModuleLocalIdent');
 const { css } = require('@storybook/theming');
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
+
 module.exports = {
   staticDirs: [path.resolve(__dirname, '../public')],
   stories: ['../source/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -24,6 +26,12 @@ module.exports = {
     builder: '@storybook/builder-webpack5',
   },
   webpackFinal: async config => {
+    config.plugins.push(
+      new StylelintWebpackPlugin({
+        exclude: ['node_modules', 'storybook'],
+      }),
+    );
+
     // Support CSS modules, via https://gist.github.com/justincy/b8805ae2b333ac98d5a3bd9f431e8f70
     const cssRule = config.module.rules.find(
       rule => rule.test.toString() === '/\\.css$/',

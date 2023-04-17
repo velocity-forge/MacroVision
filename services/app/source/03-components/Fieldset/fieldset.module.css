@@ -1,6 +1,7 @@
 @layer components {
   .fieldset {
     --legend-offset: calc(var(--line-height-base) * var(--base-font-size));
+
     inset-block-start: var(--legend-offset);
     margin-block-end: calc(var(--spacing-3) + var(--legend-offset));
     padding: 0;
@@ -35,6 +36,7 @@
       line-height: 2;
       padding: 0;
       text-shadow: 0 1px 0 var(--grayscale-white);
+
       &.is-disabled {
         opacity: var(--form-disabled-opacity);
       }
@@ -82,15 +84,15 @@
       margin-block-start: var(--spacing-0-5);
     }
 
+    & .description {
+      margin-block-start: calc(-1 * var(--spacing-2));
+    }
+
     &.is-disabled {
       & .legend,
       & .description {
         opacity: var(--form-disabled-opacity);
       }
-    }
-
-    .description {
-      margin-block-start: calc(-1 * var(--spacing-2));
     }
   }
 }

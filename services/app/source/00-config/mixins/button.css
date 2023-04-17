@@ -7,6 +7,7 @@
   } @else {
     border: 0;
   }
+
   border-radius: $border-radius;
   color: var(--button-text-color);
   cursor: pointer;
@@ -34,6 +35,7 @@
     @if $border-width != 0 {
       border-color: var(--button-border-hover);
     }
+
     color: var(--button-text-hover);
   }
 
@@ -48,6 +50,7 @@
     @if $border-width != 0 {
       border-color: var(--button-border-disabled);
     }
+
     color: var(--button-text-disabled);
     cursor: default;
     pointer-events: none;
@@ -56,6 +59,7 @@
 
 @mixin text-button() {
   @include focus();
+
   appearance: none;
   background: transparent;
   border: 0;

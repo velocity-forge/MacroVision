@@ -7,7 +7,7 @@
   line-height: var(--line-height-base);
   margin-block: 0 var(--spacing-2);
   margin-inline: 0;
-  text-rendering: optimizelegibility;
+  text-rendering: optimizeLegibility;
 
   @media print {
     orphans: 3;

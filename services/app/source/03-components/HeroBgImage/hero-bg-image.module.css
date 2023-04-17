@@ -12,15 +12,15 @@
     & > img {
       block-size: 100%;
       inline-size: 100%;
-      inset-inline-start: 0;
       inset-block-start: 0;
+      inset-inline-start: 0;
       object-fit: cover;
       position: absolute;
     }
 
     &.has-overlay {
       &::after {
-        background: rgba(0, 0, 0, 0.5);
+        background: rgb(0 0 0 / 50%);
         content: '';
         inset: 0;
         position: absolute;
@@ -36,6 +36,7 @@
 
   .title {
     @include display-text-display;
+
     color: var(--text-on-dark);
     margin-block-end: var(--spacing-5);
 
@@ -47,6 +48,7 @@
 
   .summary {
     @include display-body-large;
+
     color: var(--text-on-dark);
     margin-block-end: var(--spacing-5);
 

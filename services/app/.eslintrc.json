@@ -8,7 +8,14 @@
     "prettier"
   ],
   "rules": {
-    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "ignoreRestSiblings": true,
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-empty-interface": [
       "error",
@@ -16,16 +23,20 @@
         "allowSingleExtends": true
       }
     ],
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
-    ],
     "prettier/prettier": "error"
   },
-  "overrides": [{
-    "files": ["**/*.stories.tsx"],
-    "rules": {
-      "@next/next/no-img-element": "off"
+  "overrides": [
+    {
+      "files": ["**/*.stories.tsx"],
+      "rules": {
+        "@next/next/no-img-element": "off"
+      }
+    },
+    {
+      "files": ["next.config.js", ".storybook/**/*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
     }
-  }]
+  ]
 }

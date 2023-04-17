@@ -31,8 +31,8 @@
 
       [dir='rtl'] & {
         float: left;
+        margin-inline-end: initial;
         margin-left: var(--gutter-width);
-        margin-end: initial;
       }
     }
   }
@@ -43,7 +43,6 @@
   margin-inline: auto;
 }
 
-// Clear floats
 .u-clear-both {
   clear: both;
 }

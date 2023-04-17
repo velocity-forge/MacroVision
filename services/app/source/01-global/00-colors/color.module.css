@@ -1,6 +1,7 @@
 .group {
   --swatch-padding: 1rem;
   --swatch-size: rem(150px);
+
   border-bottom: 1px solid #eee;
   display: flex;
   flex-wrap: wrap;
@@ -31,6 +32,6 @@
 
 .hex {
   font-family: Menlo, Consolas, 'Lucida Console', 'Liberation Mono',
-  'Courier New', monospace, sans-serif;
+    'Courier New', monospace, sans-serif;
   font-size: rem(14px);
 }

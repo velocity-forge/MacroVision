@@ -16,6 +16,7 @@
 
   .title {
     @include set-link-vars(var(--text-on-light), var(--ui-text-dark));
+
     font-size: var(--font-size-5);
     margin: 0;
   }

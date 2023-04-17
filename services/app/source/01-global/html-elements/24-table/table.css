@@ -21,18 +21,24 @@ td {
   padding: var(--spacing-2);
 }
 
-tfoot {
-  & td,
-  & th {
-    background-color: var(--table-background-foot);
-  }
-}
-
 th {
   background-color: var(--table-background);
   border: 1px solid var(--table-border);
   padding: var(--spacing-2);
   text-align: start;
+}
+
+tr {
+  @media print {
+    page-break-inside: avoid;
+  }
+}
+
+tfoot {
+  & td,
+  & th {
+    background-color: var(--table-background-foot);
+  }
 }
 
 thead {
@@ -43,11 +49,5 @@ thead {
 
   @media print {
     display: table-header-group;
-  }
-}
-
-tr {
-  @media print {
-    page-break-inside: avoid;
   }
 }

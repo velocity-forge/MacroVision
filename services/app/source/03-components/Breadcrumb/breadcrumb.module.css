@@ -2,11 +2,13 @@
 
 @layer components {
   .breadcrumb {
+    @include set-link-vars(var(--ui-text-light));
+    @include clearfix;
+
     --background-color: var(--ui-accent-dark);
     --divider-color: var(--ui-border);
-    @include set-link-vars(var(--ui-text-light));
     --text-color: var(--text-on-dark);
-    @include clearfix;
+
     background-color: var(--background-color);
     color: var(--text-color);
     font-size: var(--font-size-2);
@@ -21,6 +23,7 @@
 
   .list {
     @include list-inline;
+
     margin-block-end: 0;
   }
 

@@ -11,6 +11,7 @@
 
 @mixin mod-list($mod, $remainder) {
   $mod: $mod + 'n';
+
   &:nth-last-child($mod + $remainder):first-child,
   &:nth-last-child($mod + $remainder):first-child ~ li {
     @content;

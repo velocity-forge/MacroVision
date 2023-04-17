@@ -1,49 +1,49 @@
 :root {
-  --ui-accent: var(--brand-blue-base);
+  --background-site: var(--grayscale-white);
 
-  --ui-accent-dark: var(--brand-blue-dark-1);
-  --ui-accent-light: var(--brand-blue-light);
-  --mark-background: var(--other-yellow-neon);
-  --selection-background: var(--brand-blue-base);
-  --table-background: var(--grayscale-white);
-  --ui-background: var(--grayscale-gray-3);
   --button-background-active: var(--brand-blue-dark-1);
   --button-background-color: var(--brand-blue-base);
-  --ui-background-dark: var(--grayscale-gray-6);
-  --button-background-disabled: var(--grayscale-gray-1);
-  --table-background-head: var(--grayscale-gray-1);
   --button-background-hover: var(--brand-blue-dark);
-
-  --ui-background-light: var(--grayscale-gray-1);
-  --table-border: var(--grayscale-gray-5);
-
-  --ui-border: var(--grayscale-gray-3);
+  --button-background-disabled: var(--grayscale-gray-1);
   --button-border-color: var(--button-background-color);
-
-  --ui-border-dark: var(--grayscale-gray-6);
   --button-border-disabled: var(--button-background-disabled);
   --button-border-hover: var(--button-background-hover);
-  --ui-border-light: var(--grayscale-gray-1);
-
-  --ui-focus: var(--brand-blue-light);
   --button-font-size: var(--base-font-size);
+  --button-text-active: var(--grayscale-white);
+  --button-text-color: var(--grayscale-white);
+  --button-text-disabled: var(--grayscale-gray-3);
+  --button-text-hover: var(--grayscale-white);
+
+  --mark-background: var(--other-yellow-neon);
+  --mark-text: var(--grayscale-gray-7);
+
+  --selection-background: var(--brand-blue-base);
+  --selection-text: var(--grayscale-white);
+
+  --table-background: var(--grayscale-white);
   --tablebackground-foot: var(--grayscale-gray-1);
+  --table-background-head: var(--grayscale-gray-1);
+  --table-border: var(--grayscale-gray-5);
+
   --text-link: var(--brand-blue-base);
   --text-link-active: var(--brand-blue-dark);
   --text-link-hover: var(--brand-blue-dark);
   --text-link-visited: var(--brand-blue-dark);
   --text-on-dark: var(--grayscale-white);
-
   --text-on-light: var(--grayscale-gray-7);
   --text-primary: var(--grayscale-gray-7);
   --text-secondary: var(--grayscale-gray-5);
-  --background-site: var(--grayscale-white);
-  --mark-text: var(--grayscale-gray-7);
-  --selection-text: var(--grayscale-white);
-  --button-text-active: var(--grayscale-white);
-  --button-text-color: var(--grayscale-white);
+
+  --ui-accent: var(--brand-blue-base);
+  --ui-accent-dark: var(--brand-blue-dark-1);
+  --ui-accent-light: var(--brand-blue-light);
+  --ui-background: var(--grayscale-gray-3);
+  --ui-background-dark: var(--grayscale-gray-6);
+  --ui-background-light: var(--grayscale-gray-1);
+  --ui-border: var(--grayscale-gray-3);
+  --ui-border-dark: var(--grayscale-gray-6);
+  --ui-border-light: var(--grayscale-gray-1);
+  --ui-focus: var(--brand-blue-light);
   --ui-text-dark: var(--grayscale-gray-5);
-  --button-text-disabled: var(--grayscale-gray-3);
-  --button-text-hover: var(--grayscale-white);
   --ui-text-light: var(--grayscale-gray-3);
 }

@@ -1,6 +1,7 @@
 :is(.form-item--box, .form-item--color, .form-item--date, .form-item--email, .form-item--file, .form-item--month, .form-item--number, .form-item--password, .form-item--search, .form-item--select, .form-item--tel, .form-item--text, .form-item--time, .form-item--url, .form-item--week) {
   & :is(input, select) {
     @include focus;
+
     appearance: none;
     background: var(--form-background);
     block-size: rem(44px);

@@ -1,4 +1,5 @@
 const basePath = '';
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 
 /** @type {import('next').NextConfig} */
 module.exports = {
@@ -15,6 +16,12 @@ module.exports = {
     config.plugins.push(
       new webpack.DefinePlugin({
         'process.env.NEXT_BASEPATH': JSON.stringify(basePath || ''),
+      }),
+    );
+
+    config.plugins.push(
+      new StylelintWebpackPlugin({
+        exclude: ['node_modules', 'storybook'],
       }),
     );
 

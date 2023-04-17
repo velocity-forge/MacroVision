@@ -1,4 +1,3 @@
-
 $easing-swatch: rem(75px);
 
 .easing {
@@ -7,21 +6,6 @@ $easing-swatch: rem(75px);
 }
 
 .helptext {
-  margin-bottom: 1rem;
-}
-
-.group {
-  padding: 0 rem(150px) 0 1rem;
-
-  &:hover {
-    .indicator {
-      left: 100%;
-    }
-  }
-}
-
-
-.item {
   margin-bottom: 1rem;
 }
 
@@ -35,4 +19,18 @@ $easing-swatch: rem(75px);
   transition-duration: 1s;
   transition-property: left;
   width: $easing-swatch;
+}
+
+.group {
+  padding: 0 rem(150px) 0 1rem;
+
+  &:hover {
+    .indicator {
+      left: 100%;
+    }
+  }
+}
+
+.item {
+  margin-bottom: 1rem;
 }

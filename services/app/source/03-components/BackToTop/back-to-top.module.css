@@ -3,6 +3,7 @@
 @layer components {
   .link {
     @include set-link-vars(var(--grayscale-white));
+
     display: none;
 
     @media (--mobile-lg) {
@@ -29,6 +30,7 @@
         opacity: 0;
       }
     }
+
     &.show {
       opacity: 1 !important;
     }
