@@ -1,0 +1,25 @@
+@layer component {
+  .skiplink {
+    display: flex;
+    font-family: var(--font-family-system);
+    justify-content: center;
+    position: absolute;
+    inline-size: 100%;
+    z-index: 9999;
+  }
+
+  .link,
+  .link:visited,
+  .link:hover,
+  .link:focus {
+    background-color: var(--ui-background-dark);
+    border: 2px solid var(--ui-border-light);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-block-start-width: 0;
+    box-shadow: var(--box-shadow-2);
+    color: var(--text-on-dark);
+    display: inline-block;
+    font-weight: bold;
+  }
+}

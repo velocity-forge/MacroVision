@@ -1,0 +1,10 @@
+@layer components {
+  .site-name {
+    display: inline-block;
+  }
+
+  .text {
+    composes: global(h1);
+    margin-block-end: var(--spacing-2);
+  }
+}

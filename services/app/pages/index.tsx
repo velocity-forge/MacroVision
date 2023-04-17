@@ -1,18 +1,10 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Article from '../source/03-components/Article/Article';
+import Page from '../source/04-templates/Page/Page';
 
 const Home: NextPage = () => {
   const title = 'Forum One Next.js Starter App';
   return (
-    <Article title={title} showFooter={false}>
-      <Head>
-        <title>{title}</title>
-        <meta
-          name="description"
-          content="Next app using TypeScript and Emotion"
-        />
-      </Head>
+    <Page title={title} description="Next app using TypeScript and Emotion">
       <p>
         <a href="https://nextjs.org/docs">Next.js</a> app with{' '}
         <a href="https://www.typescriptlang.org/">TypeScript</a>.
@@ -123,7 +115,7 @@ const Home: NextPage = () => {
         quisquam interdum fringilla, delectus eleifend natoque tempor habitant
         laboriosam.
       </p>
-    </Article>
+    </Page>
   );
 };
 
