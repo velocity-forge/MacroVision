@@ -135,7 +135,7 @@ function Input({
         type={type}
         disabled={isDisabled}
         required={isRequired}
-        aria-required={isRequired ? 'true' : 'false'}
+        aria-required={isRequired && type !== 'range' ? 'true' : undefined}
         {...props}
       />
     </FormItem>

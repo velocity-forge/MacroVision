@@ -24,14 +24,20 @@ const Homepage: Story = args => (
             {...args.card}
             title="It’s Only a Model"
             media={
-              <img src="https://picsum.photos/800/600?image=1069" alt="" />
+              <img
+                src="https://picsum.photos/800/600?image=1069"
+                alt="Orange jellyfish swimming in blue water"
+              />
             }
           />
           <Card
             {...args.card}
             title="Let Us Ride to Camelot"
             media={
-              <img src="https://picsum.photos/800/600?image=1025" alt="" />
+              <img
+                src="https://picsum.photos/800/600?image=1025"
+                alt="A doggo wrapped in a blanket"
+              />
             }
           >
             <p>
@@ -43,13 +49,21 @@ const Homepage: Story = args => (
             {...args.card}
             title="What a Strange Person"
             media={
-              <img src="https://picsum.photos/800/600?image=1040" alt="" />
+              <img
+                src="https://picsum.photos/800/600?image=1040"
+                alt="Castle against a verdant landscape"
+              />
             }
           />
           <Card
             {...args.card}
             title="The Knights Who Say Ni"
-            media={<img src="https://picsum.photos/800/600?image=870" alt="" />}
+            media={
+              <img
+                src="https://picsum.photos/800/600?image=870"
+                alt="Close-up of a lighthouse against a night sky"
+              />
+            }
           />
         </Grid>
       </Section>

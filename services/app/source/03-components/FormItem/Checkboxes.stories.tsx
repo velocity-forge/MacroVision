@@ -28,7 +28,7 @@ export const Checkboxes: Story = () => (
     <Input
       {...Checkbox.args}
       label="Disabled Checked Choice"
-      id="checkbox-5"
+      id="checkbox-6"
       isDisabled={true}
       checked={true}
     />

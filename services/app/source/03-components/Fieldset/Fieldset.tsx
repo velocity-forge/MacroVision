@@ -37,7 +37,6 @@ function Fieldset({
       )}
       aria-describedby={id && description ? id : undefined}
       disabled={isDisabled}
-      aria-required={isRequired}
     >
       <legend
         className={clsx(styles.legend, isDisabled && styles['is-disabled'])}
