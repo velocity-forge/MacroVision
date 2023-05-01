@@ -7,6 +7,8 @@ import Footer from '../source/02-layouts/Footer/Footer';
 import Header from '../source/02-layouts/Header/Header';
 import SiteContainer from '../source/02-layouts/SiteContainer/SiteContainer';
 import BackToTop from '../source/03-components/BackToTop/BackToTop';
+import Menu from '../source/03-components/Menu/Menu';
+import footerStyles from '../source/03-components/Menu/menu-footer.module.css';
 import ResponsiveMenu from '../source/03-components/Menu/ResponsiveMenu/ResponsiveMenu';
 import SiteName from '../source/03-components/SiteName/SiteName';
 import Skiplink from '../source/03-components/Skiplink/Skiplink';
@@ -31,12 +33,31 @@ function MyApp({ Component, pageProps }: AppProps) {
                 title: 'Home',
                 url: '/',
               },
+              {
+                title: 'About',
+                url: '/about',
+              },
             ]}
           />
         </Header>
         {/* Breadcrumb */}
         <Component mainId={mainId} {...pageProps} />
-        <Footer>[FOOTER CONTENT]</Footer>
+        <Footer>
+          <Menu
+            items={[
+              {
+                title: 'Home',
+                url: '/',
+              },
+              {
+                title: 'About',
+                url: '/about',
+              },
+            ]}
+            modifierClasses={footerStyles.menu}
+            itemClasses={footerStyles.item}
+          />
+        </Footer>
       </SiteContainer>
       <BackToTop text="Back to Top" topElement="top" />
     </>
