@@ -1,24 +1,26 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Details from './Details';
+import { Meta, StoryObj } from '@storybook/react';
+import parse from 'html-react-parser';
+import DetailsComponent from './Details';
+import detailsArgs from './details.yml';
 
-const settings = {
+const meta: Meta<typeof DetailsComponent> = {
   title: 'Components/Details',
-  component: Details,
-} as ComponentMeta<typeof Details>;
-
-const Template: ComponentStory<typeof Details> = args => (
-  <Details {...args}>
-    <p>Details content</p>
-  </Details>
-);
-
-const _Details = Template.bind({});
-_Details.args = {
-  detailsSummary: 'Details summary',
-  detailsDescription: 'Details description',
-  modifierClasses: '',
-  isRequired: false,
+  component: DetailsComponent,
+  tags: ['autodocs'],
+  argTypes: {
+    children: {
+      control: false,
+    },
+  },
 };
 
-export default settings;
-export { _Details };
+type Story = StoryObj<typeof DetailsComponent>;
+const Details: Story = {
+  args: {
+    ...detailsArgs,
+    children: parse(detailsArgs.children),
+  },
+};
+
+export default meta;
+export { Details };

@@ -1,18 +1,17 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Video from './Video';
+import { Meta, StoryObj } from '@storybook/react';
+import VideoComponent from './Video';
+import videoArgs from './video.yml';
 
-const settings = {
+const meta: Meta<typeof VideoComponent> = {
   title: 'Components/Video',
-  component: Video,
-} as ComponentMeta<typeof Video>;
-
-const Template: ComponentStory<typeof Video> = args => <Video {...args} />;
-
-const _Video = Template.bind({});
-_Video.args = {
-  iframeSrc: 'https://player.vimeo.com/video/505735218',
-  iframeTitle: 'Say Hello to the New Forum One',
+  component: VideoComponent,
+  tags: ['autodocs'],
 };
 
-export default settings;
-export { _Video };
+type Story = StoryObj<typeof VideoComponent>;
+const Video: Story = {
+  args: videoArgs,
+};
+
+export default meta;
+export { Video };

@@ -1,0 +1,7 @@
+---
+id: 'search'
+label: 'Search'
+type: 'search'
+placeholder: 'Placeholder'
+size: 60
+maxLength: 128

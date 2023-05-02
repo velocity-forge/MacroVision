@@ -1,22 +1,23 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import styles from './back-to-top.module.css';
-import BackToTop from './BackToTop';
+import backToTopArgs from './back-to-top.yml';
+import BackToTopComponent from './BackToTop';
 
-const settings = {
+const meta: Meta<typeof BackToTopComponent> = {
   title: 'Components/Back To Top',
-  component: BackToTop,
-} as ComponentMeta<typeof BackToTop>;
-
-const Template: ComponentStory<typeof BackToTop> = args => (
-  <BackToTop {...args} />
-);
-const _BackToTop = Template.bind({});
-_BackToTop.args = {
-  topElement: 'top',
-  text: 'Back to top',
-  isDemo: true,
-  modifierClasses: styles.show,
+  component: BackToTopComponent,
+  tags: ['autodocs'],
 };
 
-export default settings;
-export { _BackToTop };
+type Story = StoryObj<typeof BackToTopComponent>;
+
+const BackToTop: Story = {
+  args: {
+    ...backToTopArgs,
+    modifierClasses: styles.show,
+  },
+  storyName: 'Back To Top',
+};
+
+export default meta;
+export { BackToTop };

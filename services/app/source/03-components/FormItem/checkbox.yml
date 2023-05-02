@@ -1,0 +1,5 @@
+---
+id: 'checkbox'
+label: 'Checkbox'
+labelDisplay: 'after'
+type: 'checkbox'

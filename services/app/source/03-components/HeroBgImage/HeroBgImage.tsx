@@ -39,3 +39,4 @@ function HeroBgImage({
 }
 
 export default HeroBgImage;
+export type { HeroBgImageProps };

@@ -1,4 +1,4 @@
-import { ComponentStory, Meta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import listStyles from './list.module.css';
 
 function DemoList({ style }: { style: string }): JSX.Element {
@@ -11,8 +11,9 @@ function DemoList({ style }: { style: string }): JSX.Element {
   );
 }
 
-const settings: Meta<typeof DemoList> = {
+const meta: Meta<typeof DemoList> = {
   title: 'Components/List',
+  component: DemoList,
   argTypes: {
     style: {
       options: ['border', 'clean', 'inline', 'pipeline', 'column'],
@@ -20,34 +21,33 @@ const settings: Meta<typeof DemoList> = {
   },
 };
 
-const Template: ComponentStory<typeof DemoList> = args => (
-  <DemoList {...args} />
-);
-
-const Clean = Template.bind({});
-Clean.args = {
-  style: 'clean',
+type Story = StoryObj<typeof DemoList>;
+const Clean: Story = {
+  args: {
+    style: 'clean',
+  },
+};
+const Inline: Story = {
+  args: {
+    style: 'inline',
+  },
+};
+const Pipeline: Story = {
+  args: {
+    style: 'pipeline',
+  },
+};
+const Border: Story = {
+  args: {
+    style: 'border',
+  },
 };
 
-const Inline = Template.bind({});
-Inline.args = {
-  style: 'inline',
+const Column: Story = {
+  args: {
+    style: 'column',
+  },
 };
 
-const Pipeline = Template.bind({});
-Pipeline.args = {
-  style: 'pipeline',
-};
-
-const Border = Template.bind({});
-Border.args = {
-  style: 'border',
-};
-
-const Column = Template.bind({});
-Column.args = {
-  style: 'column',
-};
-
-export default settings;
+export default meta;
 export { Clean, Inline, Pipeline, Border, Column };

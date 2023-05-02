@@ -1,10 +1,12 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Media from './Media';
+import { Meta, StoryObj } from '@storybook/react';
+import parse from 'html-react-parser';
+import MediaLayout from './Media';
 import styles from './media.module.css';
+import mediaArgs from './media.yml';
 
-const settings = {
+const meta: Meta<typeof MediaLayout> = {
   title: 'Layouts/Media',
-  component: Media,
+  component: MediaLayout,
   argTypes: {
     media: {
       control: false,
@@ -13,36 +15,31 @@ const settings = {
       control: false,
     },
   },
-} as ComponentMeta<typeof Media>;
-
-const Template: ComponentStory<typeof Media> = args => <Media {...args} />;
-
-const Default = Template.bind({});
-Default.args = {
-  media: (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src="http://fpoimg.com/200x150?text=Media Image" alt="Media Image" />
-  ),
-  mediaContent: (
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-      necessitatibus fuga provident aut.
-    </p>
-  ),
-  modifierClasses: '',
 };
 
-const Column = Template.bind({});
-Column.args = {
-  ...Default.args,
-  modifierClasses: styles['media--column'],
+type Story = StoryObj<typeof MediaLayout>;
+
+const Default: Story = {
+  args: {
+    ...mediaArgs,
+    media: parse(mediaArgs.media),
+    mediaContent: parse(mediaArgs.mediaContent),
+  },
 };
 
-const Reversed = Template.bind({});
-Reversed.args = {
-  ...Default.args,
-  modifierClasses: styles['media--reversed'],
+const Column: Story = {
+  args: {
+    ...Default.args,
+    modifierClasses: styles['media--column'],
+  },
 };
 
-export default settings;
+const Reversed: Story = {
+  args: {
+    ...Default.args,
+    modifierClasses: styles['media--reversed'],
+  },
+};
+
+export default meta;
 export { Default, Column, Reversed };

@@ -1,24 +1,23 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import SampleContent from '../../06-utility/storybook/SampleContent';
-import Footer from './Footer';
+import FooterLayout from './Footer';
+import footerArgs from './footer.yml';
 
-const settings = {
+const meta: Meta<typeof FooterLayout> = {
   title: 'Layouts/Footer',
-  component: Footer,
-} as ComponentMeta<typeof Footer>;
-
-const Template: ComponentStory<typeof Footer> = args => (
-  <Footer {...args}>
-    <SampleContent>Footer Layout Content</SampleContent>
-  </Footer>
-);
-
-const _Footer = Template.bind({});
-_Footer.args = {
-  hasConstrain: true,
-  modifierClasses: '',
-  constrainClasses: '',
+  component: FooterLayout,
 };
 
-export default settings;
-export { _Footer };
+type Story = StoryObj<typeof FooterLayout>;
+
+const Footer: Story = {
+  render: args => (
+    <FooterLayout {...args}>
+      <SampleContent>Footer Layout Content</SampleContent>
+    </FooterLayout>
+  ),
+  args: footerArgs,
+};
+
+export default meta;
+export { Footer };

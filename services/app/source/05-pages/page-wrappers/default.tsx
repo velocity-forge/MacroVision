@@ -4,8 +4,8 @@ import Header from '../../02-layouts/Header/Header';
 import SiteContainer from '../../02-layouts/SiteContainer/SiteContainer';
 import BackToTop from '../../03-components/BackToTop/BackToTop';
 import { FooterMenu } from '../../03-components/Menu/Menu.stories';
-import { _ResponsiveMenu as ResponsiveMenu } from '../../03-components/Menu/ResponsiveMenu/ResponsiveMenu.stories';
-import { _SiteName as SiteName } from '../../03-components/SiteName/SiteName.stories';
+import { ResponsiveMenu } from '../../03-components/Menu/ResponsiveMenu/ResponsiveMenu.stories';
+import { SiteName } from '../../03-components/SiteName/SiteName.stories';
 import Skiplink from '../../03-components/Skiplink/Skiplink';
 
 interface PageWrapperProps {
@@ -20,11 +20,15 @@ function PageWrapper({ children }: PageWrapperProps): JSX.Element {
       <Skiplink id={mainId} />
       <SiteContainer>
         <Header>
-          <SiteName
-            siteName={SiteName.args?.siteName || 'Site Name'}
-            {...SiteName.args}
-          />
-          <ResponsiveMenu items={ResponsiveMenu.args?.items || []} />
+          {SiteName.render && (
+            <SiteName.render
+              siteName={SiteName.args?.siteName || 'Site Name'}
+              {...SiteName.args}
+            />
+          )}
+          {ResponsiveMenu.render && (
+            <ResponsiveMenu.render items={ResponsiveMenu.args?.items || []} />
+          )}
         </Header>
         {React.Children.map(children, el => {
           if (React.isValidElement(el)) {
@@ -32,10 +36,12 @@ function PageWrapper({ children }: PageWrapperProps): JSX.Element {
           }
         })}
         <Footer>
-          <FooterMenu
-            items={FooterMenu.args?.items || []}
-            {...FooterMenu.args}
-          />
+          {FooterMenu.render && (
+            <FooterMenu.render
+              items={FooterMenu.args?.items || []}
+              {...FooterMenu.args}
+            />
+          )}
         </Footer>
       </SiteContainer>
       <BackToTop text="Back to Top" topElement="top" />

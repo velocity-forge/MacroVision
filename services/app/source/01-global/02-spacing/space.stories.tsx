@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 
 const allVars = getCssVariables();
@@ -23,7 +23,7 @@ const spacing = allVars.reduce((allSpacing, [key, value]) => {
   return allSpacing;
 }, {} as SpacingOptions);
 
-const Spacing = ({ spacing }: { spacing: SpacingOptions }) => {
+const SpacingComponent = ({ spacing }: { spacing: SpacingOptions }) => {
   return (
     <table>
       <thead>
@@ -61,8 +61,9 @@ const Spacing = ({ spacing }: { spacing: SpacingOptions }) => {
   );
 };
 
-const settings = {
+const meta: Meta<typeof SpacingComponent> = {
   title: 'Global/Spacing',
+  component: SpacingComponent,
   argTypes: {
     spacing: {
       table: {
@@ -70,13 +71,13 @@ const settings = {
       },
     },
   },
-} as ComponentMeta<typeof Spacing>;
-
-const Template: ComponentStory<typeof Spacing> = args => <Spacing {...args} />;
-const _Spacing = Template.bind({});
-_Spacing.args = {
-  spacing,
 };
 
-export default settings;
-export { _Spacing };
+const Spacing: StoryObj<typeof SpacingComponent> = {
+  args: {
+    spacing,
+  },
+};
+
+export default meta;
+export { Spacing };

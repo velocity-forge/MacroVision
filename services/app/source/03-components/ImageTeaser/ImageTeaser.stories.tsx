@@ -1,34 +1,22 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ImageTeaser from './ImageTeaser';
+import { Meta, StoryObj } from '@storybook/react';
+import parse from 'html-react-parser';
+import imageTeaserArgs from './image-teaser.yml';
+import ImageTeaserComponent from './ImageTeaser';
 
-const settings = {
+const meta: Meta<typeof ImageTeaserComponent> = {
   title: 'Components/Image Teaser',
-  component: ImageTeaser,
-} as ComponentMeta<typeof ImageTeaser>;
-
-const Template: ComponentStory<typeof ImageTeaser> = args => (
-  <ImageTeaser {...args} />
-);
-
-const _ImageTeaser = Template.bind({});
-_ImageTeaser.args = {
-  url: '#0',
-  image: (
-    <img
-      src="http://fpoimg.com/140x105?text=Thumbnail 4:3"
-      alt="Thumbnail placeholder"
-    />
-  ),
-  title: 'Title',
-  date: 'Teaser Date',
-  summary: (
-    <p>
-      This is the summary, which can contain{' '}
-      <abbr title="Hyper Text Markup Language">HTML</abbr> markup. It should be
-      600 characters or less.
-    </p>
-  ),
+  component: ImageTeaserComponent,
+  tags: ['autodocs'],
 };
 
-export default settings;
-export { _ImageTeaser };
+type Story = StoryObj<typeof ImageTeaserComponent>;
+const ImageTeaser: Story = {
+  args: {
+    ...imageTeaserArgs,
+    image: parse(imageTeaserArgs.image),
+    summary: parse(imageTeaserArgs.summary),
+  },
+};
+
+export default meta;
+export { ImageTeaser };

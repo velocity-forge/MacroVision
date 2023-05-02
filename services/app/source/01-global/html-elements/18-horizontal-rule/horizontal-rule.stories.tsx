@@ -1,19 +1,22 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
-const settings: Meta = {
+const meta: Meta = {
   title: 'Global/HTML Elements/Horizontal Rule',
   parameters: {
     controls: { hideNoControlsWarning: true },
   },
 };
 
-const HorizontalRule: Story = () => {
-  return (
-    <>
-      <hr />
-    </>
-  );
+const HorizontalRule: StoryObj = {
+  render: () => {
+    return (
+      <>
+        <hr />
+      </>
+    );
+  },
+  storyName: 'Horizontal Rule',
 };
 
-export default settings;
+export default meta;
 export { HorizontalRule };

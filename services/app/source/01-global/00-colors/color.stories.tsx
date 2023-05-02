@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './color.module.css';
 
@@ -81,7 +81,7 @@ const ColorGroup = ({
   );
 };
 
-const ColorPalette = ({ brand, grayscale, other }: ColorFamily) => (
+const ColorPaletteComponent = ({ brand, grayscale, other }: ColorFamily) => (
   <div>
     {brand && (
       <>
@@ -125,8 +125,9 @@ const ColorPalette = ({ brand, grayscale, other }: ColorFamily) => (
   </div>
 );
 
-const settings = {
+const meta: Meta<typeof ColorPaletteComponent> = {
   title: 'Global/Color Palette',
+  component: ColorPaletteComponent,
   argTypes: {
     brand: {
       table: {
@@ -144,13 +145,14 @@ const settings = {
       },
     },
   },
-} as ComponentMeta<typeof ColorPalette>;
+};
 
-const Template: ComponentStory<typeof ColorPalette> = args => (
-  <ColorPalette {...args} />
-);
-const _ColorPalette = Template.bind({});
-_ColorPalette.args = colorFamilies;
+type Story = StoryObj<typeof ColorPaletteComponent>;
 
-export default settings;
-export { _ColorPalette };
+const ColorPalette: Story = {
+  args: colorFamilies,
+  storyName: 'Color Palette',
+};
+
+export default meta;
+export { ColorPalette };

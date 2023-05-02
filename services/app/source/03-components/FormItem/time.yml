@@ -1,0 +1,7 @@
+---
+id: 'time'
+label: 'Text'
+type: 'time'
+placeholder: 'hh:mm:ss'
+size: 12
+step: 1

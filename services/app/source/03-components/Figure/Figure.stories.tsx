@@ -1,74 +1,77 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { _Video as Video } from '../Video/Video.stories';
-import Figure from './Figure';
+import { Meta, StoryObj } from '@storybook/react';
+import parse from 'html-react-parser';
+import { Video } from '../Video/Video.stories';
+import FigureComponent from './Figure';
 import styles from './figure.module.css';
+import figureArgs from './figure.yml';
 
-const settings = {
+const meta: Meta<typeof FigureComponent> = {
   title: 'Components/Figure',
-  component: Figure,
-} as ComponentMeta<typeof Figure>;
-
-const Template: ComponentStory<typeof Figure> = args => <Figure {...args} />;
-
-const Default = Template.bind({});
-Default.args = {
-  media: (
-    <img
-      src="https://picsum.photos/200/200?image=237"
-      alt="dog photo"
-      width={200}
-      height={200}
-    />
-  ),
-  caption:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper vel metus at cursus.',
+  component: FigureComponent,
+  tags: ['autodocs'],
 };
 
-const FigureCentered = Template.bind({});
-FigureCentered.args = {
-  ...Default.args,
-  modifierClasses: 'u-align-center',
+type Story = StoryObj<typeof FigureComponent>;
+
+const Default: Story = {
+  args: {
+    ...figureArgs,
+    media: parse(figureArgs.media),
+  },
 };
 
-const FigureLeftAligned = Template.bind({});
-FigureLeftAligned.args = {
-  ...Default.args,
-  modifierClasses: 'u-align-left',
+const FigureCentered: Story = {
+  args: {
+    ...Default.args,
+    modifierClasses: 'u-align-center',
+  },
 };
 
-const FigureRightAligned = Template.bind({});
-FigureRightAligned.args = {
-  ...Default.args,
-  modifierClasses: 'u-align-right',
+const FigureLeftAligned: Story = {
+  args: {
+    ...Default.args,
+    modifierClasses: 'u-align-left',
+  },
 };
 
-const FigureWithVideo = Template.bind({});
-FigureWithVideo.args = {
-  media: <Video {...Video.args} />,
-  caption:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper vel metus at cursus.',
-  modifierClasses: styles['figure--iframe'],
+const FigureRightAligned: Story = {
+  args: {
+    ...Default.args,
+    modifierClasses: 'u-align-right',
+  },
 };
 
-const FigureWithVideoCentered = Template.bind({});
-FigureWithVideoCentered.args = {
-  ...FigureWithVideo.args,
-  modifierClasses: [styles['figure--iframe'], 'u-align-center'],
+const FigureWithVideo: Story = {
+  args: {
+    media: Video.render && <Video.render {...Video.args} />,
+    caption:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla semper vel metus at cursus.',
+    modifierClasses: styles['figure--iframe'],
+  },
 };
 
-const FigureWithVideoLeftAligned = Template.bind({});
-FigureWithVideoLeftAligned.args = {
-  ...FigureWithVideo.args,
-  modifierClasses: [styles['figure--iframe'], 'u-align-left'],
+const FigureWithVideoCentered: Story = {
+  args: {
+    ...FigureWithVideo.args,
+    modifierClasses: [styles['figure--iframe'], 'u-align-center'],
+  },
 };
 
-const FigureWithVideoRightAligned = Template.bind({});
-FigureWithVideoRightAligned.args = {
-  ...FigureWithVideo.args,
-  modifierClasses: [styles['figure--iframe'], 'u-align-right'],
+const FigureWithVideoLeftAligned: Story = {
+  args: {
+    ...FigureWithVideo.args,
+    modifierClasses: [styles['figure--iframe'], 'u-align-left'],
+  },
 };
 
-export default settings;
+const FigureWithVideoRightAligned: Story = {
+  args: {
+    ...FigureWithVideo.args,
+    modifierClasses: [styles['figure--iframe'], 'u-align-right'],
+  },
+};
+
+export default meta;
 export {
   Default,
   FigureCentered,

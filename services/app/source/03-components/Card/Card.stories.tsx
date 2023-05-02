@@ -1,66 +1,49 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
+import parse from 'html-react-parser';
 import Grid from '../../02-layouts/Grid/Grid';
-import Card from './Card';
+import CardComponent from './Card';
 import styles from './card.module.css';
+import cardArgs from './card.yml';
 
-const settings = {
+const meta: Meta<typeof CardComponent> = {
   title: 'Components/Card',
-  component: Card,
-} as ComponentMeta<typeof Card>;
-const Template: ComponentStory<typeof Card> = args => (
-  <Card {...args}>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et
-      accumsan augue. Morbi non laoreet lorem.
-    </p>
-  </Card>
-);
+  component: CardComponent,
+  tags: ['autodocs'],
+  argTypes: {
+    children: {
+      control: false,
+    },
+    tags: {
+      control: false,
+    },
+    media: {
+      control: false,
+    },
+  },
+};
 
-const Default = Template.bind({});
-Default.args = {
-  title: 'Card title',
-  url: '#0',
-  footer: '',
-  date: 'September 28, 2018',
-  readMore: true,
-  media: (
-    <img
-      src="https://picsum.photos/id/1015/800/600"
-      alt="Placeholder card image"
-    />
-  ),
-  tags: [
-    {
-      url: '#0',
-      title: 'Tag 1',
-    },
-    {
-      url: '#0',
-      title: 'Tag 2',
-    },
-    {
-      url: '#0',
-      title: 'Tag 3',
-    },
-    {
-      url: '#0',
-      title: 'Tag 4',
-    },
+type Story = StoryObj<typeof CardComponent>;
+const Default: Story = {
+  args: {
+    ...cardArgs,
+    media: parse(cardArgs.media),
+    children: parse(cardArgs.children),
+  },
+  decorators: [
+    Component => (
+      <Grid numCols={3}>
+        <Component />
+      </Grid>
+    ),
   ],
 };
-Default.decorators = [
-  Story => (
-    <Grid numCols={3}>
-      <Story />
-    </Grid>
-  ),
-];
 
-const FeatureCard = Template.bind({});
-FeatureCard.args = {
-  ...Default.args,
-  modifierClasses: styles['card--feature'],
+const FeatureCard: Story = {
+  args: {
+    ...Default.args,
+    modifierClasses: styles['card--feature'],
+  },
 };
 
-export default settings;
+export default meta;
 export { Default, FeatureCard };

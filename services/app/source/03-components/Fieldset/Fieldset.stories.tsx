@@ -1,30 +1,29 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Fieldset from './Fieldset';
+import { Meta, StoryObj } from '@storybook/react';
+import parse from 'html-react-parser';
+import FieldsetComponent from './Fieldset';
 import styles from './fieldset.module.css';
+import fieldsetArgs from './fieldset.yml';
 
-const settings = {
+const meta: Meta<typeof FieldsetComponent> = {
   title: 'Components/Fieldset',
-  component: Fieldset,
-} as ComponentMeta<typeof Fieldset>;
-
-const Template: ComponentStory<typeof Fieldset> = args => (
-  <Fieldset {...args}>
-    <p>Fieldset content goes here&hellip;</p>
-  </Fieldset>
-);
-
-const _Fieldset = Template.bind({});
-_Fieldset.args = {
-  legend: 'Fieldset',
-  description: <p>The description for this fieldset.</p>,
-  modifierClasses: styles['fieldset--default'],
-  id: 'fieldset',
-  errors: '',
-  prefix: '',
-  suffix: '',
-  isRequired: false,
-  isDisabled: false,
+  component: FieldsetComponent,
+  tags: ['autodocs'],
+  argTypes: {
+    children: {
+      control: false,
+    },
+  },
 };
 
-export default settings;
-export { _Fieldset };
+type Story = StoryObj<typeof FieldsetComponent>;
+const Fieldset: Story = {
+  args: {
+    ...fieldsetArgs,
+    description: parse(fieldsetArgs.description),
+    children: parse(fieldsetArgs.children),
+    modifierClasses: styles['fieldset--default'],
+  },
+};
+
+export default meta;
+export { Fieldset };

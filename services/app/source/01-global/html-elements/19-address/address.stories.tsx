@@ -1,14 +1,14 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
-const settings: Meta = {
+const meta: Meta = {
   title: 'Global/HTML Elements/Address',
   parameters: {
     controls: { hideNoControlsWarning: true },
   },
 };
 
-const Address: Story = () => {
-  return (
+const Address: StoryObj = {
+  render: () => (
     <>
       <address>
         333 E Wonderview Ave
@@ -16,8 +16,8 @@ const Address: Story = () => {
         Estes Park, CO 80517
       </address>
     </>
-  );
+  ),
 };
 
-export default settings;
+export default meta;
 export { Address };

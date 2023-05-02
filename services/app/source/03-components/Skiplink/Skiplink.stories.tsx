@@ -1,19 +1,17 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Skiplink from './Skiplink';
+import { Meta, StoryObj } from '@storybook/react';
+import SkiplinkComponent from './Skiplink';
+import skiplinkArgs from './skiplink.yml';
 
-const settings: ComponentMeta<typeof Skiplink> = {
+const meta: Meta<typeof SkiplinkComponent> = {
   title: 'Components/Skiplink',
-  component: Skiplink,
+  component: SkiplinkComponent,
+  tags: ['autodocs'],
 };
 
-const Template: ComponentStory<typeof Skiplink> = args => (
-  <Skiplink {...args} />
-);
-
-const _Skiplink = Template.bind({});
-_Skiplink.args = {
-  id: 'main',
+type Story = StoryObj<typeof SkiplinkComponent>;
+const Skiplink: Story = {
+  args: skiplinkArgs,
 };
 
-export default settings;
-export { _Skiplink };
+export default meta;
+export { Skiplink };

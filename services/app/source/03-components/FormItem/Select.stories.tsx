@@ -1,8 +1,10 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import FormItem, { Select } from './FormItem';
-import FormItemLabel from './FormItemLabel';
+import { Meta, StoryObj } from '@storybook/react';
+import parse from 'html-react-parser';
+import { Select } from './FormItem';
+import withGroupArgs from './select-with-groups.yml';
+import selectArgs from './select.yml';
 
-const settings = {
+const meta: Meta<typeof Select> = {
   title: 'Components/Form Item/Select',
   component: Select,
   args: {
@@ -16,7 +18,6 @@ const settings = {
     prefix: '',
     suffix: '',
   },
-  subcomponents: { FormItem, FormItemLabel },
   argTypes: {
     type: {
       table: {
@@ -29,45 +30,21 @@ const settings = {
       },
     },
   },
-} as ComponentMeta<typeof Select>;
-
-const Template: ComponentStory<typeof Select> = args => <Select {...args} />;
-
-const Default = Template.bind({});
-Default.args = {
-  label: 'Select',
-  id: 'select',
-  children: (
-    <>
-      <option>Option One</option>
-      <option>Option Two</option>
-      <option>Option Three</option>
-      <option>Option Four</option>
-      <option>Option Five</option>
-      <option disabled={true}>Disabled Option</option>
-    </>
-  ),
 };
 
-const WithGroups = Template.bind({});
-WithGroups.args = {
-  label: 'Select with groups',
-  id: 'select-options',
-  children: (
-    <>
-      <optgroup label="Group One">
-        <option>Option A</option>
-        <option>Option B</option>
-        <option>Option C</option>
-      </optgroup>
-      <optgroup label="Group Two">
-        <option>Option D</option>
-        <option>Option E</option>
-        <option disabled={true}>Disabled Option</option>
-      </optgroup>
-    </>
-  ),
+type Story = StoryObj<typeof Select>;
+const Default: Story = {
+  args: {
+    ...selectArgs,
+    children: parse(selectArgs.children),
+  },
+};
+const WithGroups: Story = {
+  args: {
+    ...withGroupArgs,
+    children: parse(withGroupArgs.children),
+  },
 };
 
-export default settings;
+export default meta;
 export { Default, WithGroups };

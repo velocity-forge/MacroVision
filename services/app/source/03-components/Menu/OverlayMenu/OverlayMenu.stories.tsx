@@ -1,40 +1,17 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import OverlayMenu from './OverlayMenu';
+import { Meta, StoryObj } from '@storybook/react';
+import overlayMenuArgs from './overlay-menu.yml';
+import OverlayMenuComponent from './OverlayMenu';
 
-const settings: ComponentMeta<typeof OverlayMenu> = {
+const meta: Meta<typeof OverlayMenuComponent> = {
   title: 'Components/Menu/Overlay Menu',
-  component: OverlayMenu,
+  component: OverlayMenuComponent,
+  tags: ['autodocs'],
 };
 
-const Template: ComponentStory<typeof OverlayMenu> = args => (
-  <OverlayMenu {...args} />
-);
-
-const _OverlayMenu = Template.bind({});
-_OverlayMenu.args = {
-  items: [
-    {
-      title: 'Home',
-      url: '#0',
-      inActiveTrail: false,
-    },
-    {
-      title: 'About',
-      url: '#0',
-      inActiveTrail: false,
-    },
-    {
-      title: 'Resources',
-      url: '#0',
-      inActiveTrail: false,
-    },
-    {
-      title: 'Contact',
-      url: '#0',
-      inActiveTrail: false,
-    },
-  ],
+type Story = StoryObj<typeof OverlayMenuComponent>;
+const OverlayMenu: Story = {
+  args: overlayMenuArgs,
 };
 
-export default settings;
-export { _OverlayMenu };
+export default meta;
+export { OverlayMenu };

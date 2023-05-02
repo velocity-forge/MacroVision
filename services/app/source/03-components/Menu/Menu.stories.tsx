@@ -1,52 +1,29 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import Menu from './Menu';
 import footerStyles from './menu-footer.module.css';
+import footerMenuArgs from './menu-footer.yml';
+import menuArgs from './menu.yml';
 
-export default {
+const meta: Meta<typeof Menu> = {
   title: 'Components/Menu',
   component: Menu,
-} as ComponentMeta<typeof Menu>;
-
-const Template: ComponentStory<typeof Menu> = args => <Menu {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  items: [
-    {
-      title: 'Link 1',
-      url: '#0',
-    },
-    {
-      title: 'Link 2',
-      url: '#0',
-    },
-  ],
+  tags: ['autodocs'],
 };
 
-export const FooterMenu = Template.bind({});
-FooterMenu.args = {
-  items: [
-    {
-      title: 'Careers',
-      url: '#0',
-      inActiveTrail: false,
-    },
-    {
-      title: 'Contact',
-      url: '#0',
-      inActiveTrail: false,
-    },
-    {
-      title: 'Credits',
-      url: '#0',
-      inActiveTrail: false,
-    },
-    {
-      title: 'Terms of Use',
-      url: '#0',
-      inActiveTrail: false,
-    },
-  ],
-  modifierClasses: footerStyles.menu,
-  itemClasses: footerStyles.item,
+type Story = StoryObj<typeof Menu>;
+const Default: Story = {
+  args: menuArgs,
 };
+const FooterMenu: Story = {
+  // Workaround to allow story to be imported elsewhere.
+  // See https://github.com/storybookjs/storybook/issues/22278
+  render: args => <Menu {...args} />,
+  args: {
+    ...footerMenuArgs,
+    modifierClasses: footerStyles.menu,
+    itemClasses: footerStyles.item,
+  },
+};
+
+export default meta;
+export { Default, FooterMenu };

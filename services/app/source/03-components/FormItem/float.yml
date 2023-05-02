@@ -1,0 +1,6 @@
+---
+id: 'float'
+label: 'Number (float)'
+type: 'number'
+placeholder: 'Placeholder'
+step: 'any'

@@ -1,0 +1,6 @@
+---
+id: 'radio'
+label: 'Radio option'
+labelDisplay: 'after'
+type: 'radio'
+name: 'demo'

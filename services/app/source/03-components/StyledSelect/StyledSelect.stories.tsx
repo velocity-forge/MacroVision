@@ -1,90 +1,21 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import StyledSelect from './StyledSelect';
+import { Meta, StoryObj } from '@storybook/react';
+import styledSelectArgs from './styled-select.yml';
+import StyledSelectComponent from './StyledSelect';
+import withGroupsArgs from './with-groups.yml';
 
-const settings: ComponentMeta<typeof StyledSelect> = {
+const meta: Meta<typeof StyledSelectComponent> = {
   title: 'Components/Styled Select',
-  component: StyledSelect,
+  component: StyledSelectComponent,
+  tags: ['autodocs'],
 };
 
-const Template: ComponentStory<typeof StyledSelect> = args => (
-  <StyledSelect {...args} />
-);
-
-const _StyledSelect = Template.bind({});
-_StyledSelect.args = {
-  options: [
-    {
-      value: 'one',
-      label: 'Option One',
-    },
-    {
-      value: 'two',
-      label: 'Option Two',
-    },
-    {
-      value: 'three',
-      label: 'Option Three',
-    },
-    {
-      value: 'four',
-      label: 'Option Four',
-    },
-    {
-      value: 'five',
-      label: 'Option Five',
-    },
-    {
-      value: 'six',
-      label: 'Disabled Option',
-      isDisabled: true,
-    },
-  ],
-  isMulti: true,
-  isSearchable: true,
+type Story = StoryObj<typeof StyledSelectComponent>;
+const StyledSelect: Story = {
+  args: styledSelectArgs,
+};
+const WithGroups: Story = {
+  args: withGroupsArgs,
 };
 
-const WithGroups = Template.bind({});
-WithGroups.args = {
-  options: [
-    {
-      label: 'Group One',
-      options: [
-        {
-          value: 'one',
-          label: 'Option One',
-        },
-        {
-          value: 'two',
-          label: 'Option Two',
-        },
-        {
-          value: 'three',
-          label: 'Option Three',
-        },
-      ],
-    },
-    {
-      label: 'Group Two',
-      options: [
-        {
-          value: 'four',
-          label: 'Option Four',
-        },
-        {
-          value: 'five',
-          label: 'Option Five',
-        },
-        {
-          value: 'six',
-          label: 'Disabled Option',
-          isDisabled: true,
-        },
-      ],
-    },
-  ],
-  isMulti: false,
-  isSearchable: false,
-};
-
-export default settings;
-export { _StyledSelect, WithGroups };
+export default meta;
+export { StyledSelect, WithGroups };

@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Property } from 'csstype';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './duration.module.css';
@@ -16,7 +16,7 @@ const duration = allVars.reduce((allDurations, [key, value]) => {
   return allDurations;
 }, {} as DurationOptions);
 
-const Duration = ({ duration }: { duration: DurationOptions }) => {
+const DurationComponent = ({ duration }: { duration: DurationOptions }) => {
   return (
     <div className={styles.duration}>
       <div className={styles.helptext}>(Hover to demo duration)</div>
@@ -40,8 +40,9 @@ const Duration = ({ duration }: { duration: DurationOptions }) => {
   );
 };
 
-const settings = {
+const meta: Meta<typeof DurationComponent> = {
   title: 'Global/Duration',
+  component: DurationComponent,
   argTypes: {
     duration: {
       table: {
@@ -49,15 +50,13 @@ const settings = {
       },
     },
   },
-} as ComponentMeta<typeof Duration>;
-
-const Template: ComponentStory<typeof Duration> = args => (
-  <Duration {...args} />
-);
-const _Duration = Template.bind({});
-_Duration.args = {
-  duration: duration,
 };
 
-export default settings;
-export { _Duration };
+type Story = StoryObj<typeof DurationComponent>;
+const Duration: Story = {
+  args: {
+    duration,
+  },
+};
+export default meta;
+export { Duration };

@@ -1,0 +1,7 @@
+---
+id: 'email'
+label: 'Email'
+type: 'email'
+placeholder: 'email@example.com'
+size: 60
+maxLength: 255

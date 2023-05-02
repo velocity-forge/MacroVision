@@ -1,0 +1,6 @@
+---
+id: 'url'
+label: 'URL'
+type: 'url'
+placeholder: 'Placeholder'
+size: 12

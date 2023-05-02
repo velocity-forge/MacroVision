@@ -188,9 +188,9 @@ hooks:
 # https://ngrok.com/docs#http or run "ngrok http -h"
 
 # disable_settings_management: false
-# If true, ddev will not create CMS-specific settings files like
-# Drupal's settings.php/settings.ddev.php or TYPO3's AdditionalConfiguration.php
-# In this case the user must provide all such settings.
+# If true, ddev will not create CMS-specific meta files like
+# Drupal's meta.php/meta.ddev.php or TYPO3's AdditionalConfiguration.php
+# In this case the user must provide all such meta.
 
 # You can inject environment variables into the web container with:
 # web_environment:

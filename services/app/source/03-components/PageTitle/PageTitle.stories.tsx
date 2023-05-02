@@ -1,9 +1,10 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import PageTitle from './PageTitle';
+import { Meta, StoryObj } from '@storybook/react';
+import pageTitleArgs from './page-title.yml';
+import PageTitleComponent from './PageTitle';
 
-const settings = {
+const meta: Meta<typeof PageTitleComponent> = {
   title: 'Components/Page Title',
-  component: PageTitle,
+  component: PageTitleComponent,
   argTypes: {
     pageTitle: {
       type: 'string',
@@ -20,15 +21,13 @@ const settings = {
       include: ['pageTitle', 'modifierClasses'],
     },
   },
-} as ComponentMeta<typeof PageTitle>;
-
-const Template: ComponentStory<typeof PageTitle> = args => (
-  <PageTitle {...args} />
-);
-const _PageTitle = Template.bind({});
-_PageTitle.args = {
-  pageTitle: 'Page Title',
+  tags: ['autodocs'],
 };
 
-export default settings;
-export { _PageTitle };
+type Story = StoryObj<typeof PageTitleComponent>;
+const PageTitle: Story = {
+  args: pageTitleArgs,
+};
+
+export default meta;
+export { PageTitle };

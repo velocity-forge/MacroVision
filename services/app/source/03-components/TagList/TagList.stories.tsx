@@ -1,35 +1,17 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import TagList from './TagList';
+import { Meta, StoryObj } from '@storybook/react';
+import tagListArgs from './tag-list.yml';
+import TagListComponent from './TagList';
 
-const settings = {
-  title: 'Components/TagList',
-  component: TagList,
-} as ComponentMeta<typeof TagList>;
-
-const Template: ComponentStory<typeof TagList> = args => <TagList {...args} />;
-
-const _TagList = Template.bind({});
-_TagList.args = {
-  items: [
-    {
-      url: '#0',
-      title: 'Tag 1',
-    },
-    {
-      url: '#0',
-      title: 'Tag 2',
-    },
-    {
-      url: '#0',
-      title: 'Tag 3',
-    },
-    {
-      url: '#0',
-      title: 'Tag 4',
-    },
-  ],
-  modifierClasses: '',
+const meta: Meta<typeof TagListComponent> = {
+  title: 'Components/Tag List',
+  component: TagListComponent,
+  tags: ['autodocs'],
 };
 
-export default settings;
-export { _TagList };
+type Story = StoryObj<typeof TagListComponent>;
+const TagList: Story = {
+  args: tagListArgs,
+};
+
+export default meta;
+export { TagList };

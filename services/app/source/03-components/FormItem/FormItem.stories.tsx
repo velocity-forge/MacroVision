@@ -1,8 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import FormItem, { Input } from './FormItem';
-import FormItemLabel from './FormItemLabel';
+import { Meta, StoryObj } from '@storybook/react';
+import checkboxArgs from './checkbox.yml';
+import { Input } from './FormItem';
+import radioArgs from './radio.yml';
 
-const settings = {
+const meta: Meta<typeof Input> = {
   title: 'Components/Form Item',
   component: Input,
   args: {
@@ -15,7 +16,6 @@ const settings = {
     prefix: '',
     suffix: '',
   },
-  subcomponents: { FormItem, FormItemLabel },
   argTypes: {
     type: {
       table: {
@@ -23,26 +23,18 @@ const settings = {
       },
     },
   },
-} as ComponentMeta<typeof Input>;
-
-const Template: ComponentStory<typeof Input> = args => <Input {...args} />;
-
-const Checkbox = Template.bind({});
-Checkbox.args = {
-  id: 'checkbox',
-  label: 'Checkbox',
-  labelDisplay: 'after',
-  type: 'checkbox',
+  tags: ['autodocs'],
 };
 
-const Radio = Template.bind({});
-Radio.args = {
-  id: 'radio',
-  label: 'Radio option',
-  labelDisplay: 'after',
-  type: 'radio',
-  name: 'demo',
+type Story = StoryObj<typeof Input>;
+
+const Checkbox: Story = {
+  args: checkboxArgs,
 };
 
-export default settings;
+const Radio: Story = {
+  args: radioArgs,
+};
+
+export default meta;
 export { Checkbox, Radio };

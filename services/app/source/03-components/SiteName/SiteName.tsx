@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
 import Link from 'next/link';
-import styles from './site_name.module.css';
+import styles from './site-name.module.css';
 
 interface SiteNameProps extends GessoComponent {
   siteName: string;

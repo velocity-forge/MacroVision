@@ -1,6 +1,7 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import SampleContent from '../../06-utility/storybook/SampleContent';
-import Grid from './Grid';
+import GridLayout from './Grid';
+import gridArgs from './grid.yml';
 
 function GridDemo(): JSX.Element {
   const arr = Array.from(Array(6).keys());
@@ -13,9 +14,9 @@ function GridDemo(): JSX.Element {
   );
 }
 
-const settings = {
+const meta: Meta<typeof GridLayout> = {
   title: 'Layouts/Grid',
-  component: Grid,
+  component: GridLayout,
   argTypes: {
     numCols: {
       options: [1, 2, 3, 4, 6],
@@ -24,18 +25,18 @@ const settings = {
       },
     },
   },
-} as ComponentMeta<typeof Grid>;
-
-const Template: ComponentStory<typeof Grid> = args => (
-  <Grid {...args}>
-    <GridDemo />
-  </Grid>
-);
-const _Grid = Template.bind({});
-_Grid.args = {
-  numCols: 3,
-  modifierClasses: '',
 };
 
-export default settings;
-export { _Grid };
+type Story = StoryObj<typeof GridLayout>;
+
+const Grid: Story = {
+  render: args => (
+    <GridLayout {...args}>
+      <GridDemo />
+    </GridLayout>
+  ),
+  args: gridArgs,
+};
+
+export default meta;
+export { Grid };

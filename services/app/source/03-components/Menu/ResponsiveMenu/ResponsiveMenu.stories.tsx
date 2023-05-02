@@ -1,40 +1,20 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ResponsiveMenu from './ResponsiveMenu';
+import { Meta, StoryObj } from '@storybook/react';
+import responsiveMenuArgs from './responsive-menu.yml';
+import ResponsiveMenuComponent from './ResponsiveMenu';
 
-const settings: ComponentMeta<typeof ResponsiveMenu> = {
+const meta: Meta<typeof ResponsiveMenuComponent> = {
   title: 'Components/Menu/Responsive Menu',
-  component: ResponsiveMenu,
+  component: ResponsiveMenuComponent,
+  tags: ['autodocs'],
 };
 
-const Template: ComponentStory<typeof ResponsiveMenu> = args => (
-  <ResponsiveMenu {...args} />
-);
-
-const _ResponsiveMenu = Template.bind({});
-_ResponsiveMenu.args = {
-  items: [
-    {
-      title: 'Home',
-      url: '#0',
-      inActiveTrail: false,
-    },
-    {
-      title: 'About',
-      url: '#0',
-      inActiveTrail: false,
-    },
-    {
-      title: 'Resources',
-      url: '#0',
-      inActiveTrail: false,
-    },
-    {
-      title: 'Contact',
-      url: '#0',
-      inActiveTrail: false,
-    },
-  ],
+type Story = StoryObj<typeof ResponsiveMenuComponent>;
+const ResponsiveMenu: Story = {
+  // Workaround to allow story to be imported elsewhere.
+  // See https://github.com/storybookjs/storybook/issues/22278
+  render: args => <ResponsiveMenuComponent {...args} />,
+  args: responsiveMenuArgs,
 };
 
-export default settings;
-export { _ResponsiveMenu };
+export default meta;
+export { ResponsiveMenu };

@@ -1,37 +1,22 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ButtonGroup from './ButtonGroup';
+import { Meta, StoryObj } from '@storybook/react';
+import buttonGroupArgs from './button-group.yml';
+import ButtonGroupComponent from './ButtonGroup';
 
-const settings = {
+const meta: Meta<typeof ButtonGroupComponent> = {
   title: 'Components/Button Group',
-  component: ButtonGroup,
-} as ComponentMeta<typeof ButtonGroup>;
-
-const Template: ComponentStory<typeof ButtonGroup> = args => (
-  <ButtonGroup {...args} />
-);
-
-const _ButtonGroup = Template.bind({});
-_ButtonGroup.args = {
-  heading: 'Heading',
-  element: 'div',
-  modifierClasses: '',
-  buttons: [
-    {
-      text: 'First button',
+  component: ButtonGroupComponent,
+  tags: ['autodocs'],
+  argTypes: {
+    buttons: {
+      control: false,
     },
-    {
-      text: 'Active middle button',
-      isActive: true,
-    },
-    {
-      text: 'Middle button',
-    },
-    {
-      text: 'Last button',
-    },
-  ],
-  activeLabel: '(active)',
+  },
 };
 
-export default settings;
-export { _ButtonGroup };
+type Story = StoryObj<typeof ButtonGroupComponent>;
+const ButtonGroup: Story = {
+  args: buttonGroupArgs,
+};
+
+export default meta;
+export { ButtonGroup };

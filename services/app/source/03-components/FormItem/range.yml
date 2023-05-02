@@ -1,0 +1,7 @@
+---
+id: 'range'
+label: 'Range'
+type: 'range'
+step: 1
+min: 0
+max: 100

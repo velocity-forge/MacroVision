@@ -1,9 +1,9 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Property } from 'csstype';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './fonts.module.css';
 
-const settings: Meta = {
+const meta: Meta = {
   title: 'Global/Typography/Fonts',
 };
 
@@ -13,6 +13,11 @@ interface FontOptions {
 
 interface WeightOptions {
   [name: string]: Property.FontWeight;
+}
+
+interface FontsArgs {
+  fonts: FontOptions;
+  weights: WeightOptions;
 }
 
 const allVars = getCssVariables();
@@ -34,69 +39,71 @@ const weights = allVars.reduce((allWeights, [key, value]) => {
   return allWeights;
 }, {} as WeightOptions);
 
-const Fonts: Story = args => {
-  return (
-    <>
-      {Object.entries(args.fonts as FontOptions).map(([name, fontFamily]) => (
-        <div className={styles.fonts} key={name}>
-          <h3
-            className={styles.family}
-            style={{
-              fontFamily,
-            }}
-          >
-            {name}
-          </h3>
-          {Object.entries(args.weights as WeightOptions).map(
-            ([name, fontWeight]) => (
-              <div className={styles.item} key={name}>
-                <div
-                  className={styles['preview-character']}
-                  style={{
-                    fontStyle: 'normal',
-                    fontFamily,
-                    fontWeight,
-                  }}
-                >
-                  AaBbCc
-                </div>
-                <div
-                  className={styles.preview}
-                  style={{
-                    fontStyle: 'normal',
-                    fontFamily,
-                    fontWeight,
-                  }}
-                >
-                  ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                  <br />
-                  abcdefghijklmnopqrstuvwxyz
-                  <br />
-                  1234567890(,.;:?!$&*)
-                </div>
-                <div className={styles['preview-meta']}>
-                  <div className={styles.name}>{name}</div>
-                  <div className={styles.weight}>
-                    <span className={styles.label}>Weight:</span>
-                    {fontWeight}
+const Fonts: StoryObj<FontsArgs> = {
+  render: args => {
+    return (
+      <>
+        {Object.entries(args.fonts as FontOptions).map(([name, fontFamily]) => (
+          <div className={styles.fonts} key={name}>
+            <h3
+              className={styles.family}
+              style={{
+                fontFamily,
+              }}
+            >
+              {name}
+            </h3>
+            {Object.entries(args.weights as WeightOptions).map(
+              ([name, fontWeight]) => (
+                <div className={styles.item} key={name}>
+                  <div
+                    className={styles['preview-character']}
+                    style={{
+                      fontStyle: 'normal',
+                      fontFamily,
+                      fontWeight,
+                    }}
+                  >
+                    AaBbCc
                   </div>
-                  <div className={styles.style}>
-                    <span className={styles.label}>Style:</span>
-                    {fontFamily}
+                  <div
+                    className={styles.preview}
+                    style={{
+                      fontStyle: 'normal',
+                      fontFamily,
+                      fontWeight,
+                    }}
+                  >
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                    <br />
+                    abcdefghijklmnopqrstuvwxyz
+                    <br />
+                    1234567890(,.;:?!$&*)
+                  </div>
+                  <div className={styles['preview-meta']}>
+                    <div className={styles.name}>{name}</div>
+                    <div className={styles.weight}>
+                      <span className={styles.label}>Weight:</span>
+                      {fontWeight}
+                    </div>
+                    <div className={styles.style}>
+                      <span className={styles.label}>Style:</span>
+                      {fontFamily}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ),
-          )}
-        </div>
-      ))}
-    </>
-  );
-};
-Fonts.args = {
-  fonts: fonts,
-  weights: weights,
+              ),
+            )}
+          </div>
+        ))}
+      </>
+    );
+  },
+  args: {
+    fonts,
+    weights,
+  },
 };
 
-export default settings;
+export default meta;
 export { Fonts };

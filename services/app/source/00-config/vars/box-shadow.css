@@ -1,8 +1,8 @@
 :root {
   --box-shadow-0: none;
-  --box-shadow-1: 0 1px 3px rgb(0 0 0 / 12%) 0 1px 2px rgb(0 0 0 / 24%);
-  --box-shadow-2: 0 3px 6px rgb(0 0 0 / 16%) 0 3px 6px rgb(0 0 0 / 23%);
-  --box-shadow-3: 0 10px 20px rgb(0 0 0 / 19%) 0 6px 6px rgb(0 0 0 / 23%);
-  --box-shadow-4: 0 14px 28px rgb(0 0 0 / 25%) 0 10px 10px rgb(0 0 0 / 22%);
-  --box-shadow-5: 0 20px 38px rgb(0 0 0 / 30%) 0 15px 12px rgb(0 0 0 / 22%);
+  --box-shadow-1: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+  --box-shadow-2: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+  --box-shadow-3: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+  --box-shadow-4: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+  --box-shadow-5: 0 20px 38px rgb(0 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 22%);
 }

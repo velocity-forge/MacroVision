@@ -1,0 +1,15 @@
+---
+items:
+  - title: 'Careers'
+    url: '#0'
+    inActiveTrail: false
+  - title: 'Contact'
+    url: '#0'
+    inActiveTrail: false
+  - title: 'Credits'
+    url: '#0'
+    inActiveTrail: false
+  - title: 'Terms of Use'
+    url: '#0'
+    inActiveTrail: false
+linkClasses: ''

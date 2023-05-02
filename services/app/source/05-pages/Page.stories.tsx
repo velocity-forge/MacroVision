@@ -1,19 +1,29 @@
-import { Meta, Story } from '@storybook/react';
-import { _Page as Page } from '../04-templates/Page/Page.stories';
+import { Meta, StoryObj } from '@storybook/react';
+import { PageProps } from '../04-templates/Page/Page';
+import { Page as PageStory } from '../04-templates/Page/Page.stories';
 import PageWrapper from './page-wrappers/default';
 
-const settings: Meta = {
+interface PageStoryArgs {
+  page: PageProps;
+}
+
+const settings: Meta<PageStoryArgs> = {
   title: 'Pages/Page',
 };
 
-const _Page: Story = args => (
-  <PageWrapper>
-    <Page {...args.page} />
-  </PageWrapper>
-);
-_Page.args = {
-  page: Page.args,
+const Page: StoryObj<PageStoryArgs> = {
+  render: args => (
+    <PageWrapper>
+      {PageStory.render && <PageStory.render {...args.page} />}
+    </PageWrapper>
+  ),
+};
+Page.args = {
+  page: {
+    ...PageStory.args,
+    title: 'Page title',
+  },
 };
 
 export default settings;
-export { _Page };
+export { Page };

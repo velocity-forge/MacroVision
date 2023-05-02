@@ -7,11 +7,11 @@ import Wysiwyg from '../Wysiwyg/Wysiwyg';
 import styles from './article.module.css';
 
 interface ArticleProps extends GessoComponent {
-  title?: ReactNode;
+  title?: ReactNode | string;
   children?: ReactNode;
   showFooter?: boolean;
   author?: ReactNode;
-  date?: ReactNode;
+  date?: ReactNode | string;
 }
 
 function Article({

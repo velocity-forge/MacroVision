@@ -1,24 +1,22 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import SampleContent from '../../06-utility/storybook/SampleContent';
-import Header from './Header';
+import HeaderLayout from './Header';
+import headerArgs from './header.yml';
 
-const settings = {
+const meta: Meta<typeof HeaderLayout> = {
   title: 'Layouts/Header',
-  component: Header,
-} as ComponentMeta<typeof Header>;
-
-const Template: ComponentStory<typeof Header> = args => (
-  <Header {...args}>
-    <SampleContent>Header Layout Content</SampleContent>
-  </Header>
-);
-
-const _Header = Template.bind({});
-_Header.args = {
-  hasConstrain: true,
-  modifierClasses: '',
-  constrainClasses: '',
+  component: HeaderLayout,
 };
 
-export default settings;
-export { _Header };
+type Story = StoryObj<typeof HeaderLayout>;
+const Header: Story = {
+  render: args => (
+    <HeaderLayout {...args}>
+      <SampleContent>Header Layout Content</SampleContent>
+    </HeaderLayout>
+  ),
+  args: headerArgs,
+};
+
+export default meta;
+export { Header };

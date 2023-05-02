@@ -10,8 +10,3 @@ declare module 'gesso' {
 
   export type { GessoComponent, ConstrainComponent };
 }
-
-declare module '!!raw-loader!*' {
-  const content: string;
-  export default content;
-}

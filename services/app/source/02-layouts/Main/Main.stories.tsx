@@ -1,25 +1,23 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import SampleContent from '../../06-utility/storybook/SampleContent';
-import Main from './Main';
+import MainLayout from './Main';
+import mainArgs from './main.yml';
 
-const settings = {
+const meta: Meta<typeof MainLayout> = {
   title: 'Layouts/Main',
-  component: Main,
-} as ComponentMeta<typeof Main>;
-
-const Template: ComponentStory<typeof Main> = args => (
-  <Main {...args}>
-    <SampleContent>Main Layout Content</SampleContent>
-  </Main>
-);
-
-const _Main = Template.bind({});
-_Main.args = {
-  id: 'main',
-  hasConstrain: true,
-  modifierClasses: '',
-  constrainClasses: '',
+  component: MainLayout,
 };
 
-export default settings;
-export { _Main };
+type Story = StoryObj<typeof MainLayout>;
+
+const Main: Story = {
+  render: args => (
+    <MainLayout {...args}>
+      <SampleContent>Main Layout Content</SampleContent>
+    </MainLayout>
+  ),
+  args: mainArgs,
+};
+
+export default meta;
+export { Main };

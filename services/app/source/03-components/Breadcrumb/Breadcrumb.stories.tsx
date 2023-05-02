@@ -1,36 +1,26 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import Breadcrumb from './Breadcrumb';
+import { Meta, StoryObj } from '@storybook/react';
+import BreadcrumbComponent from './Breadcrumb';
+import breadcrumbArgs from './breadcrumb.yml';
 
-const settings = {
+const meta: Meta<typeof BreadcrumbComponent> = {
   title: 'Components/Breadcrumb',
-  component: Breadcrumb,
-} as ComponentMeta<typeof Breadcrumb>;
-
-const Template: ComponentStory<typeof Breadcrumb> = args => (
-  <Breadcrumb {...args} />
-);
-
-const _Breadcrumb = Template.bind({});
-_Breadcrumb.args = {
-  title: 'Breadcrumb',
-  breadcrumb: [
-    {
-      url: '#0',
-      text: 'Home',
+  component: BreadcrumbComponent,
+  tags: ['autodocs'],
+  argTypes: {
+    breadcrumb: {
+      control: false,
     },
-    {
-      url: '#1',
-      text: 'Level 1',
-    },
-    {
-      url: '#2',
-      text: 'Level 2',
-    },
-    {
-      text: 'Current item',
-    },
-  ],
+  },
 };
 
-export default settings;
-export { _Breadcrumb };
+type Story = StoryObj<typeof BreadcrumbComponent>;
+
+const Breadcrumb: Story = {
+  // Workaround to allow story to be imported elsewhere.
+  // See https://github.com/storybookjs/storybook/issues/22278
+  render: args => <BreadcrumbComponent {...args} />,
+  args: breadcrumbArgs,
+};
+
+export default meta;
+export { Breadcrumb };

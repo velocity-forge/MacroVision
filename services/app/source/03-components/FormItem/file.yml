@@ -1,0 +1,6 @@
+---
+id: 'file'
+label: 'File'
+type: 'file'
+size: 22
+accept: 'image/*'

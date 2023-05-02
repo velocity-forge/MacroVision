@@ -1,8 +1,23 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import FormItem, { Input } from './FormItem';
-import FormItemLabel from './FormItemLabel';
+import { Meta, StoryObj } from '@storybook/react';
+import colorArgs from './color.yml';
+import dateArgs from './date.yml';
+import decimalArgs from './decimal.yml';
+import emailArgs from './email.yml';
+import fileArgs from './file.yml';
+import floatArgs from './float.yml';
+import { Input } from './FormItem';
+import integerArgs from './integer.yml';
+import monthArgs from './month.yml';
+import passwordArgs from './password.yml';
+import rangeArgs from './range.yml';
+import searchArgs from './search.yml';
+import telephoneArgs from './telephone.yml';
+import textArgs from './text.yml';
+import timeArgs from './time.yml';
+import urlArgs from './url.yml';
+import weekArgs from './week.yml';
 
-const settings = {
+const meta: Meta<typeof Input> = {
   title: 'Components/Form Item/Input',
   component: Input,
   args: {
@@ -16,7 +31,6 @@ const settings = {
     prefix: '',
     suffix: '',
   },
-  subcomponents: { FormItem, FormItemLabel },
   argTypes: {
     type: {
       table: {
@@ -24,156 +38,59 @@ const settings = {
       },
     },
   },
-} as ComponentMeta<typeof Input>;
-
-const Template: ComponentStory<typeof Input> = args => <Input {...args} />;
-
-const Color = Template.bind({});
-Color.args = {
-  id: 'color',
-  label: 'Color',
-  type: 'color',
 };
 
-const Date = Template.bind({});
-Date.args = {
-  id: 'date',
-  label: 'Date',
-  type: 'date',
-  size: 12,
-  min: '1900-01-01',
-  max: '2050-12-31',
+type Story = StoryObj<typeof Input>;
+const Color: Story = {
+  args: colorArgs,
+};
+const Date: Story = {
+  args: dateArgs,
+};
+const Email: Story = {
+  args: emailArgs,
+};
+const File: Story = {
+  args: fileArgs,
+};
+const Month: Story = {
+  args: monthArgs,
+};
+const NumberDecimal: Story = {
+  args: decimalArgs,
+};
+const NumberFloat: Story = {
+  args: floatArgs,
+};
+const NumberInteger: Story = {
+  args: integerArgs,
+};
+const Password: Story = {
+  args: passwordArgs,
+};
+const Range: Story = {
+  args: rangeArgs,
+};
+const Search: Story = {
+  args: searchArgs,
+};
+const Telephone: Story = {
+  args: telephoneArgs,
+};
+const Text: Story = {
+  args: textArgs,
+};
+const Time: Story = {
+  args: timeArgs,
+};
+const Url: Story = {
+  args: urlArgs,
+};
+const Week: Story = {
+  args: weekArgs,
 };
 
-const Email = Template.bind({});
-Email.args = {
-  id: 'email',
-  label: 'Email',
-  type: 'email',
-  placeholder: 'email@example.com',
-  size: 60,
-  maxLength: 255,
-};
-
-const File = Template.bind({});
-File.args = {
-  id: 'file',
-  label: 'File',
-  type: 'file',
-  size: 22,
-  accept: 'image/*',
-};
-
-const Month = Template.bind({});
-Month.args = {
-  id: 'month',
-  label: 'Month',
-  type: 'month',
-  size: 12,
-};
-
-const NumberDecimal = Template.bind({});
-NumberDecimal.args = {
-  id: 'decimal',
-  label: 'Number (decimal)',
-  type: 'number',
-  placeholder: 'Placeholder',
-  step: 0.01,
-};
-
-const NumberFloat = Template.bind({});
-NumberFloat.args = {
-  id: 'float',
-  label: 'Number (float)',
-  type: 'number',
-  placeholder: 'Placeholder',
-  step: 'any',
-};
-
-const NumberInteger = Template.bind({});
-NumberInteger.args = {
-  id: 'integer',
-  label: 'Number (integer)',
-  type: 'number',
-  placeholder: 'Placeholder',
-  step: 1,
-};
-
-const Password = Template.bind({});
-Password.args = {
-  id: 'password',
-  label: 'Password',
-  type: 'password',
-  size: 60,
-  maxLength: 128,
-};
-
-const Range = Template.bind({});
-Range.args = {
-  id: 'range',
-  label: 'Range',
-  type: 'range',
-  step: 1,
-  min: 0,
-  max: 100,
-};
-
-const Search = Template.bind({});
-Search.args = {
-  id: 'search',
-  label: 'Search',
-  type: 'search',
-  placeholder: 'Placeholder',
-  size: 60,
-  maxLength: 128,
-};
-
-const Telephone = Template.bind({});
-Telephone.args = {
-  id: 'tel',
-  label: 'Telephone',
-  type: 'tel',
-  size: 15,
-};
-
-const Text = Template.bind({});
-Text.args = {
-  id: 'text',
-  label: 'Text',
-  type: 'text',
-  placeholder: 'Placeholder',
-  size: 60,
-  maxLength: 128,
-};
-
-const Time = Template.bind({});
-Time.args = {
-  id: 'time',
-  label: 'Text',
-  type: 'time',
-  placeholder: 'hh:mm:ss',
-  size: 12,
-  step: 1,
-};
-
-const Url = Template.bind({});
-Url.args = {
-  id: 'url',
-  label: 'URL',
-  type: 'url',
-  placeholder: 'Placeholder',
-  size: 12,
-};
-
-const Week = Template.bind({});
-Week.args = {
-  id: 'week',
-  label: 'Week',
-  type: 'week',
-  size: 12,
-};
-
-export default settings;
+export default meta;
 export {
   Color,
   Date,

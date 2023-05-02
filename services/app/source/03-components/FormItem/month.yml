@@ -1,0 +1,5 @@
+---
+id: 'month'
+label: 'Month'
+type: 'month'
+size: 12

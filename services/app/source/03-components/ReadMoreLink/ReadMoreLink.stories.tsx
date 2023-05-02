@@ -1,22 +1,17 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ReadMoreLink from './ReadMoreLink';
+import { Meta, StoryObj } from '@storybook/react';
+import readMoreLinkArgs from './read-more-link.yml';
+import ReadMoreLinkComponent from './ReadMoreLink';
 
-const settings = {
+const meta: Meta<typeof ReadMoreLinkComponent> = {
   title: 'Components/Read More Link',
-  component: ReadMoreLink,
-} as ComponentMeta<typeof ReadMoreLink>;
-
-const Template: ComponentStory<typeof ReadMoreLink> = args => (
-  <ReadMoreLink {...args} />
-);
-
-const _ReadMoreLink = Template.bind({});
-_ReadMoreLink.args = {
-  title: 'Title',
-  url: '#0',
-  hideDescription: false,
-  modifierClasses: '',
+  component: ReadMoreLinkComponent,
+  tags: ['autodocs'],
 };
 
-export default settings;
-export { _ReadMoreLink };
+type Story = StoryObj<typeof ReadMoreLinkComponent>;
+const ReadMoreLink: Story = {
+  args: readMoreLinkArgs,
+};
+
+export default meta;
+export { ReadMoreLink };

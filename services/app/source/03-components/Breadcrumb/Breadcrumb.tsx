@@ -12,7 +12,7 @@ interface Crumbs {
 interface BreadcrumbProps extends GessoComponent {
   title?: string;
   titleElement?: ElementType;
-  breadcrumb: Crumbs[];
+  breadcrumb?: Crumbs[];
   hideTitle?: boolean;
 }
 
@@ -38,17 +38,18 @@ function Breadcrumb({
           {title}
         </TitleElement>
         <ol className={styles.list}>
-          {breadcrumb.map(crumb => (
-            <li key={crumb.url || 'current'} className={styles.item}>
-              {crumb.url ? (
-                <Link href={crumb.url} className={styles.link}>
-                  {crumb.text}
-                </Link>
-              ) : (
-                <span aria-current="page">{crumb.text}</span>
-              )}
-            </li>
-          ))}
+          {breadcrumb &&
+            breadcrumb.map(crumb => (
+              <li key={crumb.url || 'current'} className={styles.item}>
+                {crumb.url ? (
+                  <Link href={crumb.url} className={styles.link}>
+                    {crumb.text}
+                  </Link>
+                ) : (
+                  <span aria-current="page">{crumb.text}</span>
+                )}
+              </li>
+            ))}
         </ol>
       </div>
     </nav>

@@ -5,8 +5,8 @@ import styles from './details.module.css';
 
 interface DetailsProps extends GessoComponent {
   isRequired?: boolean;
-  detailsSummary?: ReactNode;
-  detailsDescription?: ReactNode;
+  detailsSummary?: string | ReactNode;
+  detailsDescription?: string | ReactNode;
   children: ReactNode;
 }
 

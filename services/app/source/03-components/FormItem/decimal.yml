@@ -1,0 +1,6 @@
+---
+id: 'decimal'
+label: 'Number (decimal)'
+type: 'number'
+placeholder: 'Placeholder'
+step: 0.01

@@ -1,21 +1,22 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import SampleContent from '../../06-utility/storybook/SampleContent';
-import SiteContainer from './SiteContainer';
+import siteContainerArgs from './site-container.yml';
+import SiteContainerLayout from './SiteContainer';
 
-const settings = {
+const meta: Meta<typeof SiteContainerLayout> = {
   title: 'Layouts/Site Container',
-  component: SiteContainer,
-} as ComponentMeta<typeof SiteContainer>;
-
-const Template: ComponentStory<typeof SiteContainer> = args => (
-  <SiteContainer {...args}>
-    <SampleContent>Site Container Layout Content</SampleContent>
-  </SiteContainer>
-);
-
-const _SiteContainer = Template.bind({});
-_SiteContainer.args = {
-  modifierClasses: '',
+  component: SiteContainerLayout,
 };
-export default settings;
-export { _SiteContainer };
+
+type Story = StoryObj<typeof SiteContainerLayout>;
+
+const SiteContainer: Story = {
+  render: args => (
+    <SiteContainerLayout {...args}>
+      <SampleContent>Site Container Layout Content</SampleContent>
+    </SiteContainerLayout>
+  ),
+  args: siteContainerArgs,
+};
+export default meta;
+export { SiteContainer };

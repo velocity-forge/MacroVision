@@ -1,58 +1,35 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
+import parse from 'html-react-parser';
 import styles from './hero-inline-image.module.css';
+import heroInlineImageArgs from './hero-inline-image.yml';
 import HeroInlineImage from './HeroInlineImage';
 
-const settings = {
+const meta: Meta<typeof HeroInlineImage> = {
   title: 'Components/Hero/Hero With Inline Image',
   component: HeroInlineImage,
+  tags: ['autodocs'],
+};
+
+type Story = StoryObj<typeof HeroInlineImage>;
+const Default: Story = {
   args: {
-    hasOverlay: true,
-    title: 'Hero Title',
-    summary: <p>Hero summary text.</p>,
-    button: {
-      label: 'Hero Button',
-      href: '#0',
-    },
-    media: (
-      <picture>
-        <source
-          srcSet="https://picsum.photos/1600/800?image=11"
-          media="(min-width: 1024px)"
-          type="image/jpeg"
-        />
-        <source
-          srcSet="https://picsum.photos/1200/600?image=11"
-          media="(min-width: 760px)"
-          type="image/jpeg"
-        />
-        <source
-          srcSet="https://picsum.photos/800/400?image=11"
-          type="image/jpeg"
-        />
-        <img
-          srcSet="https://picsum.photos/1600/800?image=11"
-          alt="Hero Image Alt Text"
-        />
-      </picture>
-    ),
+    ...heroInlineImageArgs,
+    summary: parse(heroInlineImageArgs.summary),
+    media: parse(heroInlineImageArgs.media),
   },
-} as ComponentMeta<typeof HeroInlineImage>;
-
-const Template: ComponentStory<typeof HeroInlineImage> = args => (
-  <HeroInlineImage {...args} />
-);
-
-const Default = Template.bind({});
-
-const Left = Template.bind({});
-Left.args = {
-  modifierClasses: styles['hero--left'],
+};
+const Left: Story = {
+  args: {
+    ...Default.args,
+    modifierClasses: styles['hero--left'],
+  },
+};
+const Right: Story = {
+  args: {
+    ...Default.args,
+    modifierClasses: styles['hero--right'],
+  },
 };
 
-const Right = Template.bind({});
-Right.args = {
-  modifierClasses: styles['hero--right'],
-};
-
-export default settings;
+export default meta;
 export { Default, Left, Right };

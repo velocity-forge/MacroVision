@@ -1,21 +1,28 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { Button, LinkButton, SharedButtonProps } from './Button';
+import {
+  Button as ButtonComponent,
+  LinkButton as LinkButtonComponent,
+  SharedButtonProps,
+} from './Button';
+import buttonArgs from './button.yml';
 
 function DemoButtons({ label, ...props }: SharedButtonProps): JSX.Element {
   return (
     <>
-      <Button label={label} {...props} />
-      <LinkButton label={`Link ${label}`} {...props} />
-      <Button label={`Disabled ${label}`} {...props} disabled={true} />
+      <ButtonComponent label={label} {...props} />
+      <LinkButtonComponent label={`Link ${label}`} {...props} />
+      <ButtonComponent label={`Disabled ${label}`} {...props} disabled={true} />
     </>
   );
 }
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
+const meta: Meta<typeof DemoButtons> = {
   title: 'Components/Button',
-  component: Button,
+  component: DemoButtons,
+  // More on automatic documentation: https://storybook.js.org/docs/react/writing-docs/autodocs
+  tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   // More on controls: https://storybook.js.org/docs/react/essentials/controls
   argTypes: {
@@ -27,40 +34,41 @@ export default {
       defaultValue: 'primary',
     },
   },
-  subcomponents: { Button, LinkButton },
-} as ComponentMeta<typeof DemoButtons>;
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof DemoButtons> = args => (
-  <DemoButtons {...args} />
-);
-
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  label: 'Button',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  variant: 'secondary',
-  label: 'Button',
+// More on writing stories: https://storybook.js.org/docs/react/writing-stories/introduction#how-to-write-stories
+type Story = StoryObj<typeof DemoButtons>;
+const Primary: Story = {
+  args: { ...buttonArgs },
 };
 
-export const Danger = Template.bind({});
-Danger.args = {
-  variant: 'danger',
-  label: 'Button',
+const Secondary: Story = {
+  args: {
+    ...buttonArgs,
+    variant: 'secondary',
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  styleSize: 'large',
-  label: 'Button',
+const Danger: Story = {
+  args: {
+    ...buttonArgs,
+    variant: 'danger',
+  },
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  styleSize: 'small',
-  label: 'Button',
+const Large: Story = {
+  args: {
+    ...buttonArgs,
+    styleSize: 'large',
+  },
 };
+
+const Small: Story = {
+  args: {
+    ...buttonArgs,
+    styleSize: 'small',
+  },
+};
+
+export default meta;
+export { Primary, Secondary, Danger, Large, Small };

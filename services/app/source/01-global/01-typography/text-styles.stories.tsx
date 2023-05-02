@@ -1,7 +1,7 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import styles from './text-styles.module.css';
 
-const TextStyles = () => {
+const TextStylesComponent = () => {
   return (
     <>
       {Object.entries(styles).map(([name, style]) => (
@@ -20,15 +20,15 @@ const TextStyles = () => {
   );
 };
 
-const settings = {
+const meta: Meta<typeof TextStylesComponent> = {
   title: 'Global/Typography/Text Styles',
+  component: TextStylesComponent,
   parameters: {
     controls: { hideNoControlsWarning: true },
   },
-} as ComponentMeta<typeof TextStyles>;
+};
 
-const Template: ComponentStory<typeof TextStyles> = () => <TextStyles />;
-const _TextStyles = Template.bind({});
+const TextStyles: StoryObj<typeof TextStylesComponent> = {};
 
-export default settings;
-export { _TextStyles };
+export default meta;
+export { TextStyles };

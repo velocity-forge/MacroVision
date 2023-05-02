@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import { Property } from 'csstype';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './easing.module.css';
@@ -17,7 +17,7 @@ const easing = allVars.reduce((allEases, [key, value]) => {
   return allEases;
 }, {} as EasingOptions);
 
-const Easing = ({ easing }: { easing: EasingOptions }) => {
+const EasingComponent = ({ easing }: { easing: EasingOptions }) => {
   return (
     <div className={styles.easing}>
       <div className={styles.helptext}>(Hover to demo easing)</div>
@@ -38,8 +38,9 @@ const Easing = ({ easing }: { easing: EasingOptions }) => {
   );
 };
 
-const settings = {
+const meta: Meta<typeof EasingComponent> = {
   title: 'Global/Easing',
+  component: EasingComponent,
   argTypes: {
     easing: {
       table: {
@@ -47,13 +48,15 @@ const settings = {
       },
     },
   },
-} as ComponentMeta<typeof Easing>;
-
-const Template: ComponentStory<typeof Easing> = args => <Easing {...args} />;
-const _Easing = Template.bind({});
-_Easing.args = {
-  easing: easing,
 };
 
-export default settings;
-export { _Easing };
+type Story = StoryObj<typeof EasingComponent>;
+
+const Easing: Story = {
+  args: {
+    easing,
+  },
+};
+
+export default meta;
+export { Easing };
