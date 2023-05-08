@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Page from '../source/04-templates/Page/Page';
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
   const title = 'About Forum One Next.js Starter App';
   return (
     <Page title={title} description="Next app using TypeScript and Emotion">
@@ -119,4 +119,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default About;
