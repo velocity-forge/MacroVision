@@ -1,14 +1,16 @@
 # Forum One Next.js Starter App to run locally without ddev
 
 This is a starter app for [Next.js](https://nextjs.org/) (bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)) that includes the following features:
+* [Storybook](https://storybook.js.org)
 * [TypeScript](https://www.typescriptlang.org/)
-* [Emotion](https://emotion.sh/docs/introduction)
+* [PostCSS](https://postcss.org/)
 * [ESLint](https://eslint.org/)
+* [Stylelint](https://stylelint.io/)
 * [Prettier](https://prettier.io/)
 
 Note that Next v11 comes with the following installed already:
 * [Webpack v5](https://webpack.js.org/concepts/)
-* [Babel v7](https://babeljs.io/docs/en/)
+* [CSS Modules](https://github.com/css-modules/css-modules)
 
 ## Getting Started
 
@@ -32,6 +34,12 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+To run [Storybook](https://storybook.js.org), open a new tab in your terminal, navigate to the `services/app` directory, and run:
+
+```bash
+npm run storybook
+```
 
 ## Other Commands
 
@@ -91,14 +99,6 @@ npm run tsc
 ```
 
 Runs `tsc --noEmit`, which will compile the TypeScript code without emitting files. This acts as a TS error check in your CLI. This is useful to catch TS errors that you might miss during development. For more information, see the [TypeScript Compiler (tsc) documentation](https://www.typescriptlang.org/docs/handbook/compiler-options.html).
-
-### Scaffold new component
-
-```bash
-npm run component
-```
-Runs the `lib/component.js` script, which will scaffold a new React or Emotion component,
-with the option to include a Storybook story file as well.
 
 ## Husky
 

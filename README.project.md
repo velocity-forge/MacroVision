@@ -1,13 +1,16 @@
 # Forum One Next.js Starter App
 
 This is a starter app for [Next.js](https://nextjs.org/) (bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)) that includes the following features:
+* [Storybook](https://storybook.js.org)
 * [TypeScript](https://www.typescriptlang.org/)
-* [Emotion](https://emotion.sh/docs/introduction)
+* [PostCSS](https://postcss.org/)
 * [ESLint](https://eslint.org/)
+* [Stylelint](https://stylelint.io/)
 * [Prettier](https://prettier.io/)
 
 Note that Next v13 comes with the following installed already:
 * [Webpack v5](https://webpack.js.org/concepts/)
+* [CSS Modules](https://github.com/css-modules/css-modules)
 
 ## Getting Started
 
@@ -18,28 +21,19 @@ Note that Next v13 comes with the following installed already:
     npm ci
     ```
 
-1. Go to the `services/app` directory.
+2. Go to the `services/app` directory.
     ```bash
     cd services/app
     ```
+   
+3. Install dependencies. To install and run the app without ddev, see the README inside the app directory.
+   You will need to install dependencies and run the app in the same environment (either Docker/Linux for both
+   or your local OS for both). Otherwise, you can end up with incompatible versions of some packages.
+   ```bash
+   ddev nextjs npm ci
+   ```
 
-1. Ensure that you are using the proper Node version for this app. We currently use v16. Assuming you have [nvm](https://github.com/nvm-sh/nvm) installed locally, you can simply run:
-    ```bash
-    nvm use
-    ```
-    This will set your Node version to match the `.nvmrc` file.
-
-1. Next, install packages for local development:
-    ```bash
-    npm ci
-    ```
-
-1. Next, copy `.env.local.example` to `.env.local` and define any local environment variables you need for local development.
-    ```bash
-    cp .env.local.example .env.local
-    ```
-
-1. Now you are ready to start up the app. To do that, run `ddev start` from within the `services/app` directory:
+3. Start up the app. To do that, run `ddev start` from within the `services/app` directory:
     ```bash
     ddev start
     ```
@@ -50,7 +44,7 @@ After following the "Initial Setup" instructions, you can start the local develo
 ```bash
 ddev start
 ```
-Open [https://nyu-cdhdb.ddev.site/](https://nyu-cdhdb.ddev.site/) with your browser to see the app. Note that the script will continue to run in your terminal tab. Killing or exiting the script (e.g. `ctrl+C`) will stop the Nextjs app.
+Open [https://YOUR-PROJECT.ddev.site/](https://YOUR-PROJECT.ddev.site/) with your browser to see the app. Note that the script will continue to run in your terminal tab. Killing or exiting the script (e.g. `ctrl+C`) will stop the Nextjs app.
 
 To stop `ddev` for the project:
 ```bash
@@ -139,14 +133,6 @@ ddev nextjs tsc
 
 Runs `tsc --noEmit`, which will compile the TypeScript code without emitting files. This acts as a TS error check in your CLI. This is useful to catch TS errors that you might miss during development. For more information, see the [TypeScript Compiler (tsc) documentation](https://www.typescriptlang.org/docs/handbook/compiler-options.html).
 
-### Scaffold new component
-
-```bash
-ddev nextjs component
-```
-Runs the `lib/component.js` script, which will scaffold a new React or Emotion component,
-with the option to include a Storybook story file as well.
-
 
 ## Notes
 
@@ -176,6 +162,6 @@ To verify that it is working please run: `ddev nextjs monit` and if it is not wo
 * Remove `node_modules` folder from the `services/app`
 * Then restart DDev, `ddev start`
 
-### Helpfup script
+### Helpful script
 
-If you do not want to go into the `services/app` directory and want to stay at the root of the project, Please just use `sh dev [ddev command]`.
+If you do not want to go into the `services/app` directory and want to stay at the root of the project, use `sh dev [ddev command]`.
