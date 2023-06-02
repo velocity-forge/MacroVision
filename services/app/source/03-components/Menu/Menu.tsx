@@ -44,11 +44,7 @@ function MenuLinks({
             itemClasses,
           )}
         >
-          <Link
-            href={item.url}
-            passHref={true}
-            className={clsx(styles.link, linkClasses)}
-          >
+          <Link href={item.url} className={clsx(styles.link, linkClasses)}>
             {item.title}
           </Link>
           {item.below && (
