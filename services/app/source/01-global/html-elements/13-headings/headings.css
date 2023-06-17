@@ -1,4 +1,4 @@
-@import 'mixins';
+@import '../../../00-config/mixins';
 
 @mixin hN {
   color: inherit;

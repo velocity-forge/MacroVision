@@ -1,4 +1,4 @@
-@import 'mixins';
+@import '../../00-config/mixins';
 
 @layer layouts {
   .wrapper {
