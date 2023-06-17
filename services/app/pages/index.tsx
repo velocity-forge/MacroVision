@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <LandingPage
       title={title}
-      description="Next app using TypeScript and Emotion"
+      description="Next app using TypeScript and PostCSS"
     >
       <Section>
         <HeroBgImage
