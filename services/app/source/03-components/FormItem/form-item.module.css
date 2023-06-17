@@ -1,4 +1,4 @@
-@import '../../00-config/mixins.css';
+@import 'mixins';
 
 @layer components {
   @import 'form-item-base.css';
