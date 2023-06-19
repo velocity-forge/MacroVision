@@ -1,0 +1,23 @@
+{
+  "jsx": {
+    "babelConfig": {
+      "plugins": [
+        [
+          "@svgr/babel-plugin-add-jsx-attribute",
+          {
+            "elements": [
+              "svg"
+            ],
+            "attributes": [
+              {
+                "name": "className",
+                "value": "icon",
+                "literal": true
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}
