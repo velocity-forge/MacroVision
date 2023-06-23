@@ -3,7 +3,9 @@ module.exports = {
     '@csstools/postcss-global-data': {
       files: ['./source/00-config/vars/breakpoints.css'],
     },
-    'postcss-advanced-variables': {},
+    'postcss-advanced-variables': {
+      importPaths: ['./source/00-config'],
+    },
     [require.resolve('./lib/iff.js')]: {},
     'postcss-rem': {},
     'postcss-preset-env': {
