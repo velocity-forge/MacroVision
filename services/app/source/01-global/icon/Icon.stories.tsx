@@ -14,10 +14,10 @@ const Icon: StoryObj = {
     return (
       <>
         {icons.map(icon => {
-          const IconComponent = Icons[icon];
+          const IconComponent = Icons[icon as keyof typeof Icons];
           return (
             <p key={icon}>
-              <IconComponent isHidden={false} iconName={icon} label={icon} />{' '}
+              <IconComponent isHidden={false} title={icon} />{' '}
               {icon}
             </p>
           );
