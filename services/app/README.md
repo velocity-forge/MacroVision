@@ -41,6 +41,13 @@ To run [Storybook](https://storybook.js.org), open a new tab in your terminal, n
 npm run storybook
 ```
 
+## Icons
+After adding a new SVG to `source/01-global-icon/svgs`, you will need to
+generate the React components:
+```bash
+npm run build-icons
+```
+
 ## Other Commands
 
 ### Build production application

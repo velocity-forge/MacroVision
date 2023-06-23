@@ -6,6 +6,16 @@ const meta: Meta = {
   parameters: {
     controls: { hideNoControlsWarning: true },
   },
+  argTypes: {
+    isHidden: {
+      type: 'boolean',
+      description: 'True if the icon should be hidden from screenreaders.'
+    },
+    title: {
+      type: 'string',
+      description: 'Text label for icon to be read by screenreaders. Must be included if isHidden is false.'
+    }
+  }
 };
 
 const Icon: StoryObj = {
@@ -24,10 +34,6 @@ const Icon: StoryObj = {
         })}
       </>
     );
-  },
-  args: {
-    iconName: 'AngleUp',
-    isHidden: true,
   },
 };
 

@@ -4,7 +4,7 @@ const YAML = require('yaml');
 
 module.exports = {
   staticDirs: [path.resolve(__dirname, '../public')],
-  stories: ['../source/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  stories: ['../source/**/*.stories.@(js|jsx|ts|tsx)', '../source/**/*.mdx'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
