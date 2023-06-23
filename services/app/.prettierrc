@@ -9,5 +9,13 @@
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "all",
-  "useTabs": false
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": ["source/01-global/icon/**/*.tsx"],
+      "options": {
+        "organizeImportsSkipDestructiveCodeActions": true
+      }
+    }
+  ]
 }

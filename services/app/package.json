@@ -14,7 +14,8 @@
     "test": "npm run lint && npm run tsc",
     "component": "node lib/component.js",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build-icons": "svgr --out-dir source/01-global/icon/icons -- source/01-global/icon/svgs"
   },
   "browserslist": [
     "last 2 versions and not dead",
@@ -42,7 +43,7 @@
     "@storybook/theming": "^7.0.7",
     "@svgr/babel-plugin-add-jsx-attribute": "^8.0.0",
     "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
-    "@svgr/plugin-jsx": "^8.0.1",
+    "@svgr/cli": "^8.0.1",
     "@svgr/webpack": "^8.0.1",
     "@types/node": "^16.11.25",
     "@types/react": "^18.0.5",

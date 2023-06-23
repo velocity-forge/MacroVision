@@ -35,6 +35,8 @@ case $1 in
   prettier:write)
     npm run prettier:write
   ;;
+  icons)
+    npm run build-icons
   "")
     echo "Usage: nextjs install|build|deploy|watch|(some other command in the theme service)"
   ;;
