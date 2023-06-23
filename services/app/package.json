@@ -44,7 +44,6 @@
     "@svgr/babel-plugin-add-jsx-attribute": "^8.0.0",
     "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
     "@svgr/cli": "^8.0.1",
-    "@svgr/webpack": "^8.0.1",
     "@types/node": "^16.11.25",
     "@types/react": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.20.0",

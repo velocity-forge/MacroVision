@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import Icons from './icons';
 
 const meta: Meta = {
-  title: 'Components/Icon',
+  title: 'Global/Icon',
   parameters: {
     controls: { hideNoControlsWarning: true },
   },
