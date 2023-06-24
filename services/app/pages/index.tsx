@@ -6,12 +6,17 @@ import HeroBgImage from '../source/03-components/HeroBgImage/HeroBgImage';
 import Wysiwyg from '../source/03-components/Wysiwyg/Wysiwyg';
 import LandingPage from '../source/04-templates/LandingPage/LandingPage';
 
-const Home: NextPage = () => {
+interface HomeProps {
+  mainId: string;
+}
+
+const Home: NextPage<HomeProps> = ({ mainId }) => {
   const title = 'Forum One Next.js Starter App';
   return (
     <LandingPage
       title={title}
       description="Next app using TypeScript and PostCSS"
+      mainId={mainId}
     >
       <Section>
         <HeroBgImage
