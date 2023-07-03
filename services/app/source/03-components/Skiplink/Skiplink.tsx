@@ -10,8 +10,8 @@ interface SkiplinkProps extends GessoComponent {
 function Skiplink({
   id = MAIN_ID,
   modifierClasses,
-}: SkiplinkProps): JSX.Element | null {
-  return id ? (
+}: SkiplinkProps): JSX.Element {
+  return (
     <div className={clsx(styles.skiplink, modifierClasses)}>
       <a
         href={`#${id}`}
@@ -20,7 +20,7 @@ function Skiplink({
         Skip to main content
       </a>
     </div>
-  ) : null;
+  );
 }
 
 export default Skiplink;
