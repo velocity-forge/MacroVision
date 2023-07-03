@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="icon" href={addBasePath('/favicon.ico')} />
       </Head>
-      <Skiplink id={pageProps.mainId} />
+      <Skiplink />
       <SiteContainer>
         <Header>
           <SiteName siteName="NextJS Starter" />

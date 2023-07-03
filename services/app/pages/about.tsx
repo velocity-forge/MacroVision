@@ -1,18 +1,10 @@
 import type { NextPage } from 'next';
 import Page from '../source/04-templates/Page/Page';
 
-interface AboutProps {
-  mainId: string;
-}
-
-const About: NextPage<AboutProps> = ({ mainId }) => {
+const About: NextPage = () => {
   const title = 'About Forum One Next.js Starter App';
   return (
-    <Page
-      title={title}
-      description="Next app using TypeScript and Emotion"
-      mainId={mainId}
-    >
+    <Page title={title} description="Next app using TypeScript and Emotion">
       <p>
         <a href="https://nextjs.org/docs">Next.js</a> app with{' '}
         <a href="https://www.typescriptlang.org/">TypeScript</a>.
