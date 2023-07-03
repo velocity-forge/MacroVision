@@ -1,4 +1,4 @@
-import React, { ReactNode, useId } from 'react';
+import React, { ReactNode } from 'react';
 import Footer from '../../02-layouts/Footer/Footer';
 import Header from '../../02-layouts/Header/Header';
 import SiteContainer from '../../02-layouts/SiteContainer/SiteContainer';
@@ -13,11 +13,9 @@ interface PageWrapperProps {
 }
 
 function PageWrapper({ children }: PageWrapperProps): JSX.Element {
-  const mainId = useId();
-
   return (
     <>
-      <Skiplink id={mainId} />
+      <Skiplink />
       <SiteContainer>
         <Header>
           {SiteName.render && (
@@ -30,11 +28,7 @@ function PageWrapper({ children }: PageWrapperProps): JSX.Element {
             <ResponsiveMenu.render items={ResponsiveMenu.args?.items || []} />
           )}
         </Header>
-        {React.Children.map(children, el => {
-          if (React.isValidElement(el)) {
-            return React.cloneElement(el, { mainId });
-          }
-        })}
+        {children}
         <Footer>
           {FooterMenu.render && (
             <FooterMenu.render
