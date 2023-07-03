@@ -1,10 +1,13 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path');
+
 module.exports = {
   plugins: {
     '@csstools/postcss-global-data': {
       files: ['./source/00-config/vars/breakpoints.css'],
     },
     'postcss-advanced-variables': {
-      importPaths: ['./source/00-config'],
+      importPaths: [path.resolve(__dirname, './source/00-config')],
     },
     [require.resolve('./lib/iff.js')]: {},
     'postcss-rem': {},

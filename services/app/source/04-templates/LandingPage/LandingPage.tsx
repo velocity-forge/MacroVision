@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { ReactNode } from 'react';
+import { MAIN_ID } from '../../00-config/constants';
 import Main from '../../02-layouts/Main/Main';
 
 interface PageProps {
@@ -10,7 +11,7 @@ interface PageProps {
 }
 
 function LandingPage({
-  mainId,
+  mainId = MAIN_ID,
   title,
   description,
   children,
