@@ -53,6 +53,13 @@ ddev stop
 
 Note that these `ddev` commands _must_ be run in the `services/app` directory.
 
+## Icons
+After adding a new SVG to `source/01-global-icon/svgs`, you will need to
+generate the React components:
+```bash
+ddev nextjs icons
+```
+
 ## Helpful commands
 
 ### Monitoring the applications

@@ -1,0 +1,66 @@
+import {Canvas, Meta, ArgTypes, Source} from '@storybook/blocks';
+
+import * as IconStories from './Icon.stories';
+import * as BackToTopStories
+  from '../../03-components/BackToTop/BackToTop.stories';
+
+<Meta of={IconStories} />
+
+# Icons
+
+Icons use `svgr` to convert SVGs to React components.
+
+## Adding an icon
+To add a new icon:
+1. Add the SVG to the `svgs` directory
+2. Run either `npm run build-icons` or `ddev nextjs icons`
+
+Do not modify the components in `icons`. These will be overwritten whenever
+icons are generated.
+
+## Using icons
+Most of the time, you will import the icon from the `icons` directory.
+<Source language="tsx" type="code" code={
+  `
+import AngleUp from '../../01-global/icon/icons/AngleUp';
+
+function BackToTop({
+  text,
+  topElement,
+  smoothScroll = true,
+  modifierClasses,
+}: BackToTopProps): JSX.Element {
+  return (
+    <a
+      href="#top"
+      className={clsx(styles.link, modifierClasses)}
+      title={text}
+      aria-hidden={isHidden}
+      tabIndex={isHidden ? -1 : undefined}
+      onClick={smoothScroll ? handleClick : undefined}
+    >
+      <AngleUp title={text} isHidden={false} />
+    </a>
+  );
+`}/>
+
+To reference an icon dynamically based on a prop or variable, import `icons/index.tsx`,
+which exports an object containing all icons.
+<Source language='tsx' type='code' code={`
+import Icons from './icons';
+
+function LinkedIcon({ iconName, text }: IconProps): JSX.Element {
+  const IconComponent = Icons[iconName];
+  return (
+    <a href="#">
+      <IconComponent title={text} isHidden={false} />
+    </a>
+  );
+}
+`} />
+
+## All icons
+<Canvas of={IconStories.Icon} />
+
+## Available props
+<ArgTypes />

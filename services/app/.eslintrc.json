@@ -37,6 +37,12 @@
       "rules": {
         "@typescript-eslint/no-var-requires": "off"
       }
+    },
+    {
+      "files": ["source/03-components/Icon/icons/*.tsx"],
+      "rules": {
+        "prettier/prettier": "off"
+      }
     }
   ]
 }
