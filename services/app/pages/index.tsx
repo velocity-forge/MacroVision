@@ -1,3 +1,4 @@
+import { GessoPage } from 'gesso';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import heroPlaceholder from '../public/images/hero-placeholder.jpg';
@@ -6,17 +7,14 @@ import HeroBgImage from '../source/03-components/HeroBgImage/HeroBgImage';
 import Wysiwyg from '../source/03-components/Wysiwyg/Wysiwyg';
 import LandingPage from '../source/04-templates/LandingPage/LandingPage';
 
-interface HomeProps {
-  mainId: string;
-}
+interface HomeProps extends GessoPage {}
 
-const Home: NextPage<HomeProps> = ({ mainId }) => {
+const Home: NextPage<HomeProps> = () => {
   const title = 'Forum One Next.js Starter App';
   return (
     <LandingPage
       title={title}
       description="Next app using TypeScript and PostCSS"
-      mainId={mainId}
     >
       <Section>
         <HeroBgImage

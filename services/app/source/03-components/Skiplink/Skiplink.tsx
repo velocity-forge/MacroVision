@@ -1,13 +1,17 @@
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
+import { MAIN_ID } from '../../00-config/constants';
 import styles from './skiplink.module.css';
 
 interface SkiplinkProps extends GessoComponent {
-  id: string;
+  id?: string;
 }
 
-function Skiplink({ id, modifierClasses }: SkiplinkProps): JSX.Element {
-  return (
+function Skiplink({
+  id = MAIN_ID,
+  modifierClasses,
+}: SkiplinkProps): JSX.Element | null {
+  return id ? (
     <div className={clsx(styles.skiplink, modifierClasses)}>
       <a
         href={`#${id}`}
@@ -16,7 +20,7 @@ function Skiplink({ id, modifierClasses }: SkiplinkProps): JSX.Element {
         Skip to main content
       </a>
     </div>
-  );
+  ) : null;
 }
 
 export default Skiplink;
