@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useId } from 'react';
 import '../source/00-config/index.css';
 import '../source/01-global/index.css';
 import Footer from '../source/02-layouts/Footer/Footer';
@@ -16,14 +15,12 @@ import addBasePath from '../source/06-utility/addBasePath';
 import '../source/06-utility/index.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const mainId = useId();
-
   return (
     <>
       <Head>
         <link rel="icon" href={addBasePath('/favicon.ico')} />
       </Head>
-      <Skiplink id={mainId} />
+      <Skiplink />
       <SiteContainer>
         <Header>
           <SiteName siteName="NextJS Starter" />
@@ -41,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
         </Header>
         {/* Breadcrumb */}
-        <Component mainId={mainId} {...pageProps} />
+        <Component {...pageProps} />
         <Footer>
           <Menu
             items={[

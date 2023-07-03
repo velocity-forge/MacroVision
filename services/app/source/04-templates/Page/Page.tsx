@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { ReactNode } from 'react';
+import { MAIN_ID } from '../../00-config/constants';
 import Main from '../../02-layouts/Main/Main';
 import Article from '../../03-components/Article/Article';
 
@@ -15,7 +16,7 @@ function Page({
   title,
   description,
   children,
-  mainId,
+  mainId = MAIN_ID,
   preContent,
 }: PageProps): JSX.Element {
   return (
