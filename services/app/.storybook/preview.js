@@ -2,7 +2,7 @@ import '../source/00-config/index.css';
 import '../source/01-global/index.css';
 import '../source/06-utility/index.css';
 
-export const parameters = {
+const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
@@ -30,7 +30,7 @@ export const parameters = {
 // Toolbar to test multiple writing directions.
 // See https://storybook.js.org/docs/react/essentials/toolbars-and-globals#advanced-usage
 // for an example of using specific locales rather than general page orientations.
-export const globalTypes = {
+const globalTypes = {
   direction: {
     name: 'Direction',
     description: 'Writing direction',
@@ -66,4 +66,12 @@ const withWritingDirection = (Story, context) => {
   );
 };
 
-export const decorators = [withWritingDirection];
+const decorators = [withWritingDirection];
+
+const preview = {
+  parameters,
+  globalTypes,
+  decorators,
+};
+
+export default preview;
