@@ -37,6 +37,7 @@ case $1 in
   ;;
   icons)
     npm run build-icons
+  ;;
   "")
     echo "Usage: nextjs install|build|deploy|watch|(some other command in the theme service)"
   ;;
