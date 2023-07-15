@@ -22,7 +22,7 @@ const settings: Meta<HomepageStoryArgs> = {
 const Homepage: StoryObj<HomepageStoryArgs> = {
   render: args => (
     <PageWrapper>
-      <LandingPage title="Homepage">
+      <LandingPage title="Homepage" hidePageTitle={true}>
         <Section>
           <HeroBgImage {...args.hero} />
         </Section>
