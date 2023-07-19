@@ -12,11 +12,11 @@
       > * {
         flex: 1 1 calc(100% - var(--sidebar-width) - var(--sidebar-gutter) * 2);
       }
-    }
 
-    @supports (display: grid) {
-      display: grid;
-      grid-template-columns: var(--sidebar-width) 1fr;
+      @supports (display: grid) {
+        display: grid;
+        grid-template-columns: var(--sidebar-width) 1fr;
+      }
     }
   }
 
@@ -26,10 +26,10 @@
         flex-basis: calc(
           100% - var(--sidebar-width) * 2 - var(--sidebar-gutter) * 3
         );
-      }
 
-      @supports (display: grid) {
-        grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width);
+        @supports (display: grid) {
+          grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width);
+        }
       }
     }
   }
