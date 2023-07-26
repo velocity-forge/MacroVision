@@ -1,7 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { PageProps } from '../04-templates/Page/Page';
-import { Page as PageStory } from '../04-templates/Page/Page.stories';
+import PageTemplate, { PageProps } from '../04-templates/Page/Page';
 import PageWrapper from './page-wrappers/default';
+import { Breadcrumb } from '../03-components/Breadcrumb/Breadcrumb.stories';
+import React from 'react';
+import { WYSIWYG } from '../03-components/Wysiwyg/Wysiwyg.stories';
 
 interface PageStoryArgs {
   page: PageProps;
@@ -14,14 +16,18 @@ const settings: Meta<PageStoryArgs> = {
 const Page: StoryObj<PageStoryArgs> = {
   render: args => (
     <PageWrapper>
-      {PageStory.render && <PageStory.render {...args.page} />}
+      <PageTemplate {...args.page} />
     </PageWrapper>
   ),
-};
-Page.args = {
-  page: {
-    ...PageStory.args,
-    title: 'Page title',
+  args: {
+    page: {
+      preContent: Breadcrumb.render ? (
+        <Breadcrumb.render {...Breadcrumb.args} />
+      ) : undefined,
+      title: 'Page Title',
+      description: 'Demo basic page in Storybook',
+      children: WYSIWYG.render && <WYSIWYG.render {...WYSIWYG.args} />,
+    },
   },
 };
 
