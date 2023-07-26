@@ -19,10 +19,7 @@ function Footer({
       className={clsx(styles.wrapper, modifierClasses)}
       role="contentinfo"
     >
-      <Constrain
-        isRendered={hasConstrain}
-        modifierClasses={clsx(constrainClasses)}
-      >
+      <Constrain isHidden={!hasConstrain} modifierClasses={constrainClasses}>
         <div className={styles.inner}>{children}</div>
       </Constrain>
     </footer>

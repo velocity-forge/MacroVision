@@ -20,10 +20,7 @@ function Section({
 }: SectionProps): JSX.Element {
   return (
     <section className={clsx(styles.section, modifierClasses)}>
-      <Constrain
-        isRendered={hasConstrain}
-        modifierClasses={clsx(constrainClasses)}
-      >
+      <Constrain isHidden={!hasConstrain} modifierClasses={constrainClasses}>
         {title && <TitleElement className={styles.title}>{title}</TitleElement>}
         <div className={styles.content}>{children}</div>
       </Constrain>

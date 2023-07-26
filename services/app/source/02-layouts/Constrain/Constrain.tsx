@@ -5,18 +5,18 @@ import styles from './constrain.module.css';
 
 interface ConstrainProps extends GessoComponent {
   children?: ReactNode;
-  isRendered?: boolean;
+  isHidden?: boolean;
 }
 
 function Constrain({
   children,
-  isRendered = true,
+  isHidden = false,
   modifierClasses,
 }: ConstrainProps): JSX.Element {
-  return isRendered ? (
-    <div className={clsx(styles.constrain, modifierClasses)}>{children}</div>
-  ) : (
+  return isHidden ? (
     <>{children}</>
+  ) : (
+    <div className={clsx(styles.constrain, modifierClasses)}>{children}</div>
   );
 }
 

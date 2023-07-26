@@ -16,10 +16,7 @@ function Header({
 }: HeaderProps): JSX.Element {
   return (
     <header role="banner" className={clsx(styles.wrapper, modifierClasses)}>
-      <Constrain
-        isRendered={hasConstrain}
-        modifierClasses={clsx(constrainClasses)}
-      >
+      <Constrain isHidden={!hasConstrain} modifierClasses={constrainClasses}>
         <div className={styles.inner}>{children}</div>
       </Constrain>
     </header>

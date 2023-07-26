@@ -23,10 +23,7 @@ function Main({
       role="main"
       tabIndex={-1}
     >
-      <Constrain
-        isRendered={hasConstrain}
-        modifierClasses={clsx(constrainClasses)}
-      >
+      <Constrain isHidden={!hasConstrain} modifierClasses={constrainClasses}>
         {children}
       </Constrain>
     </main>
