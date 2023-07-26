@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { ConstrainComponent } from 'gesso';
+import Constrain from '../Constrain/Constrain';
 import { ElementType, ReactNode } from 'react';
 import styles from './section.module.css';
 
@@ -19,10 +20,13 @@ function Section({
 }: SectionProps): JSX.Element {
   return (
     <section className={clsx(styles.section, modifierClasses)}>
-      <div className={clsx(hasConstrain && 'constrain', constrainClasses)}>
+      <Constrain
+        isRendered={hasConstrain}
+        modifierClasses={clsx(constrainClasses)}
+      >
         {title && <TitleElement className={styles.title}>{title}</TitleElement>}
         <div className={styles.content}>{children}</div>
-      </div>
+      </Constrain>
     </section>
   );
 }

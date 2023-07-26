@@ -1,6 +1,5 @@
 @layer global {
   @import './normalize/normalize';
   @import './html-elements/index';
-  @import './constrain/constrain';
   @import './icon/icon';
 }

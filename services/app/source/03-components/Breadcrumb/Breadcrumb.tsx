@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
+import Constrain from '../../02-layouts/Constrain/Constrain';
 import Link from 'next/link';
 import { ElementType } from 'react';
 import styles from './breadcrumb.module.css';
@@ -30,7 +31,7 @@ function Breadcrumb({
       aria-labelledby={breadcrumbId}
       className={styles.breadcrumb}
     >
-      <div className="constrain">
+      <Constrain>
         <TitleElement
           id={breadcrumbId}
           className={clsx(styles.title, hideTitle && 'u-visually-hidden')}
@@ -51,7 +52,7 @@ function Breadcrumb({
               </li>
             ))}
         </ol>
-      </div>
+      </Constrain>
     </nav>
   );
 }
