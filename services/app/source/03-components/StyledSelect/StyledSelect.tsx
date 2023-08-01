@@ -34,9 +34,11 @@ const selectTheme: ThemeConfig = theme => ({
  * @see https://react-select.com/typescript
  * @param props
  */
-function StyledSelect(
-  props: Props<DropdownOption, boolean, GroupBase<DropdownOption>>,
-): JSX.Element {
+function StyledSelect<
+  Option = DropdownOption,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>,
+>(props: Props<Option, IsMulti, Group>): JSX.Element {
   return (
     <Select
       {...props}
