@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { ConstrainComponent } from 'gesso';
+import Constrain from '../Constrain/Constrain';
 import { ReactNode } from 'react';
 import styles from './main.module.css';
 
@@ -22,9 +23,9 @@ function Main({
       role="main"
       tabIndex={-1}
     >
-      <div className={clsx(hasConstrain && 'constrain', constrainClasses)}>
+      <Constrain isHidden={!hasConstrain} modifierClasses={constrainClasses}>
         {children}
-      </div>
+      </Constrain>
     </main>
   );
 }

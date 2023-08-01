@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { ConstrainComponent } from 'gesso';
+import Constrain from '../Constrain/Constrain';
 import { ReactNode } from 'react';
 import styles from './footer.module.css';
 
@@ -18,15 +19,9 @@ function Footer({
       className={clsx(styles.wrapper, modifierClasses)}
       role="contentinfo"
     >
-      <div
-        className={clsx(
-          styles.inner,
-          hasConstrain && 'constrain',
-          constrainClasses,
-        )}
-      >
-        {children}
-      </div>
+      <Constrain isHidden={!hasConstrain} modifierClasses={constrainClasses}>
+        <div className={styles.inner}>{children}</div>
+      </Constrain>
     </footer>
   );
 }
