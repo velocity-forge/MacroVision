@@ -10,7 +10,7 @@ import DropdownOption from './DropdownOption';
  * @see https://react-select.com/components#replacing-components
  * @param props
  */
-function StyledDropdownIndicator<Option = DropdownOption>(
+function StyledDropdownIndicator<Option extends DropdownOption>(
   props: DropdownIndicatorProps<Option, boolean, GroupBase<Option>>,
 ) {
   return (
