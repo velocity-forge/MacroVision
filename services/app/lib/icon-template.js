@@ -53,6 +53,9 @@ const iconTemplate = (
   }
 
   return tpl`
+// This component is automatically generated.
+// SVGs should be added to icon/svgs.
+// See the project documentation for more information.
 // tslint:disable:ordered-imports
 import clsx from 'clsx';
 ${imports};
