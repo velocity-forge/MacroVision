@@ -22,6 +22,7 @@ const FooterMenu: Story = {
     ...footerMenuArgs,
     modifierClasses: footerStyles.menu,
     itemClasses: footerStyles.item,
+    linkClasses: footerStyles.link,
   },
 };
 

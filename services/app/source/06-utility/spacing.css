@@ -1,0 +1,25 @@
+@each $value in (0, 0-5, 1, 1-5, 2, 2-5, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15) {
+  .u-spacing-block-$(value) {
+    margin-block: var(--spacing-#{$value});
+  }
+
+  .u-spacing-block-start-$(value) {
+    margin-block-start: var(--spacing-#{$value});
+  }
+
+  .u-spacing-block-end-$(value) {
+    margin-block-end: var(--spacing-#{$value});
+  }
+
+  .u-spacing-inline-$(value) {
+    margin-inline: var(--spacing-#{$value});
+  }
+
+  .u-spacing-inline-start-$(value) {
+    margin-inline-start: var(--spacing-#{$value});
+  }
+
+  .u-spacing-inline-end-$(value) {
+    margin-inline-end: var(--spacing-#{$value});
+  }
+}
