@@ -7,7 +7,11 @@ interface WysiwygProps extends GessoComponent {
 }
 
 function Wysiwyg({ children, modifierClasses }: WysiwygProps): JSX.Element {
-  return <div className={clsx(modifierClasses)}>{children}</div>;
+  return (
+    <div className={clsx('c-wysiwyg u-clearfix', modifierClasses)}>
+      {children}
+    </div>
+  );
 }
 
 export default Wysiwyg;
