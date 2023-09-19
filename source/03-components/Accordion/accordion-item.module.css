@@ -1,0 +1,103 @@
+@layer components {
+  .accordionItem {
+    border-bottom: solid 1px var(--grayscale-gray-2);
+  }
+
+  .panel {
+  }
+
+  .heading {
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+  }
+
+  .toggle {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    font-weight: inherit;
+    justify-content: space-between;
+    line-height: inherit;
+    padding-block: var(--spacing-2);
+    padding-inline: var(--spacing-2) var(--spacing-8);
+    pointer-events: none;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: all var(--duration-short) var(--easing-ease-out);
+    width: 100%;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: inherit;
+    }
+  
+    /* Allow pointer events if accordion is processed. */
+    [data-accordion-processed] & {
+      pointer-events: visible;
+    }
+  }
+
+  .icon {
+    display: none;
+    height: 20px;
+    position: absolute;
+    right: var(--spacing-3);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+  
+    [dir='rtl'] & {
+      left: var(--spacing-3);
+      right: initial;
+    }
+  
+    /* Only show icon if accordion js is processed. */
+    [data-accordion-processed] & {
+      display: block;
+    }
+  
+    &::before,
+    &::after {
+      background-color: var(--ui-accent);
+      content: '';
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: center;
+      transition-duration: var(--duration-short);
+      transition-property: transform;
+      transition-timing-function: var(--easing-ease-out);
+      width: 100%;
+    }
+  
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  
+    [aria-expanded='true'] & {
+      &::after {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+    }
+  }
+
+  .drawer {
+    background: var(--grayscale-white);
+  }
+
+  .drawerInner {
+    padding-block: 0 var(--spacing-2);
+    padding-inline: var(--spacing-2) var(--spacing-8);
+  
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
