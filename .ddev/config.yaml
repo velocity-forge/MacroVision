@@ -1,4 +1,4 @@
-name: [PROJECT NAME]
+name: nextjs-project-app-move
 type: php
 docroot: public
 php_version: "8.0"
