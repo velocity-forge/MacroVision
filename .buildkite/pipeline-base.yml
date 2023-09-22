@@ -32,7 +32,7 @@ env:
   ECR_NAMESPACE: "${IMAGE_REPOSITORY}:${BUILDKITE_PIPELINE_SLUG}"
 
   # Define service directory were the Dockerfile is used
-  DOCKERFILE_LOCATION: "./services/app"
+  DOCKERFILE_LOCATION: "./"
 steps:
   - label: ":hammer: :docker: Building Docker Image"
     key: "build-image"
@@ -45,7 +45,7 @@ steps:
       - *ecr
       - seek-oss/aws-sm#v2.0.0:
           file:
-            - path: services/app/.env
+            - path: .env
               secret-id: [NEED THIS CONFIGURED]
 
   # Wait for images to finish building.

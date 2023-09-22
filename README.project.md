@@ -12,46 +12,44 @@ Note that Next v13 comes with the following installed already:
 * [Webpack v5](https://webpack.js.org/concepts/)
 * [CSS Modules](https://github.com/css-modules/css-modules)
 
-## Getting Started
-
 ## Initial Setup
 
-1. Setup [husky](https://typicode.github.io/husky/#/) by installing it at the base of the repo.
+1. Run [nvm](https://github.com/nvm-sh/nvm) so your local node version matches the project's node version:
+    ```bash
+    nvm use
+    ```
+
+1. Install dependencies locally. This helps some IDEs using tools like IntelliSense to properly wireup packages to your app files,
+   or if you simply want to run `npm` commands outside of `ddev`.
+   View the `README.nextjs.md` file to see how to run commands outside of ddev.
     ```bash
     npm ci
     ```
-
-2. Go to the `services/app` directory.
-    ```bash
-    cd services/app
-    ```
    
-3. Install dependencies. To install and run the app without ddev, see the README inside the app directory.
+1. Install dependencies for ddev.
    You will need to install dependencies and run the app in the same environment (either Docker/Linux for both
    or your local OS for both). Otherwise, you can end up with incompatible versions of some packages.
    ```bash
    ddev nextjs npm ci
    ```
 
-3. Start up the app. To do that, run `ddev start` from within the `services/app` directory:
+1. Start up the app by running `ddev start`:
     ```bash
     ddev start
     ```
 
 ## Starting and stopping the project
 
-After following the "Initial Setup" instructions, you can start the local development server for the app by going to the `services/app` directory and running:
+After following the "Initial Setup" instructions, you can start the local development server for the app by running:
 ```bash
 ddev start
 ```
-Open [https://YOUR-PROJECT.ddev.site/](https://YOUR-PROJECT.ddev.site/) with your browser to see the app. Note that the script will continue to run in your terminal tab. Killing or exiting the script (e.g. `ctrl+C`) will stop the Nextjs app.
+Open [https://YOUR-PROJECT.ddev.site/](https://YOUR-PROJECT.ddev.site/) with your browser to see the app. If using storybook, use port `6006` by default to view it: [https://YOUR-PROJECT.ddev.site:6006](https://YOUR-PROJECT.ddev.site:6006).
 
 To stop `ddev` for the project:
 ```bash
 ddev stop
 ```
-
-Note that these `ddev` commands _must_ be run in the `services/app` directory.
 
 ## Icons
 After adding a new SVG to `source/01-global-icon/svgs`, you will need to
@@ -166,9 +164,5 @@ If you would want to use `npm`, please do `ddev npm [package]`.
 
 To verify that it is working please run: `ddev nextjs monit` and if it is not working as expected please try the following:
 * Stop DDev, `ddev stop`
-* Remove `node_modules` folder from the `services/app`
+* Remove `node_modules`
 * Then restart DDev, `ddev start`
-
-### Helpful script
-
-If you do not want to go into the `services/app` directory and want to stay at the root of the project, use `sh dev [ddev command]`.

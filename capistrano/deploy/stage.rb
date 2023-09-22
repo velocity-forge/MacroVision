@@ -2,7 +2,7 @@
 set :stage, :stage
 
 # An array containing site URL, used for Varnish bans
-set :site_url, %w{stage.cdhdb.nyusom.byf1.dev}
+set :site_url, %w{stage.SOME_SITE.byf1.dev}
 
 # An array containing drupal sites to copy settings files in
 set :site_folder, %w{default}
@@ -21,9 +21,9 @@ set :branch, "main"
 # Supports bulk-adding hosts to roles, the primary
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
-role :app, %w{cdhdb@nyusom.byf1.dev}, :primary => true
-role :web, %w{cdhdb@nyusom.byf1.dev}
-role :db,  %w{cdhdb@nyusom.byf1.dev}
+role :app, %w{SOME_USER@SOME_SITE.byf1.dev}, :primary => true
+role :web, %w{SOME_USER@SOME_SITE.byf1.dev}
+role :db,  %w{SOME_USER@SOME_SITE.byf1.dev}
 
 # Extended Server Syntax
 # ======================

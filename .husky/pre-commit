@@ -1,6 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# Run test command in the app service.
-cd services/app
+# Run test command
 npm test

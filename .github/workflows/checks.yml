@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./services/app
+        working-directory: ./
 
     strategy:
       matrix:
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./services/app
+        working-directory: ./
 
     strategy:
       matrix:
