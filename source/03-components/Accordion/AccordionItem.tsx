@@ -1,50 +1,69 @@
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
-import { ElementType, useId } from 'react';
+import { ElementType, MouseEventHandler, useEffect, useRef } from 'react';
 import styles from './accordion-item.module.css';
+import { slideCollapse, slideExpand } from '../../06-utility/slide';
 
 export interface AccordionItemProps extends GessoComponent {
+  id: string;
   title: string;
   content: string;
   titleElement?: ElementType;
   isOpen?: boolean;
+  accordionSpeed?: string;
+  handleClick: MouseEventHandler;
 }
 
 function AccordionItem({
+  id,
   title,
   content,
   titleElement: TitleElement = 'h3',
   isOpen,
+  accordionSpeed,
   modifierClasses,
+  handleClick,
 }: AccordionItemProps): JSX.Element {
-  const itemId = useId();
+  const accordionItemSectionRef = useRef(null);
 
-  const sectionId = `accordion-section-${itemId}`;
-  const buttonId = `accordion-button-${itemId}`;
+  const sectionId = `accordion-section-${id}`;
+  const buttonId = `accordion-button-${id}`;
+
+  useEffect(() => {
+    if (isOpen && accordionItemSectionRef.current) {
+      slideExpand(accordionItemSectionRef.current, accordionSpeed);
+    } else if (!isOpen && accordionItemSectionRef.current) {
+      slideCollapse(accordionItemSectionRef.current, accordionSpeed);
+    }
+  }, [isOpen, accordionSpeed]);
 
   return (
     <div
-      className={clsx(styles.accordionItem, modifierClasses)}
-      data-accordion-open={isOpen}
+      className={clsx(
+        styles.accordionItem,
+        isOpen ? `accordion-item_is-open` : '',
+        modifierClasses,
+      )}
     >
       <div className={styles.panel}>
         <TitleElement className={styles.heading}>
           <button
             className={styles.toggle}
             id={buttonId}
-            aria-expanded="true"
+            aria-expanded={isOpen}
             aria-controls={sectionId}
-            tabIndex={-1}
+            onClick={handleClick}
           >
             {title}
             <span className={styles.icon}></span>
           </button>
         </TitleElement>
         <div
+          ref={accordionItemSectionRef}
           className={styles.drawer}
           id={sectionId}
           aria-labelledby={buttonId}
-          aria-expanded="true"
+          aria-expanded={isOpen}
         >
           <div className={styles.drawerInner}>{content}</div>
         </div>

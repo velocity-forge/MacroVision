@@ -1,199 +1,145 @@
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
-import { useEffect, useId, useRef } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import styles from './accordion.module.css';
 import stylesAccordionItem from './accordion-item.module.css';
 import getCssVar from '../../06-utility/getCssVar';
-import { slideCollapse, slideExpand } from '../../06-utility/slide';
 import { KEYCODE } from '../../00-config/constants';
 import AccordionItem, { AccordionItemProps } from './AccordionItem';
 
 interface AccordionProps extends GessoComponent {
-  accordionItems?: AccordionItemProps[];
+  accordionItems: AccordionItemProps[];
+  accordionSpeed?: string;
   allowMultiple?: boolean;
   allowToggle?: boolean;
 }
 
 function Accordion({
   accordionItems,
+  accordionSpeed = getCssVar('duration-standard'),
   allowMultiple,
   allowToggle,
   modifierClasses,
 }: AccordionProps): JSX.Element {
   const accordionId = useId();
   const accordionRef = useRef(null);
+  const [accordionItemsStatus, setAccordionItemsStatus] = useState(
+    accordionItems.map((item, index) => ({
+      ...item,
+      id: `${accordionId}-${index}`,
+    })),
+  );
 
-  useEffect(() => {
-    const ACCORDION_TOGGLE_CLASS = stylesAccordionItem.toggle;
-    const ACCORDION_SPEED = getCssVar('duration-standard');
+  const openAccordionItem = (items: AccordionItemProps[], index: number) => {
+    return items.with(index, {
+      ...items[index],
+      isOpen: true,
+    });
+  };
 
-    const accordion = document.getElementById(accordionId);
-    const multipleAllowed = allowMultiple;
+  const closeAccordionItem = (items: AccordionItemProps[], index: number) => {
+    return items.with(index, {
+      ...items[index],
+      isOpen: false,
+    });
+  };
+
+  const handleClick = (id: string, isOpen = false) => {
     const toggleAllowed = allowMultiple ? true : allowToggle;
+    const active = accordionItemsStatus.findIndex(item => item.isOpen);
+    const itemIndex = accordionItemsStatus.findIndex(item => item.id === id);
+    let itemStatusUpdated = [...accordionItemsStatus];
 
-    const openAccordion = (button: Element | HTMLElement | null) => {
-      if (button && button.getAttribute('aria-expanded') === 'false') {
-        button.setAttribute('aria-expanded', 'true');
-        const accordionSectionId = button.getAttribute(
-          'aria-controls',
-        ) as string;
-        const accordionSection = document.getElementById(accordionSectionId);
+    // Without allowMultiple, close the open accordion
+    if (!allowMultiple && active !== -1 && active !== itemIndex) {
+      itemStatusUpdated = closeAccordionItem(itemStatusUpdated, active);
+    }
 
-        if (accordionSection) {
-          accordionSection.setAttribute('aria-expanded', 'true');
-          slideExpand(accordionSection, ACCORDION_SPEED);
-        }
-      }
-    };
+    if (!isOpen) {
+      itemStatusUpdated = openAccordionItem(itemStatusUpdated, itemIndex);
+    } else if (toggleAllowed && isOpen) {
+      itemStatusUpdated = closeAccordionItem(itemStatusUpdated, itemIndex);
+    }
 
-    const closeAccordion = (button: Element | HTMLElement | null) => {
-      if (button && button.getAttribute('aria-expanded') === 'true') {
-        button.setAttribute('aria-expanded', 'false');
-        const accordionSectionId = button.getAttribute(
-          'aria-controls',
-        ) as string;
-        const accordionSection = document.getElementById(accordionSectionId);
+    return setAccordionItemsStatus(itemStatusUpdated);
+  };
 
-        if (accordionSection) {
-          accordionSection.setAttribute('aria-expanded', 'false');
-          slideCollapse(accordionSection, ACCORDION_SPEED);
-        }
-      }
-    };
+  const handleKeydown = (event: KeyboardEvent) => {
+    const currentTarget = event.target as HTMLElement;
+    const accordion = accordionRef.current as HTMLElement | null;
+    const ACCORDION_TOGGLE_CLASS = stylesAccordionItem.toggle;
 
-    const handleClick = (event: MouseEvent) => {
-      const currentTarget = event.target as HTMLElement;
+    // Create the array of toggle elements for the accordion group
+    const triggers = Array.prototype.slice.call(
+      accordion ? accordion.querySelectorAll(`.${ACCORDION_TOGGLE_CLASS}`) : [],
+    );
 
-      // Set target differently depending on click vs. keydown
-      // because the <span> inside <button> screws things up
+    // Is this coming from an accordion header?
+    if (currentTarget.tagName === 'BUTTON') {
+      // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
       if (
-        currentTarget &&
-        (currentTarget.tagName === 'BUTTON' ||
-          (currentTarget.parentElement &&
-            currentTarget.parentElement.tagName === 'BUTTON'))
+        event.code === KEYCODE.UP ||
+        event.code === KEYCODE.DOWN ||
+        event.code === KEYCODE.PAGEDOWN ||
+        event.code === KEYCODE.UP
       ) {
-        let target;
-        // Set target based on click or keydown
-        if (currentTarget.tagName === 'BUTTON') {
-          target = currentTarget;
+        const index = triggers.indexOf(currentTarget);
+        let direction;
+        if (event.code === KEYCODE.DOWN || event.code === KEYCODE.PAGEDOWN) {
+          direction = 1;
         } else {
-          target = currentTarget.parentElement;
+          direction = -1;
         }
-        // Check if the current toggle is expanded.
-        const isExpanded = target
-          ? target.getAttribute('aria-expanded') === 'true'
-          : false;
-        const active = accordion
-          ? accordion.querySelector('[aria-expanded="true"]')
-          : null;
-
-        // without allowMultiple, close the open accordion
-        if (!multipleAllowed && active && active !== target) {
-          closeAccordion(active);
+        const triggerLength = triggers.length;
+        const newIndex = (index + triggerLength + direction) % triggerLength;
+        triggers[newIndex].focus();
+        event.preventDefault();
+      } else if (event.code === KEYCODE.HOME || event.code === KEYCODE.END) {
+        switch (event.code) {
+          // Go to first accordion
+          case KEYCODE.HOME:
+            triggers[0].focus();
+            break;
+          // Go to last accordion
+          case KEYCODE.END:
+            triggers[triggers.length - 1].focus();
+            break;
+          default:
+            triggers[0].focus();
+            break;
         }
-
-        if (!isExpanded) {
-          openAccordion(target);
-        } else if (toggleAllowed && isExpanded) {
-          closeAccordion(target);
-        }
-
         event.preventDefault();
       }
-    };
-
-    const handleKeydown = (event: KeyboardEvent) => {
-      const currentTarget = event.target as HTMLElement;
-
-      // Create the array of toggle elements for the accordion group
-      const triggers = Array.prototype.slice.call(
-        accordion
-          ? accordion.querySelectorAll(`.${ACCORDION_TOGGLE_CLASS}`)
-          : [],
-      );
-
-      // Is this coming from an accordion header?
-      if (currentTarget.tagName === 'BUTTON') {
-        // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
-        if (
-          event.code === KEYCODE.UP ||
-          event.code === KEYCODE.DOWN ||
-          event.code === KEYCODE.PAGEDOWN ||
-          event.code === KEYCODE.UP
-        ) {
-          const index = triggers.indexOf(currentTarget);
-          let direction;
-          if (event.code === KEYCODE.DOWN || event.code === KEYCODE.PAGEDOWN) {
-            direction = 1;
-          } else {
-            direction = -1;
-          }
-          const triggerLength = triggers.length;
-          const newIndex = (index + triggerLength + direction) % triggerLength;
-          triggers[newIndex].focus();
-          event.preventDefault();
-        } else if (event.code === KEYCODE.HOME || event.code === KEYCODE.END) {
-          switch (event.code) {
-            // Go to first accordion
-            case KEYCODE.HOME:
-              triggers[0].focus();
-              break;
-            // Go to last accordion
-            case KEYCODE.END:
-              triggers[triggers.length - 1].focus();
-              break;
-            default:
-              triggers[0].focus();
-              break;
-          }
-          event.preventDefault();
-        }
-      }
-    };
-
-    // Initiate accordions on page load
-    if (accordion) {
-      accordion.addEventListener('click', handleClick);
-      accordion.addEventListener('keydown', handleKeydown);
-
-      const accordionItems = accordion.querySelectorAll(
-        `.${stylesAccordionItem.accordionItem}`,
-      );
-      accordionItems.forEach(item => {
-        const toggle = item.querySelector(`.${ACCORDION_TOGGLE_CLASS}`);
-        console.log(toggle);
-        // Close all accordion items that are not 'default-open'
-        if (
-          !item.hasAttribute('data-accordion-open') ||
-          item.getAttribute('data-accordion-open') === 'false'
-        ) {
-          closeAccordion(toggle);
-        }
-        // Update toggle tabindex
-        if (toggle) {
-          toggle.removeAttribute('tabindex');
-        }
-        // Add attribute 'processed'
-        item.setAttribute('data-accordion-processed', '');
-      });
     }
-  }, [accordionId, allowMultiple, allowToggle]);
+  };
+
+  useEffect(() => {
+    const accordion = accordionRef.current as HTMLElement | null;
+    if (accordion) {
+      accordion.addEventListener('keydown', handleKeydown);
+    }
+  });
 
   return (
     <>
-      {accordionItems && (
-        <div
-          ref={accordionRef}
-          className={clsx(styles.accordion, modifierClasses)}
-          id={accordionId}
-        >
-          <div className={styles.content}>
-            {accordionItems.map((item, index) => {
-              return <AccordionItem key={index} {...item} />;
-            })}
-          </div>
+      <div
+        ref={accordionRef}
+        className={clsx(styles.accordion, modifierClasses)}
+        id={accordionId}
+      >
+        <div className={styles.content}>
+          {accordionItemsStatus.map(item => {
+            return (
+              <AccordionItem
+                key={item.id}
+                {...item}
+                accordionSpeed={accordionSpeed}
+                handleClick={() => handleClick(item.id, item.isOpen)}
+              />
+            );
+          })}
         </div>
-      )}
+      </div>
     </>
   );
 }
