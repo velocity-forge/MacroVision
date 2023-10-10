@@ -56,7 +56,7 @@
     "eslint-config-next": "^13.2.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "html-react-parser": "^3.0.16",
+    "html-react-parser": "^4.2.2",
     "husky": "^7.0.4",
     "inquirer": "^8.2.4",
     "mkdirp": "^1.0.4",
