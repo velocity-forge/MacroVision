@@ -25,7 +25,7 @@ git init
 ```shell
 git remote add origin git@github.com:forumone/[project-name].git
 ```
-4. Update configuration in the `./services/app/.ddev/config.yaml`
+4. Update configuration in the `./.ddev/config.yaml`
    5. Update `name: [project name]` to the correct project name.
 
 
@@ -42,15 +42,15 @@ git remote add origin git@github.com:forumone/[project-name].git
 ##### No
 
 Please remove:
-* `./services/app/.storybook`
-* In the `./services/app/package.json`, remove
+* `./.storybook`
+* In the `./package.json`, remove
   ```
     ...
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
     ...
   ``` 
-* Uninstall the storybook related packages as well in `services/app/package.json`
+* Uninstall the storybook related packages as well in `package.json`
 * Run `npm i --package-lock-only`
 
 #### Do you need github action linting?
@@ -68,7 +68,7 @@ Please delete: `./github` folder.
   ...
      - seek-oss/aws-sm#v2.0.0:
        file:
-        - path: services/app/.env
+        - path: .env
           secret-id: [NEED THIS CONFIGURED]
   ...
   ```

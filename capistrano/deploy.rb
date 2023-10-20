@@ -1,8 +1,8 @@
 # The name for the application, should only be things that can be in a directory name
-set :application, 'NYU-CDHDB'
+set :application, 'SOME-APP-NAME'
 
 # The repo URL
-set :repo_url, 'https://github.com/forumone/NYU-CDHDB'
+set :repo_url, 'https://github.com/forumone/SOME-REPO-NAME'
 
 # Or use the line below to deploy via rsync
 set :scm, :rsync
