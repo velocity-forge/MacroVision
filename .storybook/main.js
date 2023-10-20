@@ -18,6 +18,7 @@ module.exports = {
       },
     },
     '@storybook/addon-a11y',
+    '@storybook/addon-styling-webpack'
   ],
   framework: {
     name: '@storybook/nextjs',
