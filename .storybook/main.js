@@ -3,42 +3,13 @@ const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const YAML = require('yaml');
 
 module.exports = {
-  staticDirs: [path.resolve(__dirname, '../public')],
+  staticDirs: ['../public'],
   stories: ['../source/**/*.stories.@(js|jsx|ts|tsx)', '../source/**/*.mdx'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    {
-      name: '@storybook/addon-styling',
-      options: {
-        postcssLoaderOptions: {
-          implementation: require('postcss'),
-        },
-      },
-    },
     '@storybook/addon-a11y',
-    '@storybook/addon-styling-webpack',
-    ({
-      name: "@storybook/addon-styling-webpack",
-
-      options: {
-        rules: [{
-      test: /\.css$/,
-      sideEffects: true,
-      use: [
-          require.resolve("style-loader"),
-          {
-              loader: require.resolve("css-loader"),
-              options: {
-                  
-                  
-              },
-          },
-      ],
-    },],
-      }
-    })
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -47,7 +18,7 @@ module.exports = {
   webpackFinal: async config => {
     config.plugins.push(
       new StylelintWebpackPlugin({
-        exclude: ['node_modules', 'storybook'],
+        exclude: ['node_modules', 'storybook', '.next'],
       }),
     );
     config.module.rules.find(
