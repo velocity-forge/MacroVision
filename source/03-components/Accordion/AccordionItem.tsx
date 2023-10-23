@@ -11,6 +11,7 @@ export interface AccordionItemProps extends GessoComponent {
   titleElement?: ElementType;
   isOpen?: boolean;
   accordionSpeed?: string;
+  toggleRef?: React.RefObject<HTMLButtonElement>;
   handleClick: MouseEventHandler;
 }
 
@@ -21,6 +22,7 @@ function AccordionItem({
   titleElement: TitleElement = 'h3',
   isOpen,
   accordionSpeed,
+  toggleRef,
   modifierClasses,
   handleClick,
 }: AccordionItemProps): JSX.Element {
@@ -52,6 +54,7 @@ function AccordionItem({
             id={buttonId}
             aria-expanded={isOpen}
             aria-controls={sectionId}
+            ref={toggleRef}
             onClick={handleClick}
           >
             {title}
