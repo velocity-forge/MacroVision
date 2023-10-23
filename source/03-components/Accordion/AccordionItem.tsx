@@ -40,13 +40,7 @@ function AccordionItem({
   }, [isOpen, accordionSpeed]);
 
   return (
-    <div
-      className={clsx(
-        styles.accordionItem,
-        isOpen ? `accordion-item_is-open` : '',
-        modifierClasses,
-      )}
-    >
+    <div className={clsx(styles.accordionItem, modifierClasses)}>
       <div className={styles.panel}>
         <TitleElement className={styles.heading}>
           <button
