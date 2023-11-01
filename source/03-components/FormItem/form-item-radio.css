@@ -18,7 +18,6 @@
     inline-size: rem(18px);
     inset-block-start: rem(2px);
     margin-inline-end: 3px;
-    outline: none;
     position: relative;
     transition-duration: var(--duration-short);
     transition-property: background-color, border-color, border-radius;
