@@ -1,13 +1,19 @@
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
-import { ElementType, MouseEventHandler, useEffect, useRef } from 'react';
+import {
+  ElementType,
+  MouseEventHandler,
+  ReactElement,
+  useEffect,
+  useRef,
+} from 'react';
 import styles from './accordion-item.module.css';
 import { slideCollapse, slideExpand } from '../../06-utility/slide';
 
 export interface AccordionItemProps extends GessoComponent {
   id: string;
   title: string;
-  content: string;
+  content: ReactElement;
   titleElement?: ElementType;
   isOpen?: boolean;
   accordionSpeed?: string;

@@ -34,7 +34,6 @@ export const slideCollapse = (
     target.style.paddingBottom = '0';
     target.style.marginTop = '0';
     target.style.marginBottom = '0';
-    target.style.marginHeight = 'auto';
 
     window.requestAnimationFrame(() => {
       function hideTarget() {
@@ -70,7 +69,7 @@ export const slideCollapse = (
  *
  * @name slideExpand
  * @param {HTMLElement} target - The element expanding.
- * @param {integer} duration - The duration of the animation, defaults to gesso token standard.
+ * @param {number} duration - The duration of the animation, defaults to gesso token standard.
  * @param {string} easing - The easing of the animation, defaults to gesso token ease-in-out.
  * @param {boolean} hideContent - Whether to hide collapsed content from screen readers, defaults to true.
  */
