@@ -34,17 +34,25 @@ function Accordion({
   }, [accordionItemsStatus]);
 
   const openAccordionItem = (items: AccordionItemProps[], index: number) => {
-    return items.with(index, {
-      ...items[index],
-      isOpen: true,
-    });
+    return [
+      ...items.slice(0, index),
+      {
+        ...items[index],
+        isOpen: true,
+      },
+      ...items.slice(index + 1),
+    ];
   };
 
   const closeAccordionItem = (items: AccordionItemProps[], index: number) => {
-    return items.with(index, {
-      ...items[index],
-      isOpen: false,
-    });
+    return [
+      ...items.slice(0, index),
+      {
+        ...items[index],
+        isOpen: false,
+      },
+      ...items.slice(index + 1),
+    ];
   };
 
   const handleClick = (id: string, isOpen = false) => {
