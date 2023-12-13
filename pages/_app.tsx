@@ -13,6 +13,7 @@ import SiteName from '../source/03-components/SiteName/SiteName';
 import Skiplink from '../source/03-components/Skiplink/Skiplink';
 import addBasePath from '../source/06-utility/addBasePath';
 import '../source/06-utility/index.css';
+import SourceSansFontStyle from '../source/01-global/fonts/source-sans';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -20,6 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="icon" href={addBasePath('/favicon.ico')} />
       </Head>
+      <SourceSansFontStyle />
       <Skiplink />
       <SiteContainer>
         <Header>
