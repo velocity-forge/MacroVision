@@ -40,8 +40,7 @@
     display: block;
     float: inline-start;
     margin-inline-end: 0.75em;
-    padding-inline-end: 0.75em;
-    padding-inline-start: 0;
+    padding-inline: 0 0.75em;
 
     @supports not (float: inline-start) {
       float: left;

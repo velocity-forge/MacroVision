@@ -7,7 +7,7 @@ const TextStylesComponent = () => {
       {Object.entries(styles).map(([name, style]) => (
         <div key={name} style={{ marginBottom: '3rem' }}>
           <div style={{ textTransform: 'uppercase' }}>{name}</div>
-          <div className={style as string}>
+          <div className={style}>
             Alice was beginning to get very tired of sitting by her sister on
             the bank, and of having nothing to do: once or twice she had peeped
             into the book her sister was reading, but it had no pictures or

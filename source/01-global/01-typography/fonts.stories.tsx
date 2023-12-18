@@ -43,7 +43,7 @@ const Fonts: StoryObj<FontsArgs> = {
   render: args => {
     return (
       <>
-        {Object.entries(args.fonts as FontOptions).map(([name, fontFamily]) => (
+        {Object.entries(args.fonts).map(([name, fontFamily]) => (
           <div className={styles.fonts} key={name}>
             <h3
               className={styles.family}
@@ -53,47 +53,45 @@ const Fonts: StoryObj<FontsArgs> = {
             >
               {name}
             </h3>
-            {Object.entries(args.weights as WeightOptions).map(
-              ([name, fontWeight]) => (
-                <div className={styles.item} key={name}>
-                  <div
-                    className={styles['preview-character']}
-                    style={{
-                      fontStyle: 'normal',
-                      fontFamily,
-                      fontWeight,
-                    }}
-                  >
-                    AaBbCc
+            {Object.entries(args.weights).map(([name, fontWeight]) => (
+              <div className={styles.item} key={name}>
+                <div
+                  className={styles['preview-character']}
+                  style={{
+                    fontStyle: 'normal',
+                    fontFamily,
+                    fontWeight,
+                  }}
+                >
+                  AaBbCc
+                </div>
+                <div
+                  className={styles.preview}
+                  style={{
+                    fontStyle: 'normal',
+                    fontFamily,
+                    fontWeight,
+                  }}
+                >
+                  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                  <br />
+                  abcdefghijklmnopqrstuvwxyz
+                  <br />
+                  1234567890(,.;:?!$&*)
+                </div>
+                <div className={styles['preview-meta']}>
+                  <div className={styles.name}>{name}</div>
+                  <div className={styles.weight}>
+                    <span className={styles.label}>Weight:</span>
+                    {fontWeight}
                   </div>
-                  <div
-                    className={styles.preview}
-                    style={{
-                      fontStyle: 'normal',
-                      fontFamily,
-                      fontWeight,
-                    }}
-                  >
-                    ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                    <br />
-                    abcdefghijklmnopqrstuvwxyz
-                    <br />
-                    1234567890(,.;:?!$&*)
-                  </div>
-                  <div className={styles['preview-meta']}>
-                    <div className={styles.name}>{name}</div>
-                    <div className={styles.weight}>
-                      <span className={styles.label}>Weight:</span>
-                      {fontWeight}
-                    </div>
-                    <div className={styles.style}>
-                      <span className={styles.label}>Style:</span>
-                      {fontFamily}
-                    </div>
+                  <div className={styles.style}>
+                    <span className={styles.label}>Style:</span>
+                    {fontFamily}
                   </div>
                 </div>
-              ),
-            )}
+              </div>
+            ))}
           </div>
         ))}
       </>
