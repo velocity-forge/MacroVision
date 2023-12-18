@@ -11,7 +11,11 @@ function SourceSansFontStyle() {
     <style jsx global>
       {`
         :root {
-          --font-family-primary: ${sourceSansPro.style.fontFamily};
+          --font-family-primary: ${sourceSansPro.style.fontFamily
+              .split(',')
+              .map(fontFamily => `'${fontFamily.trim().replaceAll("'", '')}'`)
+              .join(', ')},
+            Arial, sans-serif;
         }
       `}
     </style>
