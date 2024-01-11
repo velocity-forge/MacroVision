@@ -3,11 +3,14 @@
     display: table;
     margin-block: 0 var(--spacing-2);
 
+    &:global(.align-center),
     &:global(.u-align-center) {
       clear: both;
+      display: table;
       margin-block-start: var(--spacing-2);
     }
 
+    &:global(.align-left),
     &:global(.u-align-left) {
       @media (--tablet) {
         margin-inline-end: var(--spacing-4);
@@ -15,6 +18,7 @@
       }
     }
 
+    &:global(.align-right),
     &:global(.u-align-right) {
       @media (--tablet) {
         margin-inline-start: var(--spacing-4);
@@ -33,6 +37,11 @@
   .figure--iframe {
     display: block;
     inline-size: 100%;
+
+    &:global(.align-center),
+    &:global(.u-align-center) {
+      display: block;
+    }
 
     .caption {
       display: block;
