@@ -150,10 +150,15 @@ export const slideToggle = (
   hideContent = true,
 ) => {
   if (!target.dataset.isSliding) {
-    target.addEventListener('finishslider', function () {
-      delete target.dataset.isSliding;
-      target.removeEventListener('finishslider', arguments.callee());
-    });
+    target.addEventListener(
+      'finishslider',
+      function () {
+        delete target.dataset.isSliding;
+      },
+      {
+        once: true,
+      },
+    );
 
     if (
       (hideContent && window.getComputedStyle(target).display === 'none') ||
