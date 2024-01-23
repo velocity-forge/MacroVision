@@ -23,7 +23,7 @@
     block-size: calc(100% - 55px);
     display: flex;
     flex-flow: column nowrap;
-    font-size: var(--font-size-6);
+    font-size: var(--font-size-8);
     inline-size: 100%;
     justify-content: center;
   }

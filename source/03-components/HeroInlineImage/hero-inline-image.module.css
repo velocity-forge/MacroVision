@@ -58,7 +58,7 @@
     }
 
     @media (--desktop-max) {
-      font-size: var(--font-size-8);
+      font-size: var(--font-size-12);
     }
   }
 
