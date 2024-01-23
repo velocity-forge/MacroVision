@@ -1,7 +1,6 @@
 import '../source/00-config/index.css';
 import '../source/01-global/index.css';
 import '../source/06-utility/index.css';
-import SourceSansFontStyle from '../source/01-global/fonts/source-sans';
 
 const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -67,14 +66,7 @@ const withWritingDirection = (Story, context) => {
   );
 };
 
-const withFont = Story => (
-  <>
-    <SourceSansFontStyle />
-    <Story />
-  </>
-);
-
-const decorators = [withWritingDirection, withFont];
+const decorators = [withWritingDirection];
 
 const preview = {
   parameters,
