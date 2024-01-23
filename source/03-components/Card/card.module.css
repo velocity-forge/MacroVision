@@ -17,7 +17,7 @@
   .title {
     @include set-link-vars(var(--text-on-light), var(--ui-text-dark));
 
-    font-size: var(--font-size-5);
+    font-size: var(--font-size-7);
     margin: 0;
   }
 
@@ -77,7 +77,7 @@
       flex-direction: row;
 
       & .title {
-        font-size: var(--font-size-6);
+        font-size: var(--font-size-8);
       }
 
       & .body {

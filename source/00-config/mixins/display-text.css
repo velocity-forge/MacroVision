@@ -1,7 +1,7 @@
 @mixin display-text-display {
   color: var(--text-primary);
   font-family: var(--font-family-primary);
-  font-size: var(--responsive-font-size-10);
+  font-size: var(--responsive-font-size-15);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
 }
@@ -9,7 +9,7 @@
 @mixin display-h1 {
   color: var(--text-primary);
   font-family: var(--font-family-primary);
-  font-size: var(--responsive-font-size-8);
+  font-size: var(--responsive-font-size-12);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
 }
@@ -17,7 +17,7 @@
 @mixin display-h2 {
   color: var(--text-primary);
   font-family: var(--font-family-primary);
-  font-size: var(--responsive-font-size-7);
+  font-size: var(--responsive-font-size-10);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
 }
@@ -25,7 +25,7 @@
 @mixin display-h3 {
   color: var(--text-primary);
   font-family: var(--font-family-primary);
-  font-size: var(--responsive-font-size-6);
+  font-size: var(--responsive-font-size-8);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
 }
@@ -33,7 +33,7 @@
 @mixin display-h4 {
   color: var(--text-primary);
   font-family: var(--font-family-primary);
-  font-size: var(--responsive-font-size-5);
+  font-size: var(--responsive-font-size-7);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-base);
 }
@@ -59,7 +59,7 @@
 @mixin display-blockquote {
   color: var(--text-link);
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-5);
+  font-size: var(--font-size-7);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-base);
 }
@@ -75,7 +75,7 @@
 @mixin display-body-large {
   color: var(--text-primary);
   font-family: var(--font-family-primary);
-  font-size: var(--font-size-4);
+  font-size: var(--font-size-5);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-base);
 }
