@@ -1,5 +1,5 @@
-.u-align-left,
-.align-left {
+.align-left,
+.u-align-left {
   @media (--tablet) {
     float: inline-start;
     margin-inline-end: var(--gutter-width);
@@ -18,8 +18,8 @@
   }
 }
 
-.u-align-right,
-.align-right {
+.align-right,
+.u-align-right {
   @media (--tablet) {
     float: inline-end;
     margin-inline-start: var(--gutter-width);
@@ -38,9 +38,30 @@
   }
 }
 
-.u-align-center,
-.align-center {
+.align-center,
+.u-align-center {
+  display: block;
   margin-inline: auto;
+}
+
+.text-align-left,
+.u-text-align-left {
+  text-align: left;
+}
+
+.text-align-right,
+.u-text-align-right {
+  text-align: right;
+}
+
+.text-align-center,
+.u-text-align-center {
+  text-align: center;
+}
+
+.text-align-justify,
+.u-text-align-justify {
+  text-align: justify;
 }
 
 .u-clear-both {
