@@ -144,8 +144,8 @@ function StyledSelect<
           backgroundColor: state.isSelected
             ? 'var(--brand-blue-dark)'
             : state.isFocused
-            ? 'var(--brand-blue-base)'
-            : 'transparent',
+              ? 'var(--brand-blue-base)'
+              : 'transparent',
           color:
             state.isSelected || state.isFocused
               ? 'var(--text-on-dark)'

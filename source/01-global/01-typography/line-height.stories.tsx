@@ -43,26 +43,24 @@ const LineHeight: StoryObj<LineHeightArgs> = {
   render: args => {
     return (
       <>
-        {Object.entries(args.fonts as FontOptions).map(([name, fontFamily]) => (
+        {Object.entries(args.fonts).map(([name, fontFamily]) => (
           <div className={styles['line-height']} key={name}>
             <h2 className={styles.heading}>{name}</h2>
             <div style={{ fontFamily }}>
-              {Object.entries(args.lineHeights as LineHeightOptions).map(
-                ([name, lineHeight]) => (
-                  <div className={styles.row} key={name}>
-                    <div className={styles.label}>{name}</div>
-                    <div className={styles.preview} style={{ lineHeight }}>
-                      The line-height for this text is{' '}
-                      <strong>{lineHeight}</strong> times the font-size. It’s
-                      worth remembering that line height is affected by the
-                      x-height. Much like how different typefaces can appear to
-                      be different heights despite being set at the same font
-                      size, so too can line height appear to be more open or
-                      tighter, depending on each individual font.
-                    </div>
+              {Object.entries(args.lineHeights).map(([name, lineHeight]) => (
+                <div className={styles.row} key={name}>
+                  <div className={styles.label}>{name}</div>
+                  <div className={styles.preview} style={{ lineHeight }}>
+                    The line-height for this text is{' '}
+                    <strong>{lineHeight}</strong> times the font-size. It’s
+                    worth remembering that line height is affected by the
+                    x-height. Much like how different typefaces can appear to be
+                    different heights despite being set at the same font size,
+                    so too can line height appear to be more open or tighter,
+                    depending on each individual font.
                   </div>
-                ),
-              )}
+                </div>
+              ))}
             </div>
           </div>
         ))}
