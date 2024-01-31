@@ -40,11 +40,8 @@ const SpacingComponent = ({ spacing }: { spacing: SpacingOptions }) => {
           .map(([name, unit]) => (
             <tr key={`spacing-${name}`}>
               <td>{name}</td>
-              <td>
-                {parseInt(unit) / baseFontSize}
-                rem
-              </td>
               <td>{unit}</td>
+              <td>{parseFloat(unit) * baseFontSize}px</td>
               <td>
                 <div
                   style={{
