@@ -23,4 +23,3 @@ function SourceSansFontStyle() {
 }
 
 export default SourceSansFontStyle;
-export { sourceSansPro };
