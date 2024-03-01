@@ -77,8 +77,7 @@
     .content {
       @media (--desktop) {
         align-items: flex-start;
-        inset-inline-end: 35%;
-        inset-inline-start: 10%;
+        inset-inline: 10% 35%;
       }
     }
   }
@@ -87,8 +86,7 @@
     .content {
       @media (--desktop) {
         align-items: flex-start;
-        inset-inline-end: 10%;
-        inset-inline-start: 35%;
+        inset-inline: 35% 10%;
       }
     }
   }

@@ -22,17 +22,19 @@ function BoxShadowDemo({
 }): JSX.Element {
   return (
     <div className={styles['box-shadow']}>
-      {Object.entries(boxShadow).map(([elevation, boxShadowCss]) => (
-        <div
-          key={`box-shadow-${elevation}`}
-          className={styles.item}
-          style={{
-            boxShadow: boxShadowCss,
-          }}
-        >
-          <div className={styles.label}>Elevation Level: {elevation}</div>
-        </div>
-      ))}
+      {Object.entries(boxShadow).map(
+        ([elevation, boxShadowCss]: [string, Property.BoxShadow]) => (
+          <div
+            key={`box-shadow-${elevation}`}
+            className={styles.item}
+            style={{
+              boxShadow: boxShadowCss,
+            }}
+          >
+            <div className={styles.label}>Elevation Level: {elevation}</div>
+          </div>
+        ),
+      )}
     </div>
   );
 }
