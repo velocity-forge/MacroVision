@@ -1,3 +1,5 @@
+'use client';
+
 import { Source_Sans_3 as SourceSansPro } from 'next/font/google';
 
 const sourceSansPro = SourceSansPro({

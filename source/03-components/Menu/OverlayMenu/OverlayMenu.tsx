@@ -1,3 +1,5 @@
+'use client';
+
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
 import { useEffect, useId, useState } from 'react';
