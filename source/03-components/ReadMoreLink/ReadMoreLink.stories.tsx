@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import readMoreLinkArgs from './read-more-link.yml';
 import ReadMoreLinkComponent from './ReadMoreLink';
+import readMoreLinkArgs from './read-more-link.yml';
 
 const meta: Meta<typeof ReadMoreLinkComponent> = {
   title: 'Components/Read More Link',

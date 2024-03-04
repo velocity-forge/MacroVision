@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 import styles from './button.module.css';
 
 interface SharedButtonProps {
@@ -65,5 +65,5 @@ const LinkButton = ({
   );
 };
 
-export type { SharedButtonProps, ButtonProps, LinkProps };
 export { Button, LinkButton };
+export type { ButtonProps, LinkProps, SharedButtonProps };

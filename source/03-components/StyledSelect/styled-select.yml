@@ -1,22 +1,16 @@
 ---
 options:
-  -
-    value: 'one'
+  - value: 'one'
     label: 'Option One'
-  -
-    value: 'two'
+  - value: 'two'
     label: 'Option Two'
-  -
-    value: 'three'
+  - value: 'three'
     label: 'Option Three'
-  -
-    value: 'four'
+  - value: 'four'
     label: 'Option Four'
-  -
-    value: 'five'
+  - value: 'five'
     label: 'Option Five'
-  -
-    value: 'six'
+  - value: 'six'
     label: 'Disabled Option'
     isDisabled: true
 isMulti: true

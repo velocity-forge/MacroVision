@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import responsiveMenuArgs from './responsive-menu.yml';
 import ResponsiveMenuComponent from './ResponsiveMenu';
+import responsiveMenuArgs from './responsive-menu.yml';
 
 const meta: Meta<typeof ResponsiveMenuComponent> = {
   title: 'Components/Menu/Responsive Menu',

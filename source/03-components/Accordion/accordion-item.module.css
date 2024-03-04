@@ -43,7 +43,7 @@
     inset-inline-end: var(--spacing-3);
     position: absolute;
     transform: translateY(-50%);
-  
+
     &::before,
     &::after {
       background-color: var(--ui-accent);
@@ -60,11 +60,11 @@
       transition-property: transform;
       transition-timing-function: var(--easing-ease-out);
     }
-  
+
     &::after {
       transform: translate(-50%, -50%) rotate(90deg);
     }
-  
+
     [aria-expanded='true'] & {
       &::after {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -79,7 +79,7 @@
   .drawerInner {
     padding-block: 0 var(--spacing-2);
     padding-inline: var(--spacing-2) var(--spacing-8);
-  
+
     > :last-child {
       margin-block-end: 0;
     }

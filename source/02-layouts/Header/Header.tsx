@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { ConstrainComponent } from 'gesso';
-import Constrain from '../Constrain/Constrain';
 import { ReactNode } from 'react';
+import Constrain from '../Constrain/Constrain';
 import styles from './header.module.css';
 
 interface HeaderProps extends ConstrainComponent {

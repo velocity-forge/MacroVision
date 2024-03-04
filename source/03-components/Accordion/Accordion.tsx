@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
 import { KeyboardEvent, createRef, useId, useMemo, useState } from 'react';
-import styles from './accordion.module.css';
-import getCssVar from '../../06-utility/getCssVar';
 import { KEYCODE } from '../../00-config/constants';
+import getCssVar from '../../06-utility/getCssVar';
 import AccordionItem, { AccordionItemProps } from './AccordionItem';
+import styles from './accordion.module.css';
 
 interface AccordionProps extends GessoComponent {
   accordionItems: AccordionItemProps[];

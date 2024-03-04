@@ -6,9 +6,9 @@ import {
   ReactNode,
   SelectHTMLAttributes,
 } from 'react';
-import styles from './form-item.module.css';
 import FormItemLabel from './FormItemLabel';
 import FormItemWrapper from './FormItemWrapper';
+import styles from './form-item.module.css';
 
 interface FormItemProps extends GessoComponent {
   id: string;

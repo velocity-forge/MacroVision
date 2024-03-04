@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
 import {
   Button as ButtonComponent,
   LinkButton as LinkButtonComponent,
@@ -71,4 +70,4 @@ const Small: Story = {
 };
 
 export default meta;
-export { Primary, Secondary, Danger, Large, Small };
+export { Danger, Large, Primary, Secondary, Small };

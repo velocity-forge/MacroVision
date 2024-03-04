@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import parse from 'html-react-parser';
-import imageTeaserArgs from './image-teaser.yml';
 import ImageTeaserComponent from './ImageTeaser';
+import imageTeaserArgs from './image-teaser.yml';
 
 const meta: Meta<typeof ImageTeaserComponent> = {
   title: 'Components/Image Teaser',

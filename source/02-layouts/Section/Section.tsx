@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { ConstrainComponent } from 'gesso';
-import Constrain from '../Constrain/Constrain';
 import { ElementType, ReactNode } from 'react';
+import Constrain from '../Constrain/Constrain';
 import styles from './section.module.css';
 
 interface SectionProps extends ConstrainComponent {

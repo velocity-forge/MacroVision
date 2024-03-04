@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import LandingPageTemplate from './LandingPage';
 import SampleContent from '../../06-utility/storybook/SampleContent';
+import LandingPageTemplate from './LandingPage';
 
 const meta: Meta<typeof LandingPageTemplate> = {
   title: 'Templates/Landing Page',
