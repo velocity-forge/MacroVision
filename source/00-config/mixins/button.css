@@ -4,7 +4,7 @@
   background-color: var(--button-background-color);
   @if $border-width != 0 {
     border: $border-width solid var(--button-border-color);
-  } @else {
+  } @else  {
     border: 0;
   }
 

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import checkboxArgs from './checkbox.yml';
 import { Input } from './FormItem';
+import checkboxArgs from './checkbox.yml';
 import radioArgs from './radio.yml';
 
 const meta: Meta<typeof Input> = {

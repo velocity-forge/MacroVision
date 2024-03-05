@@ -74,5 +74,5 @@ function Menu({
 }
 
 export default Menu;
-export type { MenuLinksProps, MenuProps, MenuItem };
 export { MenuLinks };
+export type { MenuItem, MenuLinksProps, MenuProps };

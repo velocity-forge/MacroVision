@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import siteNameArgs from './site-name.yml';
 import SiteNameComponent from './SiteName';
+import siteNameArgs from './site-name.yml';
 
 const meta: Meta<typeof SiteNameComponent> = {
   title: 'Components/Site Name',

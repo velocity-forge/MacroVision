@@ -42,4 +42,4 @@ const Reversed: Story = {
 };
 
 export default meta;
-export { Default, Column, Reversed };
+export { Column, Default, Reversed };

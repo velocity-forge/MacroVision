@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import pageTitleArgs from './page-title.yml';
 import PageTitleComponent from './PageTitle';
+import pageTitleArgs from './page-title.yml';
 
 const meta: Meta<typeof PageTitleComponent> = {
   title: 'Components/Page Title',

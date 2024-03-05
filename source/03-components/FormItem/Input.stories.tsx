@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { Input } from './FormItem';
 import colorArgs from './color.yml';
 import dateArgs from './date.yml';
 import decimalArgs from './decimal.yml';
 import emailArgs from './email.yml';
 import fileArgs from './file.yml';
 import floatArgs from './float.yml';
-import { Input } from './FormItem';
 import integerArgs from './integer.yml';
 import monthArgs from './month.yml';
 import passwordArgs from './password.yml';
