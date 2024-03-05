@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Property } from 'csstype';
+import { useEffect, useState } from 'react';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './line-height.module.css';
-import { useEffect, useState } from 'react';
 
 const meta: Meta = {
   title: 'Global/Typography/Line Height',
