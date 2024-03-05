@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import styledSelectArgs from './styled-select.yml';
 import StyledSelectComponent from './StyledSelect';
+import styledSelectArgs from './styled-select.yml';
 import withGroupsArgs from './with-groups.yml';
 
 const meta: Meta<typeof StyledSelectComponent> = {

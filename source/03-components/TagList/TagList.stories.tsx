@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
-import tagListArgs from './tag-list.yml';
 import TagListComponent from './TagList';
+import tagListArgs from './tag-list.yml';
 
 const meta: Meta<typeof TagListComponent> = {
   title: 'Components/Tag List',

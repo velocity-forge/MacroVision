@@ -1,18 +1,14 @@
 ---
 items:
-  -
-    title: 'Home'
+  - title: 'Home'
     url: '#0'
     inActiveTrail: false
-  -
-    title: 'About'
+  - title: 'About'
     url: '#0'
     inActiveTrail: false
-  -
-    title: 'Resources'
+  - title: 'Resources'
     url: '#0'
     inActiveTrail: false
-  -
-    title: 'Contact'
+  - title: 'Contact'
     url: '#0'
     inActiveTrail: false

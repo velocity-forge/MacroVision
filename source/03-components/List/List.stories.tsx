@@ -50,4 +50,4 @@ const Column: Story = {
 };
 
 export default meta;
-export { Clean, Inline, Pipeline, Border, Column };
+export { Border, Clean, Column, Inline, Pipeline };

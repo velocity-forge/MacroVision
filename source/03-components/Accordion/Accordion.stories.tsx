@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import parse from 'html-react-parser';
 import AccordionComponent from './Accordion';
-import accordionArgs from './accordion.yml';
 import { AccordionItemProps } from './AccordionItem';
+import accordionArgs from './accordion.yml';
 
 const meta: Meta<typeof AccordionComponent> = {
   title: 'Components/Accordion',

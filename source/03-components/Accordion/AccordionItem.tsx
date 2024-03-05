@@ -7,8 +7,8 @@ import {
   useEffect,
   useRef,
 } from 'react';
-import styles from './accordion-item.module.css';
 import { slideCollapse, slideExpand } from '../../06-utility/slide';
+import styles from './accordion-item.module.css';
 
 export interface AccordionItemProps extends GessoComponent {
   id: string;

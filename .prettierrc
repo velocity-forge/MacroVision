@@ -3,6 +3,7 @@
   "bracketSpacing": true,
   "endOfLine": "lf",
   "bracketSameLine": false,
+  "plugins": ["prettier-plugin-organize-imports"],
   "printWidth": 80,
   "quoteProps": "as-needed",
   "semi": true,

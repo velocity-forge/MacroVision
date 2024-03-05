@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
+import BackToTopComponent from './BackToTop';
 import styles from './back-to-top.module.css';
 import backToTopArgs from './back-to-top.yml';
-import BackToTopComponent from './BackToTop';
 
 const meta: Meta<typeof BackToTopComponent> = {
   title: 'Components/Back To Top',

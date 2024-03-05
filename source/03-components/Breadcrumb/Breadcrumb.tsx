@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
-import Constrain from '../../02-layouts/Constrain/Constrain';
 import Link from 'next/link';
 import { ElementType } from 'react';
+import Constrain from '../../02-layouts/Constrain/Constrain';
 import styles from './breadcrumb.module.css';
 
 interface Crumbs {

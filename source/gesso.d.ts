@@ -8,5 +8,5 @@ declare module 'gesso' {
     constrainClasses?: string | string[];
   }
 
-  export type { GessoComponent, ConstrainComponent };
+  export type { ConstrainComponent, GessoComponent };
 }
