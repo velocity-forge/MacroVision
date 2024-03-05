@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import '../source/00-config/index.css';
+import SourceSansFontStyle from '../source/01-global/fonts/source-sans';
 import '../source/01-global/index.css';
 import Footer from '../source/02-layouts/Footer/Footer';
 import Header from '../source/02-layouts/Header/Header';
@@ -13,7 +14,6 @@ import SiteName from '../source/03-components/SiteName/SiteName';
 import Skiplink from '../source/03-components/Skiplink/Skiplink';
 import addBasePath from '../source/06-utility/addBasePath';
 import '../source/06-utility/index.css';
-import SourceSansFontStyle from '../source/01-global/fonts/source-sans';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
