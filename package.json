@@ -24,7 +24,7 @@
     ">= 1% in US"
   ],
   "dependencies": {
-    "next": "^13.2.3",
+    "next": "^14.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-select": "^5.8.0"

@@ -1,7 +1,6 @@
-import type { NextPage } from 'next';
-import Page from '../source/04-templates/Page/Page';
+import Page from '../../source/04-templates/Page/Page';
 
-const About: NextPage = () => {
+function About() {
   const title = 'About Forum One Next.js Starter App';
   return (
     <Page title={title} description="Next app using TypeScript and Emotion">
@@ -117,6 +116,6 @@ const About: NextPage = () => {
       </p>
     </Page>
   );
-};
+}
 
 export default About;
