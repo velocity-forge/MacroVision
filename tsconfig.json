@@ -22,13 +22,19 @@
     "jsx": "preserve",
     "noImplicitAny": true,
     "incremental": true,
-    "strictBindCallApply": true
+    "strictBindCallApply": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.module.css"
+    "**/*.module.css",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

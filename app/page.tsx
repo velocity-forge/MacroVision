@@ -1,4 +1,3 @@
-import type { NextPage } from 'next';
 import Image from 'next/image';
 import heroPlaceholder from '../public/images/hero-placeholder.jpg';
 import Section from '../source/02-layouts/Section/Section';
@@ -6,7 +5,7 @@ import HeroBgImage from '../source/03-components/HeroBgImage/HeroBgImage';
 import Wysiwyg from '../source/03-components/Wysiwyg/Wysiwyg';
 import LandingPage from '../source/04-templates/LandingPage/LandingPage';
 
-const Home: NextPage = () => {
+function Home() {
   const title = 'Forum One Next.js Starter App';
   return (
     <LandingPage
@@ -64,6 +63,6 @@ const Home: NextPage = () => {
       </Section>
     </LandingPage>
   );
-};
+}
 
 export default Home;
