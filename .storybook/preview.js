@@ -1,7 +1,7 @@
 import '../source/00-config/index.css';
+import sourceSansPro from '../source/01-global/fonts/source-sans';
 import '../source/01-global/index.css';
 import '../source/06-utility/index.css';
-import SourceSansFontStyle from '../source/01-global/fonts/source-sans';
 
 const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -67,14 +67,19 @@ const withWritingDirection = (Story, context) => {
   );
 };
 
-const withFont = Story => (
-  <>
-    <SourceSansFontStyle />
-    <Story />
-  </>
-);
+const withFonts = Story => {
+  console.log(sourceSansPro);
+  return (
+    <div
+      className={sourceSansPro.variable}
+      style={{ display: 'contents', fontFamily: 'var(--font-family-primary)' }}
+    >
+      <Story />
+    </div>
+  );
+};
 
-const decorators = [withWritingDirection, withFont];
+const decorators = [withWritingDirection, withFonts];
 
 const preview = {
   parameters,
