@@ -1,6 +1,6 @@
 import { JSX, PropsWithChildren } from 'react';
 import '../source/00-config/index.css';
-import SourceSansFontStyle from '../source/01-global/fonts/source-sans';
+import sourceSansPro from '../source/01-global/fonts/source-sans';
 import '../source/01-global/index.css';
 import Footer from '../source/02-layouts/Footer/Footer';
 import Header from '../source/02-layouts/Header/Header';
@@ -15,9 +15,8 @@ import '../source/06-utility/index.css';
 
 function RootLayout({ children }: PropsWithChildren): JSX.Element {
   return (
-    <html lang="en">
+    <html lang="en" className={sourceSansPro.variable}>
       <body id="top">
-        <SourceSansFontStyle />
         <Skiplink />
         <SiteContainer>
           <Header>
