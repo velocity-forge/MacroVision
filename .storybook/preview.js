@@ -67,17 +67,14 @@ const withWritingDirection = (Story, context) => {
   );
 };
 
-const withFonts = Story => {
-  console.log(sourceSansPro);
-  return (
-    <div
-      className={sourceSansPro.variable}
-      style={{ display: 'contents', fontFamily: 'var(--font-family-primary)' }}
-    >
-      <Story />
-    </div>
-  );
-};
+const withFonts = Story => (
+  <div
+    className={sourceSansPro.variable}
+    style={{ display: 'contents', fontFamily: 'var(--font-family-primary)' }}
+  >
+    <Story />
+  </div>
+);
 
 const decorators = [withWritingDirection, withFonts];
 
