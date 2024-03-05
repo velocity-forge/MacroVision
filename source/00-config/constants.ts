@@ -15,4 +15,4 @@ const KEYCODE = {
   DOWN: 'ArrowDown',
 };
 
-export { MAIN_ID, KEYCODE };
+export { KEYCODE, MAIN_ID };

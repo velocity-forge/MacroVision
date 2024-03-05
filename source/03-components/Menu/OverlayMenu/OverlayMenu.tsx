@@ -1,8 +1,10 @@
+'use client';
+
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
 import { useEffect, useId, useState } from 'react';
-import buttonStyles from '../../HamburgerButton/hamburger-button.module.css';
 import HamburgerButton from '../../HamburgerButton/HamburgerButton';
+import buttonStyles from '../../HamburgerButton/hamburger-button.module.css';
 import Menu, { MenuItem } from '../Menu';
 import styles from './overlay-menu.module.css';
 

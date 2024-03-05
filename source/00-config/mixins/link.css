@@ -19,17 +19,17 @@
   --text-link: $link;
   @if $hover != '' {
     --text-link-hover: $hover;
-  } @else {
+  } @else  {
     --text-link-hover: var(--text-link);
   }
   @if $active != '' {
     --text-link-active: $active;
-  } @else {
+  } @else  {
     --text-link-active: var(--text-link-hover);
   }
   @if $visit != '' {
     --text-link-visited: $visit;
-  } @else {
+  } @else  {
     --text-link-visited: var(--text-link);
   }
 }

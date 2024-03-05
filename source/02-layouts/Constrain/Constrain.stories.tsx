@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import SampleContent from '../../06-utility/storybook/SampleContent';
-import constrainArgs from './constrain.yml';
 import ConstrainLayout from './Constrain';
+import constrainArgs from './constrain.yml';
 
 const meta: Meta<typeof ConstrainLayout> = {
   title: 'Layouts/Constrain',

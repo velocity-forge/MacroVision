@@ -7,7 +7,7 @@ function getCssVariables(): string[][] {
     .map(sheet => {
       const rules: CSSRulesWithLayers[] = Array.from(sheet.cssRules);
       return rules.map(r => {
-        if ('cssRules' in r) {
+        if ('cssRules' in r && r.cssRules.length > 0) {
           return Array.from(r.cssRules);
         }
         return r;

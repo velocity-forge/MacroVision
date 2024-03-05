@@ -1,6 +1,6 @@
 {
   "name": "nextjs-project",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -24,7 +24,7 @@
     ">= 1% in US"
   ],
   "dependencies": {
-    "next": "^13.2.3",
+    "next": "^14.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-select": "^5.8.0"
@@ -32,15 +32,15 @@
   "devDependencies": {
     "@babel/core": "^7.23.7",
     "@csstools/postcss-global-data": "^2.1.1",
-    "@storybook/addon-a11y": "^7.6.10",
-    "@storybook/addon-actions": "^7.6.10",
-    "@storybook/addon-essentials": "^7.6.10",
-    "@storybook/addon-interactions": "^7.6.10",
-    "@storybook/addon-links": "^7.6.10",
-    "@storybook/nextjs": "^7.6.10",
-    "@storybook/react": "^7.6.10",
+    "@storybook/addon-a11y": "^7.6.17",
+    "@storybook/addon-actions": "^7.6.17",
+    "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-links": "^7.6.17",
+    "@storybook/nextjs": "^7.6.17",
+    "@storybook/react": "^7.6.17",
     "@storybook/testing-library": "^0.2.2",
-    "@storybook/theming": "^7.6.10",
+    "@storybook/theming": "^7.6.17",
     "@svgr/babel-plugin-add-jsx-attribute": "^8.0.0",
     "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
     "@svgr/cli": "^8.1.0",
@@ -71,7 +71,7 @@
     "postcss-rem": "^2.0.2",
     "prettier": "^3.2.4",
     "prettier-plugin-organize-imports": "^3.2.4",
-    "storybook": "^7.6.10",
+    "storybook": "^7.6.17",
     "style-loader": "^3.3.4",
     "stylelint": "^15.11.0",
     "stylelint-config-standard": "^33.0.0",
