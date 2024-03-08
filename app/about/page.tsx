@@ -1,9 +1,16 @@
+import { Metadata } from 'next';
 import Page from '../../source/04-templates/Page/Page';
 
+const title = 'About Forum One Next.js Starter App';
+
+export const metadata: Metadata = {
+  title,
+  description: 'Next app using TypeScript and Emotion',
+};
+
 function About() {
-  const title = 'About Forum One Next.js Starter App';
   return (
-    <Page title={title} description="Next app using TypeScript and Emotion">
+    <Page title={title}>
       <p>
         <a href="https://nextjs.org/docs">Next.js</a> app with{' '}
         <a href="https://www.typescriptlang.org/">TypeScript</a>.
