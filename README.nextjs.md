@@ -12,6 +12,15 @@ Note that Next v11 comes with the following installed already:
 * [Webpack v5](https://webpack.js.org/concepts/)
 * [CSS Modules](https://github.com/css-modules/css-modules)
 
+
+## App Router
+The Next.js starter app uses [Next.js's App Router](https://nextjs.org/docs/app/building-your-application/routing#the-app-router),
+the newer router that supports React Server Components and shared layouts. See the [Next.js docs](https://nextjs.org/docs/app/building-your-application)
+to learn more about the App Router. One important change introduced with the App Router is that components default to being rendered
+on the server, so any components that need to use client-side JS, such as useState, useEffect, and event handlers, need the `use client`
+directive at the top. [The Next.js docs](https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns#when-to-use-server-and-client-components)
+have more details about which to use when.
+
 ## Getting Started
 
 Ensure that you are using the proper Node version for this app. We currently use v18. Assuming you have [nvm](https://github.com/nvm-sh/nvm) installed locally, you can simply run:
@@ -89,7 +98,7 @@ Runs `next lint`, which runs the ESLint command. This is useful to catch lint er
 npm run prettier
 ```
 
-Runs `prettier --check`, which will check that all files within the `pages` and `source` directories use the Prettier code style from `.prettierrc`. This might be redundant with the `lint` script above, since it extends whatever Prettier rules we have set.
+Runs `prettier --check`, which will check that all files within the `app` and `source` directories use the Prettier code style from `.prettierrc`. This might be redundant with the `lint` script above, since it extends whatever Prettier rules we have set.
 
 #### Prettier write
 
@@ -97,7 +106,7 @@ Runs `prettier --check`, which will check that all files within the `pages` and 
 npm run prettier:write
 ```
 
-Runs `prettier --write`, which will find and fix all prettier issues found within the `pages` and `source` directories. Note that this will automatically overwrite your files.
+Runs `prettier --write`, which will find and fix all prettier issues found within the `app` and `source` directories. Note that this will automatically overwrite your files.
 
 ### Run TypeScript compiler (tsc)
 
@@ -121,5 +130,5 @@ Note that bypassing the Husky check is frowned upon.
 
 ## Notes
 
-* Code for the app is currently configured to go into the `pages` directory (for [Next.js pages](https://nextjs.org/docs/basic-features/pages)) and `source` for theming, components, providers, helpers, etc.
+* Code for the app is currently configured to go into the `app` directory (for [Next.js pages](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts)) and `source` for theming, components, providers, helpers, etc.
 * The current favicon implementation will probably not display correctly locally in Chrome (v94), but does display correctly in Firefox and Safari. Note that the favicon _does_ display correctly once deployed. Not sure why.

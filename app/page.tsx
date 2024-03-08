@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import heroPlaceholder from '../public/images/hero-placeholder.jpg';
 import Section from '../source/02-layouts/Section/Section';
@@ -5,13 +6,16 @@ import HeroBgImage from '../source/03-components/HeroBgImage/HeroBgImage';
 import Wysiwyg from '../source/03-components/Wysiwyg/Wysiwyg';
 import LandingPage from '../source/04-templates/LandingPage/LandingPage';
 
+const title = 'Forum One Next.js Starter App';
+
+export const metadata: Metadata = {
+  title,
+  description: 'Next app using TypeScript and PostCSS',
+};
+
 function Home() {
-  const title = 'Forum One Next.js Starter App';
   return (
-    <LandingPage
-      title={title}
-      description="Next app using TypeScript and PostCSS"
-    >
+    <LandingPage title={title}>
       <Section>
         <HeroBgImage
           hasOverlay={true}
