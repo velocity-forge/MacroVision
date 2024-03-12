@@ -1,6 +1,6 @@
 {
   "name": "nextjs-project",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,7 +10,7 @@
     "lint": "next lint && stylelint \"source/**/*.css\"",
     "prepare": "husky install",
     "prettier": "prettier --check pages source/",
-    "prettier:write": "prettier --write pages source/",
+    "prettier:write": "prettier --write app source/",
     "tsc": "tsc --noEmit",
     "test": "npm run lint && npm run tsc",
     "component": "node lib/component.js",

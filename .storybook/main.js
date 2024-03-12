@@ -13,7 +13,7 @@ module.exports = {
   ],
   framework: {
     name: '@storybook/nextjs',
-    options: {},
+    options: { builder: { useSWC: true } },
   },
   webpackFinal: async config => {
     config.plugins.push(
@@ -48,6 +48,16 @@ module.exports = {
       parser: {
         parse: YAML.parse,
       },
+    });
+    config.module.rules.find(
+      rule => rule.test && rule.test.toString().includes('css'),
+    ).resourceQuery = {
+      not: /raw/,
+    };
+    config.module.rules.push({
+      test: /\.css$/,
+      resourceQuery: /raw/,
+      type: 'asset/source',
     });
     return config;
   },

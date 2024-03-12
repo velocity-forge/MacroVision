@@ -6,7 +6,7 @@ module.exports = {
   reactStrictMode: true,
   basePath,
   eslint: {
-    dirs: ['source', 'pages'],
+    dirs: ['source', 'app'],
   },
   /**
    * Custom Webpack Config

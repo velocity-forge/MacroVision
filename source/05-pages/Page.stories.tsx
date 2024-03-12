@@ -24,7 +24,6 @@ const Page: StoryObj<PageStoryArgs> = {
         <Breadcrumb.render {...Breadcrumb.args} />
       ) : undefined,
       title: 'Page Title',
-      description: 'Demo basic page in Storybook',
       children: WYSIWYG.render && <WYSIWYG.render {...WYSIWYG.args} />,
     },
   },
