@@ -61,7 +61,7 @@
     "mkdirp": "^3.0.1",
     "postcss": "^8.4.33",
     "postcss-advanced-variables": "github:kmonahan/postcss-advanced-variables",
-    "postcss-loader": "^7.3.4",
+    "postcss-loader": "^8.1.1",
     "postcss-nesting": "^12.0.2",
     "postcss-preset-env": "^9.3.0",
     "postcss-rem": "^2.0.2",
