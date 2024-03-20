@@ -13,7 +13,6 @@ module.exports = {
   ],
   framework: {
     name: '@storybook/nextjs',
-    options: { builder: {} },
   },
   webpackFinal: async config => {
     config.plugins.push(
