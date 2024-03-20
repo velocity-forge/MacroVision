@@ -31,10 +31,10 @@
 .form-item--range {
   --thumb-border-radius: 1px;
   --thumb-border-width: 1px;
-  --thumb-height: rem(44px);
-  --thumb-width: rem(22px);
+  --thumb-height: rem-convert(44px);
+  --thumb-width: rem-convert(22px);
   --track-border-width: 1px;
-  --track-height: rem(10px);
+  --track-height: rem-convert(10px);
 
   & input {
     appearance: none;

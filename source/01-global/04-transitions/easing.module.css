@@ -1,4 +1,4 @@
-$easing-swatch: rem(75px);
+$easing-swatch: rem-convert(75px);
 
 .easing {
   background-color: #eee;
@@ -22,7 +22,7 @@ $easing-swatch: rem(75px);
 }
 
 .group {
-  padding: 0 rem(150px) 0 1rem;
+  padding: 0 rem-convert(150px) 0 1rem;
 
   &:hover {
     .indicator {

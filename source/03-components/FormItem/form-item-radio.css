@@ -10,13 +10,13 @@
 
     appearance: none;
     background: var(--form-background-unchecked);
-    block-size: rem(18px);
+    block-size: rem-convert(18px);
     border: 1px solid var(--form-border-dark);
     border-radius: 50%;
     box-shadow: 0 0 0 2px transparent;
     cursor: pointer;
-    inline-size: rem(18px);
-    inset-block-start: rem(2px);
+    inline-size: rem-convert(18px);
+    inset-block-start: rem-convert(2px);
     margin-inline-end: 3px;
     position: relative;
     transition-duration: var(--duration-short);
