@@ -13,9 +13,9 @@
   "useTabs": false,
   "overrides": [
     {
-      "files": ["source/01-global/icon/**/*.tsx"],
+      "files": ["source/01-global/icon/**/*.tsx", "source/01-global/icon/**/*.svg"],
       "options": {
-        "organizeImportsSkipDestructiveCodeActions": true
+        "plugins": []
       }
     }
   ]
