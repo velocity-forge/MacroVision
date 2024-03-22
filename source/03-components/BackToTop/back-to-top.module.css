@@ -9,11 +9,11 @@
     @media (--mobile-lg) {
       align-items: center;
       background-color: var(--grayscale-gray-3);
-      block-size: rem(70px);
+      block-size: rem-convert(70px);
       border-radius: 50%;
       display: flex;
-      font-size: rem(60px);
-      inline-size: rem(70px);
+      font-size: rem-convert(60px);
+      inline-size: rem-convert(70px);
       inset-block-end: var(--spacing-2-5);
       inset-inline-end: var(--spacing-2-5);
       justify-content: center;

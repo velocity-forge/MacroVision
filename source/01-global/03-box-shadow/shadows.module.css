@@ -1,4 +1,4 @@
-$shadow-swatch: rem(200px);
+$shadow-swatch: rem-convert(200px);
 
 .box-shadow {
   display: flex;
@@ -9,7 +9,7 @@ $shadow-swatch: rem(200px);
   display: flex;
   flex: 0 0 $shadow-swatch;
   height: $shadow-swatch;
-  margin: 0 rem(25px) rem(50px);
+  margin: 0 rem-convert(25px) rem-convert(50px);
   width: $shadow-swatch;
 }
 

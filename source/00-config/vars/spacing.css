@@ -1,28 +1,28 @@
 :root {
   --spacing-0: 0;
-  --spacing-0-5: rem(4px);
-  --spacing-1: rem(8px);
-  --spacing-1-5: rem(12px);
-  --spacing-2: rem(16px);
-  --spacing-2-5: rem(20px);
-  --spacing-3: rem(24px);
-  --spacing-4: rem(32px);
-  --spacing-5: rem(40px);
-  --spacing-6: rem(48px);
-  --spacing-7: rem(56px);
-  --spacing-8: rem(64px);
-  --spacing-9: rem(72px);
-  --spacing-10: rem(80px);
-  --spacing-12: rem(96px);
-  --spacing-15: rem(120px);
+  --spacing-0-5: rem-convert(4px);
+  --spacing-1: rem-convert(8px);
+  --spacing-1-5: rem-convert(12px);
+  --spacing-2: rem-convert(16px);
+  --spacing-2-5: rem-convert(20px);
+  --spacing-3: rem-convert(24px);
+  --spacing-4: rem-convert(32px);
+  --spacing-5: rem-convert(40px);
+  --spacing-6: rem-convert(48px);
+  --spacing-7: rem-convert(56px);
+  --spacing-8: rem-convert(64px);
+  --spacing-9: rem-convert(72px);
+  --spacing-10: rem-convert(80px);
+  --spacing-12: rem-convert(96px);
+  --spacing-15: rem-convert(120px);
 
-  --gutter-width: rem(40px);
+  --gutter-width: rem-convert(40px);
 
-  --site-margins: rem(16px);
+  --site-margins: rem-convert(16px);
 }
 
 @media (--desktop) {
   :root {
-    --site-margins: rem(32px);
+    --site-margins: rem-convert(32px);
   }
 }

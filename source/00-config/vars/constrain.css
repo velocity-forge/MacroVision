@@ -1,5 +1,5 @@
 :root {
-  --constrain-sm: rem(800px);
-  --constrain-md: rem(1440px);
-  --constrain-lg: rem(2200px);
+  --constrain-sm: rem-convert(800px);
+  --constrain-md: rem-convert(1440px);
+  --constrain-lg: rem-convert(2200px);
 }

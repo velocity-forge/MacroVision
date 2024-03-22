@@ -1,4 +1,4 @@
-$duration-swatch: rem(40px);
+$duration-swatch: rem-convert(40px);
 
 .duration {
   margin-bottom: 1rem;
@@ -33,7 +33,7 @@ $duration-swatch: rem(40px);
 }
 
 .item {
-  flex: 0 0 rem(150px);
+  flex: 0 0 rem-convert(150px);
   padding: 1rem;
   text-align: center;
 }
