@@ -20,7 +20,7 @@
 
     appearance: none;
     background: var(--form-background);
-    block-size: rem(44px);
+    block-size: rem-convert(44px);
     border: 1px solid var(--form-border);
     border-radius: 0;
     display: inline-block;

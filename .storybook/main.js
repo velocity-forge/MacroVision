@@ -13,7 +13,6 @@ module.exports = {
   ],
   framework: {
     name: '@storybook/nextjs',
-    options: { builder: { useSWC: true } },
   },
   webpackFinal: async config => {
     config.plugins.push(

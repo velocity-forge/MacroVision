@@ -5,7 +5,7 @@
     @include focus;
 
     background-color: transparent;
-    block-size: rem(55px);
+    block-size: rem-convert(55px);
     border: 0;
     border-radius: 0;
     box-shadow: none;
@@ -14,7 +14,7 @@
     font-family: var(--font-family-system);
     font-size: var(--font-size-3);
     font-weight: var(--font-weight-bold);
-    line-height: rem(55px);
+    line-height: rem-convert(55px);
     margin: 0;
     padding-block: 0;
     padding-inline: var(--spacing-2);

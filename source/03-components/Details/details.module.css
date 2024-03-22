@@ -2,7 +2,7 @@
   .details {
     --details-background-color: var(--ui-background-light);
     --details-content-background: var(--background-site);
-    --details-padding: rem(24px);
+    --details-padding: rem-convert(24px);
     --details-text-color: var(--text-on-light);
 
     margin-block: 0 var(--spacing-4);
@@ -14,14 +14,14 @@
     background-image: url('/images/plus.svg');
     background-position: right var(--details-padding) center;
     background-repeat: no-repeat;
-    background-size: rem(13px);
+    background-size: rem-convert(13px);
     cursor: pointer;
     display: block;
     font-weight: var(--font-weight-bold);
     line-height: 1;
     outline: 0;
-    padding-block: rem(15px);
-    padding-inline: var(--details-padding) rem(55px);
+    padding-block: rem-convert(15px);
+    padding-inline: var(--details-padding) rem-convert(55px);
     transition: background var(--duration-long) var(--easing-ease-in-out);
 
     [dir='rtl'] & {

@@ -16,12 +16,12 @@
           @include focus;
 
           background: var(--form-background-unchecked);
-          block-size: rem(20px);
+          block-size: rem-convert(20px);
           border: 1px solid var(--form-border-dark);
           content: '\a0';
           display: inline-block;
-          inline-size: rem(20px);
-          line-height: rem(20px);
+          inline-size: rem-convert(20px);
+          line-height: rem-convert(20px);
           margin-inline-end: 0.6em;
           text-indent: 0.15em;
           transition-duration: var(--duration-short);
@@ -38,7 +38,7 @@
           background-image: url('/images/correct.svg');
           background-position: 50%;
           background-repeat: no-repeat;
-          background-size: rem(20px);
+          background-size: rem-convert(20px);
         }
       }
 

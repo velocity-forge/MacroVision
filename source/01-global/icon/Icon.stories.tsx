@@ -9,13 +9,14 @@ const meta: Meta = {
   argTypes: {
     isHidden: {
       type: 'boolean',
-      description: 'True if the icon should be hidden from screenreaders.'
+      description: 'True if the icon should be hidden from screenreaders.',
     },
     title: {
       type: 'string',
-      description: 'Text label for icon to be read by screenreaders. Must be included if isHidden is false.'
-    }
-  }
+      description:
+        'Text label for icon to be read by screenreaders. Must be included if isHidden is false.',
+    },
+  },
 };
 
 const Icon: StoryObj = {
@@ -27,8 +28,7 @@ const Icon: StoryObj = {
           const IconComponent = Icons[icon as keyof typeof Icons];
           return (
             <p key={icon}>
-              <IconComponent isHidden={false} title={icon} />{' '}
-              {icon}
+              <IconComponent isHidden={false} title={icon} /> {icon}
             </p>
           );
         })}

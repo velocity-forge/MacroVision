@@ -1,5 +1,5 @@
 .form-item--select {
-  --arrow-size: rem(20px);
+  --arrow-size: rem-convert(20px);
 
   select {
     background-image: url('/images/select-arrows.svg');

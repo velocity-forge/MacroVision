@@ -10,21 +10,21 @@
 
   --base-font-size: 16px;
 
-  --font-size-1: rem(12px);
-  --font-size-2: rem(14px);
-  --font-size-3: rem(16px);
-  --font-size-4: rem(18px);
-  --font-size-5: rem(21px);
-  --font-size-6: rem(23px);
-  --font-size-7: rem(26px);
-  --font-size-8: rem(30px);
-  --font-size-9: rem(34px);
-  --font-size-10: rem(39px);
-  --font-size-11: rem(44px);
-  --font-size-12: rem(50px);
-  --font-size-13: rem(56px);
-  --font-size-14: rem(64px);
-  --font-size-15: rem(72px);
+  --font-size-1: rem-convert(12px);
+  --font-size-2: rem-convert(14px);
+  --font-size-3: rem-convert(16px);
+  --font-size-4: rem-convert(18px);
+  --font-size-5: rem-convert(21px);
+  --font-size-6: rem-convert(23px);
+  --font-size-7: rem-convert(26px);
+  --font-size-8: rem-convert(30px);
+  --font-size-9: rem-convert(34px);
+  --font-size-10: rem-convert(39px);
+  --font-size-11: rem-convert(44px);
+  --font-size-12: rem-convert(50px);
+  --font-size-13: rem-convert(56px);
+  --font-size-14: rem-convert(64px);
+  --font-size-15: rem-convert(72px);
 
   /* The max value should never be more than 2.5 times the min value.
     https://www.smashingmagazine.com/2023/11/addressing-accessibility-concerns-fluid-type/ */

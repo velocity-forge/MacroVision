@@ -1,6 +1,6 @@
 .group {
   --swatch-padding: 1rem;
-  --swatch-size: rem(150px);
+  --swatch-size: rem-convert(150px);
 
   border-bottom: 1px solid #eee;
   display: flex;
@@ -27,11 +27,11 @@
 }
 
 .name {
-  margin-bottom: rem(8px);
+  margin-bottom: rem-convert(8px);
 }
 
 .hex {
   font-family: Menlo, Consolas, 'Lucida Console', 'Liberation Mono',
     'Courier New', monospace, sans-serif;
-  font-size: rem(14px);
+  font-size: rem-convert(14px);
 }

@@ -28,6 +28,7 @@ rules:
         - global
         - iff
         - 'responsive-font-size'
+        - 'rem-convert'
   import-notation: string
   max-nesting-depth: 4
   number-max-precision: null

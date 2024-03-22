@@ -82,7 +82,10 @@
   @param {String} $item-min-width Minimum column width.
   @param {Boolean} $flex-override Whether to reset styling to remove flex constrains first.
  */
-@mixin css-autofit-grid($item-min-width: rem(300px), $flex-override: false) {
+@mixin css-autofit-grid(
+  $item-min-width: rem-convert(300px),
+  $flex-override: false
+) {
   @if $flex-override {
     @include css-grid-reset();
   }
