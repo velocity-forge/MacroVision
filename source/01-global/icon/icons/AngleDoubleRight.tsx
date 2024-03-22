@@ -1,3 +1,4 @@
+// organize-imports-ignore
 // This component is automatically generated.
 // SVGs should be added to icon/svgs.
 // See the project documentation for more information.
