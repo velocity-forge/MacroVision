@@ -10,10 +10,7 @@ interface FigureProps extends GessoComponent {
 
 function Figure({ media, caption, modifierClasses }: FigureProps): JSX.Element {
   return (
-    <figure
-      className={clsx(styles.figure, modifierClasses)}
-      role={caption ? 'group' : undefined}
-    >
+    <figure className={clsx(styles.figure, modifierClasses)}>
       <div>{media}</div>
       {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
     </figure>
