@@ -8,16 +8,44 @@ const meta: Meta<typeof SidebarLayout> = {
   component: SidebarLayout,
   argTypes: {
     header: {
-      control: false,
+      options: ['Show', 'Hide'],
+      mapping: {
+        Show: <SampleContent>Header Content</SampleContent>,
+        Hide: false,
+      },
+      control: {
+        type: 'select',
+      },
     },
     sidebarFirst: {
-      control: false,
+      options: ['Show', 'Hide'],
+      mapping: {
+        Show: <SampleContent>Optional Sidebar Content</SampleContent>,
+        Hide: false,
+      },
+      control: {
+        type: 'select',
+      },
     },
     main: {
-      control: false,
+      options: ['Show', 'Hide'],
+      mapping: {
+        Show: <SampleContent>Main Content</SampleContent>,
+        Hide: false,
+      },
+      control: {
+        type: 'select',
+      },
     },
     sidebarSecond: {
-      control: false,
+      options: ['Show', 'Hide'],
+      mapping: {
+        Show: <SampleContent>Optional Sidebar Content</SampleContent>,
+        Hide: false,
+      },
+      control: {
+        type: 'select',
+      },
     },
   },
 };
@@ -27,10 +55,10 @@ type Story = StoryObj<typeof SidebarLayout>;
 const Sidebar: Story = {
   args: {
     ...sidebarArgs,
-    header: <SampleContent>Header Content</SampleContent>,
-    sidebarFirst: <SampleContent>Optional Sidebar Content</SampleContent>,
-    main: <SampleContent>Main Content</SampleContent>,
-    sidebarSecond: <SampleContent>Optional Sidebar Content</SampleContent>,
+    header: 'Show',
+    sidebarFirst: 'Show',
+    main: 'Show',
+    sidebarSecond: 'Show',
   },
 };
 

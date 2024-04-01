@@ -26,7 +26,9 @@ function Sidebar({
       className={clsx(
         styles.wrapper,
         modifierClasses,
-        sidebarFirst && sidebarSecond && styles['wrapper--multi-2'],
+        sidebarFirst && !sidebarSecond && styles['has-first-sidebar'],
+        !sidebarFirst && sidebarSecond && styles['has-second-sidebar'],
+        sidebarFirst && sidebarSecond && styles['has-both-sidebars'],
       )}
     >
       {header && <div className={styles.full}>{header}</div>}
