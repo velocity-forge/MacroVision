@@ -3,7 +3,7 @@
   font-family: var(--font-family-primary);
   font-size: var(--responsive-font-size-15);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
+  line-height: var(--line-height-short);
 }
 
 @mixin display-h1 {
@@ -11,7 +11,7 @@
   font-family: var(--font-family-primary);
   font-size: var(--responsive-font-size-12);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
+  line-height: var(--line-height-short);
 }
 
 @mixin display-h2 {
@@ -19,7 +19,7 @@
   font-family: var(--font-family-primary);
   font-size: var(--responsive-font-size-10);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
+  line-height: var(--line-height-short);
 }
 
 @mixin display-h3 {
@@ -27,7 +27,7 @@
   font-family: var(--font-family-primary);
   font-size: var(--responsive-font-size-8);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
+  line-height: var(--line-height-short);
 }
 
 @mixin display-h4 {
@@ -51,8 +51,8 @@
   font-family: var(--font-family-primary);
   font-size: var(--responsive-font-size-2);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: -0.04em;
-  line-height: var(--line-height-loose);
+  letter-spacing: var(--letterspacing-tight);
+  line-height: var(--line-height-tall);
   text-transform: uppercase;
 }
 
@@ -85,6 +85,6 @@
   font-family: var(--font-family-primary);
   font-size: var(--font-size-2);
   font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.02em;
-  line-height: var(--line-height-tight);
+  letter-spacing: var(--letterspacing-wide);
+  line-height: var(--line-height-short);
 }
