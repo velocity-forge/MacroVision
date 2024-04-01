@@ -1,6 +1,7 @@
 @import 'mixins/accessibility';
 @import 'mixins/button';
 @import 'mixins/clearfix';
+@import 'mixins/container-query';
 @import 'mixins/display-text';
 @import 'mixins/focus';
 @import 'mixins/grids';
