@@ -1,0 +1,86 @@
+/**
+ * Create a min-width container query.
+ * @param {Number} $breakpoint - width value.
+ * @param {String} $container_name - name of container.
+ */
+@mixin container-query-min($breakpoint, $container_name: '') {
+  @if $container_name != '' {
+    @container $container_name (inline-size >= $breakpoint) {
+      @content;
+    }
+  } @else  {
+    @container (inline-size >= $breakpoint) {
+      @content;
+    }
+  }
+}
+
+/**
+  * Create a max-width container query.
+  * @param {Number} $breakpoint - width value.
+  * @param {String} $container_name - name of container.
+  * @param {Boolean} $subtract_1_from_max - whether to subtract 1px from $breakpoint value.
+ */
+@mixin container-query-max(
+  $breakpoint,
+  $container_name: '',
+  $subtract_1_from_max: false
+) {
+  @if $container_name != '' {
+    @if $subtract_1_from_max == true {
+      @container $container_name (inline-size < $breakpoint) {
+        @content;
+      }
+    } @else  {
+      @container $container_name (inline-size <= $breakpoint) {
+        @content;
+      }
+    }
+  } @else  {
+    @if $subtract_1_from_max == true {
+      @container (inline-size < $breakpoint) {
+        @content;
+      }
+    } @else  {
+      @container (inline-size <= $breakpoint) {
+        @content;
+      }
+    }
+  }
+}
+
+/**
+  * Create a container query with both min-width and max-width.
+  * @param {Number} $breakpoint-min - width value.
+  * @param {Number} $breakpoint-max - width value.
+  * @param {String} $container_name - name of container.
+  * @param {Boolean} $subtract_1_from_max - whether to subtract 1px from $breakpoint-max value.
+ */
+@mixin container-query-min-max(
+  $breakpoint-min,
+  $breakpoint-max,
+  $container_name: '',
+  $subtract_1_from_max: false
+) {
+  @if $container_name != '' {
+    @if $subtract_1_from_max == true {
+      @container $container_name ($breakpoint-min <= inline-size < $breakpoint-max) {
+        @content;
+      }
+    } @else  {
+      @container $container_name ($breakpoint-min <= inline-size <= $breakpoint-max) {
+        @content;
+      }
+    }
+  } @else  {
+    @if $subtract_1_from_max == true {
+      @container ($breakpoint-min <= inline-size < $breakpoint-max) {
+        @content;
+      }
+    } @else  {
+      @container ($breakpoint-min <= inline-size <= $breakpoint-max) {
+        @content;
+      }
+    }
+  }
+}

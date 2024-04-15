@@ -16,6 +16,7 @@ rules:
         - 'for'
         - 'mixin'
         - 'each'
+        - 'content'
   block-no-empty: null
   color-named:
     - never
