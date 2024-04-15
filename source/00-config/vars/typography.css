@@ -49,7 +49,11 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  --line-height-tight: 1.1;
+  --letterspacing-tight: -0.04em;
+  --letterspacing-normal: 0;
+  --letterspacing-wide: 0.02em;
+
+  --line-height-short: 1.1;
   --line-height-base: 1.45;
-  --line-height-loose: 1.7;
+  --line-height-tall: 1.7;
 }
