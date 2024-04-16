@@ -1,5 +1,6 @@
 ---
 allowMultiple: true
+allowToggle: true
 accordionItems:
   - title: 'First Accordion Heading'
     isOpen: true

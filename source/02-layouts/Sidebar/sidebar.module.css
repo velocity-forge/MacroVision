@@ -2,56 +2,49 @@
 
 @layer layouts {
   .wrapper {
-    --sidebar-width: 300px;
     --sidebar-gutter: var(--spacing-2);
+    --sidebar-width: 300px;
     @media (--sidebar) {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--sidebar-gutter);
+      display: grid;
+      grid-gap: var(--sidebar-gutter);
+      grid-template-columns: minmax(0, 1fr);
 
-      > * {
-        flex: 1 1 calc(100% - var(--sidebar-width) - var(--sidebar-gutter) * 2);
-      }
-
-      @supports (display: grid) {
-        display: grid;
-        grid-template-columns: var(--sidebar-width) 1fr;
+      .full {
+        grid-column: span 1;
       }
     }
   }
 
-  .wrapper--multi-2 {
+  .wrapper.has-first-sidebar {
+    --sidebar-width: 300px;
     @media (--sidebar) {
-      > * {
-        flex-basis: calc(
-          100% - var(--sidebar-width) * 2 - var(--sidebar-gutter) * 3
-        );
+      grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
 
-        @supports (display: grid) {
-          grid-template-columns: var(--sidebar-width) 1fr var(--sidebar-width);
-        }
+      .full {
+        grid-column: span 2
       }
     }
   }
 
-  .full {
+  .wrapper.has-second-sidebar {
+    --sidebar-width: 300px;
     @media (--sidebar) {
-      flex-basis: 100%;
+      grid-template-columns: minmax(0, 1fr) var(--sidebar-width);
 
-      @supports (display: grid) {
+      .full {
         grid-column: span 2;
-
-        .wrapper--multi-2 & {
-          grid-column: span 3;
-        }
       }
     }
   }
 
-  .sidebar {
+  .wrapper.has-both-sidebars {
+    --sidebar-width: 300px;
     @media (--sidebar) {
-      flex-basis: var(--sidebar-width);
-      flex-shrink: 0;
+      grid-template-columns: var(--sidebar-width) minmax(0, 1fr) var(--sidebar-width);
+
+      .full {
+        grid-column: span 3;
+      }
     }
   }
 }
