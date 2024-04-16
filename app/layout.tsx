@@ -1,5 +1,6 @@
-import { JSX, PropsWithChildren } from 'react';
 import '../source/00-config/index.css';
+
+import { JSX, PropsWithChildren } from 'react';
 import sourceSansPro from '../source/01-global/fonts/source-sans';
 import '../source/01-global/index.css';
 import Footer from '../source/02-layouts/Footer/Footer';
