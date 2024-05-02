@@ -13,6 +13,7 @@ interface AccordionProps extends GessoComponent {
   accordionSpeed?: string;
   allowMultiple?: boolean;
   allowToggle?: boolean;
+  isStepList?: boolean;
 }
 
 function Accordion({
@@ -20,6 +21,7 @@ function Accordion({
   accordionSpeed = getCssVar('duration-standard'),
   allowMultiple,
   allowToggle,
+  isStepList,
   modifierClasses,
 }: AccordionProps): JSX.Element {
   const accordionId = useId();
@@ -125,7 +127,11 @@ function Accordion({
   return (
     <>
       <div
-        className={clsx(styles.accordion, modifierClasses)}
+        className={clsx(
+          styles.accordion,
+          isStepList && styles['is-step-list'],
+          modifierClasses,
+        )}
         id={accordionId}
         onKeyDown={handleKeydown}
       >
@@ -138,6 +144,7 @@ function Accordion({
                 accordionSpeed={accordionSpeed}
                 toggleRef={accordionItemRefs[item.id]}
                 handleClick={() => handleClick(item.id, item.isOpen)}
+                isStepList={isStepList}
               />
             );
           })}
