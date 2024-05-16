@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
-import { useEffect, useId, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import HamburgerButton from '../../HamburgerButton/HamburgerButton';
 import buttonStyles from '../../HamburgerButton/hamburger-button.module.css';
 import Menu, { MenuItem } from '../Menu';
@@ -25,29 +25,35 @@ function OverlayMenu({
     focusableElementsString,
   );
 
-  const handleKeydown = (event: KeyboardEvent) => {
-    // Trap focus within the menu
-    if (focusableElements) {
-      const firstElement = focusableElements[0] as HTMLElement;
-      const lastElement = focusableElements[
-        focusableElements.length - 1
-      ] as HTMLElement;
+  const handleKeydown = useCallback(
+    (event: KeyboardEvent) => {
+      // Trap focus within the menu
+      if (focusableElements) {
+        const firstElement = focusableElements[0] as HTMLElement;
+        const lastElement = focusableElements[
+          focusableElements.length - 1
+        ] as HTMLElement;
 
-      if (event.key === 'Tab') {
-        if (event.shiftKey && document.activeElement === firstElement) {
-          event.preventDefault();
-          lastElement.focus();
-        } else if (!event.shiftKey && document.activeElement === lastElement) {
-          event.preventDefault();
-          firstElement.focus();
+        if (event.key === 'Tab') {
+          if (event.shiftKey && document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+          } else if (
+            !event.shiftKey &&
+            document.activeElement === lastElement
+          ) {
+            event.preventDefault();
+            firstElement.focus();
+          }
         }
       }
-    }
-    // Close the menu when the escape key is pressed
-    if (event.key === 'Escape') {
-      setIsOpen(false);
-    }
-  };
+      // Close the menu when the escape key is pressed
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    },
+    [focusableElements],
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -69,7 +75,7 @@ function OverlayMenu({
       document.body.classList.remove('has-open-menu');
       window.removeEventListener('keydown', handleKeydown);
     };
-  }, [isOpen, navId, focusableElements]);
+  }, [isOpen, navId, focusableElements, handleKeydown]);
 
   return (
     <>
