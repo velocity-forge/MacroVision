@@ -1,4 +1,4 @@
-name: [PROJECT NAME]
+name: nextjs-project
 type: php
 docroot: public
 php_version: "8.0"
@@ -14,7 +14,7 @@ database:
 use_dns_when_possible: true
 composer_version: "2"
 web_environment: []
-nodejs_version: "18"
+nodejs_version: "20"
 hooks:
   post-start:
       # Detects to see if the node_modules folder exists
