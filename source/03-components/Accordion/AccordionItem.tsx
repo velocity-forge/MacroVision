@@ -16,6 +16,7 @@ export interface AccordionItemProps extends GessoComponent {
   content: ReactElement;
   titleElement?: ElementType;
   isOpen?: boolean;
+  isStepList?: boolean;
   accordionSpeed?: string;
   toggleRef?: React.RefObject<HTMLButtonElement>;
   handleClick: MouseEventHandler;
@@ -27,6 +28,7 @@ function AccordionItem({
   content,
   titleElement: TitleElement = 'h3',
   isOpen,
+  isStepList,
   accordionSpeed,
   toggleRef,
   modifierClasses,
@@ -46,7 +48,13 @@ function AccordionItem({
   }, [isOpen, accordionSpeed]);
 
   return (
-    <div className={clsx(styles.accordionItem, modifierClasses)}>
+    <div
+      className={clsx(
+        styles.accordionItem,
+        isStepList && styles['is-step-list'],
+        modifierClasses,
+      )}
+    >
       <div className={styles.panel}>
         <TitleElement className={styles.heading}>
           <button
@@ -57,7 +65,8 @@ function AccordionItem({
             ref={toggleRef}
             onClick={handleClick}
           >
-            {title}
+            <span className={styles.number}></span>
+            <span className={styles.title}>{title}</span>
             <span className={styles.icon}></span>
           </button>
         </TitleElement>
