@@ -9,7 +9,7 @@ interface HeroInlineImageProps extends GessoComponent {
   title?: string;
   summary?: ReactNode;
   button?: LinkProps;
-  media?: ReactNode;
+  heroImage?: ReactNode;
 }
 
 function HeroInlineImage({
@@ -17,7 +17,7 @@ function HeroInlineImage({
   title,
   summary,
   button,
-  media,
+  heroImage,
   modifierClasses,
 }: HeroInlineImageProps): JSX.Element {
   return (
@@ -28,7 +28,7 @@ function HeroInlineImage({
         modifierClasses,
       )}
     >
-      <div className={styles.media}>{media}</div>
+      <div className={styles.media}>{heroImage}</div>
       <div className={styles.content}>
         {title && <h1 className={styles.title}>{title}</h1>}
         {summary && <div className={styles.summary}>{summary}</div>}

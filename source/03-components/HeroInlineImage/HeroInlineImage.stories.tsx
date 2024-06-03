@@ -15,7 +15,7 @@ const Default: Story = {
   args: {
     ...heroInlineImageArgs,
     summary: parse(heroInlineImageArgs.summary),
-    media: parse(heroInlineImageArgs.media),
+    heroImage: parse(heroInlineImageArgs.heroImage),
   },
 };
 const Left: Story = {
