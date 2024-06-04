@@ -6,18 +6,18 @@ import styles from './hero-inline-image.module.css';
 
 interface HeroInlineImageProps extends GessoComponent {
   hasOverlay?: boolean;
+  heroImage?: ReactNode;
   title?: string;
   summary?: ReactNode;
   button?: LinkProps;
-  media?: ReactNode;
 }
 
 function HeroInlineImage({
   hasOverlay,
+  heroImage,
   title,
   summary,
   button,
-  media,
   modifierClasses,
 }: HeroInlineImageProps): JSX.Element {
   return (
@@ -28,7 +28,7 @@ function HeroInlineImage({
         modifierClasses,
       )}
     >
-      <div className={styles.media}>{media}</div>
+      <div className={styles.image}>{heroImage}</div>
       <div className={styles.content}>
         {title && <h1 className={styles.title}>{title}</h1>}
         {summary && <div className={styles.summary}>{summary}</div>}

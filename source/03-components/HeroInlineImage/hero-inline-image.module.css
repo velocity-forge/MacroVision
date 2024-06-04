@@ -23,7 +23,7 @@
     }
   }
 
-  .media {
+  .image {
     display: block;
     line-height: 0;
     margin-block-end: var(--spacing-3);
