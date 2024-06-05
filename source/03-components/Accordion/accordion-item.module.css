@@ -36,8 +36,6 @@
   }
 
   .number {
-    display: none;
-
     .is-step-list & {
       background-color: var(--grayscale-gray-2);
       border-radius: 100%;

@@ -65,7 +65,7 @@ function AccordionItem({
             ref={toggleRef}
             onClick={handleClick}
           >
-            <span className={styles.number}></span>
+            {isStepList && <span className={styles.number}></span>}
             <span className={styles.title}>{title}</span>
             <span className={styles.icon}></span>
           </button>
@@ -75,7 +75,6 @@ function AccordionItem({
           className={styles.drawer}
           id={sectionId}
           aria-labelledby={buttonId}
-          aria-expanded={isOpen}
         >
           <div className={styles.drawerInner}>{content}</div>
         </div>
