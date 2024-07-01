@@ -25,12 +25,20 @@ accordionArgs.accordionItems = accordionArgs.accordionItems.map(
   },
 );
 
-const Accordion: Story = {
+const Default: Story = {
   render: args => <AccordionComponent {...args} />,
   args: {
     ...accordionArgs,
   },
 };
 
+const StepList: Story = {
+  render: args => <AccordionComponent {...args} />,
+  args: {
+    ...accordionArgs,
+    isStepList: true,
+  },
+};
+
 export default meta;
-export { Accordion };
+export { Default, StepList };

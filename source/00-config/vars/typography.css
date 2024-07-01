@@ -53,7 +53,10 @@
   --letterspacing-normal: 0;
   --letterspacing-wide: 0.02em;
 
+  --line-height-shortest: 1;
   --line-height-short: 1.1;
   --line-height-base: 1.45;
-  --line-height-tall: 1.7;
+  --line-height-tall: 1.6;
+  --line-height-taller: 1.7;
+  --line-height-tallest: 2;
 }

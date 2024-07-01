@@ -5,7 +5,7 @@ summary: '<p>Hero summary text.</p>'
 button:
   label: 'Hero Button'
   href: '#0'
-media: |-
+heroImage: |-
   <picture>
     <source
     srcSet="https://picsum.photos/1600/800?image=11"

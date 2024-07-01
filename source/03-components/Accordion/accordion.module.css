@@ -1,7 +1,11 @@
 @layer components {
   .accordion {
+    &.is-step-list {
+      counter-reset: step;
+    }
   }
 
   .content {
   }
+
 }

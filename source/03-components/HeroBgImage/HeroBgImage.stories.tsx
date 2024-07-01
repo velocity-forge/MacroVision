@@ -21,13 +21,13 @@ const Default: Story = {
 const Left: Story = {
   args: {
     ...Default.args,
-    modifierClasses: styles['hero--left'],
+    modifierClasses: styles['has-content-left'],
   },
 };
 const Right: Story = {
   args: {
     ...Default.args,
-    modifierClasses: styles['hero--right'],
+    modifierClasses: styles['has-content-right'],
   },
 };
 
