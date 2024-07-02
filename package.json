@@ -24,9 +24,9 @@
     ">= 1% in US"
   ],
   "dependencies": {
-    "next": "^14.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-select": "^5.8.0"
   },
   "devDependencies": {
@@ -44,7 +44,8 @@
     "@svgr/babel-plugin-remove-jsx-attribute": "^8.0.0",
     "@svgr/cli": "^8.1.0",
     "@types/node": "^20.14.0",
-    "@types/react": "^18.2.48",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
     "clsx": "^2.1.0",
@@ -52,7 +53,7 @@
     "csstype": "3.1.3",
     "enhanced-resolve": "^5.15.0",
     "eslint": "^8.56.0",
-    "eslint-config-next": "^14.1.0",
+    "eslint-config-next": "^14.2.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "html-react-parser": "^5.1.1",
@@ -73,7 +74,7 @@
     "stylelint-config-standard": "^36.0.0",
     "stylelint-order": "^6.0.4",
     "stylelint-webpack-plugin": "^5.0.0",
-    "typescript": "^5.3.3",
+    "typescript": "^5.5.3",
     "yaml": "^2.3.4"
   },
   "overrides": {
