@@ -2,6 +2,9 @@
 // CSSGroupingRule, so we fake it.
 type CSSRulesWithLayers = CSSRule | CSSGroupingRule;
 
+const isCSSStyleRule = (val: CSSRule): val is CSSStyleRule =>
+  val instanceof CSSStyleRule;
+
 function getCssVariables(): string[][] {
   return Array.from(document.styleSheets)
     .map(sheet => {
@@ -17,12 +20,12 @@ function getCssVariables(): string[][] {
       return allStyles.concat(
         sheet
           .flat()
-          .filter(r => r instanceof CSSStyleRule)
+          .filter(isCSSStyleRule)
           .reduce((cssVars, rule) => {
-            const props = Array.from((rule as CSSStyleRule).style)
+            const props = Array.from(rule.style)
               .map(propName => [
                 propName.trim(),
-                (rule as CSSStyleRule).style.getPropertyValue(propName).trim(),
+                rule.style.getPropertyValue(propName).trim(),
               ])
               .filter(([propName]) => propName.indexOf('--') === 0);
             return [...cssVars, ...props];
