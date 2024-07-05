@@ -1,0 +1,24 @@
+# EditorConfig is awesome: https://EditorConfig.org
+# We should only put very basic rules in here.
+# ESLint and Prettier should be our main source of rules,
+# but this helps out in cases where an editor may not
+# be properly configured for eslint/prettier.
+
+# top-most EditorConfig file
+root = true
+
+### All files
+[*]
+charset = utf-8
+# Unix-style newlines with a newline ending every file
+end_of_line = lf
+insert_final_newline = true
+# 2 space indentation
+indent_style = space
+indent_size = 2
+# Remove any whitespace characters preceding newline characters
+trim_trailing_whitespace = true
+
+### Markdown
+[*.md]
+trim_trailing_whitespace = false
