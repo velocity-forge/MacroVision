@@ -8,7 +8,7 @@
 
     /* Modal overlay styling */
     &::backdrop {
-      background-color: rgba(0 0 0 / 75%);
+      background-color: rgb(0 0 0 / 75%);
     }
 
     &[open] {
