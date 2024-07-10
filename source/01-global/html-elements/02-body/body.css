@@ -11,7 +11,8 @@ body {
   padding: 0;
   word-wrap: break-word;
 
-  &.has-open-menu {
+  &.has-open-menu,
+  &.has-open-modal {
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
   }
