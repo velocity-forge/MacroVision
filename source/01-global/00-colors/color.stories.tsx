@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import Constrain from '../../02-layouts/Constrain/Constrain';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './color.module.css';
 
@@ -128,6 +129,13 @@ const ColorPaletteComponent = ({ brand, grayscale, other }: ColorFamily) => (
 const meta: Meta<typeof ColorPaletteComponent> = {
   title: 'Global/Color Palette',
   component: ColorPaletteComponent,
+  decorators: [
+    Component => (
+      <Constrain modifierClasses="u-spacing-block-4">
+        <Component />
+      </Constrain>
+    ),
+  ],
   argTypes: {
     brand: {
       table: {

@@ -1,11 +1,19 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Property } from 'csstype';
 import { useEffect, useState } from 'react';
+import Constrain from '../../02-layouts/Constrain/Constrain';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './line-height.module.css';
 
 const meta: Meta = {
   title: 'Global/Typography/Line Height',
+  decorators: [
+    Component => (
+      <Constrain modifierClasses="u-spacing-block-4">
+        <Component />
+      </Constrain>
+    ),
+  ],
 };
 
 interface FontOptions {

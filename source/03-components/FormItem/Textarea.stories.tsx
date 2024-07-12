@@ -1,13 +1,11 @@
 import { Meta, StoryObj } from '@storybook/react';
-import parse from 'html-react-parser';
 import Constrain from '../../02-layouts/Constrain/Constrain';
-import { Select } from './FormItem';
-import withGroupArgs from './select-with-groups.yml';
-import selectArgs from './select.yml';
+import { Textarea } from './FormItem';
+import textareaArgs from './textarea.yml';
 
-const meta: Meta<typeof Select> = {
-  title: 'Components/Form Item/Select',
-  component: Select,
+const meta: Meta<typeof Textarea> = {
+  title: 'Components/Form Item/Textarea',
+  component: Textarea,
   decorators: [
     Component => (
       <Constrain modifierClasses="u-spacing-block-4">
@@ -17,14 +15,14 @@ const meta: Meta<typeof Select> = {
   ],
   args: {
     labelDisplay: 'before',
+    prefix: '',
+    suffix: '',
+    description: 'The description for this form field.',
     descriptionDisplay: 'after',
+    errors: '',
     isDisabled: false,
     isFullWidth: false,
     isRequired: false,
-    description: 'The description for this form field.',
-    errors: '',
-    prefix: '',
-    suffix: '',
   },
   argTypes: {
     type: {
@@ -40,19 +38,12 @@ const meta: Meta<typeof Select> = {
   },
 };
 
-type Story = StoryObj<typeof Select>;
+type Story = StoryObj<typeof Textarea>;
 const Default: Story = {
   args: {
-    ...selectArgs,
-    children: parse(selectArgs.children),
-  },
-};
-const WithGroups: Story = {
-  args: {
-    ...withGroupArgs,
-    children: parse(withGroupArgs.children),
+    ...textareaArgs,
   },
 };
 
 export default meta;
-export { Default, WithGroups };
+export { Default };

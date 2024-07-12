@@ -1,11 +1,19 @@
 import { Meta, StoryObj } from '@storybook/react';
 import parse from 'html-react-parser';
+import Constrain from '../../02-layouts/Constrain/Constrain';
 import ArticleComponent from './Article';
 import articleArgs from './article.yml';
 
 const meta: Meta<typeof ArticleComponent> = {
   title: 'Components/Article',
   component: ArticleComponent,
+  decorators: [
+    Component => (
+      <Constrain modifierClasses="u-spacing-block-4">
+        <Component />
+      </Constrain>
+    ),
+  ],
   tags: ['autodocs'],
 };
 

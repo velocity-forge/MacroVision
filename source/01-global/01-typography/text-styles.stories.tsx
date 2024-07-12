@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import Constrain from '../../02-layouts/Constrain/Constrain';
 import styles from './text-styles.module.css';
 
 const TextStylesComponent = () => {
@@ -23,6 +24,13 @@ const TextStylesComponent = () => {
 const meta: Meta<typeof TextStylesComponent> = {
   title: 'Global/Typography/Text Styles',
   component: TextStylesComponent,
+  decorators: [
+    Component => (
+      <Constrain modifierClasses="u-spacing-block-4">
+        <Component />
+      </Constrain>
+    ),
+  ],
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

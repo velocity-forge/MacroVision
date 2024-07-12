@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import Constrain from '../../02-layouts/Constrain/Constrain';
 import {
   Button as ButtonComponent,
   LinkButton as LinkButtonComponent,
@@ -20,6 +21,13 @@ function DemoButtons({ label, ...props }: SharedButtonProps): JSX.Element {
 const meta: Meta<typeof DemoButtons> = {
   title: 'Components/Button',
   component: DemoButtons,
+  decorators: [
+    Component => (
+      <Constrain modifierClasses="u-spacing-block-4">
+        <Component />
+      </Constrain>
+    ),
+  ],
   // More on automatic documentation: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes

@@ -1,10 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
+import Constrain from '../../02-layouts/Constrain/Constrain';
 import PageTitleComponent from './PageTitle';
 import pageTitleArgs from './page-title.yml';
 
 const meta: Meta<typeof PageTitleComponent> = {
   title: 'Components/Page Title',
   component: PageTitleComponent,
+  decorators: [
+    Component => (
+      <Constrain modifierClasses="u-spacing-block-4">
+        <Component />
+      </Constrain>
+    ),
+  ],
   argTypes: {
     pageTitle: {
       type: 'string',

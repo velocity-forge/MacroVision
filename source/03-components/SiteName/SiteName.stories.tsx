@@ -1,10 +1,18 @@
 import { Meta, StoryObj } from '@storybook/react';
+import Constrain from '../../02-layouts/Constrain/Constrain';
 import SiteNameComponent from './SiteName';
 import siteNameArgs from './site-name.yml';
 
 const meta: Meta<typeof SiteNameComponent> = {
   title: 'Components/Site Name',
   component: SiteNameComponent,
+  decorators: [
+    Component => (
+      <Constrain modifierClasses="u-spacing-block-4">
+        <Component />
+      </Constrain>
+    ),
+  ],
   tags: ['autodocs'],
 };
 

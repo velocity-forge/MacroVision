@@ -2,7 +2,27 @@
   .figure {
     display: table;
     margin-block: 0 var(--spacing-2);
+  }
 
+  .caption {
+    caption-side: bottom;
+    display: table-caption;
+    font-weight: var(--font-weight-semibold);
+    margin-block-start: var(--spacing-1);
+  }
+
+  .figure--iframe {
+    display: block;
+    inline-size: 100%;
+
+    .caption {
+      display: block;
+    }
+  }
+}
+
+@layer utility {
+  .figure {
     &:global(.align-center),
     &:global(.u-align-center) {
       clear: both;
@@ -27,23 +47,9 @@
     }
   }
 
-  .caption {
-    caption-side: bottom;
-    display: table-caption;
-    font-weight: var(--font-weight-semibold);
-    margin-block-start: var(--spacing-1);
-  }
-
   .figure--iframe {
-    display: block;
-    inline-size: 100%;
-
     &:global(.align-center),
     &:global(.u-align-center) {
-      display: block;
-    }
-
-    .caption {
       display: block;
     }
   }

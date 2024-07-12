@@ -1,7 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react';
+import Constrain from '../../../02-layouts/Constrain/Constrain';
 
 const settings: Meta = {
   title: 'Global/HTML Elements/Definition List',
+  decorators: [
+    Component => (
+      <Constrain modifierClasses="u-spacing-block-4">
+        <Component />
+      </Constrain>
+    ),
+  ],
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

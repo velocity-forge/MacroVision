@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import parse from 'html-react-parser';
+import Constrain from '../../02-layouts/Constrain/Constrain';
 import FieldsetComponent from './Fieldset';
 import styles from './fieldset.module.css';
 import fieldsetArgs from './fieldset.yml';
@@ -7,6 +8,13 @@ import fieldsetArgs from './fieldset.yml';
 const meta: Meta<typeof FieldsetComponent> = {
   title: 'Components/Fieldset',
   component: FieldsetComponent,
+  decorators: [
+    Component => (
+      <Constrain modifierClasses="u-spacing-block-4">
+        <Component />
+      </Constrain>
+    ),
+  ],
   tags: ['autodocs'],
   argTypes: {
     children: {

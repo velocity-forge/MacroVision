@@ -5,6 +5,7 @@ import {
   InputHTMLAttributes,
   ReactNode,
   SelectHTMLAttributes,
+  TextareaHTMLAttributes,
 } from 'react';
 import FormItemLabel from './FormItemLabel';
 import FormItemWrapper from './FormItemWrapper';
@@ -30,6 +31,8 @@ interface FormItemProps extends GessoComponent {
 type InputProps = Omit<FormItemProps, 'children'> &
   InputHTMLAttributes<HTMLInputElement>;
 type SelectProps = FormItemProps & SelectHTMLAttributes<HTMLSelectElement>;
+type TextareaProps = FormItemProps &
+  TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 function FormItem({
   id,
@@ -187,5 +190,47 @@ function Select({
   );
 }
 
+function Textarea({
+  id,
+  label,
+  labelDisplay = 'before',
+  prefix,
+  suffix,
+  description,
+  descriptionDisplay = 'after',
+  errors,
+  modifierClasses,
+  isDisabled = false,
+  isFullWidth = false,
+  isRequired = false,
+  ...props
+}: TextareaProps): JSX.Element {
+  return (
+    <FormItem
+      id={id}
+      type="textarea"
+      label={label}
+      labelDisplay={labelDisplay}
+      prefix={prefix}
+      suffix={suffix}
+      description={description}
+      descriptionDisplay={descriptionDisplay}
+      errors={errors}
+      modifierClasses={modifierClasses}
+      isDisabled={isDisabled}
+      isFullWidth={isFullWidth}
+      isRequired={isRequired}
+    >
+      <textarea
+        id={id}
+        disabled={isDisabled}
+        required={isRequired}
+        aria-required="true"
+        {...props}
+      />
+    </FormItem>
+  );
+}
+
 export default FormItem;
-export { Input, Select };
+export { Input, Select, Textarea };
