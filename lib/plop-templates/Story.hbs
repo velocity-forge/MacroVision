@@ -1,0 +1,20 @@
+import { Meta, StoryObj } from '@storybook/react';
+import {{> componentAlias }} from './{{ componentName }}';
+import data from './{{ kebabCase componentName }}.yml';
+
+const meta: Meta<typeof {{> componentAlias }}> = {
+  title: '{{ titleCase (cascadeLayer componentFolder) }}/{{ componentTitle }}',
+  component: {{> componentAlias }},
+  tags: ['autodocs'],
+};
+
+type Story = StoryObj<typeof {{> componentAlias }}>;
+
+const Default: Story = {
+  args: {
+    ...data,
+  },
+};
+
+export default meta;
+export { Default };
