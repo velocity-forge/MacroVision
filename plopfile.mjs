@@ -56,7 +56,11 @@ async function getDirectories(source) {
   /** @type {string[]} */
   const directoryFiles = await readdir(source);
   /** @type {string[]} */
-  const directoryPaths = directoryFiles.map(name => path.join(source, name));
+  const directoryPaths = directoryFiles
+    .filter(
+      dirName => !['00-config', '05-pages', '06-utility'].includes(dirName),
+    )
+    .map(name => path.join(source, name));
   /** @type {Awaited<boolean>[]} */
   const isDirectoryResults = await Promise.all(directoryPaths.map(isDirectory));
   return directoryPaths.filter((value, index) => isDirectoryResults[index]);
