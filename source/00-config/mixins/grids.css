@@ -1,19 +1,4 @@
 /**
-  Set flex Grid layout.
-  @param {Number} $columns Number of columns.
-  @param {String} $item-min-width Value to set a minimum column width.
- */
-@mixin flex-grid($columns: 1, $item-min-width: 300px) {
-  display: flex;
-  flex-wrap: wrap;
-  margin-inline: calc(var(--gutter-width) / -2);
-
-  > * {
-    @include set-flex-column($columns, $item-min-width);
-  }
-}
-
-/**
   Set auto fit Grid template.
   @param {String} $item-min-width Minimum column width.
  */
