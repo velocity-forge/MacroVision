@@ -1,0 +1,25 @@
+@layer components {
+  .layout {
+    align-items: center;
+    display: grid;
+    grid-gap: var(--spacing-5);
+
+    @media (--tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .media {
+    @media (--tablet) {
+      grid-column-start: 2;
+      order: 2;
+    }
+  }
+
+  .content {
+    @media (--tablet) {
+      grid-row-start: 1;
+      order: 1;
+    }
+  }
+}
