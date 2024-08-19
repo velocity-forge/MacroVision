@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 
 const allVars = getCssVariables();
@@ -61,6 +62,7 @@ const SpacingComponent = ({ spacing }: { spacing: SpacingOptions }) => {
 const meta: Meta<typeof SpacingComponent> = {
   title: 'Global/Spacing',
   component: SpacingComponent,
+  decorators: [withGlobalWrapper],
   argTypes: {
     spacing: {
       table: {

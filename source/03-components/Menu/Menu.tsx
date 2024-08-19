@@ -1,17 +1,21 @@
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
 import Link from 'next/link';
+import { ReactNode } from 'react';
 import styles from './menu.module.css';
 
 interface MenuItem {
-  title: string;
+  title: ReactNode;
   url: string;
   inActiveTrail?: boolean;
   below?: MenuItem[];
 }
 
-interface MenuProps extends GessoComponent {
+interface BaseMenuProps extends GessoComponent {
   items: MenuItem[];
+}
+
+interface MenuProps extends BaseMenuProps {
   itemClasses?: string | string[];
   linkClasses?: string | string[];
 }
@@ -75,4 +79,4 @@ function Menu({
 
 export default Menu;
 export { MenuLinks };
-export type { MenuItem, MenuLinksProps, MenuProps };
+export type { BaseMenuProps, MenuItem, MenuLinksProps, MenuProps };

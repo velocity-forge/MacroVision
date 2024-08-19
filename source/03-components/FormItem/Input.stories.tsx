@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import { Input } from './FormItem';
 import colorArgs from './color.yml';
 import dateArgs from './date.yml';
@@ -20,6 +21,7 @@ import weekArgs from './week.yml';
 const meta: Meta<typeof Input> = {
   title: 'Components/Form Item/Input',
   component: Input,
+  decorators: [withGlobalWrapper],
   args: {
     isDisabled: false,
     descriptionDisplay: 'after',

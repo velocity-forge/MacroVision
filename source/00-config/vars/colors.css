@@ -21,7 +21,7 @@
   --selection-text: var(--grayscale-white);
 
   --table-background: var(--grayscale-white);
-  --tablebackground-foot: var(--grayscale-gray-1);
+  --table-background-foot: var(--grayscale-gray-1);
   --table-background-head: var(--grayscale-gray-1);
   --table-border: var(--grayscale-gray-5);
 

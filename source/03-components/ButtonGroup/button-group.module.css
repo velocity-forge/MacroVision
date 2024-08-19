@@ -33,6 +33,22 @@ $border-radius: 3px;
     }
   }
 
+  .link--secondary {
+    composes: button--secondary from '../Button/button.module.css';
+  }
+
+  .link--danger {
+    composes: button--danger from '../Button/button.module.css';
+  }
+
+  .link--large {
+    composes: button--large from '../Button/button.module.css';
+  }
+
+  .link--small {
+    composes: button--small from '../Button/button.module.css';
+  }
+
   .item {
     margin: 0;
 

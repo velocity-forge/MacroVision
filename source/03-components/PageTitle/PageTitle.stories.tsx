@@ -1,10 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import PageTitleComponent from './PageTitle';
 import pageTitleArgs from './page-title.yml';
 
 const meta: Meta<typeof PageTitleComponent> = {
   title: 'Components/Page Title',
   component: PageTitleComponent,
+  decorators: [withGlobalWrapper],
   argTypes: {
     pageTitle: {
       type: 'string',

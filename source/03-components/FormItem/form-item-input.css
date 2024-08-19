@@ -11,11 +11,12 @@
     .form-item--select,
     .form-item--tel,
     .form-item--text,
+    .form-item--textarea,
     .form-item--time,
     .form-item--url,
     .form-item--week
   ) {
-  & :is(input, select) {
+  & :is(input, select, textarea) {
     @include focus;
 
     appearance: none;
@@ -55,5 +56,11 @@
 
   &.is-full-width > input {
     width: 100%;
+  }
+}
+
+:is(.form-item--textarea) {
+  & :is(textarea) {
+    height: auto;
   }
 }

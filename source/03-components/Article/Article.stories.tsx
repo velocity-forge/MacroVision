@@ -1,11 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
 import parse from 'html-react-parser';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import ArticleComponent from './Article';
 import articleArgs from './article.yml';
 
 const meta: Meta<typeof ArticleComponent> = {
   title: 'Components/Article',
   component: ArticleComponent,
+  decorators: [withGlobalWrapper],
   tags: ['autodocs'],
 };
 

@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import styles from './text-styles.module.css';
 
 const TextStylesComponent = () => {
@@ -23,6 +24,7 @@ const TextStylesComponent = () => {
 const meta: Meta<typeof TextStylesComponent> = {
   title: 'Global/Typography/Text Styles',
   component: TextStylesComponent,
+  decorators: [withGlobalWrapper],
   parameters: {
     controls: { hideNoControlsWarning: true },
   },
