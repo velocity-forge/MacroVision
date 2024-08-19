@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { withGlobalWrapper } from '../../../../.storybook/decorators';
 
 const data = `
     P R E F O R M A T T E D T E X T
@@ -12,6 +13,7 @@ const data = `
 
 const meta: Meta = {
   title: 'Global/HTML Elements/Preformatted Text',
+  decorators: [withGlobalWrapper],
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

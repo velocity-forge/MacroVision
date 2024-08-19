@@ -1,0 +1,13 @@
+import clsx from 'clsx';
+import { GessoComponent } from 'gesso';
+import { JSX } from 'react';
+import styles from './{{ kebabCase componentName }}.module.css';
+
+interface {{> propsName }} extends GessoComponent {}
+
+function {{ componentName }}({ modifierClasses }: {{> propsName }}): JSX.Element {
+  return <div className={clsx(styles.wrapper, modifierClasses)} />;
+}
+
+export type { {{> propsName }} };
+export default {{ componentName }};

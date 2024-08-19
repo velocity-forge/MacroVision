@@ -1,6 +1,6 @@
 ---
 id: 'time'
-label: 'Text'
+label: 'Time'
 type: 'time'
 placeholder: 'hh:mm:ss'
 size: 12
