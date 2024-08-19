@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Property } from 'csstype';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './shadows.module.css';
 
@@ -43,13 +43,7 @@ function BoxShadowDemo({
 const meta: Meta<typeof BoxShadowDemo> = {
   title: 'Global/Box Shadows',
   component: BoxShadowDemo,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   argTypes: {
     boxShadow: {
       table: {

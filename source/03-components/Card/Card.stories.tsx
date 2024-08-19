@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import parse from 'html-react-parser';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import Grid from '../../02-layouts/Grid/Grid';
 import CardComponent from './Card';
 import styles from './card.module.css';
@@ -9,13 +9,7 @@ import cardArgs from './card.yml';
 const meta: Meta<typeof CardComponent> = {
   title: 'Components/Card',
   component: CardComponent,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   tags: ['autodocs'],
   argTypes: {
     children: {

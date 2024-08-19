@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Property } from 'csstype';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './duration.module.css';
 
@@ -44,13 +44,7 @@ const DurationComponent = ({ duration }: { duration: DurationOptions }) => {
 const meta: Meta<typeof DurationComponent> = {
   title: 'Global/Duration',
   component: DurationComponent,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   argTypes: {
     duration: {
       table: {

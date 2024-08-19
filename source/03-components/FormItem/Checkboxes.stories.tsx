@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import Fieldset from '../Fieldset/Fieldset';
 import fieldsetStyles from '../Fieldset/fieldset.module.css';
 import { Input } from './FormItem';
@@ -7,13 +7,7 @@ import { Checkbox } from './FormItem.stories';
 
 const meta: Meta = {
   title: 'Components/Form Item/Checkboxes',
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

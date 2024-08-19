@@ -1,18 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import ButtonGroupComponent from './ButtonGroup';
 import buttonGroupArgs from './button-group.yml';
 
 const meta: Meta<typeof ButtonGroupComponent> = {
   title: 'Components/Button Group',
   component: ButtonGroupComponent,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   tags: ['autodocs'],
   argTypes: {
     buttons: {

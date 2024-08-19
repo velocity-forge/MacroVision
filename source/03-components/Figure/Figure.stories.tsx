@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import parse from 'html-react-parser';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import { Video } from '../Video/Video.stories';
 import FigureComponent from './Figure';
 import styles from './figure.module.css';
@@ -9,13 +9,7 @@ import figureArgs from './figure.yml';
 const meta: Meta<typeof FigureComponent> = {
   title: 'Components/Figure',
   component: FigureComponent,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   tags: ['autodocs'],
 };
 

@@ -1,18 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import TagComponent from './Tag';
 import tagArgs from './tag.yml';
 
 const meta: Meta<typeof TagComponent> = {
   title: 'Components/Tag',
   component: TagComponent,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   tags: ['autodocs'],
 };
 

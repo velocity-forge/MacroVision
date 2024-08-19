@@ -1,18 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import VideoComponent from './Video';
 import videoArgs from './video.yml';
 
 const meta: Meta<typeof VideoComponent> = {
   title: 'Components/Video',
   component: VideoComponent,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   tags: ['autodocs'],
 };
 

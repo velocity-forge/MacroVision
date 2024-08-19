@@ -1,18 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import { Textarea } from './FormItem';
 import textareaArgs from './textarea.yml';
 
 const meta: Meta<typeof Textarea> = {
   title: 'Components/Form Item/Textarea',
   component: Textarea,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   args: {
     labelDisplay: 'before',
     prefix: '',

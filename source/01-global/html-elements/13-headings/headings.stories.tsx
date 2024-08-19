@@ -1,15 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Constrain from '../../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../../.storybook/decorators';
 
 const settings: Meta = {
   title: 'Global/HTML Elements/Headings',
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

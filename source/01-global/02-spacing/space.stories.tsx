@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 
 const allVars = getCssVariables();
@@ -62,13 +62,7 @@ const SpacingComponent = ({ spacing }: { spacing: SpacingOptions }) => {
 const meta: Meta<typeof SpacingComponent> = {
   title: 'Global/Spacing',
   component: SpacingComponent,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   argTypes: {
     spacing: {
       table: {

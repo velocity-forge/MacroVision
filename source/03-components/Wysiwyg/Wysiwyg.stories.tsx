@@ -1,19 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
 import parse from 'html-react-parser';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import WysiwygComponent from './Wysiwyg';
 import wysiwygArgs from './wysiwyg.yml';
 
 const meta: Meta<typeof WysiwygComponent> = {
   title: 'Components/WYSIWYG',
   component: WysiwygComponent,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   tags: ['autodocs'],
   argTypes: {
     children: {

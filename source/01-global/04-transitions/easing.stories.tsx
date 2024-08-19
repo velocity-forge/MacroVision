@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Property } from 'csstype';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './easing.module.css';
 
@@ -42,13 +42,7 @@ const EasingComponent = ({ easing }: { easing: EasingOptions }) => {
 const meta: Meta<typeof EasingComponent> = {
   title: 'Global/Easing',
   component: EasingComponent,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   argTypes: {
     easing: {
       table: {

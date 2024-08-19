@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { Property } from 'csstype';
 import { useEffect, useState } from 'react';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import typographyVarsAsString from '../../00-config/vars/typography.css?raw';
-import Constrain from '../../02-layouts/Constrain/Constrain';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './typographic-scale.module.css';
 
@@ -27,13 +27,7 @@ const typographyVarsMin = typographyVars.map((e: string) => {
 
 const settings: Meta = {
   title: 'Global/Typography/Typographic Scale',
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
 };
 
 interface FontOptions {

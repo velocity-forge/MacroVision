@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import parse from 'html-react-parser';
-import Constrain from '../../02-layouts/Constrain/Constrain';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import { Select } from './FormItem';
 import withGroupArgs from './select-with-groups.yml';
 import selectArgs from './select.yml';
@@ -8,13 +8,7 @@ import selectArgs from './select.yml';
 const meta: Meta<typeof Select> = {
   title: 'Components/Form Item/Select',
   component: Select,
-  decorators: [
-    Component => (
-      <Constrain modifierClasses="u-spacing-block-4">
-        <Component />
-      </Constrain>
-    ),
-  ],
+  decorators: [withGlobalWrapper],
   args: {
     labelDisplay: 'before',
     descriptionDisplay: 'after',
