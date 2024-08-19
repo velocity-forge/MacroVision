@@ -2,7 +2,7 @@
   .layout {
     align-items: center;
     display: grid;
-    grid-gap: var(--spacing-5);
+    gap: var(--spacing-5);
 
     @media (--tablet) {
       grid-template-columns: repeat(2, 1fr);
