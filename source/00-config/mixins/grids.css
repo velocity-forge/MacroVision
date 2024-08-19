@@ -1,19 +1,4 @@
 /**
-  Set flex column inline-size.
-  @param {Number} $columns Number of columns.
-  @param {String} $item-min-width Value to set a minimum column width.
- */
-@mixin set-flex-columns($columns: 1, $item-min-width: false) {
-  flex: 0 0 auto;
-  inline-size: calc(1 / $columns * 100% - var(--gutter-width));
-  margin-block-end: var(--gutter-width);
-  margin-inline: calc(var(--gutter-width) / 2);
-  @if $item-min-width {
-    min-inline-size: $item-min-width;
-  }
-}
-
-/**
   Set flex Grid layout.
   @param {Number} $columns Number of columns.
   @param {String} $item-min-width Value to set a minimum column width.
@@ -29,67 +14,27 @@
 }
 
 /**
-  Remove flex constrains and margins.
-  CSS Grid reset for flex parent and children items.
- */
-@mixin css-grid-reset {
-  margin-inline: 0;
-
-  > * {
-    inline-size: 100%;
-    margin: 0;
-    min-inline-size: 0;
-  }
-}
-
-/**
   Set auto fit Grid template.
   @param {String} $item-min-width Minimum column width.
-  @param {Boolean} $flex-override Whether to set override for Grid cells.
  */
-@mixin set-css-autofit-columns($item-min-width, $flex-override: false) {
+@mixin set-css-autofit-columns($item-min-width) {
   gap: var(--gutter-width);
   grid-template-columns: repeat(auto-fit, minmax(#{$item-min-width}, 1fr));
-
-  @if $flex-override {
-    > * {
-      inline-size: 100%;
-      margin: 0;
-      min-inline-size: 0;
-    }
-  }
 }
 
 /**
   Set fixed Grid template.
   @param {Number} $columns Number of columns.
-  @param {Boolean} $flex-override Whether to set override for Grid cells.
  */
-@mixin set-css-fixed-columns($columns, $flex-override: false) {
+@mixin set-css-fixed-columns($columns) {
   grid-template-columns: repeat($columns, 1fr);
-
-  @if $flex-override {
-    > * {
-      inline-size: 100%;
-      margin: 0;
-      min-inline-size: 0;
-    }
-  }
 }
 
 /**
   Create auto fit Grid.
   @param {String} $item-min-width Minimum column width.
-  @param {Boolean} $flex-override Whether to reset styling to remove flex constrains first.
  */
-@mixin css-autofit-grid(
-  $item-min-width: rem-convert(300px),
-  $flex-override: false
-) {
-  @if $flex-override {
-    @include css-grid-reset();
-  }
-
+@mixin css-autofit-grid($item-min-width: rem-convert(300px)) {
   @include set-css-autofit-columns($item-min-width);
 
   display: grid;
@@ -98,13 +43,8 @@
 /**
   Create auto fit Grid.
   @param {String} $item-min-width Minimum column width.
-  @param {Boolean} $flex-override Whether to reset styling to remove flex constrains first.
  */
-@mixin css-fixed-grid($columns: 1, $flex-override: false) {
-  @if $flex-override {
-    @include css-grid-reset();
-  }
-
+@mixin css-fixed-grid($columns: 1) {
   @include set-css-fixed-columns($columns, false);
 
   display: grid;

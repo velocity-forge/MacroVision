@@ -35,6 +35,33 @@
     }
   }
 
+  .number {
+    .is-step-list & {
+      background-color: var(--grayscale-gray-2);
+      border-radius: 100%;
+      display: inline-block;
+      font-size: var(--font-size-4);
+      height: var(--spacing-4);
+      margin-right: var(--spacing-2);
+      position: relative;
+      width: var(--spacing-4);
+
+      &::before {
+        content: counter(step);
+        counter-increment: step;
+        display: inline-block;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .title {
+    flex-basis: 100%;
+  }
+
   .icon {
     block-size: 1.25rem;
     display: block;

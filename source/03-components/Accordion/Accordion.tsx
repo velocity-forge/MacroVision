@@ -3,7 +3,6 @@
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
 import { KeyboardEvent, createRef, useId, useMemo, useState } from 'react';
-import { KEYCODE } from '../../00-config/constants';
 import getCssVar from '../../06-utility/getCssVar';
 import AccordionItem, { AccordionItemProps } from './AccordionItem';
 import styles from './accordion.module.css';
@@ -13,6 +12,7 @@ interface AccordionProps extends GessoComponent {
   accordionSpeed?: string;
   allowMultiple?: boolean;
   allowToggle?: boolean;
+  isStepList?: boolean;
 }
 
 function Accordion({
@@ -20,6 +20,7 @@ function Accordion({
   accordionSpeed = getCssVar('duration-standard'),
   allowMultiple,
   allowToggle,
+  isStepList,
   modifierClasses,
 }: AccordionProps): JSX.Element {
   const accordionId = useId();
@@ -81,43 +82,40 @@ function Accordion({
     const currentTarget = event.target as HTMLButtonElement;
 
     // Create the array of toggle elements for the accordion group
-    const triggers = Object.values(accordionItemRefs).map(ref => ref.current);
+    const toggles = Object.values(accordionItemRefs).map(ref => ref.current);
 
     // Is this coming from an accordion header?
-    if (triggers && currentTarget.tagName === 'BUTTON') {
+    if (toggles && currentTarget.tagName === 'BUTTON') {
       // Up/ Down arrow and Control + Page Up/ Page Down keyboard operations
       if (
-        event.code === KEYCODE.UP ||
-        event.code === KEYCODE.DOWN ||
-        event.code === KEYCODE.PAGEUP ||
-        event.code === KEYCODE.PAGEDOWN
+        event.key === 'ArrowUp' ||
+        event.key === 'ArrowDown' ||
+        event.key === 'PageDown' ||
+        event.key === 'PageUp'
       ) {
-        const index = triggers.indexOf(currentTarget);
+        const index = toggles.indexOf(currentTarget);
         let direction;
-        if (event.code === KEYCODE.DOWN || event.code === KEYCODE.PAGEDOWN) {
+        if (event.key === 'ArrowDown' || event.key === 'PageDown') {
           direction = 1;
         } else {
           direction = -1;
         }
-        const triggerLength = triggers.length;
+        const triggerLength = toggles.length;
         const newIndex = (index + triggerLength + direction) % triggerLength;
-        triggers[newIndex]?.focus();
+        toggles[newIndex]?.focus();
         event.preventDefault();
-      } else if (event.code === KEYCODE.HOME || event.code === KEYCODE.END) {
-        switch (event.code) {
-          // Go to first accordion
-          case KEYCODE.HOME:
-            triggers[0]?.focus();
-            break;
-          // Go to last accordion
-          case KEYCODE.END:
-            triggers[triggers.length - 1]?.focus();
-            break;
-          default:
-            triggers[0]?.focus();
-            break;
+      } else if (event.key === 'Home') {
+        // Home navigates to the first accordion item
+        if (toggles[0]) {
+          toggles[0].focus();
         }
-        event.preventDefault();
+      } else if (event.key === 'End') {
+        // End navigates to the last accordion item
+        const lastToggle = toggles[toggles.length - 1];
+        if (lastToggle != null) {
+          lastToggle.focus();
+          event.preventDefault();
+        }
       }
     }
   };
@@ -125,7 +123,11 @@ function Accordion({
   return (
     <>
       <div
-        className={clsx(styles.accordion, modifierClasses)}
+        className={clsx(
+          styles.accordion,
+          isStepList && styles['is-step-list'],
+          modifierClasses,
+        )}
         id={accordionId}
         onKeyDown={handleKeydown}
       >
@@ -138,6 +140,7 @@ function Accordion({
                 accordionSpeed={accordionSpeed}
                 toggleRef={accordionItemRefs[item.id]}
                 handleClick={() => handleClick(item.id, item.isOpen)}
+                isStepList={isStepList}
               />
             );
           })}
