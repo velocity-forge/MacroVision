@@ -15,6 +15,8 @@ interface ButtonGroupProps extends GessoComponent {
   heading: string;
   buttons: Button[];
   activeLabel?: string;
+  variant?: string;
+  styleSize?: 'small' | 'medium' | 'large';
 }
 
 function ButtonGroup({
@@ -23,6 +25,8 @@ function ButtonGroup({
   modifierClasses,
   buttons,
   activeLabel = '(active)',
+  variant,
+  styleSize = 'medium',
 }: ButtonGroupProps): JSX.Element {
   return (
     <Element
@@ -44,6 +48,8 @@ function ButtonGroup({
               className={clsx(
                 styles.link,
                 button.isActive && styles['is-active'],
+                variant && variant !== 'primary' && styles[`link--${variant}`],
+                styleSize !== 'medium' && styles[`link--${styleSize}`],
               )}
             >
               {button.text}

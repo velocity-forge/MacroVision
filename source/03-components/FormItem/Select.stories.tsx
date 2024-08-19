@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import parse from 'html-react-parser';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import { Select } from './FormItem';
 import withGroupArgs from './select-with-groups.yml';
 import selectArgs from './select.yml';
@@ -7,6 +8,7 @@ import selectArgs from './select.yml';
 const meta: Meta<typeof Select> = {
   title: 'Components/Form Item/Select',
   component: Select,
+  decorators: [withGlobalWrapper],
   args: {
     labelDisplay: 'before',
     descriptionDisplay: 'after',

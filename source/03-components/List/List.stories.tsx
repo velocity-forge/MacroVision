@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import listStyles from './list.module.css';
 
 function DemoList({ style }: { style: string }): JSX.Element {
@@ -14,6 +15,7 @@ function DemoList({ style }: { style: string }): JSX.Element {
 const meta: Meta<typeof DemoList> = {
   title: 'Components/List',
   component: DemoList,
+  decorators: [withGlobalWrapper],
   argTypes: {
     style: {
       options: ['border', 'clean', 'inline', 'pipeline', 'column'],

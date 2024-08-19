@@ -1,7 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { withGlobalWrapper } from '../../../../.storybook/decorators';
 
 const meta: Meta = {
   title: 'Global/HTML Elements/Table',
+  decorators: [withGlobalWrapper],
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

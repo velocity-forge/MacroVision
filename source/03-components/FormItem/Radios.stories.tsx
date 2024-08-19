@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import Fieldset from '../Fieldset/Fieldset';
 import fieldsetStyles from '../Fieldset/fieldset.module.css';
 import { Input } from './FormItem';
@@ -6,6 +7,7 @@ import { Radio } from './FormItem.stories';
 
 const meta: Meta = {
   title: 'Components/Form Item/Radios',
+  decorators: [withGlobalWrapper],
 };
 
 const Radios: StoryObj = {

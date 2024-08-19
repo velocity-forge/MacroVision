@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { withGlobalWrapper } from '../../../.storybook/decorators';
 import getCssVariables from '../../06-utility/storybook/getCssVariables';
 import styles from './color.module.css';
 
@@ -128,6 +129,7 @@ const ColorPaletteComponent = ({ brand, grayscale, other }: ColorFamily) => (
 const meta: Meta<typeof ColorPaletteComponent> = {
   title: 'Global/Color Palette',
   component: ColorPaletteComponent,
+  decorators: [withGlobalWrapper],
   argTypes: {
     brand: {
       table: {
