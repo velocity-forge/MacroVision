@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import { GessoComponent } from 'gesso';
-import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { JSX, useCallback, useEffect, useId, useRef, useState } from 'react';
 import HamburgerButton from '../../HamburgerButton/HamburgerButton';
 import buttonStyles from '../../HamburgerButton/hamburger-button.module.css';
 import Menu, { MenuItem } from '../Menu';
@@ -12,6 +12,9 @@ interface OverlayMenuProps extends GessoComponent {
   items: MenuItem[];
 }
 
+const focusableElementsString =
+  'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+
 function OverlayMenu({
   items,
   modifierClasses,
@@ -19,9 +22,7 @@ function OverlayMenu({
   const [isOpen, setIsOpen] = useState(false);
   const navId = useId();
   const navRef = useRef<HTMLElement>(null);
-  const focusableElementsString =
-    'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
-  const focusableElements = navRef.current?.querySelectorAll(
+  const focusableElements = navRef.current?.querySelectorAll<HTMLElement>(
     focusableElementsString,
   );
 
@@ -29,10 +30,8 @@ function OverlayMenu({
     (event: KeyboardEvent) => {
       // Trap focus within the menu
       if (focusableElements) {
-        const firstElement = focusableElements[0] as HTMLElement;
-        const lastElement = focusableElements[
-          focusableElements.length - 1
-        ] as HTMLElement;
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
 
         if (event.key === 'Tab') {
           if (event.shiftKey && document.activeElement === firstElement) {
@@ -58,8 +57,7 @@ function OverlayMenu({
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('has-open-menu');
-      const firstElement =
-        focusableElements && (focusableElements[0] as HTMLElement);
+      const firstElement = focusableElements && focusableElements[0];
       firstElement?.focus();
       window.addEventListener('keydown', handleKeydown);
     } else {
